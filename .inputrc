@@ -1,0 +1,3 @@
+$if bash
+set completion-ignore-case on 
+$endif
