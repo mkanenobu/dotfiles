@@ -122,8 +122,9 @@ alias naut='nautilus .'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias vr='vim ~/.vimrc'
-alias py='python3'
-alias lua='lua5.3'
+alias py3='python3'
+alias py2='python2'
+alias lua='luajit'
 alias sbr='source ~/.bashrc'
 
 # typo
