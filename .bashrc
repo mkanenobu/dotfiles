@@ -122,6 +122,7 @@ alias naut='nautilus .'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias vr='vim ~/.vimrc'
+alias dein='nvim ~/.dein/.dein.toml'
 alias py3='python3'
 alias py2='python2'
 alias lua='luajit'
@@ -153,7 +154,6 @@ shopt -s autocd
 set -o emacs
 set noclobber
 
-xmodmap ~/.Xmodmap
 
 # Translate
 function dict() {
@@ -163,3 +163,5 @@ function dict() {
 function jtoe() {
 	grep $1 $HOME/Documents/Memo/gene-utf8.txt -B 1 -w --color
 }
+
+xmodmap ~/.Xmodmap

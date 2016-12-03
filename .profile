@@ -23,4 +23,3 @@ fi
 
 export PATH=$PATH:/usr/local/go/bin
 
-xmodmap .Xmodmap

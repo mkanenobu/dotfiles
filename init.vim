@@ -15,6 +15,13 @@ let g:loaded_netrwPlugin	   = 1
 let g:loaded_netrwSettings	   = 1
 let g:loaded_netrwFileHandlers = 1
 
+"let g:syntastic_alwayspopulate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+let g:syntastic_python_check = ['flake8']
+
+let g:deoplete#enable_at_startup = 1
 "no matcheparen
 if !has('gui_running')
 	let g:loaded_matchparen = 1
@@ -81,9 +88,9 @@ set clipboard=unnamed,unnamedplus
 vmap <C-c> :w !xsel -ib<CR><CR>
 
 "
-augroup set_kp_help
-	autocmd FileType vim setlocal keywordprg=:help
-augroup END
+"augroup set_kp_help
+"	autocmd FileType vim setlocal keywordprg=:help
+"augroup END
 
 
 "mapping
@@ -119,13 +126,14 @@ autocmd InsertLeave * set nopaste
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 
-"nnoremap Y y$
-"nnoremap y$ Y
+nnoremap Y y$
+nnoremap y$ Y
 
 noremap gj j
 noremap gk k
 noremap j gj
 noremap k gk
+inoremap <C-j><C-k> <Esc>
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -193,9 +201,9 @@ nmap <C-n><C-t> :NERDTree<CR>
 nmap <C-n><Esc> :NERDTreeClose<CR>
 
 "denite map
-nmap <C-u><C-r> :<C-u>Denite file_rec<CR>
-nmap <C-u><C-g> :<C-u>Denite grep<CR>
-nmap <C-u><C-f> :<C-u>Denite line<CR>
+nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
+nmap <C-n><C-g> :<C-u>Denite grep<CR>
+nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "ColorScheme
 colorscheme molokai 
