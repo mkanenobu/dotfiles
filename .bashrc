@@ -123,10 +123,11 @@ alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias vr='vim ~/.vimrc'
 alias dein='nvim ~/.dein/.dein.toml'
-alias py3='python3'
+alias py='python3'
 alias py2='python2'
 alias lua='luajit'
 alias sbr='source ~/.bashrc'
+alias du='du -h'
 
 # typo
 alias al='la'
@@ -164,4 +165,3 @@ function jtoe() {
 	grep $1 $HOME/Documents/Memo/gene-utf8.txt -B 1 -w --color
 }
 
-xmodmap ~/.Xmodmap

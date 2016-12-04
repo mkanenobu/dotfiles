@@ -21,6 +21,9 @@ let g:loaded_netrwFileHandlers = 1
 "let g:syntastic_check_on_wq = 0
 let g:syntastic_python_check = ['flake8']
 
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
 let g:deoplete#enable_at_startup = 1
 "no matcheparen
 if !has('gui_running')
@@ -100,6 +103,7 @@ nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
+let mapleader =","
 
 "numeric keypad map
 "inoremap <Esc>Oq 1
@@ -156,7 +160,7 @@ inoremap   <Left>	<nop>
 inoremap   <Right>	<nop>
 
 "mouse nop
-"set mouse=
+set mouse=""
 
 " dein settings {{{
 if &compatible

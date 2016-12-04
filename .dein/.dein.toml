@@ -29,5 +29,7 @@ repo = 'vim-syntastic/syntastic'
 [[plugins]]
 repo = 'Shougo/neco-vim'
 
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+#()complete
+#[[plugins]]
+#repo = 'thinca/lexima.vim'
+
