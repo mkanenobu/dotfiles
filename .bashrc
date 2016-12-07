@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -119,6 +119,7 @@ fi
 
 # User
 alias naut='nautilus .'
+alias open='nautilus .'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias vr='vim ~/.vimrc'
@@ -126,8 +127,10 @@ alias dein='nvim ~/.dein/.dein.toml'
 alias py='python3'
 alias py2='python2'
 alias lua='luajit'
+alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
-alias du='du -h'
+alias df='df -h'
+alias ':q'='exit'
 
 # typo
 alias al='la'
@@ -135,6 +138,8 @@ alias ala='la'
 alias lal='la'
 alias sls='ls'
 alias lsl='ls'
+alias ka='la'
+alias ks='ls'
 alias cdla='la'
 alias cdls='ls'
 alias cdcd='cd'
@@ -148,6 +153,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gs='git status'
 alias gpom='git push origin master'
+alias gcl='git clone'
 
 export XDG_CONFIG_HOME=$HOME/.config
 

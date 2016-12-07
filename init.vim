@@ -15,15 +15,23 @@ let g:loaded_netrwPlugin	   = 1
 let g:loaded_netrwSettings	   = 1
 let g:loaded_netrwFileHandlers = 1
 
+"Stntastic
 "let g:syntastic_alwayspopulate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_python_check = ['flake8']
 
+"Emmet
+let g:user_emmet_leader_key =  '<C-Z>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+"indent
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
+"deoplete
 let g:deoplete#enable_at_startup = 1
 "no matcheparen
 if !has('gui_running')
@@ -210,7 +218,9 @@ nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "ColorScheme
-colorscheme molokai 
+autocmd ColorScheme molokai highlight Visual ctermbg=242
+autocmd ColorScheme molokai highlight Comment Ctermfg=102
+colorscheme molokai
 let g:molokai_original=1
 set t_Co=256
 set background=dark
