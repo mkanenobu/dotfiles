@@ -18,7 +18,7 @@ let g:loaded_netrwFileHandlers = 1
 "Stntastic
 "let g:syntastic_alwayspopulate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_check = ['flake8']
 
@@ -209,8 +209,7 @@ endif
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 "NERDTree
-nmap <C-n><C-t> :NERDTree<CR>
-nmap <C-n><Esc> :NERDTreeClose<CR>
+nmap <C-n><C-t> :NERDTreeToggle<CR>
 
 "denite map
 nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
