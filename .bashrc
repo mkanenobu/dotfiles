@@ -154,6 +154,8 @@ alias gc='git commit'
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcl='git clone'
+alias gl='git log'
+alias glo='git log --oneline --graph --decorate'
 
 export XDG_CONFIG_HOME=$HOME/.config
 

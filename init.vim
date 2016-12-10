@@ -23,9 +23,19 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_check = ['flake8']
 
 "Emmet
-let g:user_emmet_leader_key =  '<C-Z>'
+"let g:user_emmet_leader_key =  '<C-Y>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+let g:user_emmet_mode = 'iv'
+autocmd FileType html,css,php EmmetInstall
+let g:user_emmet_expandabbr_key = '<C-e>'
+
+"NERDTree
+nmap <C-n><C-t> :NERDTreeToggle<CR>
+
+"denite map
+nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
+nmap <C-n><C-g> :<C-u>Denite grep<CR>
+nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "indent
 let g:indent_guides_enable_on_vim_startup = 1
@@ -42,6 +52,8 @@ endif
 if has("multi_lang")
 language C
 endif
+
+let mapleader =","
 
 "autocommand
 if has("autocmd")
@@ -111,7 +123,6 @@ nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
-let mapleader =","
 
 "numeric keypad map
 "inoremap <Esc>Oq 1
@@ -131,7 +142,6 @@ let mapleader =","
 "inoremap <Esc>OS -
 "inoremap <Esc>OM <Enter>
 
-inoremap <C-[> <Esc>
 "set pastetoggle=<C-t>
 autocmd InsertLeave * set nopaste
 
@@ -146,6 +156,7 @@ noremap gk k
 noremap j gj
 noremap k gk
 inoremap <C-j><C-k> <Esc>
+inoremap <C-c> <Esc>
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -208,13 +219,6 @@ endif
 ":W = save with root
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
-"NERDTree
-nmap <C-n><C-t> :NERDTreeToggle<CR>
-
-"denite map
-nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
-nmap <C-n><C-g> :<C-u>Denite grep<CR>
-nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "ColorScheme
 autocmd ColorScheme molokai highlight Visual ctermbg=242
