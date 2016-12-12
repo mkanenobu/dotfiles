@@ -36,6 +36,3 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
-[[plugins]]
-repo = 'mattn/flappyvird-vim'
-

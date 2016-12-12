@@ -131,6 +131,7 @@ alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
 alias df='df -h'
 alias ':q'='exit'
+alias rename='rename -v'
 
 # typo
 alias al='la'

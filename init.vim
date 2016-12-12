@@ -15,39 +15,6 @@ let g:loaded_netrwPlugin	   = 1
 let g:loaded_netrwSettings	   = 1
 let g:loaded_netrwFileHandlers = 1
 
-"Stntastic
-"let g:syntastic_alwayspopulate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_check = ['flake8']
-
-"Emmet
-"let g:user_emmet_leader_key =  '<C-Y>'
-let g:user_emmet_install_global = 0
-let g:user_emmet_mode = 'iv'
-autocmd FileType html,css,php EmmetInstall
-let g:user_emmet_expandabbr_key = '<C-e>'
-
-"NERDTree
-nmap <C-n><C-t> :NERDTreeToggle<CR>
-
-"denite map
-nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
-nmap <C-n><C-g> :<C-u>Denite grep<CR>
-nmap <C-n><C-f> :<C-u>Denite line<CR>
-
-"indent
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-"deoplete
-let g:deoplete#enable_at_startup = 1
-"no matcheparen
-if !has('gui_running')
-	let g:loaded_matchparen = 1
-endif
-
 "in English
 if has("multi_lang")
 language C
@@ -179,7 +146,7 @@ inoremap   <Left>	<nop>
 inoremap   <Right>	<nop>
 
 "mouse nop
-set mouse=""
+"set mouse=""
 
 " dein settings {{{
 if &compatible
@@ -216,17 +183,49 @@ if dein#check_install()
 endif
 " }}}
 
+
+"let g:syntastic_alwayspopulate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"Emmet
+"let g:user_emmet_leader_key =  '<C-Y>'
+let g:user_emmet_install_global = 0
+let g:user_emmet_mode = 'iv'
+autocmd FileType html,css,php EmmetInstall
+let g:user_emmet_expandabbr_key = '<C-e>'
+
+"NERDTree
+nmap <C-n><C-t> :NERDTreeToggle<CR>
+
+"denite map
+nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
+nmap <C-n><C-g> :<C-u>Denite grep<CR>
+nmap <C-n><C-f> :<C-u>Denite line<CR>
+
+"indent
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
+"no matcheparen
+if !has('gui_running')
+	let g:loaded_matchparen = 1
+endif
+
 ":W = save with root
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 
 "ColorScheme
-autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment Ctermfg=102
 colorscheme molokai
 let g:molokai_original=1
 set t_Co=256
 set background=dark
+autocmd ColorScheme molokai highlight Visual ctermbg=242
+autocmd ColorScheme molokai highlight Comment Ctermfg=102
 
 syntax on
 
