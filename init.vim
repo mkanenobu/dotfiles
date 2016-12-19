@@ -1,4 +1,4 @@
-"NeoVim settings
+"NeoVim setting
 let g:loaded_gzip			   = 1
 let g:loaded_tar			   = 1
 let g:loaded_tarPlugin		   = 1
@@ -15,12 +15,13 @@ let g:loaded_netrwPlugin	   = 1
 let g:loaded_netrwSettings	   = 1
 let g:loaded_netrwFileHandlers = 1
 
+"deoplete
+let g:deoplete#enable_at_startup = 1
+
 "in English
 if has("multi_lang")
 language C
 endif
-
-let mapleader =","
 
 "autocommand
 if has("autocmd")
@@ -83,7 +84,7 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 "augroup END
 
 
-"mapping
+""mapping
 
 "increment,decrement
 nnoremap <kPlus> <C-a>
@@ -128,7 +129,7 @@ inoremap <C-c> <Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
 
-map <C-s> <nop>
+"noremap <C-s> :w<CR><CR>
 nnoremap Q <nop>
 
 "cursor nop
@@ -204,12 +205,9 @@ nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
 nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
 
-"indent
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
-"deoplete
-let g:deoplete#enable_at_startup = 1
+
+
 "no matcheparen
 if !has('gui_running')
 	let g:loaded_matchparen = 1

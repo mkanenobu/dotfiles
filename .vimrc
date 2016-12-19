@@ -1,19 +1,19 @@
 "NeoVim settings
-let g:loaded_gzip			   = 1
-let g:loaded_tar			   = 1
-let g:loaded_tarPlugin		   = 1
-let g:loaded_zip			   = 1
-let g:loaded_zipPlugin		   = 1
-let g:loaded_rrhelper		   = 1
-let g:loaded_2html_plugin	   = 1
-let g:loaded_vimball		   = 1
-let g:loaded_vimballPlugin	   = 1
-let g:loaded_getscript		   = 1
-let g:loaded_getscriptPlugin   = 1
-let g:loaded_netrw			   = 1
-let g:loaded_netrwPlugin	   = 1
-let g:loaded_netrwSettings	   = 1
-let g:loaded_netrwFileHandlers = 1
+"let g:loaded_gzip			   = 1
+"let g:loaded_tar			   = 1
+"let g:loaded_tarPlugin		   = 1
+"let g:loaded_zip			   = 1
+"let g:loaded_zipPlugin		   = 1
+"let g:loaded_rrhelper		   = 1
+"let g:loaded_2html_plugin	   = 1
+"let g:loaded_vimball		   = 1
+"let g:loaded_vimballPlugin	   = 1
+"let g:loaded_getscript		   = 1
+"let g:loaded_getscriptPlugin   = 1
+"let g:loaded_netrw			   = 1
+"let g:loaded_netrwPlugin	   = 1
+"let g:loaded_netrwSettings	   = 1
+"let g:loaded_netrwFileHandlers = 1
 
 "Stntastic
 "let g:syntastic_alwayspopulate_loc_list = 1
@@ -33,6 +33,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
+
 "no matcheparen
 if !has('gui_running')
 	let g:loaded_matchparen = 1
@@ -111,7 +112,6 @@ nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
-let mapleader =","
 
 "numeric keypad map
 "inoremap <Esc>Oq 1
