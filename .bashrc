@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 
-# User
+## User
 alias naut='nautilus .'
 alias open='nautilus .'
 alias br='nvim ~/.bashrc'
@@ -146,6 +146,7 @@ alias cdls='ls'
 alias cdcd='cd'
 alias sl='ls'
 alias c=':'
+alias d=':'
 alias a='la'
 alias nvmi='nvim'
 

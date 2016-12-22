@@ -147,7 +147,7 @@ inoremap   <Left>	<nop>
 inoremap   <Right>	<nop>
 
 "mouse nop
-"set mouse=""
+set mouse=""
 
 " dein settings {{{
 if &compatible
@@ -191,7 +191,7 @@ endif
 "let g:syntastic_check_on_wq = 0
 
 "Emmet
-"let g:user_emmet_leader_key =  '<C-Y>'
+let g:user_emmet_leader_key =  '<C-Y>,'
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode = 'iv'
 autocmd FileType html,css,php EmmetInstall

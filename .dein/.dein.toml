@@ -11,8 +11,8 @@ repo = 'tomasr/molokai'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
