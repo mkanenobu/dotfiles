@@ -15,9 +15,6 @@ let g:loaded_netrwPlugin	   = 1
 let g:loaded_netrwSettings	   = 1
 let g:loaded_netrwFileHandlers = 1
 
-"deoplete
-let g:deoplete#enable_at_startup = 1
-
 "in English
 if has("multi_lang")
 language C
@@ -27,6 +24,9 @@ endif
 if has("autocmd")
 filetype off
 endif
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
 
 filetype off
 filetype indent plugin off
@@ -183,7 +183,6 @@ if dein#check_install()
 	call dein#install()
 endif
 " }}}
-
 
 "let g:syntastic_alwayspopulate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1

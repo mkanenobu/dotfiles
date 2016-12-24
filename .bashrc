@@ -149,6 +149,7 @@ alias c=':'
 alias d=':'
 alias a='la'
 alias nvmi='nvim'
+alias nivm='nvim'
 
 # Git
 alias ga='git add'
