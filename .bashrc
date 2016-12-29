@@ -150,6 +150,10 @@ alias d=':'
 alias a='la'
 alias nvmi='nvim'
 alias nivm='nvim'
+if [ -d ${HOME}/.Trash ]
+then
+    alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash'
+fi
 
 # Git
 alias ga='git add'
