@@ -12,9 +12,6 @@ repo = 'tomasr/molokai'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
 repo = 'Shougo/vinarise.vim'
 
 [[plugins]]
@@ -38,3 +35,4 @@ repo = 'w0ng/vim-hybrid'
 
 [[pluins]]
 repo = 'nanotech/jellybeans.vim'
+

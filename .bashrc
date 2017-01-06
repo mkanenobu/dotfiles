@@ -133,6 +133,11 @@ alias df='df -h'
 alias ':q'='exit'
 alias rename='rename -v'
 
+if [ -d ${HOME}/.Trash ]
+then
+    alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash'
+fi
+
 # typo
 alias al='la'
 alias ala='la'
@@ -150,10 +155,8 @@ alias d=':'
 alias a='la'
 alias nvmi='nvim'
 alias nivm='nvim'
-if [ -d ${HOME}/.Trash ]
-then
-    alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash'
-fi
+alias dc=':'
+
 
 # Git
 alias ga='git add'

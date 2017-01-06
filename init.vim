@@ -1,4 +1,4 @@
-"NeoVim setting
+"#NeoVim setting
 let g:loaded_gzip			   = 1
 let g:loaded_tar			   = 1
 let g:loaded_tarPlugin		   = 1
@@ -203,8 +203,6 @@ nmap <C-n><C-t> :NERDTreeToggle<CR>
 nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
 nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
-
-
 
 
 "no matcheparen
