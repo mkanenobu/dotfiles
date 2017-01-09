@@ -23,9 +23,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_check = ['flake8']
 
 "Emmet
-let g:user_emmet_leader_key =  '<C-Z>'
+let g:user_emmet_leader_key =  '<C-Y>,'
 let g:user_emmet_install_global = 0
+let g:user_emmet_mode = 'iv'
 autocmd FileType html,css EmmetInstall
+let g:user_emmet_expandabbr_key = '<C-e>'
 
 "indent
 let g:indent_guides_enable_on_vim_startup = 1

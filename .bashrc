@@ -155,6 +155,7 @@ alias d=':'
 alias a='la'
 alias nvmi='nvim'
 alias nivm='nvim'
+alias nim='nvim'
 alias dc=':'
 
 
