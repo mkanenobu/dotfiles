@@ -125,6 +125,7 @@ noremap j gj
 noremap k gk
 inoremap <C-j><C-k> <Esc>
 inoremap <C-c> <Esc>
+inoremap JK <Esc>
 
 nnoremap <S-h> ^
 nnoremap <S-l> $

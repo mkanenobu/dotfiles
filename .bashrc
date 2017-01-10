@@ -177,7 +177,11 @@ set noclobber
 
 # Translate
 function dict() {
-	grep $1 $HOME/Documents/Memo/gene-utf8.txt -A 1 -wi --color
+	if [ -e ~/Documents/Memo/gene-utf8.txt ]; then
+		grep $1 $HOME/Documents/Memo/gene-utf8.txt -A 1 -wi --color
+	else
+		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar -xvzf ~/Downloads/gene95.tar.gz && nkf -w ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
+	fi
 }
 
 function jtoe() {
