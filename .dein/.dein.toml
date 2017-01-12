@@ -12,27 +12,8 @@ repo = 'tomasr/molokai'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
-repo = 'Shougo/vinarise.vim'
+repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-#()complete
-#[[plugins]]
-#repo = 'thinca/lexima.vim'
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
-
-[[pluins]]
-repo = 'nanotech/jellybeans.vim'
+repo = 'jonathanfilip/vim-lucius'
 

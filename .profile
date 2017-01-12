@@ -21,5 +21,5 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/tools
 

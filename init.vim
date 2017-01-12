@@ -71,6 +71,8 @@ set shiftwidth=4
 set softtabstop=0
 set smarttab
 set smartindent
+autocmd BufRead,BufNewFile *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "Status line
 set laststatus=2

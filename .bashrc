@@ -180,7 +180,7 @@ function dict() {
 	if [ -e ~/Documents/Memo/gene-utf8.txt ]; then
 		grep $1 $HOME/Documents/Memo/gene-utf8.txt -A 1 -wi --color
 	else
-		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar -xvzf ~/Downloads/gene95.tar.gz && nkf -w ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
+		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
 	fi
 }
 

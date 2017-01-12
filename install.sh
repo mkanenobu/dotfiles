@@ -1,7 +1,11 @@
 #!/bin/bash
-ls -a $HOME/Git/dotfiles/.??* --ignore=".git" | xargs cp -t $HOME/ -rfv
+ls -a ~/Git/dotfiles/.??* --ignore=".git" | xargs cp -t ~/ -rfv
 
-if [ ! -e $HOME/.config/nvim/ ]; then
-	mkdir $HOME/.config/nvim
+if [ ! -e ~/.config/nvim/ ]; then
+	mkdir ~/.config/nvim
 fi
-cp -fv $HOME/Git/dotfiles/init.vim $HOME/.config/nvim/
+cp -fv ~/Git/dotfiles/init.vim ~/.config/nvim/
+if [ ! -e ~/.mozc ]; then
+	mkdir ~/.mozc
+fi
+cp -v user_dictionary.db ~/.mozc/
