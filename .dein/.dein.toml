@@ -17,3 +17,8 @@ repo = 'Shougo/deoplete.nvim'
 [[plugins]]
 repo = 'jonathanfilip/vim-lucius'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'

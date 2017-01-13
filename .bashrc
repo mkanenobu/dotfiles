@@ -130,13 +130,7 @@ alias lua='luajit'
 alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
 alias df='df -h'
-alias ':q'='exit'
 alias rename='rename -v'
-
-if [ -d ${HOME}/.Trash ]
-then
-    alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash'
-fi
 
 # typo
 alias al='la'
@@ -149,6 +143,7 @@ alias ks='ls'
 alias cdla='la'
 alias cdls='ls'
 alias cdcd='cd'
+alias lla='la'
 alias sl='ls'
 alias c=':'
 alias d=':'
