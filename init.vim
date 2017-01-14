@@ -125,6 +125,7 @@ noremap gj j
 noremap gk k
 noremap j gj
 noremap k gk
+nnoremap ; :
 inoremap <C-j><C-k> <Esc>
 inoremap <C-c> <Esc>
 inoremap JK <Esc>
