@@ -25,6 +25,8 @@ if has("autocmd")
 filetype off
 endif
 
+
+
 "deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -63,6 +65,7 @@ set title
 "set showmatch
 source $VIMRUNTIME/macros/matchit.vim
 nnoremap % m
+nnoremap m %
 
 "Tab
 set noexpandtab
@@ -71,8 +74,7 @@ set shiftwidth=4
 set softtabstop=0
 set smarttab
 set smartindent
-autocmd BufRead,BufNewFile *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+set list
 
 "Status line
 set laststatus=2
@@ -93,24 +95,6 @@ nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
-
-"numeric keypad map
-"inoremap <Esc>Oq 1
-"inoremap <Esc>Or 2
-"inoremap <Esc>Os 3
-"inoremap <Esc>Ot 4
-"inoremap <Esc>Ou 5
-"inoremap <Esc>Ov 6
-"inoremap <Esc>Ow 7
-"inoremap <Esc>Ox 8
-"inoremap <Esc>Oy 9
-"inoremap <Esc>Op 0
-"inoremap <Esc>On .
-"inoremap <Esc>OQ /
-"inoremap <Esc>OR 
-"inoremap <Esc>Ol +
-"inoremap <Esc>OS -
-"inoremap <Esc>OM <Enter>
 
 "set pastetoggle=<C-t>
 autocmd InsertLeave * set nopaste
@@ -133,6 +117,7 @@ inoremap JK <Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
 
+inoremap <C-p> <C-r>
 "noremap <C-s> :w<CR><CR>
 nnoremap Q <nop>
 
@@ -149,6 +134,33 @@ inoremap   <Up>		<nop>
 inoremap   <Down>	<nop>
 inoremap   <Left>	<nop>
 inoremap   <Right>	<nop>
+
+"window
+nnoremap <C-s>j <C-w>j
+nnoremap <C-s>k <C-w>k
+nnoremap <C-s>l <C-w>l
+nnoremap <C-s>h <C-w>h
+nnoremap <C-s>J <C-w>J
+nnoremap <C-s>K <C-w>K
+nnoremap <C-s>L <C-w>L
+nnoremap <C-s>H <C-w>H
+nnoremap <C-s>n gt
+nnoremap <C-s>p gT
+nnoremap <C-s>r <C-w>r
+nnoremap <C-s>= <C-w>=
+nnoremap <C-s>w <C-w>w
+nnoremap <C-s>o <C-w>_<C-w>|
+nnoremap <C-s>O <C-w>=
+nnoremap <C-s>N :<C-u>bn<CR>
+nnoremap <C-s>P :<C-u>bp<CR>
+nnoremap <C-s>t :<C-u>tabnew<CR>
+nnoremap <C-s>T :<C-u>Unite tab<CR>
+nnoremap <C-s>s :<C-u>sp<CR>
+nnoremap <C-s>v :<C-u>vs<CR>
+nnoremap <C-s>q :<C-u>q<CR>
+nnoremap <C-s>Q :<C-u>bd<CR>
+nnoremap <C-s>b :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap <C-s>B :<C-u>Unite buffer -buffer-name=file<CR>
 
 "mouse nop
 set mouse=""
@@ -208,6 +220,10 @@ nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
 nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
 
+"indent guide
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 4
+let g:indent_guides_guide_size = 1
 
 "no matcheparen
 if !has('gui_running')
