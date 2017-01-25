@@ -21,11 +21,11 @@ language C
 endif
 
 "autocommand
-if has("autocmd")
-filetype off
-endif
+"if has("autocmd")
+"filetype off
+"endif
 
-
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
@@ -118,49 +118,21 @@ nnoremap <S-h> ^
 nnoremap <S-l> $
 
 inoremap <C-p> <C-r>
-"noremap <C-s> :w<CR><CR>
 nnoremap Q <nop>
 
 "cursor nop
-vnoremap  <Up>	   <nop>
-vnoremap  <Down>   <nop>
-vnoremap  <Left>   <nop>
-vnoremap  <Right>  <nop>
-noremap   <Up>	   <nop>
-noremap   <Down>   <nop>
-noremap   <Left>   <nop>
-noremap   <Right>  <nop>
-inoremap   <Up>		<nop>
-inoremap   <Down>	<nop>
-inoremap   <Left>	<nop>
-inoremap   <Right>	<nop>
-
-"window
-nnoremap <C-s>j <C-w>j
-nnoremap <C-s>k <C-w>k
-nnoremap <C-s>l <C-w>l
-nnoremap <C-s>h <C-w>h
-nnoremap <C-s>J <C-w>J
-nnoremap <C-s>K <C-w>K
-nnoremap <C-s>L <C-w>L
-nnoremap <C-s>H <C-w>H
-nnoremap <C-s>n gt
-nnoremap <C-s>p gT
-nnoremap <C-s>r <C-w>r
-nnoremap <C-s>= <C-w>=
-nnoremap <C-s>w <C-w>w
-nnoremap <C-s>o <C-w>_<C-w>|
-nnoremap <C-s>O <C-w>=
-nnoremap <C-s>N :<C-u>bn<CR>
-nnoremap <C-s>P :<C-u>bp<CR>
-nnoremap <C-s>t :<C-u>tabnew<CR>
-nnoremap <C-s>T :<C-u>Unite tab<CR>
-nnoremap <C-s>s :<C-u>sp<CR>
-nnoremap <C-s>v :<C-u>vs<CR>
-nnoremap <C-s>q :<C-u>q<CR>
-nnoremap <C-s>Q :<C-u>bd<CR>
-nnoremap <C-s>b :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap <C-s>B :<C-u>Unite buffer -buffer-name=file<CR>
+"vnoremap  <Up>	   <nop>
+"vnoremap  <Down>   <nop>
+"vnoremap  <Left>   <nop>
+"vnoremap  <Right>  <nop>
+"noremap   <Up>	   <nop>
+"noremap   <Down>   <nop>
+"noremap   <Left>   <nop>
+"noremap   <Right>  <nop>
+"inoremap   <Up>		<nop>
+"inoremap   <Down>	<nop>
+"inoremap   <Left>	<nop>
+"inoremap   <Right>	<nop>
 
 "mouse nop
 set mouse=""
@@ -209,7 +181,7 @@ endif
 let g:user_emmet_leader_key =  '<C-Y>,'
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode = 'iv'
-autocmd FileType html,css,php EmmetInstall
+autocmd FileType html,css,scss,php EmmetInstall
 let g:user_emmet_expandabbr_key = '<C-e>'
 
 "NERDTree
@@ -219,11 +191,6 @@ nmap <C-n><C-t> :NERDTreeToggle<CR>
 nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
 nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
-
-"indent guide
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 4
-let g:indent_guides_guide_size = 1
 
 "no matcheparen
 if !has('gui_running')

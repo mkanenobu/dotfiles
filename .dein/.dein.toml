@@ -15,9 +15,6 @@ repo = 'Shougo/denite.nvim'
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-repo = 'jonathanfilip/vim-lucius'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
@@ -29,3 +26,5 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'fatih/vim-go'

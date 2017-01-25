@@ -21,5 +21,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+export GOROOT=~/.config/go
+export GOPATH=$GOROOT/packages
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/tools
 
