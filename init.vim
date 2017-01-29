@@ -74,7 +74,7 @@ set shiftwidth=4
 set softtabstop=0
 set smarttab
 set smartindent
-set list
+"set list
 
 "Status line
 set laststatus=2
