@@ -12,19 +12,37 @@ repo = 'tomasr/molokai'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-
-[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'fatih/vim-go'
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+
+[[plugins]]
+repo = 'php-vim/phpcd.vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+
+[[plugins]]
+repo = 'thalesmello/webcomplete.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'

@@ -120,6 +120,7 @@ fi
 ## User
 alias naut='nautilus .'
 alias open='nautilus .'
+alias off='shutdown -h 0'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias n='nvim'
@@ -173,14 +174,14 @@ set noclobber
 
 # Translate
 function dict() {
-	if [ -e ~/Documents/Memo/gene-utf8.txt ]; then
-		grep $1 $HOME/Documents/Memo/gene-utf8.txt -A 1 -wi --color
+	if [ -e ~/Workspace/Memo/gene-utf8.txt ]; then
+		grep $1 ${HOME}/Workspace/Memo/gene-utf8.txt -A 1 -wi --color
 	else
-		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
+		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Workspace/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Workspace/Memo/gene-utf8.txt
 	fi
 }
 
 function jtoe() {
-	grep $1 $HOME/Documents/Memo/gene-utf8.txt -B 1 -w --color
+	grep $1 ${HOME}/Workspace/Memo/gene-utf8.txt -B 1 -w --color
 }
 

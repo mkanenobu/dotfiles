@@ -1,19 +1,18 @@
-"#NeoVim setting
-let g:loaded_gzip			   = 1
-let g:loaded_tar			   = 1
-let g:loaded_tarPlugin		   = 1
-let g:loaded_zip			   = 1
-let g:loaded_zipPlugin		   = 1
-let g:loaded_rrhelper		   = 1
-let g:loaded_2html_plugin	   = 1
-let g:loaded_vimball		   = 1
-let g:loaded_vimballPlugin	   = 1
-let g:loaded_getscript		   = 1
-let g:loaded_getscriptPlugin   = 1
-let g:loaded_netrw			   = 1
-let g:loaded_netrwPlugin	   = 1
-let g:loaded_netrwSettings	   = 1
-let g:loaded_netrwFileHandlers = 1
+"let g:loaded_gzip			   = 1
+"let g:loaded_tar			   = 1
+"let g:loaded_tarPlugin		   = 1
+"let g:loaded_zip			   = 1
+"let g:loaded_zipPlugin		   = 1
+"let g:loaded_rrhelper		   = 1
+"let g:loaded_2html_plugin	   = 1
+"let g:loaded_vimball		   = 1
+"let g:loaded_vimballPlugin	   = 1
+"let g:loaded_getscript		   = 1
+"let g:loaded_getscriptPlugin   = 1
+"let g:loaded_netrw			   = 1
+"let g:loaded_netrwPlugin	   = 1
+"let g:loaded_netrwSettings	   = 1
+"let g:loaded_netrwFileHandlers = 1
 
 "in English
 if has("multi_lang")
@@ -26,9 +25,6 @@ endif
 "endif
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
-
-"deoplete
-let g:deoplete#enable_at_startup = 1
 
 filetype off
 filetype indent plugin off
@@ -50,7 +46,7 @@ set display=lastline
 "search
 set hlsearch
 set incsearch
-set ignorecase
+"set ignorecase
 set smartcase
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -193,12 +189,29 @@ nmap <C-n><C-g> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "no matcheparen
-if !has('gui_running')
-	let g:loaded_matchparen = 1
-endif
+"if !has('gui_running')
+"	let g:loaded_matchparen = 1
+"endif
 
 ":W = save with root
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
+"inoremap <expr><tab> () "\<C-n>"
+inoremap <silent><expr> <TAB>
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ deoplete#mappings#manual_complete()
+		function! s:check_back_space() abort "{{{
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~ '\s'
+		endfunction"}}}
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+let g:tern_request_timeout = 1
+
+
 
 
 "ColorScheme
