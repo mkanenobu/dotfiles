@@ -1,3 +1,5 @@
+# dein.toml
+
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -18,10 +20,13 @@ repo = 'scrooloose/nerdtree'
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -45,4 +50,4 @@ repo = 'fishbullet/deoplete-ruby'
 repo = 'thalesmello/webcomplete.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
+repo = 'Shougo/neosnippet-snippets'

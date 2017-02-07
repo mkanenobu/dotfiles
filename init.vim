@@ -112,6 +112,8 @@ inoremap JK <Esc>
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
+vnoremap <S-h> ^
+vnoremap <S-l> $
 
 inoremap <C-p> <C-r>
 nnoremap Q <nop>
@@ -198,7 +200,7 @@ command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
-"inoremap <expr><tab> () "\<C-n>"
+inoremap <expr><tab> () "\<C-n>"
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
@@ -207,12 +209,19 @@ inoremap <silent><expr> <TAB>
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~ '\s'
 		endfunction"}}}
+		
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_camel_case = 0
+let g:deoplete#enable_ignore_case = 0
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_refresh_always = 0
+"let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#max_list = 30
+"set completeopt+=noinsert
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 let g:tern_request_timeout = 1
-
-
-
 
 "ColorScheme
 colorscheme molokai

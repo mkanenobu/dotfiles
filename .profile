@@ -25,6 +25,6 @@ export GOROOT=$HOME/.config/go
 export GOPATH=$GOROOT/packages
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/tools
-export GIT=$HOME/Git
+export GITROOT=$HOME/Git
 export DOT_DIR=$HOME/Git/dotfiles
 
