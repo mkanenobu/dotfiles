@@ -224,12 +224,14 @@ let g:deoplete#ignore_sources.php = ['omni']
 let g:tern_request_timeout = 1
 
 "ColorScheme
-colorscheme molokai
-let g:molokai_original=1
-set t_Co=256
-set background=dark
 autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment Ctermfg=102
+if $TERM == 'screen'
+	set t_Co=256
+endif
+colorscheme molokai
+let g:molokai_original=1
+set background=dark
 
 syntax on
 

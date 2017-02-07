@@ -207,7 +207,7 @@ nmap <C-n><C-f> :<C-u>Denite line<CR>
 "ColorScheme
 colorscheme molokai
 let g:molokai_original=1
-set t_Co=256
+"set t_Co=256
 set background=dark
 autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment Ctermfg=102

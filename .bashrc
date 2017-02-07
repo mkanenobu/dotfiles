@@ -136,6 +136,8 @@ alias sbr='source ~/.bashrc'
 alias rename='rename -v'
 alias lua='lua5.3'
 alias miu='chromium-browser'
+alias byo='byobu'
+alias ':q'='exit'
 
 # typo
 alias al='la'
