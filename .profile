@@ -28,3 +28,4 @@ export PATH=$PATH:/usr/local/tools
 export GITROOT=$HOME/Git
 export DOT_DIR=$HOME/Git/dotfiles
 
+export XDG_CONFIG_HOME=$HOME/.config
