@@ -23,6 +23,13 @@ repo = 'mattn/emmet-vim'
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
+repo = 'SpaceVim/SpaceVim'
+
+
+
+
+
+[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
