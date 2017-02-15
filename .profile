@@ -30,4 +30,4 @@ export DOT_DIR=$HOME/Git/dotfiles
 
 export XDG_CONFIG_HOME=$HOME/.config
 
-export TERM=xterm-256color
+export TRANSCEND=/media/mika/TRANSCEND

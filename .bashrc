@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -61,7 +61,12 @@ fi
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
-PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+
+#if [ "$color_prompt" = yes ]; then
+	PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+#else
+#	PS1='\h:\w\$ '
+#fi
 
 
 # If this is an xterm set the title to user@host:dir
@@ -159,6 +164,7 @@ alias nvmi='nvim'
 alias nivm='nvim'
 alias nim='nvim'
 alias dc=':'
+alias uanr='unar'
 
 
 # Git
@@ -175,17 +181,18 @@ shopt -s autocd
 set -o emacs
 set noclobber
 
+export TERM=xterm-256color
 
 # Translate
 function dict() {
-	if [ -e ~/Workspace/Memo/gene-utf8.txt ]; then
-		grep $1 ${HOME}/Workspace/Memo/gene-utf8.txt -A 1 -wi --color
+	if [ -e ~/Documents/Memo/gene-utf8.txt ]; then
+		grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -A 1 -wi --color
 	else
-		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Workspace/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Workspace/Memo/gene-utf8.txt
+		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Documents/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
 	fi
 }
 
 function jtoe() {
-	grep $1 ${HOME}/Workspace/Memo/gene-utf8.txt -B 1 -w --color
+	grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -B 1 -w --color
 }
 

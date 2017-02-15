@@ -118,22 +118,13 @@ vnoremap <S-l> $
 inoremap <C-p> <C-r>
 nnoremap Q <nop>
 
-"cursor nop
-"vnoremap  <Up>	   <nop>
-"vnoremap  <Down>   <nop>
-"vnoremap  <Left>   <nop>
-"vnoremap  <Right>  <nop>
-"noremap   <Up>	   <nop>
-"noremap   <Down>   <nop>
-"noremap   <Left>   <nop>
-"noremap   <Right>  <nop>
-"inoremap   <Up>		<nop>
-"inoremap   <Down>	<nop>
-"inoremap   <Left>	<nop>
-"inoremap   <Right>	<nop>
+" window manage
+nnoremap <M-j> :split<CR>
+nnoremap <M-l> :vsplit<CR>
+
 
 "mouse nop
-set mouse=""
+"set mouse=""
 
 " dein settings {{{
 if &compatible
