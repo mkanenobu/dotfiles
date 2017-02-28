@@ -15,9 +15,9 @@
 "let g:loaded_netrwFileHandlers = 1
 
 "in English
-if has("multi_lang")
-language C
-endif
+"if has("multi_lang")
+"language C
+"endif
 
 "autocommand
 "if has("autocmd")

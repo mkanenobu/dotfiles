@@ -31,3 +31,4 @@ export DOT_DIR=$HOME/Git/dotfiles
 export XDG_CONFIG_HOME=$HOME/.config
 
 export TRANSCEND=/media/mika/TRANSCEND
+

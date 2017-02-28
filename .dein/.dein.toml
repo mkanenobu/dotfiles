@@ -28,7 +28,6 @@ repo = 'SpaceVim/SpaceVim'
 
 
 
-
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 

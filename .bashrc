@@ -140,9 +140,8 @@ alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
 alias rename='rename -v'
 alias lua='lua5.3'
-alias miu='chromium-browser'
 alias byo='byobu'
-alias ':q'='exit'
+alias du='du -h'
 
 # typo
 alias al='la'
@@ -196,3 +195,6 @@ function jtoe() {
 	grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -B 1 -w --color
 }
 
+# less syntax highlight
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS='-R'
