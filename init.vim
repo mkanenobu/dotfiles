@@ -14,12 +14,12 @@
 "let g:loaded_netrwSettings	   = 1
 "let g:loaded_netrwFileHandlers = 1
 
-"in English
+" In English
 "if has("multi_lang")
 "language C
 "endif
 
-"autocommand
+" Autocommand
 "if has("autocmd")
 "filetype off
 "endif
@@ -43,7 +43,7 @@ set noswapfile
 set wrap
 set display=lastline
 
-"search
+" Search
 set hlsearch
 set incsearch
 "set ignorecase
@@ -60,19 +60,20 @@ set wildmenu
 set title
 "set showmatch
 source $VIMRUNTIME/macros/matchit.vim
-nnoremap % m
-nnoremap m %
+"nnoremap % m
+"nnoremap m %
 
-"Tab
+" Tab
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
 set smarttab
 set smartindent
-"set list
+set list
+set listchars=tab:>-,trail:-,nbsp:%
 
-"Status line
+" Status line
 set laststatus=2
 
 set clipboard=unnamed,unnamedplus
@@ -84,9 +85,9 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 "augroup END
 
 
-""mapping
+"" Mapping
 
-"increment,decrement
+" Increment,decrement
 nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
@@ -98,8 +99,9 @@ autocmd InsertLeave * set nopaste
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 
-nnoremap Y y$
-nnoremap y$ Y
+
+"nnoremap Y y$
+"nnoremap y$ Y
 
 noremap gj j
 noremap gk k
