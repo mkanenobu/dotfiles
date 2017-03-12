@@ -10,3 +10,4 @@ ln -sv "$DOTDIR"/.dein ~/.dein
 ln -sv "$DOTDIR"/init.vim ~/.config/nvim/init.vim
 ln -sv "$DOTDIR"/byobu ~/.config/byobu
 ln -s "$DOTDIR"/init.vim ~/.vimrc
+ln -sv "$DOTDIR"/.imwheelrc ~/.imwheelrc

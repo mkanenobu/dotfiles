@@ -70,8 +70,8 @@ set shiftwidth=4
 set softtabstop=0
 set smarttab
 set smartindent
-set list
-set listchars=tab:>-,trail:-,nbsp:%
+"set list
+"set listchars=tab:>-,trail:-,nbsp:%
 
 " Status line
 set laststatus=2
