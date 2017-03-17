@@ -31,4 +31,5 @@ export DOT_DIR=$HOME/Git/dotfiles
 export XDG_CONFIG_HOME=$HOME/.config
 
 export TRANSCEND=/media/mika/TRANSCEND
-
+#imwheel 1>/dev/null 2>/dev/null
+imwheel >/dev/null 2>&1
