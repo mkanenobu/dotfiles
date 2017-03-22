@@ -118,7 +118,6 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
-inoremap <C-p> <C-r>
 nnoremap Q <nop>
 
 " window manage
@@ -219,7 +218,8 @@ let g:tern_request_timeout = 1
 
 "ColorScheme
 autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment Ctermfg=102
+autocmd ColorScheme molokai highlight Comment ctermfg=102
+autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 if $TERM == 'screen'
 	set t_Co=256
 endif
