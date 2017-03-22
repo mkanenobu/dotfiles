@@ -29,7 +29,7 @@
 
 # Default: depends on the distro (which is either auto-detected, either set
 # via $DISTRO)
-#LOGO="\o/"
+LOGO="\o/"
 
 # Abbreviate the release to N characters
 # By default, this is disabled.  But if you set RELEASE_ABBREVIATED=1
@@ -37,22 +37,22 @@
 #RELEASE_ABBREVIATED=1
 
 # Default: /
-#MONITORED_DISK=/
+MONITORED_DISK=/
 
 # Minimum disk throughput that triggers the notification (in kB/s)
 # Default: 50
-#DISK_IO_THRESHOLD=50
+DISK_IO_THRESHOLD=50
 
 # Default: eth0
-#MONITORED_NETWORK=eth0
+MONITORED_NETWORK=eth0
 
 # Unit used for network throughput (either bits per second or bytes per second)
 # Default: bits
-#NETWORK_UNITS=bytes
+NETWORK_UNITS=bytes
 
 # Minimum network throughput that triggers the notification (in kbit/s)
 # Default: 20
-#NETWORK_THRESHOLD=20
+NETWORK_THRESHOLD=20
 
 # You can add an additional source of temperature here
 #MONITORED_TEMP=/proc/acpi/thermal_zone/THM0/temperature
@@ -66,13 +66,13 @@
 
 # You can set this to 1 to report your external/public ip address
 # Default: 0
-#IP_EXTERNAL=0
+IP_EXTERNAL=0
 
 # The users notification normally counts ssh sessions; set this configuration to '1'
 # to instead count number of distinct users logged onto the system
 # Default: 0
-#USERS_DISTINCT=0
+USERS_DISTINCT=0
 
 # Set this to zero to hide seconds int the time display
 # Default 1
-#TIME_SECONDS=0
+TIME_SECONDS=0

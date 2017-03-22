@@ -44,6 +44,7 @@ set wrap
 set display=lastline
 
 " Search
+set inccommand=split
 set hlsearch
 set incsearch
 "set ignorecase
