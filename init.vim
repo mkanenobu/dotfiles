@@ -24,7 +24,11 @@
 "filetype off
 "endif
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+" 0.1.7 or older
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" 0.2.0 or newer
+"set guicursor=a:block-blinkon100-Cursor/Cursor
+set guicursor=a:block
 
 filetype off
 filetype indent plugin off
