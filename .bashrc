@@ -126,7 +126,7 @@ fi
 ## User
 alias naut='nautilus .'
 alias open='nautilus .'
-alias off='shutdown -h 0'
+#alias off='shutdown -h 0'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias n='nvim'
@@ -181,6 +181,20 @@ set -o emacs
 set noclobber
 
 export TERM=xterm-256color
+
+function off() {
+	if test $# -eq 0; then
+		shutdown -h 0
+	elif test $# -eq 1; then
+		shutdown -h $1
+	else
+		echo "error"
+	fi
+}
+
+function gac() {
+	git add . && git commit -m $1
+}
 
 # Translate
 function dict() {
