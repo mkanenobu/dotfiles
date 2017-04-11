@@ -146,23 +146,11 @@ alias sass='node-sass'
 
 # typo
 alias al='la'
-alias ala='la'
-alias lal='la'
-alias sls='ls'
-alias lsl='ls'
 alias ka='la'
 alias ks='ls'
-alias cdla='la'
-alias cdls='ls'
-alias cdcd='cd'
-alias lla='la'
-alias sl='ls'
 alias c=':'
 alias d=':'
 alias a='la'
-alias nvmi='nvim'
-alias nivm='nvim'
-alias nim='nvim'
 alias dc=':'
 
 
