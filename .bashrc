@@ -142,6 +142,7 @@ alias rename='rename -v'
 alias lua='lua5.3'
 alias byo='byobu'
 alias du='du -h'
+alias sass='node-sass'
 
 # typo
 alias al='la'
@@ -163,7 +164,6 @@ alias nvmi='nvim'
 alias nivm='nvim'
 alias nim='nvim'
 alias dc=':'
-alias uanr='unar'
 
 
 # Git
@@ -196,12 +196,18 @@ function gac() {
 	git add . && git commit -m $1
 }
 
+function unam() {
+	for i in "$@"; do
+		unar $i
+	done
+}
+
 # Translate
 function dict() {
-	if [ -e ~/Documents/Memo/gene-utf8.txt ]; then
-		grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -A 1 -wi --color
+	if [ -e ~/Documents/gene-utf8.txt ]; then
+		grep $1 ${HOME}/Documents/gene-utf8.txt -A 1 -wi --color
 	else
-		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Documents/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt >> ~/Documents/Memo/gene-utf8.txt
+		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
 	fi
 }
 

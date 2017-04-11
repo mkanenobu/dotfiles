@@ -1,5 +1,4 @@
 # dein.toml
-
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -22,9 +21,6 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
-[[plugins]]
-repo = 'SpaceVim/SpaceVim'
-
 
 
 
@@ -41,16 +37,11 @@ repo = 'zchee/deoplete-go'
 repo = 'carlitux/deoplete-ternjs'
 
 [[plugins]]
-repo = 'php-vim/phpcd.vim'
-
-[[plugins]]
 repo = 'zchee/deoplete-jedi'
 
 [[plugins]]
 repo = 'fishbullet/deoplete-ruby'
 
 [[plugins]]
-repo = 'thalesmello/webcomplete.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
