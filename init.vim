@@ -40,6 +40,7 @@ set fileformats=unix,dos,mac
 set ambiwidth=double
 set history=5000
 
+
 set nobackup
 set noswapfile
 
@@ -47,8 +48,15 @@ set noswapfile
 set wrap
 set display=lastline
 
+" disable auto comment
+augroup auto_comment_off
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=r
+	autocmd BufEnter * setlocal formatoptions-=o
+augroup END
+
 " Search
-set inccommand=split
+"set inccommand=split
 set hlsearch
 set incsearch
 "set ignorecase
@@ -91,6 +99,9 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 
 
 "" Mapping
+
+" word count
+vnoremap wc g<C-g>
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
