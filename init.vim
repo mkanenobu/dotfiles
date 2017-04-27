@@ -90,18 +90,16 @@ set smartindent
 set laststatus=2
 
 set clipboard=unnamed,unnamedplus
-vmap <C-c> :w !xsel -ib<CR><CR>
-
-"
-"augroup set_kp_help
-"	autocmd FileType vim setlocal keywordprg=:help
-"augroup END
 
 
 "" Mapping
 
-" word count
-vnoremap wc g<C-g>
+" Undo when InputMode
+inoremap <C-z> <Esc>ui
+
+" Copy and Paste
+vmap <C-c> :w !xsel -ib<CR><CR>
+inoremap <C-v> <Esc>pA
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
@@ -218,6 +216,15 @@ inoremap <silent><expr> <TAB>
 		return !col || getline('.')[col - 1]  =~ '\s'
 		endfunction"}}}
 		
+inoremap <silent><expr> <S-TAB>
+		\ pumvisible() ? "\<C-p>" :
+		\ <SID>check_back_space() ? "\<S-TAB>" :
+		\ deoplete#mappings#manual_complete()
+		function! s:check_back_space() abort "{{{
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~ '\s'
+		endfunction"}}}
+
 let g:deoplete#auto_complete_delay = 0
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#enable_camel_case = 0
@@ -266,3 +273,5 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('js', 'red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'magenta', 'none', '#ff00ff', '#151515')
+
+
