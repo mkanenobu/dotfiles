@@ -99,7 +99,7 @@ inoremap <C-z> <Esc>ui
 
 " Copy and Paste
 vmap <C-c> :w !xsel -ib<CR><CR>
-inoremap <C-v> <Esc>pA
+inoremap <C-v> <C-r>"
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
