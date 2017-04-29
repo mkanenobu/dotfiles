@@ -40,8 +40,5 @@ repo = 'carlitux/deoplete-ternjs'
 repo = 'zchee/deoplete-jedi'
 
 [[plugins]]
-repo = 'fishbullet/deoplete-ruby'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
