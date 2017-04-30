@@ -27,7 +27,6 @@
 " 0.1.7 or older
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " 0.2.0 or newer
-"set guicursor=a:block-blinkon100-Cursor/Cursor
 set guicursor=a:block
 
 filetype off
@@ -56,7 +55,9 @@ augroup auto_comment_off
 augroup END
 
 " Search
-"set inccommand=split
+
+" interactive replace
+set inccommand=split
 set hlsearch
 set incsearch
 "set ignorecase
