@@ -142,6 +142,7 @@ alias rename='rename -v'
 alias lua='lua5.3'
 alias byo='byobu'
 alias du='du -h'
+alias mp='mplayer'
 alias sass='node-sass'
 
 # typo

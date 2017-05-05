@@ -60,7 +60,7 @@ augroup END
 set inccommand=split
 set hlsearch
 set incsearch
-"set ignorecase
+set ignorecase
 set smartcase
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -93,7 +93,7 @@ set laststatus=2
 set clipboard=unnamed,unnamedplus
 
 
-"" Mapping
+"" Keymapping
 
 " Undo when InputMode
 inoremap <C-z> <Esc>ui
@@ -115,8 +115,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 
 
-"nnoremap Y y$
-"nnoremap y$ Y
+nnoremap Y y$
+nnoremap y$ Y
 
 noremap gj j
 noremap gk k
