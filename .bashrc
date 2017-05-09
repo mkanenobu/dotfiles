@@ -133,8 +133,8 @@ alias n='nvim'
 alias vr='vim ~/.vimrc'
 alias dein='nvim ~/.dein/.dein.toml'
 alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
-#alias py='python3'
-#alias py2='python2'
+alias py='python3'
+alias py2='python2'
 alias rb='ruby'
 alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
@@ -170,6 +170,15 @@ set -o emacs
 set noclobber
 
 export TERM=xterm-256color
+
+function countwords() {
+	countstrings=$1
+	if [ -e $1 ];then
+		countstrings=`cat $1`
+	fi
+	sleep 0.1s
+	echo ${#countstrings}
+}
 
 function off() {
 	if test $# -eq 0; then
