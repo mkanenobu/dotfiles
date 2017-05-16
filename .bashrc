@@ -63,7 +63,8 @@ fi
 #fi
 
 #if [ "$color_prompt" = yes ]; then
-	PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+	PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+#	PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
 #else
 #	PS1='\h:\w\$ '
 #fi
@@ -171,16 +172,17 @@ set noclobber
 
 export TERM=xterm-256color
 
-function countwords() {
-	countstrings=$1
+function countwords(){
 	if [ -e $1 ];then
 		countstrings=`cat $1`
+	else
+		countstrings=$1
 	fi
 	sleep 0.1s
 	echo ${#countstrings}
 }
 
-function off() {
+function off(){
 	if test $# -eq 0; then
 		shutdown -h 0
 	elif test $# -eq 1; then
@@ -190,18 +192,18 @@ function off() {
 	fi
 }
 
-function gac() {
+function gac(){
 	git add . && git commit -m $1
 }
 
-function unam() {
+function unam(){
 	for i in "$@"; do
 		unar $i
 	done
 }
 
 # Translate
-function dict() {
+function dict(){
 	if [ -e ~/Documents/gene-utf8.txt ]; then
 		grep $1 ${HOME}/Documents/gene-utf8.txt -A 1 -wi --color
 	else
@@ -209,10 +211,7 @@ function dict() {
 	fi
 }
 
-function jtoe() {
+function jtoe(){
 	grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -B 1 -w --color
 }
 
-# less syntax highlight
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS='-R'

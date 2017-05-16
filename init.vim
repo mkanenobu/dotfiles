@@ -96,7 +96,7 @@ set clipboard=unnamed,unnamedplus
 "" Keymapping
 
 " Undo when InputMode
-inoremap <C-z> <Esc>ui
+inoremap <M-u> <C-o>u
 
 " Copy and Paste
 vmap <C-c> :w !xsel -ib<CR><CR>
@@ -115,8 +115,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 
 
-nnoremap Y y$
-nnoremap y$ Y
+"nnoremap Y y$
+"nnoremap y$ Y
 
 noremap gj j
 noremap gk k
