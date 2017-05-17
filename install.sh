@@ -18,5 +18,9 @@ if [ ! -e ~/.config/nvim ];then
 fi
 ln -sv "$DOTDIR"/init.vim ~/.config/nvim/init.vim
 ln -sv "$DOTDIR"/byobu ~/.config/byobu
-ln -s "$DOTDIR"/init.vim ~/.vimrc
+ln -sv "$DOTDIR"/init.vim ~/.vimrc
 ln -sv "$DOTDIR"/.imwheelrc ~/.imwheelrc
+if [! -e ~/.config/Code/User ];then
+	mkdir -p ~/.config/Code/User
+fi
+ln -sv "$DOTDIR"/setting.json ~/.config/Code/User/setting.json
