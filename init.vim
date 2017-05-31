@@ -138,9 +138,10 @@ nnoremap Q <nop>
 nnoremap <M-j> :split<CR>
 nnoremap <M-l> :vsplit<CR>
 
+nnoremap ' :
 
-"mouse nop
-"set mouse=""
+
+set mouse=a
 
 " dein settings {{{
 if &compatible

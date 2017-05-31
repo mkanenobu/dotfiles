@@ -21,6 +21,8 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
+#[[plugins]]
+#repo = 'nathanaelkane/vim-indent-guides'
 
 
 

@@ -125,8 +125,6 @@ fi
 
 
 ## User
-alias naut='nautilus .'
-alias open='nautilus .'
 #alias off='shutdown -h 0'
 alias br='nvim ~/.bashrc'
 alias nvr='nvim ~/.config/nvim/init.vim'
@@ -172,6 +170,14 @@ set noclobber
 
 export TERM=xterm-256color
 
+function open(){
+	if [ -e $1 ];then
+		nautilus .
+	else
+		nautilus $@
+	fi
+}
+
 function countwords(){
 	if [ -e $1 ];then
 		countstrings=`cat $1`
@@ -212,6 +218,6 @@ function dict(){
 }
 
 function jtoe(){
-	grep $1 ${HOME}/Documents/Memo/gene-utf8.txt -B 1 -w --color
+	grep $1 ${HOME}/Documents/gene-utf8.txt -B 1 -w --color
 }
 
