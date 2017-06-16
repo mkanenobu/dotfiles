@@ -2,9 +2,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+#[[plugins]]
+#repo = 'Shougo/vimproc.vim'
+#build = 'make'
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -23,6 +23,9 @@ repo = 'Shougo/deoplete.nvim'
 
 #[[plugins]]
 #repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
 
 
 
