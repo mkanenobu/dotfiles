@@ -221,3 +221,14 @@ function jtoe(){
 	grep $1 ${HOME}/Documents/gene-utf8.txt -B 1 -w --color
 }
 
+export EDITOR=vim
+
+function encopus(){
+	opusfile=`echo "$1" | sed -e 's/.wav/.opus/'`
+	if test $# -lt 2; then
+		rate=192
+	else
+		rate="$2"
+	fi
+	opusenc "$1" "$opusfile" --bitrate "$rate"
+}

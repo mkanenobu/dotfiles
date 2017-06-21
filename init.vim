@@ -186,9 +186,9 @@ if dein#load_state('~/.cache/dein')
 	call dein#save_state()
 endif
 
-if dein#check_install(['vimproc'])
-	call dein#install(['vimproc'])
-endif
+"if dein#check_install(['vimproc'])
+"	call dein#install(['vimproc'])
+"endif
 
 if dein#check_install()
 	call dein#install()
