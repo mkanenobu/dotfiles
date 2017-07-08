@@ -12,7 +12,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    . "$HOME/.bashrc"
     fi
 fi
 
@@ -21,13 +21,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-#export GOROOT=/usr/share/go-1.6
-#export GOPATH=$GOROOT/pkg
-export GOPATH=$HOME/usr/local/go
-export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/usr/local/tools
 export GITROOT=$HOME/Git
-export DOT_DIR=$HOME/Git/dotfiles
+export EDITOR=vim
 
 export XDG_CONFIG_HOME=$HOME/.config
 

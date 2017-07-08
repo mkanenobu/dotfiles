@@ -47,26 +47,26 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
 #if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
 
 #if [ "$color_prompt" = yes ]; then
-	PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
-#	PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+    PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+#   PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
 #else
-#	PS1='\h:\w\$ '
+#   PS1='\h:\w\$ '
 #fi
 
 
@@ -116,11 +116,11 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 
@@ -141,8 +141,9 @@ alias rename='rename -v'
 alias lua='lua5.3'
 alias byo='byobu'
 alias du='du -h'
-alias mp='mplayer'
 alias sass='node-sass'
+alias pcd='cd $(find . -maxdepth 1 -type d | peco)'
+alias screensaver='cmatrix -a'
 
 # typo
 alias al='la'
@@ -171,64 +172,70 @@ set noclobber
 export TERM=xterm-256color
 
 function open(){
-	if [ -e $1 ];then
-		nautilus .
-	else
-		nautilus $@
-	fi
+    if [ ! -e "$1" ];then
+        nautilus .
+    else
+        nautilus "$@"
+    fi
+}
+
+function mkdircd(){
+    mkdir "$1" && cd "$1"
 }
 
 function countwords(){
-	if [ -e $1 ];then
-		countstrings=`cat $1`
-	else
-		countstrings=$1
-	fi
-	sleep 0.1s
-	echo ${#countstrings}
+    if [ -e "$1" ];then
+        countstrings=$(cat "$1")
+    else
+        countstrings="$1"
+    fi
+    sleep 0.1s
+    echo "${#countstrings}"
 }
 
 function off(){
-	if test $# -eq 0; then
-		shutdown -h 0
-	elif test $# -eq 1; then
-		shutdown -h $1
-	else
-		echo "error"
-	fi
+    if test "$#" -eq 0; then
+        shutdown -h 0
+    elif test "$#" -eq 1; then
+        shutdown -h "$1"
+    else
+        echo "error"
+    fi
 }
 
-function gac(){
-	git add . && git commit -m $1
-}
-
+# unar extract multiple files
 function unam(){
-	for i in "$@"; do
-		unar $i
-	done
+    for i in "$@"; do
+        unar "$i"
+    done
 }
 
 # Translate
 function dict(){
-	if [ -e ~/Documents/gene-utf8.txt ]; then
-		grep $1 ${HOME}/Documents/gene-utf8.txt -A 1 -wi --color
-	else
-		curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
-	fi
+    if [ -e ~/Documents/gene-utf8.txt ]; then
+        grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1 -wi --color
+    else
+        curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
+    fi
 }
 
 function jtoe(){
-	grep $1 ${HOME}/Documents/gene-utf8.txt -B 1 -w --color
+    grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1 -w --color
 }
-
-export EDITOR=vim
 
 function encopus(){
-	opusfile=`echo "$1" | sed -e 's/.wav/.opus/'`
-	if test $# -lt 2; then
-		rate=192
-	else
-		rate="$2"
-	fi
-	opusenc "$1" "$opusfile" --bitrate "$rate"
+    opusfile=$(echo "$1" | sed -e 's/.wav/.opus/')
+    if [ -z "$2" ]; then
+        rate=160
+    else
+        rate="$2"
+    fi
+    opusenc "$1" "$opusfile" --bitrate "$rate"
 }
+
+function soxspectrogram(){
+    spectrofile=$(echo "$1" | sed -r -e 's/.*//g')
+    sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
+}
+
+alias mouseconf='cd /usr/share/X11/xorg.conf.d/'

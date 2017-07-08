@@ -1,28 +1,13 @@
-"let g:loaded_gzip			   = 1
-"let g:loaded_tar			   = 1
-"let g:loaded_tarPlugin		   = 1
-"let g:loaded_zip			   = 1
-"let g:loaded_zipPlugin		   = 1
-"let g:loaded_rrhelper		   = 1
-"let g:loaded_2html_plugin	   = 1
-"let g:loaded_vimball		   = 1
-"let g:loaded_vimballPlugin	   = 1
-"let g:loaded_getscript		   = 1
-"let g:loaded_getscriptPlugin   = 1
-"let g:loaded_netrw			   = 1
-"let g:loaded_netrwPlugin	   = 1
-"let g:loaded_netrwSettings	   = 1
-"let g:loaded_netrwFileHandlers = 1
-
 " In English
-"if has("multi_lang")
-"language C
-"endif
+if has("multi_lang")
+language C
+endif
+
 filetype indent plugin off
 
 " Autocommand
 if has("autocmd")
-	filetype off
+    filetype off
 endif
 
 " 0.1.7 or older
@@ -51,9 +36,9 @@ set display=lastline
 
 " disable auto comment
 augroup auto_comment_off
-	autocmd!
-	autocmd BufEnter * setlocal formatoptions-=r
-	autocmd BufEnter * setlocal formatoptions-=o
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions-=r
+    autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
 " Search
@@ -64,9 +49,10 @@ set smartcase
 
 " replace
 if has('nvim')
-	set inccommand=split
+    set inccommand=split
 endif
-set gdefault
+
+"set gdefault
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -81,37 +67,36 @@ set wildmenu
 set showcmd
 set title
 "set showmatch
-"source $VIMRUNTIME/macros/matchit.vim
+" expand match
+source $VIMRUNTIME/macros/matchit.vim
 
-"nnoremap % m
-"nnoremap m %
+nnoremap % m
+nnoremap m %
 
 " Tab
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
 set autoindent
 set smartindent
+" Indent guide
 set list
 set listchars=tab:>-,trail:-,extends:>
 
 
 " Status line
 set laststatus=2
-
 set clipboard=unnamed,unnamedplus
 
 
 "" Keymapping
 
-" Undo when InputMode
-inoremap <M-u> <C-o>u
-
 " Copy and Paste
 vmap <C-c> :w !xsel -ib<CR><CR>
 
+inoremap <C-l> <Del>
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
@@ -124,6 +109,7 @@ autocmd InsertLeave * set nopaste
 
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
+nnoremap <C-z> <nop>
 
 
 "nnoremap Y y$
@@ -134,7 +120,6 @@ noremap gk k
 noremap j gj
 noremap k gk
 nnoremap ; :
-inoremap <C-j><C-k> <Esc>
 inoremap <C-c> <Esc>
 inoremap JK <Esc>
 
@@ -146,8 +131,10 @@ vnoremap <S-l> $
 nnoremap Q <nop>
 
 " window manage
-"nnoremap <M-j> :split<CR>
-"nnoremap <M-l> :vsplit<CR>
+nnoremap <S-M-j> :split<CR>
+nnoremap <S-M-l> :vsplit<CR>
+"Only current window
+nnoremap <M-o> <C-w>c
 
 " switch window
 nnoremap <M-h> <C-w>h
@@ -162,7 +149,7 @@ set mouse=""
 
 " dein settings {{{
 if &compatible
-	set nocompatible
+    set nocompatible
 endif
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 "dein.vim diredtory
@@ -170,28 +157,28 @@ let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 "if not exist git clone
 if !isdirectory(s:dein_repo_dir)
-	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
 "manege plugins
-	let s:toml = '~/.dein/.dein.toml'
-	let s:lazy_toml = '~/.dein/.dein_lazy.toml'
-	call dein#load_toml(s:toml, {'lazy': 0})
-	call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    let s:toml = '~/.dein/.dein.toml'
+    let s:lazy_toml = '~/.dein/.dein_lazy.toml'
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-	call dein#end()
-	call dein#save_state()
+    call dein#end()
+    call dein#save_state()
 endif
 
 "if dein#check_install(['vimproc'])
-"	call dein#install(['vimproc'])
+"   call dein#install(['vimproc'])
 "endif
 
 if dein#check_install()
-	call dein#install()
+    call dein#install()
 endif
 " }}}
 
@@ -216,7 +203,7 @@ nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "no matcheparen
 "if !has('gui_running')
-"	let g:loaded_matchparen = 1
+"   let g:loaded_matchparen = 1
 "endif
 
 ":W = save with root
@@ -226,22 +213,22 @@ command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> () "\<C-n>"
 inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
-		
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ deoplete#mappings#manual_complete()
+        function! s:check_back_space() abort "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+        endfunction"}}}
+        
 inoremap <silent><expr> <S-TAB>
-		\ pumvisible() ? "\<C-p>" :
-		\ <SID>check_back_space() ? "\<S-TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
+        \ pumvisible() ? "\<C-p>" :
+        \ <SID>check_back_space() ? "\<S-TAB>" :
+        \ deoplete#mappings#manual_complete()
+        function! s:check_back_space() abort "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+        endfunction"}}}
 
 let g:deoplete#auto_complete_delay = 0
 let g:deoplete#auto_complete_start_length = 1
@@ -261,7 +248,7 @@ autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 if $TERM == 'screen'
-	set t_Co=256
+    set t_Co=256
 endif
 colorscheme molokai
 let g:molokai_original=1

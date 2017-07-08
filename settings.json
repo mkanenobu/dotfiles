@@ -4,5 +4,7 @@
     "editor.insertSpaces": false,
     "editor.cursorStyle": "block",
     "editor.renderIndentGuides": true,
-    "editor.scrollBeyondLastLine": false
+    "editor.scrollBeyondLastLine": false,
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "simple-icons"
 }
