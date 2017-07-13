@@ -135,7 +135,6 @@ alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
 alias py='python3'
 alias py2='python2'
 alias rb='ruby'
-alias irb='irb --simple-prompt'
 alias sbr='source ~/.bashrc'
 alias rename='rename -v'
 alias lua='lua5.3'
@@ -234,8 +233,9 @@ function encopus(){
 }
 
 function soxspectrogram(){
-    spectrofile=$(echo "$1" | sed -r -e 's/.*//g')
+    spectrofile=`echo "$1" | sed -re 's/.wav//g'`
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
 }
 
 alias mouseconf='cd /usr/share/X11/xorg.conf.d/'
+

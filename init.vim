@@ -109,8 +109,7 @@ autocmd InsertLeave * set nopaste
 
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
-nnoremap <C-z> <nop>
-
+nnoremap Q <nop>
 
 "nnoremap Y y$
 "nnoremap y$ Y
@@ -128,13 +127,15 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
-nnoremap Q <nop>
 
 " window manage
+
+" split window
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
-"Only current window
-nnoremap <M-o> <C-w>c
+
+"close other than current window
+nnoremap <M-o> <C-w>o
 
 " switch window
 nnoremap <M-h> <C-w>h
@@ -144,7 +145,7 @@ nnoremap <M-l> <C-w>l
 
 nnoremap ' :
 
-
+" disable mouse
 set mouse=""
 
 " dein settings {{{

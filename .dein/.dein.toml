@@ -21,10 +21,6 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
-
-#[[plugins]]
-#repo = 'nathanaelkane/vim-indent-guides'
-
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
@@ -37,11 +33,16 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
+# Deoplete sources
+
 [[plugins]]
 repo = 'Shougo/neco-vim'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
 
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
