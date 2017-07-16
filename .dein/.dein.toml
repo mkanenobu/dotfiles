@@ -42,9 +42,6 @@ repo = 'Shougo/neco-vim'
 repo = 'zchee/deoplete-go'
 
 [[plugins]]
-repo = 'eagletmt/neco-ghc'
-
-[[plugins]]
 repo = 'carlitux/deoplete-ternjs'
 
 [[plugins]]

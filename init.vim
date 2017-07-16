@@ -77,7 +77,7 @@ nnoremap m %
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 set smarttab
 set autoindent
 set smartindent
@@ -248,9 +248,7 @@ let g:tern_request_timeout = 1
 autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
-if $TERM == 'screen'
-    set t_Co=256
-endif
+set t_Co=256
 colorscheme molokai
 let g:molokai_original=1
 set background=dark

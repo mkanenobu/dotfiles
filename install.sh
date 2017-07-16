@@ -27,3 +27,4 @@ if [! -e ~/.config/Code/User ];then
 	mkdir -p ~/.config/Code/User
 fi
 ln -sv "$DOTDIR"/setting.json ~/.config/Code/User/setting.json
+ln -s "$DOTDIR"/asunder ~/.config/asunder
