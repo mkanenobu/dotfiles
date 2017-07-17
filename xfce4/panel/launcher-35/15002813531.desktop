@@ -1,0 +1,35 @@
+[Desktop Entry]
+Version=1.0
+Name=Chromium Web Browser
+GenericName=Web Browser
+GenericName[ja]=ウェブ・ブラウザ
+Comment=Access the Internet
+Comment[ja]=インターネットにアクセス
+Exec=chromium-browser %U
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=chromium-browser
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=false
+Actions=NewWindow;Incognito;TempProfile;
+X-AppInstall-Package=chromium-browser
+X-XFCE-Source=file:///usr/share/applications/chromium-browser.desktop
+
+Path=
+
+[Desktop Action NewWindow]
+Name=Open a New Window
+Name[ja]=新しいウィンドウを開く
+Exec=chromium-browser
+
+[Desktop Action Incognito]
+Name=Open a New Window in incognito mode
+Name[ja]=新しいシークレット ウィンドウを開く
+Exec=chromium-browser --incognito
+
+[Desktop Action TempProfile]
+Name=Open a New Window with a temporary profile
+Name[ja]=一時プロファイルで新しいウィンドウを開く
+Exec=chromium-browser --temp-profile

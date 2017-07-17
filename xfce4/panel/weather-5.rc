@@ -1,0 +1,26 @@
+loc_name=倉敷市, 岡山県
+lat=34.584474
+lon=133.774635
+msl=5
+timezone=Asia/Tokyo
+cache_file_max_age=172800
+power_saving=true
+units_temperature=0
+units_pressure=0
+units_windspeed=0
+units_precipitation=0
+units_altitude=0
+model_apparent_temperature=0
+round=true
+single_row=true
+tooltip_style=0
+forecast_layout=1
+forecast_days=5
+scrollbox_animate=true
+theme_dir=/usr/share/xfce4/weather/icons/simplistic
+show_scrollbox=true
+scrollbox_lines=1
+scrollbox_color=#ffffffffffff
+scrollbox_use_color=true
+label0=3
+

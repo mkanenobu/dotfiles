@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="pointers" version="1.0">
+  <property name="Logitech_Gaming_Mouse_G302" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="7"/>
+    <property name="Acceleration" type="double" value="1.500000"/>
+  </property>
+  <property name="TPPS2_IBM_TrackPoint" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="27"/>
+    <property name="Acceleration" type="double" value="7.500000"/>
+    <property name="ReverseScrolling" type="bool" value="true"/>
+  </property>
+  <property name="SynPS2_Synaptics_TouchPad" type="empty">
+    <property name="Properties" type="empty">
+      <property name="Synaptics_Tap_Action" type="array">
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="2"/>
+      </property>
+    </property>
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="30"/>
+    <property name="Acceleration" type="double" value="10.000000"/>
+    <property name="ReverseScrolling" type="bool" value="true"/>
+  </property>
+  <property name="DisableTouchpadWhileTyping" type="bool" value="true"/>
+  <property name="DisableTouchpadDuration" type="double" value="0.300000"/>
+</channel>

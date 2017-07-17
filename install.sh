@@ -28,3 +28,7 @@ if [! -e ~/.config/Code/User ];then
 fi
 ln -sv "$DOTDIR"/setting.json ~/.config/Code/User/setting.json
 ln -s "$DOTDIR"/asunder ~/.config/asunder
+if [ -e ~/.config/xfce4 ]; then
+    rm -rf ~/.config/xfce4
+fi
+ln -sv "$DOTDIR"/xfce4 ~/.config/xfce4
