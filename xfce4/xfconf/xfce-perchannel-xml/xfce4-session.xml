@@ -31,6 +31,9 @@
         <property name="FgColor" type="string" value="#ffffff"/>
         <property name="Image" type="string" value=""/>
       </property>
+      <property name="balou" type="empty">
+        <property name="Theme" type="string" value="Default"/>
+      </property>
     </property>
   </property>
   <property name="compat" type="empty">

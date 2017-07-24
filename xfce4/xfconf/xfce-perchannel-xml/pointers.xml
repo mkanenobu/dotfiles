@@ -25,8 +25,8 @@
       </property>
     </property>
     <property name="RightHanded" type="bool" value="true"/>
-    <property name="Threshold" type="int" value="30"/>
-    <property name="Acceleration" type="double" value="10.000000"/>
+    <property name="Threshold" type="int" value="50"/>
+    <property name="Acceleration" type="double" value="15.000000"/>
     <property name="ReverseScrolling" type="bool" value="true"/>
   </property>
   <property name="DisableTouchpadWhileTyping" type="bool" value="true"/>

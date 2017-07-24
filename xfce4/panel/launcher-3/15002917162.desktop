@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=pavucontrol
+Comment=Switch audio device
+Exec=pavucontrol
+Icon=audio-volume-muted-blocking-symbolic
+Path=
+Terminal=false
+StartupNotify=false
