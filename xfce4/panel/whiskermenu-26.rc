@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=spotify.desktop,chromium_proxy.desktop,chrome-proxy.desktop,gparted.desktop,simple-scan.desktop,skypeforlinux.desktop,slack.desktop,org.gnome.clocks.desktop,xfce-settings-manager.desktop,gitkraken.desktop
+recent=mousepad.desktop,gparted.desktop,opera.desktop,openjdk-8-policytool.desktop,jetbrains-pycharm-ce.desktop,spotify.desktop,google-chrome.desktop,libreoffice-startcenter.desktop,usb-creator-gtk.desktop,steam.desktop
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false

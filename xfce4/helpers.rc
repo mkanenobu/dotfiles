@@ -1,4 +1,4 @@
-WebBrowser=chromium-browser
+WebBrowser=chromium
 TerminalEmulator=gnome-terminal
-FileManager=nautilus
+FileManager=Thunar
 
