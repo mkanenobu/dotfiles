@@ -32,3 +32,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 export TRANSCEND=/media/mika/TRANSCEND
 #imwheel 1>/dev/null 2>/dev/null
 imwheel >/dev/null 2>&1
+
+# thinkpad touchpad acceleration
+xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 1.5
+
+# thinkpad touchpad natural scroll
+synclient VertScrollDelta=-99

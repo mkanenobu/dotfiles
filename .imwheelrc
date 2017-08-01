@@ -1,5 +1,5 @@
 ".*"
-None,      Up,     Button4, 2
-None,      Down,   Button5, 2
+None,      Up,     Button4, 1.8
+None,      Down,   Button5, 1.8
 Shift_L,   Up,     Button6
 Shift_L,   Down,   Button7
