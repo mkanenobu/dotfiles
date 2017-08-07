@@ -1,17 +1,15 @@
 show_frame=false
-fg_set=true
-fg=65535R 65535G 65535B
-bg_set=true
-bg=23644R 23644G 23644B
+fg_set=false
+bg_set=false
 timezone=
 width_set=false
 height_set=false
 lines_vertically=true
 rotation=0
 data0=%x
-font0=
+font0=Sans 10
+data1=%X
+font1=Sans 10
 tooltip=%x %A
 hib_timing=false
-data1=%X
-font1=Takao Pゴシック 10
 

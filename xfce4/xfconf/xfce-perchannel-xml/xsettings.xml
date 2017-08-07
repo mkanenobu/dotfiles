@@ -21,7 +21,7 @@
     <property name="RGBA" type="string" value="rgb"/>
   </property>
   <property name="Gtk" type="empty">
-    <property name="CanChangeAccels" type="bool" value="false"/>
+    <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
     <property name="FontName" type="string" value="Takao Pゴシック 10"/>
     <property name="IconSizes" type="empty"/>

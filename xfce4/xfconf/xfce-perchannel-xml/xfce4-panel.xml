@@ -66,30 +66,31 @@
     </property>
     <property name="panel-3" type="empty">
       <property name="position" type="string" value="p=2;x=1520;y=10"/>
-      <property name="size" type="uint" value="27"/>
+      <property name="size" type="uint" value="28"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="24"/>
         <value type="int" value="5"/>
-        <value type="int" value="3"/>
         <value type="int" value="1"/>
-        <value type="int" value="21"/>
-        <value type="int" value="25"/>
-        <value type="int" value="17"/>
+        <value type="int" value="4"/>
+        <value type="int" value="3"/>
+        <value type="int" value="28"/>
+        <value type="int" value="11"/>
+        <value type="int" value="6"/>
       </property>
       <property name="position-locked" type="bool" value="true"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="background-style" type="uint" value="1"/>
-      <property name="background-alpha" type="uint" value="63"/>
+      <property name="background-alpha" type="uint" value="64"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="background-color" type="array">
-        <value type="uint" value="56228"/>
-        <value type="uint" value="58383"/>
-        <value type="uint" value="65535"/>
+        <value type="uint" value="56096"/>
+        <value type="uint" value="57230"/>
+        <value type="uint" value="60991"/>
         <value type="uint" value="65535"/>
       </property>
       <property name="length" type="uint" value="1"/>
-      <property name="leave-opacity" type="uint" value="90"/>
+      <property name="leave-opacity" type="uint" value="100"/>
       <property name="background-image" type="string" value="/home/mika/Pictures/Wallpapers/google_now___provo_wallpaper_by_brebenel_silviu-d6p5klb/Day/3.jpg"/>
     </property>
   </property>
@@ -121,45 +122,7 @@
       <property name="style" type="uint" value="2"/>
       <property name="expand" type="bool" value="false"/>
     </property>
-    <property name="plugin-17" type="string" value="actions">
-      <property name="appearance" type="uint" value="0"/>
-      <property name="ask-confirmation" type="bool" value="true"/>
-      <property name="items" type="array">
-        <value type="string" value="-lock-screen"/>
-        <value type="string" value="-switch-user"/>
-        <value type="string" value="+separator"/>
-        <value type="string" value="-suspend"/>
-        <value type="string" value="-hibernate"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="-shutdown"/>
-        <value type="string" value="-restart"/>
-        <value type="string" value="-separator"/>
-        <value type="string" value="+logout"/>
-        <value type="string" value="-logout-dialog"/>
-      </property>
-    </property>
-    <property name="plugin-21" type="string" value="systray">
-      <property name="names-visible" type="array">
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="networkmanager アプレット"/>
-        <value type="string" value="steam"/>
-        <value type="string" value="ネットワーク"/>
-        <value type="string" value="orage"/>
-        <value type="string" value="psensor"/>
-        <value type="string" value="solaar"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="update-notifier"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="skypeforlinux"/>
-        <value type="string" value="slack"/>
-      </property>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="names-hidden" type="array">
-      </property>
-      <property name="size-max" type="uint" value="25"/>
-    </property>
     <property name="plugin-24" type="string" value="pager"/>
-    <property name="plugin-25" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-26" type="string" value="whiskermenu"/>
     <property name="plugin-29" type="string" value="thunar-tpa"/>
     <property name="plugin-30" type="string" value="tasklist">
@@ -184,16 +147,47 @@
       </property>
     </property>
     <property name="plugin-5" type="string" value="weather"/>
-    <property name="plugin-3" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15002917162.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-1" type="string" value="battery"/>
     <property name="clipman" type="empty">
       <property name="tweaks" type="empty">
         <property name="never-confirm-history-clear" type="bool" value="false"/>
       </property>
     </property>
+    <property name="plugin-4" type="string" value="xfce4-sensors-plugin"/>
+    <property name="plugin-1" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-3" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="steam"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="psensor"/>
+        <value type="string" value="networkmanager アプレット"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="update-notifier"/>
+      </property>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="names-hidden" type="array">
+      </property>
+    </property>
+    <property name="plugin-6" type="string" value="actions">
+      <property name="ask-confirmation" type="bool" value="true"/>
+      <property name="appearance" type="uint" value="0"/>
+      <property name="items" type="array">
+        <value type="string" value="-lock-screen"/>
+        <value type="string" value="-switch-user"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-suspend"/>
+        <value type="string" value="-hibernate"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="-shutdown"/>
+        <value type="string" value="-restart"/>
+        <value type="string" value="-separator"/>
+        <value type="string" value="+logout"/>
+        <value type="string" value="-logout-dialog"/>
+      </property>
+      <property name="invert-orientation" type="bool" value="false"/>
+    </property>
+    <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
+    <property name="plugin-28" type="string" value="battery"/>
   </property>
 </channel>

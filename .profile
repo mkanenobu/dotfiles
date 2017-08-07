@@ -28,6 +28,7 @@ export GITROOT=$HOME/Git
 export EDITOR=vim
 
 export XDG_CONFIG_HOME=$HOME/.config
+export GNUSTEP_USER_DEFAULTS_DIR=/etc/GNUstep/GNUstep.conf
 
 export TRANSCEND=/media/mika/TRANSCEND
 #imwheel 1>/dev/null 2>/dev/null

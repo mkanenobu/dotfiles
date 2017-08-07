@@ -8,10 +8,10 @@
     <property name="enabled" type="bool" value="true"/>
   </property>
   <property name="autobrowse" type="empty">
-    <property name="enabled" type="empty"/>
+    <property name="enabled" type="bool" value="true"/>
   </property>
   <property name="autoopen" type="empty">
-    <property name="enabled" type="empty"/>
+    <property name="enabled" type="bool" value="false"/>
   </property>
   <property name="autoplay-audio-cds" type="empty">
     <property name="command" type="string" value="/usr/bin/asunder"/>
