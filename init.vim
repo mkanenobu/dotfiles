@@ -94,10 +94,6 @@ set clipboard=unnamed,unnamedplus
 
 "" Keymapping
 
-" Copy and Paste
-vmap <C-c> :w !xsel -ib<CR><CR>
-
-inoremap <C-l> <Del>
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
@@ -112,8 +108,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
-"nnoremap Y y$
-"nnoremap y$ Y
+nnoremap Y y$
+nnoremap y$ Y
 
 noremap gj j
 noremap gk k

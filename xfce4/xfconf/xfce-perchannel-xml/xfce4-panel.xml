@@ -158,12 +158,14 @@
     </property>
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="steam"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="psensor"/>
         <value type="string" value="networkmanager アプレット"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="ネットワーク"/>
+        <value type="string" value="psensor"/>
+        <value type="string" value="blueman-applet"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
+        <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">

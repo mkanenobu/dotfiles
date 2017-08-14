@@ -1,8 +1,8 @@
-delay=1
-region=1
+delay=0
+region=2
 action=1
-show_mouse=1
-screenshot_dir=file:///home/mika/Pictures
-app=shotwell
+show_mouse=0
+screenshot_dir=file:/home/mika/Pictures/Screenshot
+app=none
 last_user=
 
