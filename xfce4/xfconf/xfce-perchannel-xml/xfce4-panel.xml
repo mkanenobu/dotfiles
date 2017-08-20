@@ -43,6 +43,7 @@
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="35"/>
+        <value type="int" value="2"/>
         <value type="int" value="36"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
@@ -191,5 +192,10 @@
     </property>
     <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-28" type="string" value="battery"/>
+    <property name="plugin-2" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15030184531.desktop"/>
+      </property>
+    </property>
   </property>
 </channel>

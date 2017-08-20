@@ -12,7 +12,7 @@
   <property name="default-view" type="string" value="ThunarDetailsView"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_SMALLER"/>
-  <property name="last-details-view-column-widths" type="string" value="50,89,50,50,302,50,50,72,132"/>
+  <property name="last-details-view-column-widths" type="string" value="50,89,50,50,347,50,50,69,90"/>
   <property name="last-window-width" type="int" value="776"/>
   <property name="last-window-height" type="int" value="597"/>
   <property name="last-window-maximized" type="bool" value="false"/>

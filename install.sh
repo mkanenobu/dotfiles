@@ -6,6 +6,7 @@ if [ -e ~/.bashrc ]; then
 	mv ~/.bashrc ~/Documents/.bashrc.org
 fi
 ln -v "$DOTDIR"/.bashrc ~/.bashrc
+ln -v "$DOTDIR"/.bash_functions ~/.bash_functions
 ln -sv "$DOTDIR"/.inputrc ~/.inputrc
 if [ -e ~/.profile ]; then
 	mv ~/.profile ~/Documents/.profile.org

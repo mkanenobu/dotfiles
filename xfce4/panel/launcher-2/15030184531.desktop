@@ -1,0 +1,25 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+GenericName=Web Browser
+GenericName[ja]=ウェブブラウザ
+Comment=Access the Internet
+Comment[ja]=インターネットにアクセス
+Exec=/usr/bin/google-chrome-stable %U
+Terminal=false
+Icon=google-chrome
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Actions=NewWindow;NewPrivateWindow;
+X-XFCE-Source=file:///usr/share/applications/google-chrome.desktop
+
+[Desktop Action NewWindow]
+Name=New Window
+Name[ja]=新規ウインドウ
+Exec=/usr/bin/google-chrome-stable
+
+[Desktop Action NewPrivateWindow]
+Name=New Incognito Window
+Name[ja]=新しいシークレット ウィンドウ
+Exec=/usr/bin/google-chrome-stable --incognito

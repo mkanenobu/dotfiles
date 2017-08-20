@@ -108,8 +108,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
-nnoremap Y y$
-nnoremap y$ Y
+"nnoremap Y y$
+"nnoremap y$ Y
 
 noremap gj j
 noremap gk k
