@@ -160,6 +160,7 @@
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="networkmanager アプレット"/>
+        <value type="string" value="discord"/>
         <value type="string" value="steam"/>
         <value type="string" value="ネットワーク"/>
         <value type="string" value="psensor"/>
