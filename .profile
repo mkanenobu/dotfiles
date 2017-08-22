@@ -39,3 +39,4 @@ xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant De
 
 # thinkpad touchpad natural scroll
 synclient VertScrollDelta=-99
+

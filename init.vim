@@ -146,20 +146,21 @@ nnoremap ' :
 set mouse=""
 
 " dein settings {{{
-if &compatible
-    set nocompatible
-endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-"dein.vim diredtory
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-"if not exist git clone
-if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-endif
-execute 'set runtimepath^=' . s:dein_repo_dir
+if has('nvim')
+    if &compatible
+        set nocompatible
+    endif
+    set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+    "dein.vim diredtory
+    let s:dein_dir = expand('~/.cache/dein')
+    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+    "if not exist git clone
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
 
-if dein#load_state('~/.cache/dein')
+    if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
 "manege plugins
     let s:toml = '~/.dein/.dein.toml'
@@ -169,17 +170,17 @@ if dein#load_state('~/.cache/dein')
 
     call dein#end()
     call dein#save_state()
+    endif
+
+    "if dein#check_install(['vimproc'])
+    "   call dein#install(['vimproc'])
+    "endif
+
+    if dein#check_install()
+        call dein#install()
+    endif
+    " }}}
 endif
-
-"if dein#check_install(['vimproc'])
-"   call dein#install(['vimproc'])
-"endif
-
-if dein#check_install()
-    call dein#install()
-endif
-" }}}
-
 
 "Emmet
 let g:user_emmet_leader_key =  '<C-Y>,'

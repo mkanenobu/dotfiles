@@ -142,10 +142,10 @@ alias byo='byobu'
 alias du='du -h'
 alias sass='node-sass'
 alias pcd='cd $(find . -maxdepth 1 -type d | peco)'
-alias screensaver='cmatrix -a'
+alias matrix='cmatrix -a'
 
 # typo
-alias al='la'
+alias al='sl -e'
 alias ka='la'
 alias ks='ls'
 alias c=':'
@@ -157,6 +157,7 @@ alias sl='sl -e'
 # Git
 alias ga='git add'
 alias gc='git commit'
+alias gcm='git commit -m'
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcl='git clone'
@@ -172,9 +173,9 @@ export TERM=xterm-256color
 
 function open(){
     if [ ! -e "$1" ];then
-        nautilus .
+        thunar . >/dev/null 2>&1
     else
-        nautilus "$@"
+        thunar "$@" >/dev/null 2>&1
     fi
 }
 
@@ -237,5 +238,13 @@ function soxspectrogram(){
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
 }
 
+function generate_m3u(){
+    generate_file=`pwd | sed -e "s/\/.*\/.*\/.*\//""/" -e "s/\$/.m3u/"`
+    echo '#EXTM3U' >> "$generate_file"
+    ls *.opus >> "$generate_file"
+}
+
 alias mouseconf='cd /usr/share/X11/xorg.conf.d/'
 
+# ls sorting
+export LC_COLLATE=C
