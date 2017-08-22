@@ -2,7 +2,7 @@
 
 <channel name="xfce4-notifyd" version="1.0">
   <property name="notify-location" type="uint" value="2"/>
-  <property name="theme" type="string" value="Paper"/>
-  <property name="expire-timeout" type="int" value="2"/>
-  <property name="initial-opacity" type="double" value="0.500000"/>
+  <property name="theme" type="string" value="Greybird"/>
+  <property name="expire-timeout" type="int" value="3"/>
+  <property name="initial-opacity" type="double" value="0.960000"/>
 </channel>
