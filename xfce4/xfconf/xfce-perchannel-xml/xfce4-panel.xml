@@ -165,7 +165,10 @@
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
         <value type="string" value="discord"/>
+<<<<<<< HEAD
         <value type="string" value="network"/>
+=======
+>>>>>>> e86ae5773fd7a357b12138ebbd089cf1a799aae6
         <value type="string" value="steam"/>
         <value type="string" value="ネットワーク"/>
         <value type="string" value="psensor"/>

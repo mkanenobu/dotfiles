@@ -1,5 +1,9 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
+<<<<<<< HEAD
 recent=mikutter.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,spotify.desktop,grub-customizer.desktop,steam.desktop,gimp.desktop,exo-terminal-emulator.desktop,byobu.desktop,gconf-editor.desktop,ca.desrt.dconf-editor.desktop
+=======
+recent=usb-creator-gtk.desktop,discord.desktop,synaptic.desktop,htop.desktop,chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop,spotify.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,font-manager.desktop,code.desktop,org.gnome.font-viewer.desktop
+>>>>>>> e86ae5773fd7a357b12138ebbd089cf1a799aae6
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false
