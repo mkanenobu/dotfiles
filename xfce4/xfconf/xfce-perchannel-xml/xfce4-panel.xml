@@ -125,6 +125,7 @@
     </property>
     <property name="plugin-24" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
     <property name="plugin-26" type="string" value="whiskermenu"/>
     <property name="plugin-29" type="string" value="thunar-tpa"/>

@@ -140,8 +140,8 @@ alias rename='rename -v'
 alias lua='lua5.3'
 alias byo='byobu'
 alias du='du -h'
-alias sass='node-sass'
-alias pcd='cd $(find . -maxdepth 1 -type d | peco)'
+alias diff='icddiff -U 1 --line-number'
+alias duc='du -h --max-depth=1'
 alias matrix='cmatrix -a'
 
 # typo
@@ -239,7 +239,7 @@ function soxspectrogram(){
 }
 
 function generate_m3u(){
-    generate_file=`pwd | sed -e "s/\/.*\/.*\/.*\//""/" -e "s/\$/.m3u/"`
+    generate_file=`basename "$(pwd)" | sed -e "s/\$/.m3u/g"`
     echo '#EXTM3U' >> "$generate_file"
     ls *.opus >> "$generate_file"
 }

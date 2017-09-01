@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=exo-terminal-emulator.desktop,byobu.desktop,gconf-editor.desktop,grub-customizer.desktop,spotify.desktop,ca.desrt.dconf-editor.desktop,filezilla.desktop,discord.desktop,synaptic.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop
+recent=mikutter.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,spotify.desktop,grub-customizer.desktop,steam.desktop,gimp.desktop,exo-terminal-emulator.desktop,byobu.desktop,gconf-editor.desktop,ca.desrt.dconf-editor.desktop
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false

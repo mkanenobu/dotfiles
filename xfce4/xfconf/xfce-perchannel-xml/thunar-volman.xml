@@ -8,7 +8,7 @@
     <property name="enabled" type="bool" value="true"/>
   </property>
   <property name="autobrowse" type="empty">
-    <property name="enabled" type="bool" value="true"/>
+    <property name="enabled" type="bool" value="false"/>
   </property>
   <property name="autoopen" type="empty">
     <property name="enabled" type="bool" value="false"/>
