@@ -14,7 +14,7 @@
     <property name="blank-on-battery" type="int" value="5"/>
     <property name="show-tray-icon" type="int" value="0"/>
     <property name="general-notification" type="bool" value="false"/>
-    <property name="presentation-mode" type="bool" value="false"/>
+    <property name="presentation-mode" type="bool" value="true"/>
     <property name="brightness-level-on-battery" type="uint" value="80"/>
   </property>
 </channel>

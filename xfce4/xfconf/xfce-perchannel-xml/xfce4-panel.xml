@@ -16,7 +16,6 @@
         <value type="int" value="31"/>
         <value type="int" value="30"/>
         <value type="int" value="15"/>
-        <value type="int" value="29"/>
       </property>
       <property name="background-alpha" type="uint" value="32"/>
       <property name="background-style" type="uint" value="1"/>
@@ -43,7 +42,6 @@
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="35"/>
-        <value type="int" value="2"/>
         <value type="int" value="36"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
@@ -74,7 +72,7 @@
         <value type="int" value="1"/>
         <value type="int" value="4"/>
         <value type="int" value="3"/>
-        <value type="int" value="28"/>
+        <value type="int" value="19"/>
         <value type="int" value="11"/>
         <value type="int" value="6"/>
       </property>
@@ -128,7 +126,6 @@
       <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
     <property name="plugin-26" type="string" value="whiskermenu"/>
-    <property name="plugin-29" type="string" value="thunar-tpa"/>
     <property name="plugin-30" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="false"/>
       <property name="show-labels" type="bool" value="false"/>
@@ -165,24 +162,14 @@
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
         <value type="string" value="discord"/>
-<<<<<<< HEAD
-        <value type="string" value="network"/>
-=======
->>>>>>> e86ae5773fd7a357b12138ebbd089cf1a799aae6
-        <value type="string" value="steam"/>
-        <value type="string" value="ネットワーク"/>
-        <value type="string" value="psensor"/>
+        <value type="string" value="orage"/>
         <value type="string" value="blueman-applet"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
         <value type="string" value="xfce4-power-manager"/>
       </property>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="names-hidden" type="array">
-      </property>
     </property>
     <property name="plugin-6" type="string" value="actions">
-      <property name="ask-confirmation" type="bool" value="true"/>
       <property name="appearance" type="uint" value="0"/>
       <property name="items" type="array">
         <value type="string" value="-lock-screen"/>
@@ -197,14 +184,8 @@
         <value type="string" value="+logout"/>
         <value type="string" value="-logout-dialog"/>
       </property>
-      <property name="invert-orientation" type="bool" value="false"/>
     </property>
     <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
-    <property name="plugin-28" type="string" value="battery"/>
-    <property name="plugin-2" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15030184531.desktop"/>
-      </property>
-    </property>
+    <property name="plugin-19" type="string" value="battery"/>
   </property>
 </channel>

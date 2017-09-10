@@ -1,15 +1,16 @@
-show_frame=false
+show_frame=true
 fg_set=false
-bg_set=false
+bg_set=true
+bg=49151R 49151G 49151B
 timezone=
 width_set=false
 height_set=false
 lines_vertically=true
 rotation=0
 data0=%x
-font0=Sans 10
+font0=Takao Pゴシック 10
 data1=%X
-font1=Sans 10
-tooltip=%x %A
-hib_timing=false
+font1=
+tooltip=%A %d %B %Y/%V
+hib_timing=true
 

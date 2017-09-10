@@ -4,10 +4,10 @@ Show_Labels=true
 Use_Bar_UI=1
 Show_Colored_Bars=true
 Scale=0
-Font_Size=medium
-Font_Size_Numerical=2
+Font_Size=small
+Font_Size_Numerical=1
 Font=Sans 12
-Lines_Size=1
+Lines_Size=2
 Update_Interval=8
 Exec_Command=true
 Show_Units=true
@@ -39,6 +39,15 @@ Color=#3F3F3F
 Show=true
 Min=0.00
 Max=45.00
+
+[Chip2_Feature2]
+Id=-1
+Address=2
+Name=Core 1
+Color=#3F3F3F
+Show=true
+Min=0.00
+Max=42.00
 
 [Chip3]
 Name=ACPI
