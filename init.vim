@@ -1,7 +1,7 @@
 " In English
-if has("multi_lang")
-language C
-endif
+"if has("multi_lang")
+"    language ja_JP.utf8
+"endif
 
 filetype indent plugin off
 
@@ -14,7 +14,7 @@ endif
 "let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " 0.2.0 or newer
-set guicursor=a:block
+"set guicursor=a:block
 
 filetype off
 set encoding=utf-8
@@ -89,10 +89,10 @@ set listchars=tab:>-,trail:-,extends:>
 
 " Status line
 set laststatus=2
-set clipboard=unnamed,unnamedplus
+"set clipboard=unnamed,unnamedplus
 
 
-"" Keymapping
+"" Keymap
 
 
 " Increment,decrement

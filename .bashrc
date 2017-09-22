@@ -180,5 +180,11 @@ fi
 
 alias mouseconf='cd /usr/share/X11/xorg.conf.d/'
 
-# ls sorting
-export LC_COLLATE=C
+
+export LESS_TERMCAP_mb=`tput bold; tput setaf 1`		## turn on bold
+export LESS_TERMCAP_md=`tput bold; tput setaf 6`		## turn on blink
+export LESS_TERMCAP_me=`tput sgr0`				## turn off all
+export LESS_TERMCAP_so=`tput bold; tput setaf 3; tput setab 4`  ## begin standout mode
+export LESS_TERMCAP_se=`tput sgr0`				## exit standout mode
+export LESS_TERMCAP_us=`tput bold; tput setaf 3`		## begin underline mode
+export LESS_TERMCAP_ue=`tput sgr0`				## exit underline mode
