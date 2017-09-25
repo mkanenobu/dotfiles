@@ -44,6 +44,6 @@ xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant De
 # thinkpad touchpad natural scroll
 synclient VertScrollDelta=-99
 
-# Marble Mouse middle click emulation
+# Kensington Orbit with Scroll Ring middle click emulation
 xinput set-prop "Primax Kensington Eagle Trackball" "Evdev Middle Button Emulation" 1 2>&1 >/dev/null
 xinput set-prop "Primax Kensington Eagle Trackball" "Evdev Middle Button Timeout" 100 2>&1 >/dev/null
