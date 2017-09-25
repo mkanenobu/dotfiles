@@ -36,7 +36,7 @@
       </property>
       <property name="Synaptics_Two-Finger_Scrolling" type="array">
         <value type="int" value="1"/>
-        <value type="int" value="1"/>
+        <value type="int" value="0"/>
       </property>
       <property name="Synaptics_Circular_Scrolling" type="int" value="0"/>
       <property name="Synaptics_Circular_Scrolling_Trigger" type="int" value="0"/>
@@ -64,7 +64,7 @@
   </property>
   <property name="Primax_Kensington_Eagle_Trackball" type="empty">
     <property name="RightHanded" type="bool" value="true"/>
-    <property name="Threshold" type="int" value="5"/>
+    <property name="Threshold" type="int" value="4"/>
     <property name="Acceleration" type="double" value="2.100000"/>
   </property>
 </channel>

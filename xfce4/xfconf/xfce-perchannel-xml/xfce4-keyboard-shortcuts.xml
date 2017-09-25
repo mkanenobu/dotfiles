@@ -46,6 +46,7 @@
       <property name="&lt;Primary&gt;&lt;Shift&gt;dollar" type="string" value="xfce4-screenshooter -w -s /home/mika/Pictures/Screenshot/"/>
       <property name="&lt;Super&gt;e" type="string" value="thunar ."/>
       <property name="&lt;Super&gt;k" type="string" value="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"/>
+      <property name="&lt;Super&gt;m" type="string" value="/usr/share/simplenote/simplenote"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

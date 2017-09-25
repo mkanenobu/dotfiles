@@ -12,5 +12,5 @@
   <property name="default-view" type="string" value="ThunarDetailsView"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_SMALLER"/>
-  <property name="last-details-view-column-widths" type="string" value="50,127,50,50,182,50,50,72,78"/>
+  <property name="last-details-view-column-widths" type="string" value="50,127,50,50,192,50,50,72,150"/>
 </channel>
