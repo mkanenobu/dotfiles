@@ -33,6 +33,9 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
+[[plugins]]
+repo = 'baabelfish/nvim-nim'
+
 # Deoplete sources
 
 [[plugins]]
