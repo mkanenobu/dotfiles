@@ -71,6 +71,10 @@ set title
 let loaded_matchparen = 1
 source $VIMRUNTIME/macros/matchit.vim
 
+" fold
+" don't autofold
+set foldlevel=100
+
 nnoremap % m
 nnoremap m %
 

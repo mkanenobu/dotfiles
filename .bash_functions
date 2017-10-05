@@ -57,7 +57,12 @@ function encopus(){
     fi
     opusenc "$1" "$opusfile" --bitrate "$rate"
 }
-
+ function encopusm(){
+     for encordfiles in "$@";do
+         encopus "$encordfiles"
+     done
+ }
+ 
 function soxspectrogram(){
     spectrofile=`echo "$1" | sed -re 's/.wav//g'`
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
