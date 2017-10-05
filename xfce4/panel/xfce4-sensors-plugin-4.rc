@@ -11,12 +11,12 @@ Lines_Size=2
 Update_Interval=5
 Exec_Command=true
 Show_Units=true
-Small_Spacings=true
-Command_Name=psensor
+Small_Spacings=false
+Command_Name=xfce4-sensors
 Number_Chips=4
 Suppress_Hddtemp_Message=true
 Suppress_Tooltip=true
-Preferred_Width=463
+Preferred_Width=396
 Preferred_Height=372
 
 [Chip0]
@@ -35,19 +35,19 @@ Number=2
 Id=-1
 Address=1
 Name=Core 0
-Color=#3F3F3F
+Color=#000000
 Show=true
 Min=0.00
-Max=45.00
+Max=60.00
 
 [Chip2_Feature2]
 Id=-1
 Address=2
 Name=Core 1
-Color=#3F3F3F
+Color=#000000
 Show=true
 Min=0.00
-Max=42.00
+Max=56.00
 
 [Chip3]
 Name=ACPI

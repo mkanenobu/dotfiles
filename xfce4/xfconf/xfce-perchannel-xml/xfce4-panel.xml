@@ -16,6 +16,7 @@
         <value type="int" value="31"/>
         <value type="int" value="30"/>
         <value type="int" value="15"/>
+        <value type="int" value="2"/>
       </property>
       <property name="background-alpha" type="uint" value="32"/>
       <property name="background-style" type="uint" value="1"/>
@@ -159,15 +160,19 @@
     </property>
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="thunar"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
         <value type="string" value="discord"/>
         <value type="string" value="network"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="psensor"/>
         <value type="string" value="orage"/>
         <value type="string" value="blueman-applet"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
         <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="skypeforlinux"/>
       </property>
     </property>
     <property name="plugin-6" type="string" value="actions">
@@ -188,5 +193,6 @@
     </property>
     <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-19" type="string" value="battery"/>
+    <property name="plugin-2" type="string" value="thunar-tpa"/>
   </property>
 </channel>
