@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=gitkraken.desktop,org.gnome.Calendar.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,vivaldi-stable.desktop,firefox.desktop,org.gnome.clocks.desktop,gnome-calculator.desktop,steam.desktop,libreoffice-calc.desktop,libreoffice-draw.desktop
+recent=gitkraken.desktop,code.desktop,org.gnome.Calendar.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,vivaldi-stable.desktop,firefox.desktop,org.gnome.clocks.desktop,gnome-calculator.desktop,steam.desktop,libreoffice-calc.desktop
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false
