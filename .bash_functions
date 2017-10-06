@@ -64,13 +64,13 @@ function encopus(){
  }
  
 function soxspectrogram(){
-    spectrofile=`echo "$1" | sed -re 's/.wav//g'`
+    spectrofile=$(echo "$1" | sed -re 's/.wav//g')
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
 }
 
 function generate_m3u(){
     generate_file=`basename "$(pwd)" | sed -e "s/\$/.m3u/g"`
     echo '#EXTM3U' >> "$generate_file"
-    ls *.opus >> "$generate_file"
+    ls ./*.opus >> "$generate_file"
 }
 
