@@ -36,6 +36,11 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'baabelfish/nvim-nim'
 
+[[plugins]]
+repo = 'neomake/neomake'
+
+[[plugins]]
+repo = 'kassio/neoterm'
 # Deoplete sources
 
 [[plugins]]

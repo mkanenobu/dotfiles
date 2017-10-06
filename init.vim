@@ -115,6 +115,9 @@ nnoremap Q <nop>
 "nnoremap Y y$
 "nnoremap y$ Y
 
+tnoremap <silent> <Esc> <C-\><C-n>
+tnoremap <silent> <C-[> <C-\><C-n>
+
 noremap gj j
 noremap gk k
 noremap j gj
@@ -260,6 +263,16 @@ syntax on
 filetype indent plugin on
 
 set secure
+
+" neoterm
+let g:neoterm_position = 'vertical'
+" Neomake
+" When writing a buffer.
+call neomake#configure#automake('w')
+" When writing a buffer, and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
+" When reading a buffer (after 1s), and when writing.
+call neomake#configure#automake('rw', 1000)
 
 " NERDTress File highlighting
 "function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
