@@ -38,7 +38,7 @@ function unam(){
 # Translate
 function dict(){
     if [ -e ~/Documents/gene-utf8.txt ]; then
-        grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1 -wi --color
+        grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
     else
         curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
     fi
@@ -69,7 +69,7 @@ function soxspectrogram(){
 }
 
 function generate_m3u(){
-    generate_file=`basename "$(pwd)" | sed -e "s/\$/.m3u/g"`
+    generate_file=$(basename "$(pwd)" | sed -e "s/\$/.m3u/g")
     echo '#EXTM3U' >> "$generate_file"
     ls ./*.opus >> "$generate_file"
 }

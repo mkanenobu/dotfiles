@@ -10,11 +10,6 @@ if has("autocmd")
     filetype off
 endif
 
-" 0.1.7 or older
-"let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-" 0.2.0 or newer
-"set guicursor=a:block
 
 filetype off
 set encoding=utf-8
@@ -75,8 +70,8 @@ source $VIMRUNTIME/macros/matchit.vim
 " don't autofold
 set foldlevel=100
 
-nnoremap % m
-nnoremap m %
+"nnoremap % m
+"nnoremap m %
 
 " Tab
 set expandtab
@@ -93,7 +88,7 @@ set listchars=tab:>-,trail:-,extends:>
 
 " Status line
 set laststatus=2
-"set clipboard=unnamed,unnamedplus
+set clipboard=unnamed,unnamedplus
 
 
 "" Keymap
@@ -147,7 +142,6 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
-nnoremap ' :
 
 " disable mouse
 set mouse=""
@@ -267,6 +261,7 @@ set secure
 " neoterm
 let g:neoterm_position = 'vertical'
 " Neomake
+nnoremap <C-e><C-r> :lopen<CR>
 " When writing a buffer.
 call neomake#configure#automake('w')
 " When writing a buffer, and on normal mode changes (after 750ms).
