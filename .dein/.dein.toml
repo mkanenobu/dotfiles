@@ -41,6 +41,7 @@ repo = 'neomake/neomake'
 
 [[plugins]]
 repo = 'kassio/neoterm'
+
 # Deoplete sources
 
 [[plugins]]
