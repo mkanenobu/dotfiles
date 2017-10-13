@@ -8,7 +8,5 @@ Terminal=false
 Categories=Utility;X-XFCE;X-Xfce-Toplevel;
 OnlyShowIn=XFCE;
 Name=Terminal Emulator
-Name[ja]=ターミナルエミュレーター
 Comment=Use the command line
-Comment[ja]=コマンドラインを使用します
 X-XFCE-Source=file:///usr/share/applications/exo-terminal-emulator.desktop
