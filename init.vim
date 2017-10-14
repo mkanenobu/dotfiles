@@ -250,7 +250,7 @@ autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 set t_Co=256
 colorscheme molokai
 let g:molokai_original=1
-set background=dark
+"set background=dark
 
 syntax on
 
