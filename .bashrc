@@ -124,27 +124,33 @@ if ! shopt -oq posix; then
 fi
 
 
-## User
+## User aliases
 #alias off='shutdown -h 0'
 alias br='nvim ~/.bashrc'
 alias bf='nvim ~/.bash_functions'
+alias so='source'
+alias mkdir='mkdir -p'
 alias nvr='nvim ~/.config/nvim/init.vim'
 alias n='nvim'
 alias vr='vim ~/.vimrc'
 alias dein='nvim ~/.dein/.dein.toml'
 alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
-alias py='python3'
-alias py2='python2'
-alias rb='ruby'
 alias sbr='source ~/.bashrc'
+alias spr='source ~/.profile'
 alias rename='rename -v'
-alias lua='lua5.3'
 alias byo='byobu'
 alias du='du -h'
 alias diff='icddiff -U 1 --line-number'
-alias duc='du -h --max-depth=1'
 alias screensaver='cmatrix -a'
-alias xclip='xclip -selection clipboard'
+alias toxclip='xclip -selection clipboard'
+alias rm='trash-put'
+alias mv='mv -i'
+
+alias py='python3'
+alias py2='python2'
+alias nimc='nim c'
+alias nimcr='nim c -r'
+alias lua='lua5.3'
 
 # typo
 alias al='sl -e'
@@ -159,6 +165,7 @@ alias sl='sl -e'
 # Git
 alias ga='git add'
 alias gc='git commit'
+alias gd='git diff'
 alias gcm='git commit -m'
 alias gs='git status'
 alias gpom='git push origin master'
@@ -177,13 +184,4 @@ if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
 
-
-
-export LESS_TERMCAP_mb=`tput bold; tput setaf 1`		## turn on bold
-export LESS_TERMCAP_md=`tput bold; tput setaf 6`		## turn on blink
-export LESS_TERMCAP_me=`tput sgr0`				## turn off all
-export LESS_TERMCAP_so=`tput bold; tput setaf 3; tput setab 4`  ## begin standout mode
-export LESS_TERMCAP_se=`tput sgr0`				## exit standout mode
-export LESS_TERMCAP_us=`tput bold; tput setaf 3`		## begin underline mode
-export LESS_TERMCAP_ue=`tput sgr0`				## exit underline mode
 
