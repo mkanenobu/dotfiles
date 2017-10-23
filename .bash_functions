@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function open(){
+open(){
     if [ ! -e "$1" ];then
         thunar . >/dev/null 2>&1
     else
@@ -8,7 +8,7 @@ function open(){
     fi
 }
 
-function countwords(){
+countwords(){
     if [ -e "$1" ];then
         countstrings=$(cat "$1")
     else
@@ -18,7 +18,7 @@ function countwords(){
     echo "${#countstrings}"
 }
 
-function off(){
+off(){
     if test "$#" -eq 0; then
         shutdown -h 0
     elif test "$#" -eq 1; then
@@ -29,14 +29,14 @@ function off(){
 }
 
 # unar extract multiple files
-function unam(){
+unam(){
     for i in "$@"; do
         unar "$i"
     done
 }
 
 # Translate
-function dict(){
+dict(){
     if [ -e ~/Documents/gene-utf8.txt ]; then
         grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
     else
@@ -44,11 +44,11 @@ function dict(){
     fi
 }
 
-function jtoe(){
+jtoe(){
     grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1 -w --color
 }
 
-function encopus(){
+encopus(){
     opusfile=$(echo "$1" | sed -e 's/.wav/.opus/')
     if [ -z "$2" ]; then
         rate=160
@@ -57,18 +57,19 @@ function encopus(){
     fi
     opusenc "$1" "$opusfile" --bitrate "$rate"
 }
- function encopusm(){
+
+encopusm(){
      for encordfiles in "$@";do
          encopus "$encordfiles"
      done
  }
- 
-function soxspectrogram(){
+
+soxspectrogram(){
     spectrofile=$(echo "$1" | sed -re 's/.wav//g')
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
 }
 
-function generate_m3u(){
+generate_m3u(){
     generate_file=$(basename "$(pwd)" | sed -e "s/\$/.m3u/g")
     echo '#EXTM3U' >> "$generate_file"
     ls ./*.opus >> "$generate_file"

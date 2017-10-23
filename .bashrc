@@ -64,7 +64,7 @@ fi
 
 #if [ "$color_prompt" = yes ]; then
     PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
-#   PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+#   PS1='\[\033[01;34m\]\w\[\033[00m\] \$\[\033[00m\] '
 #else
 #   PS1='\h:\w\$ '
 #fi
@@ -143,8 +143,9 @@ alias du='du -h'
 alias diff='icddiff -U 1 --line-number'
 alias screensaver='cmatrix -a'
 alias toxclip='xclip -selection clipboard'
-alias rm='trash-put'
 alias mv='mv -i'
+alias ...='../../'
+alias ....='../../../'
 
 alias py='python3'
 alias py2='python2'
@@ -176,7 +177,9 @@ alias glo='git log --oneline --graph --decorate'
 
 shopt -s autocd
 set -o emacs
-set noclobber
+# リダイレクトによる上書き禁止
+# >|を用いればリダイレクトできる
+set -C noclobber
 
 export TERM=xterm-256color
 
