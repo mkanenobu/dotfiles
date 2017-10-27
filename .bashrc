@@ -144,6 +144,7 @@ alias diff='icddiff -U 1 --line-number'
 alias screensaver='cmatrix -a'
 alias toxclip='xclip -selection clipboard'
 alias mv='mv -i'
+alias ly='lilypond'
 alias ...='../../'
 alias ....='../../../'
 
@@ -152,6 +153,7 @@ alias py2='python2'
 alias nimc='nim c'
 alias nimcr='nim c -r'
 alias lua='lua5.3'
+alias gosh='rlwrap -c -q -m gosh'
 
 # typo
 alias al='sl -e'
@@ -181,10 +183,6 @@ set -o emacs
 # >|を用いればリダイレクトできる
 set -C noclobber
 
-export TERM=xterm-256color
-
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
-
-
