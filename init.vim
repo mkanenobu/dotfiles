@@ -4,7 +4,7 @@
 "endif
 
 filetype indent plugin off
-
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Autocommand
 if has("autocmd")
     filetype off
@@ -47,7 +47,6 @@ if has('nvim')
     set inccommand=split
 endif
 
-"set gdefault
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -61,7 +60,7 @@ set number
 set wildmenu
 set showcmd
 set title
-"set showmatch
+set showmatch
 " expand match
 let loaded_matchparen = 1
 source $VIMRUNTIME/macros/matchit.vim
@@ -70,8 +69,8 @@ source $VIMRUNTIME/macros/matchit.vim
 " don't autofold
 set foldlevel=100
 
-"nnoremap % m
-"nnoremap m %
+nnoremap % m
+nnoremap m %
 
 " Tab
 set expandtab
@@ -92,7 +91,6 @@ set clipboard=unnamed,unnamedplus
 
 
 "" Keymap
-
 
 " Increment,decrement
 nnoremap <kPlus> <C-a>
@@ -287,3 +285,4 @@ call neomake#configure#automake('rw', 1000)
 "call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
 "call NERDTreeHighlightFile('js', 'red', 'none', '#ffa500', '#151515')
 "call NERDTreeHighlightFile('php', 'magenta', 'none', '#ff00ff', '#151515')
+
