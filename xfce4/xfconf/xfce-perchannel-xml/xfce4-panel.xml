@@ -179,6 +179,7 @@
         <value type="string" value="update-notifier"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="skypeforlinux"/>
+        <value type="string" value="clipgrab"/>
       </property>
     </property>
     <property name="plugin-6" type="string" value="actions">
