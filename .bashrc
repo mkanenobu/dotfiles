@@ -151,7 +151,7 @@ alias ....='../../../'
 alias py='python3'
 alias py2='python2'
 alias nimc='nim c'
-alias nimcr='nim c -r'
+alias nimcr='nim c -r --verbosity:0'
 alias lua='lua5.3'
 alias gosh='rlwrap -c -q -m gosh'
 
