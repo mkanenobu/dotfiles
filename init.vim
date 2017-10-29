@@ -116,8 +116,9 @@ noremap gk k
 noremap j gj
 noremap k gk
 nnoremap ; :
+" disable input method
+nnoremap : ::
 inoremap <C-c> <Esc>
-inoremap JK <Esc>
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
