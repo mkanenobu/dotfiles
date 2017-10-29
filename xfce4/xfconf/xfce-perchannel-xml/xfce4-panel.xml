@@ -172,8 +172,8 @@
         <value type="string" value="discord"/>
         <value type="string" value="network"/>
         <value type="string" value="steam"/>
-        <value type="string" value="psensor"/>
         <value type="string" value="orage"/>
+        <value type="string" value="psensor"/>
         <value type="string" value="blueman-applet"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
