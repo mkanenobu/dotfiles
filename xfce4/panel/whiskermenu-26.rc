@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=org.gnome.clocks.desktop,steam.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,libreoffice-calc.desktop,spotify.desktop,musescore.desktop,mit-scheme.desktop,code.desktop,grub-customizer.desktop,vivaldi-stable.desktop
+recent=steam.desktop,org.gnome.clocks.desktop,spotify.desktop,google-chrome_proxy.desktop,grub-customizer.desktop,filezilla.desktop,opera.desktop,vivaldi-stable.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,wine-winecfg.desktop
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false
