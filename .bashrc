@@ -145,6 +145,7 @@ alias screensaver='cmatrix -a'
 alias toxclip='xclip -selection clipboard'
 alias mv='mv -i'
 alias ly='lilypond'
+alias ftp-ncftp='ncftp'
 alias ...='../../'
 alias ....='../../../'
 
