@@ -141,6 +141,9 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
+" open file (Denite)
+nmap :e :Denite dile
+
 
 " disable mouse
 set mouse=""
@@ -196,8 +199,8 @@ nmap <C-n><C-t> :NERDTreeToggle<CR>
 " \r
 
 "denite map
-nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
-nmap <C-n><C-g> :<C-u>Denite grep<CR>
+nmap <C-w> :<C-u>Denite file_rec<CR>
+"nmap <C-w> :<C-u>Denite grep<CR>
 nmap <C-n><C-f> :<C-u>Denite line<CR>
 
 "no matcheparen
@@ -242,11 +245,12 @@ let g:deoplete#max_list = 30
 "let g:deoplete#ignore_sources.php = ['omni']
 let g:tern_request_timeout = 1
 
+let g:LangageClient_autoStart = 1
+
 "ColorScheme
 autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
-set t_Co=256
 colorscheme molokai
 let g:molokai_original=1
 "set background=dark
@@ -260,30 +264,12 @@ set secure
 " neoterm
 let g:neoterm_position = 'vertical'
 " Neomake
+" List errors
 nnoremap <C-e><C-r> :lopen<CR>
 " When writing a buffer.
 call neomake#configure#automake('w')
 " When writing a buffer, and on normal mode changes (after 750ms).
 call neomake#configure#automake('nw', 750)
-" When reading a buffer (after 1s), and when writing.
-call neomake#configure#automake('rw', 1000)
-
-" NERDTress File highlighting
-"function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-" exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-" exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-"endfunction
-"
-"call NERDTreeHighlightFile('sh', 'green', 'none', 'green', '#151515')
-"call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('md', 'green', 'none', '#3366FF', '#151515')
-"call NERDTreeHighlightFile('py', 'green', 'none', '#3366FF', '#151515')
-"call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('html', 'red', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-"call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-"call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
-"call NERDTreeHighlightFile('js', 'red', 'none', '#ffa500', '#151515')
-"call NERDTreeHighlightFile('php', 'magenta', 'none', '#ff00ff', '#151515')
+" When reading a buffer (after ns), and when writing.
+call neomake#configure#automake('rw', 750)
 
