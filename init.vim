@@ -105,8 +105,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
-"nnoremap Y y$
-"nnoremap y$ Y
+nnoremap Y y$
+nnoremap y$ Y
 
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
@@ -246,6 +246,30 @@ let g:deoplete#max_list = 30
 let g:tern_request_timeout = 1
 
 let g:LangageClient_autoStart = 1
+
+" Copy from vim-closetag
+" filenames like *.xml, *.html, *.xhtml, ...
+" Then after you press <kbd>&gt;</kbd> in these files, this plugin will try to close the current tag.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.php'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non closing tags self closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" integer value [0|1]
+" This will make the list of non closing tags case sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
 
 "ColorScheme
 autocmd ColorScheme molokai highlight Visual ctermbg=242
