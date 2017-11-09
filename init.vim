@@ -1,7 +1,5 @@
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-if has("autocmd")
-    filetype off
-endif
+
+filetype indent plugin off
 
 set encoding=utf-8
 set ambiwidth=double
@@ -14,17 +12,19 @@ set wrap
 set display=lastline
 
 " disable autp comment
-augroup auto_comment_off
-    autocmd!
-    autocmd BufEnter * setlocal formatoptions-=r
-    autocmd BufEnter * setlocal formatoptions-=o
-augroup END
+"augroup auto_comment_off
+"    autocmd!
+"    autocmd BufEnter * setlocal formatoptions-=r
+"    autocmd BufEnter * setlocal formatoptions-=o
+"augroup END
 
 " search
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
+
+set inccommand=split
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
@@ -34,6 +34,7 @@ set mouse=""
 set ruler
 set number
 set wildmenu
+"set cursorline
 set showcmd
 set title
 set showmatch
@@ -172,7 +173,7 @@ let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_refresh_always = 0
-"let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 "set completeopt+=noinsert
 "let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
@@ -198,3 +199,15 @@ call neomake#configure#automake('w')
 call neomake#configure#automake('nw', 750)
 " When reading a buffer (after ns), and when writing.
 call neomake#configure#automake('rw', 750)
+
+"fun! JumpToDef()
+"  if exists("*GotoDefinition_" . &filetype)
+"    call GotoDefinition_{&filetype}()
+"  else
+"    exe "norm! \<C-]>"
+"  endif
+"endf
+
+syntax on
+filetype indent plugin on
+set secure

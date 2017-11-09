@@ -35,6 +35,11 @@ repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
 repo = 'baabelfish/nvim-nim'
+#[[plugins]]
+#repo = "zah/nim.vim"
+
+[[plugins]]
+repo = "alvan/vim-closetag"
 
 [[plugins]]
 repo = 'neomake/neomake'
@@ -55,6 +60,7 @@ repo = 'zchee/deoplete-go'
 
 #[[plugins]]
 #repo = 'carlitux/deoplete-ternjs'
+
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
 
