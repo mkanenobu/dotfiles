@@ -11,12 +11,13 @@ set noswapfile
 set wrap
 set display=lastline
 
-" disable autp comment
-"augroup auto_comment_off
-"    autocmd!
-"    autocmd BufEnter * setlocal formatoptions-=r
-"    autocmd BufEnter * setlocal formatoptions-=o
-"augroup END
+
+" disable auto comment
+augroup auto_comment_off
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions-=r
+    autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 
 " search
 set hlsearch
