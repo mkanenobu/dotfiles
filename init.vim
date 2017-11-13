@@ -11,8 +11,6 @@ set noswapfile
 set wrap
 set display=lastline
 
-
-" disable auto comment
 augroup auto_comment_off
     autocmd!
     autocmd BufEnter * setlocal formatoptions-=r
@@ -71,8 +69,8 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
-nnoremap Y y$
-nnoremap y$ Y
+"nnoremap Y y$
+"nnoremap y$ Y
 
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
