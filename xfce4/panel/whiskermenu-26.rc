@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,org.gnome.clocks.desktop,google-chrome_proxy.desktop,filezilla.desktop,spotify.desktop,discord.desktop,skypeforlinux.desktop,gedit.desktop,org.gnome.Calendar.desktop,xfcalendar.desktop
+recent=filezilla.desktop,google-chrome_proxy.desktop,firefox.desktop,vivaldi-stable.desktop,atom.desktop,org.gnome.clocks.desktop,discord.desktop,chrome-menkifleemblimdogmoihpfopnplikde-Default.desktop,language-selector.desktop
 button-title=アプリケーション
 button-icon=start-here-xfce
 button-single-row=false

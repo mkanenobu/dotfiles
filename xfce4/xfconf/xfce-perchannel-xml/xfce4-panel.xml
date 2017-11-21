@@ -166,6 +166,7 @@
     </property>
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="nylas-mail"/>
         <value type="string" value="thunar"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
@@ -175,6 +176,7 @@
         <value type="string" value="psensor"/>
         <value type="string" value="orage"/>
         <value type="string" value="blueman-applet"/>
+        <value type="string" value="megasync"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
         <value type="string" value="xfce4-power-manager"/>

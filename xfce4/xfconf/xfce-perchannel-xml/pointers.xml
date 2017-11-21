@@ -59,8 +59,8 @@
   </property>
   <property name="UHURU_Bluetooth_Mouse" type="empty">
     <property name="RightHanded" type="bool" value="true"/>
-    <property name="Threshold" type="int" value="3"/>
-    <property name="Acceleration" type="double" value="3.000000"/>
+    <property name="Threshold" type="int" value="5"/>
+    <property name="Acceleration" type="double" value="2.000000"/>
   </property>
   <property name="Primax_Kensington_Eagle_Trackball" type="empty">
     <property name="RightHanded" type="bool" value="true"/>
