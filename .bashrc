@@ -146,13 +146,13 @@ alias toxclip='xclip -selection clipboard'
 alias mv='mv -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
-alias ...='../../'
-alias ....='../../../'
+alias lockscreen='xflock4'
 
 alias py='python3'
 alias py2='python2'
 alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'
+alias rc='rustc'
 alias lua='lua5.3'
 alias gosh='rlwrap -c -q -m gosh'
 
@@ -177,7 +177,6 @@ alias gcl='git clone'
 alias gl='git log'
 alias glo='git log --oneline --graph --decorate'
 
-
 shopt -s autocd
 set -o emacs
 # リダイレクトによる上書き禁止
@@ -187,3 +186,4 @@ set -C noclobber
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
+
