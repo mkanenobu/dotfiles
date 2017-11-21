@@ -50,6 +50,9 @@ repo = 'kassio/neoterm'
 # Deoplete sources
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
 repo = 'Shougo/neco-vim'
 
 [[plugins]]
