@@ -1,4 +1,3 @@
-
 filetype indent plugin off
 
 set encoding=utf-8
@@ -7,6 +6,7 @@ set history=1000
 
 set nobackup
 set noswapfile
+set hidden
 
 set wrap
 set display=lastline
@@ -27,12 +27,12 @@ set inccommand=split
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
-set wildmode=list,full
 
 set mouse=""
 set ruler
 set number
 set wildmenu
+set wildmode=list,full
 "set cursorline
 set showcmd
 set title
@@ -206,6 +206,11 @@ call neomake#configure#automake('rw', 750)
 "    exe "norm! \<C-]>"
 "  endif
 "endf
+
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/rustfmt'
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 syntax on
 filetype indent plugin on
