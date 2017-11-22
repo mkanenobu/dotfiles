@@ -61,13 +61,11 @@ fi
 #else
 #   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
-
-#if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
-#   PS1='\[\033[01;34m\]\w\[\033[00m\] \$\[\033[00m\] '
-#else
-#   PS1='\h:\w\$ '
-#fi
+# Original
+#PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
+RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[32m ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
+PS1="${PS1}${RETURN_CODE}"
 
 
 # If this is an xterm set the title to user@host:dir
@@ -138,6 +136,7 @@ alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
 alias sbr='source ~/.bashrc'
 alias spr='source ~/.profile'
 alias rename='rename -v'
+alias cp='cp -i'
 alias byo='byobu'
 alias du='du -h'
 alias diff='icddiff -U 1 --line-number'
