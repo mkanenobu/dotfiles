@@ -75,3 +75,19 @@ generate_m3u(){
     ls ./*.opus >> "$generate_file"
 }
 
+cp2multi(){
+    echo "${@:2}" | xargs -n 1 cp -v "$1"
+}
+
+tex2pdf(){
+    platex "$1"
+    dvipdfmx $(echo "$1" | cut -d "." -f 1)
+}
+
+repeat_yes(){
+    if [ "$#" -le 1 ] ;then
+        echo "repeat_yes [Command] [Times]"
+    else
+        yes "$1" | head -n "$2" | sh
+    fi
+}
