@@ -7,6 +7,7 @@ set history=1000
 set nobackup
 set noswapfile
 set hidden
+set autoread
 
 set wrap
 set display=lastline
@@ -56,7 +57,8 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 set laststatus=2
-set clipboard=unnamed,unnamedplus
+"set clipboard=unnamed,unnamedplus
+set clipboard+=unnamedplus
 autocmd InsertLeave * set nopaste
 
 " Keymap
@@ -82,6 +84,7 @@ nnoremap k gk
 nnoremap ; :
 nnoremap : ::
 inoremap <C-c> <Esc>
+inoremap x "_x
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -92,6 +95,14 @@ vnoremap <S-l> $
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
+" charcount
+vnoremap \c :s/./&/gn<CR>
+vnoremap :wordcount :s/./&/gn<CR>
+
+" ZebkakuSpace
+hi ZenkakuSpace cterm=underline ctermfg=lightblue ctermbg=white
+match ZenkakuSpace / /
+
 " Emmet
 let g:user_emmet_leader_key='<C-Y>,'
 let g:user_emmet_install_global=0
@@ -100,7 +111,8 @@ autocmd Filetype html,css,scss,php EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
 
 " :W = save with root permission
-command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
+"command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
+cabbr W w !sudo tee > /dev/null %
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -175,7 +187,6 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 "set completeopt+=noinsert
-"let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 "let g:deoplete#ignore_sources.php = ['omni']
 let g:tern_request_timeout = 1
 
@@ -185,6 +196,10 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
+" quickrun
+" 水平に分割
+let g:quickrun_config={'*': {'split': ''}}
 
 " neoterm
 let g:neoterm_position='vertical'
@@ -199,14 +214,7 @@ call neomake#configure#automake('nw', 750)
 " When reading a buffer (after ns), and when writing.
 call neomake#configure#automake('rw', 750)
 
-"fun! JumpToDef()
-"  if exists("*GotoDefinition_" . &filetype)
-"    call GotoDefinition_{&filetype}()
-"  else
-"    exe "norm! \<C-]>"
-"  endif
-"endf
-
+" Rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/rustfmt'
 let g:racer_cmd = '$HOME/.cargo/bin/racer'
