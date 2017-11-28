@@ -64,7 +64,8 @@ fi
 # Original
 #PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
-RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[32m ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
+#RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[32m ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
+RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[\033[00m\] ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
 PS1="${PS1}${RETURN_CODE}"
 
 
@@ -137,23 +138,21 @@ alias sbr='source ~/.bashrc'
 alias spr='source ~/.profile'
 alias rename='rename -v'
 alias cp='cp -i'
-alias byo='byobu'
 alias du='du -h'
+alias duc='du -d 1'
 alias diff='icddiff -U 1 --line-number'
 alias screensaver='cmatrix -a'
-alias toxclip='xclip -selection clipboard'
+alias copy2xclip='xclip -selection clipboard'
 alias mv='mv -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
 
 alias py='python3'
-alias py2='python2'
 alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'
 alias rc='rustc'
-alias lua='lua5.3'
-alias gosh='rlwrap -c -q -m gosh'
+alias ltm='latexmk'
 
 # typo
 alias al='sl -e'
@@ -175,6 +174,7 @@ alias gpom='git push origin master'
 alias gcl='git clone'
 alias gl='git log'
 alias glo='git log --oneline --graph --decorate'
+alias gg='git grep'
 
 shopt -s autocd
 set -o emacs
