@@ -12,8 +12,8 @@ repo = 'tomasr/molokai'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
+#[[plugins]]
+#repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
@@ -44,8 +44,8 @@ repo = "alvan/vim-closetag"
 [[plugins]]
 repo = 'neomake/neomake'
 
-[[plugins]]
-repo = 'kassio/neoterm'
+#[[plugins]]
+#repo = 'kassio/neoterm'
 
 # Deoplete sources
 
