@@ -84,7 +84,7 @@ nnoremap k gk
 nnoremap ; :
 nnoremap : ::
 inoremap <C-c> <Esc>
-inoremap x "_x
+nnoremap x "_x
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
