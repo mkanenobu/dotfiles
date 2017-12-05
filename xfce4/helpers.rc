@@ -1,4 +1,5 @@
 TerminalEmulator=gnome-terminal
 FileManager=Thunar
 WebBrowser=google-chrome
+MailReader=opera-mailer
 
