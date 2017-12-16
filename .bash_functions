@@ -3,6 +3,8 @@
 open(){
     if [ ! -e "$1" ];then
         thunar . >/dev/null 2>&1
+    elif [[ "$1" == *.html ]];then
+        google-chrome "$1" >/dev/null 2>&1
     else
         thunar "$@" >/dev/null 2>&1
     fi
