@@ -1,1 +1,28 @@
 # dein_lazy.toml
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+
+# Deoplete sources
+
+#[[plugins]]
+#repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+
+#[[plugins]]
+#repo = 'autozimu/LanguageClient-neovim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'

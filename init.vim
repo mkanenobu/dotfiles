@@ -1,5 +1,8 @@
 " config file for Neovim
 filetype indent plugin off
+if &compatible
+    set nocompatible
+endif
 
 set encoding=utf-8
 set ambiwidth=double
@@ -55,8 +58,8 @@ set smarttab
 set autoindent
 set smartindent
 set list
-set listchars=tab:\¦\
-"set listchars=tab:>-,trail:-,extends:>
+"set listchars=tab:\¦\
+set listchars=tab:>-,trail:-,extends:>
 
 set laststatus=2
 set clipboard=unnamed,unnamedplus
@@ -79,11 +82,14 @@ nnoremap Q <nop>
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
 
-nnoremap gj j
-nnoremap gk k
-nnoremap j gj
-nnoremap k gk
+"nnoremap gj j
+"nnoremap gk k
+"nnoremap j gj
+"nnoremap k gk
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 nnoremap ; :
+nnoremap ' :
 inoremap <C-c> <Esc>
 
 nnoremap <S-h> ^
@@ -161,8 +167,6 @@ autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 colorscheme molokai
 let g:molokai_original=1
-
-
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
