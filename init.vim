@@ -1,3 +1,4 @@
+" config file for Neovim
 filetype indent plugin off
 
 set encoding=utf-8
@@ -49,16 +50,17 @@ nnoremap m %
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set softtabstop=0
+"set softtabstop=0
 set smarttab
 set autoindent
 set smartindent
 set list
-set listchars=tab:>-,trail:-,extends:>
+set listchars=tab:\¦\
+"set listchars=tab:>-,trail:-,extends:>
 
 set laststatus=2
-"set clipboard=unnamed,unnamedplus
-set clipboard+=unnamedplus
+set clipboard=unnamed,unnamedplus
+"set clipboard+=unnamedplus
 autocmd InsertLeave * set nopaste
 
 " Keymap
@@ -82,9 +84,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
-nnoremap : ::
 inoremap <C-c> <Esc>
-nnoremap x "_x
 
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -97,18 +97,23 @@ nnoremap <S-M-l> :vsplit<CR>
 
 " charcount
 vnoremap \c :s/./&/gn<CR>
-vnoremap :wordcount :s/./&/gn<CR>
+vnoremap :wordcount :s/./&/gn<CR> :set nohlsearch!<CR>
 
 " ZebkakuSpace
-hi ZenkakuSpace cterm=underline ctermfg=lightblue ctermbg=white
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue ctermbg=white
 match ZenkakuSpace / /
 
 " Emmet
-let g:user_emmet_leader_key='<C-Y>,'
+let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_install_global=0
 let g:user_emmet_mode='iv'
 autocmd Filetype html,css,scss,php EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
+let g:user_emmet_settings = {
+    \    'variables': {
+    \      'lang': "ja"
+    \    },
+    \ }
 
 " :W = save with root permission
 "command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
@@ -157,6 +162,8 @@ autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 colorscheme molokai
 let g:molokai_original=1
 
+
+
 " deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> () "\<C-n>"
@@ -204,6 +211,11 @@ let g:quickrun_config={'*': {'split': ''}}
 " neoterm
 let g:neoterm_position='vertical'
 
+" indentLine
+let g:indentLine_bgcolor_term = 239
+"let g:indentLine_setColors = 0
+let g:indentLine_char = 'c'
+
 " Neomake
 " List errors
 nnoremap <C-e><C-r> :lopen<CR>
@@ -215,10 +227,10 @@ call neomake#configure#automake('nw', 750)
 call neomake#configure#automake('rw', 750)
 
 " Rust
-let g:rustfmt_autosave = 1
-let g:rustfmt_command = '$HOME/.cargo/rustfmt'
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let $RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+"let g:rustfmt_autosave = 1
+"let g:rustfmt_command = '$HOME/.cargo/rustfmt'
+"let g:racer_cmd = '$HOME/.cargo/bin/racer'
+"let $RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 syntax on
 filetype indent plugin on

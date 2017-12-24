@@ -63,8 +63,9 @@ fi
 #fi
 # Original
 #PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+
+# if return error, change prompt color
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
-#RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[32m ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
 RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[\033[00m\] ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
 PS1="${PS1}${RETURN_CODE}"
 
@@ -147,6 +148,7 @@ alias mv='mv -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
+alias flp='flatpak'
 
 alias py='python3'
 alias nimc='nim c'

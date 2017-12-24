@@ -3,8 +3,8 @@
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-[[plugins]]
-repo = 'gisraptor/vim-lilypond-integrator'
+#[[plugins]]
+#repo = 'gisraptor/vim-lilypond-integrator'
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -35,6 +35,7 @@ repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
 repo = 'baabelfish/nvim-nim'
+
 #[[plugins]]
 #repo = "zah/nim.vim"
 
@@ -44,13 +45,10 @@ repo = "alvan/vim-closetag"
 [[plugins]]
 repo = 'neomake/neomake'
 
-#[[plugins]]
-#repo = 'kassio/neoterm'
-
 # Deoplete sources
 
-[[plugins]]
-repo = 'rust-lang/rust.vim'
+#[[plugins]]
+#repo = 'rust-lang/rust.vim'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -62,10 +60,7 @@ repo = 'Shougo/neco-syntax'
 repo = 'zchee/deoplete-go'
 
 #[[plugins]]
-#repo = 'carlitux/deoplete-ternjs'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
+#repo = 'autozimu/LanguageClient-neovim'
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
