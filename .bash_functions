@@ -61,9 +61,9 @@ encopus(){
 }
 
 encopusm(){
-     for encordfiles in "$@";do
-         encopus "$encordfiles"
-     done
+    for encordfiles in "$@";do
+        encopus "$encordfiles"
+    done
  }
 
 soxspectrogram(){
@@ -81,11 +81,6 @@ cp2multi(){
     echo "${@:2}" | xargs -n 1 cp -v "$1"
 }
 
-tex2pdf(){
-    platex "$1"
-    dvipdfmx $(echo "$1" | cut -d "." -f 1)
-}
-
 repeat_yes(){
     if [ "$#" -le 1 ] ;then
         echo "repeat_yes [Command] [Times]"
@@ -93,3 +88,10 @@ repeat_yes(){
         yes "$1" | head -n "$2" | sh
     fi
 }
+
+chrome_reload_tab(){
+    xdotool windowfocus $(xdotool search --onlyvisible --name google)
+    xdotool key ctrl+r
+    xdotool windowfocus $(xdotool search --onlyvisible --class gnome-terminal)
+}
+

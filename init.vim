@@ -4,6 +4,7 @@ if &compatible
     set nocompatible
 endif
 
+
 set encoding=utf-8
 set ambiwidth=double
 set history=1000
@@ -82,12 +83,12 @@ nnoremap Q <nop>
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
 
-"nnoremap gj j
-"nnoremap gk k
-"nnoremap j gj
-"nnoremap k gk
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+"nmap j <Plug>(accelerated_jk_gj)
+"nmap k <Plug>(accelerated_jk_gk)
 nnoremap ; :
 nnoremap ' :
 inoremap <C-c> <Esc>
@@ -217,7 +218,7 @@ let g:neoterm_position='vertical'
 
 " indentLine
 let g:indentLine_bgcolor_term = 239
-"let g:indentLine_setColors = 0
+let g:indentLine_setColors = 0
 let g:indentLine_char = 'c'
 
 " Neomake
