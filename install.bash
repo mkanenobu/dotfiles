@@ -1,12 +1,12 @@
 #!/bin/bash
-set -Ceu
+### maybe not work
 
 ### install dotfiles
 DOTDIR="$HOME"/Git/dotfiles
 cd "$DOTDIR"
-if [ -z "$XDG_CONFIG_HOME" ];then
-    local XDG_CONFIG_HOME="$HOME"/.config
-fi
+#if [ -z "$XDG_CONFIG_HOME" ];then
+XDG_CONFIG_HOME="$HOME"/.config
+#fi
 mkdir -p "$XDG_CONFIG_HOME"/dotfiles_backups
 
 link(){
