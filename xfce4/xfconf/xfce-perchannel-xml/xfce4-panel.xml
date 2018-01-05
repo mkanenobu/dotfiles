@@ -73,7 +73,7 @@
         <value type="int" value="1"/>
         <value type="int" value="4"/>
         <value type="int" value="3"/>
-        <value type="int" value="14"/>
+        <value type="int" value="16"/>
         <value type="int" value="11"/>
         <value type="int" value="6"/>
       </property>
@@ -161,9 +161,6 @@
       </property>
     </property>
     <property name="plugin-4" type="string" value="xfce4-sensors-plugin"/>
-    <property name="plugin-1" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-    </property>
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="nylas-mail"/>
@@ -175,8 +172,10 @@
         <value type="string" value="steam"/>
         <value type="string" value="psensor"/>
         <value type="string" value="orage"/>
+        <value type="string" value="ネットワーク"/>
         <value type="string" value="blueman-applet"/>
         <value type="string" value="megasync"/>
+        <value type="string" value="solaar"/>
         <value type="string" value="clipman"/>
         <value type="string" value="update-notifier"/>
         <value type="string" value="xfce4-power-manager"/>
@@ -184,6 +183,10 @@
         <value type="string" value="calendar-indicator"/>
         <value type="string" value="sylpheed"/>
         <value type="string" value="clipgrab"/>
+        <value type="string" value="slack"/>
+      </property>
+      <property name="show-frame" type="bool" value="true"/>
+      <property name="names-hidden" type="array">
       </property>
     </property>
     <property name="plugin-6" type="string" value="actions">
@@ -204,6 +207,9 @@
     </property>
     <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
     <property name="plugin-2" type="string" value="thunar-tpa"/>
-    <property name="plugin-14" type="string" value="battery"/>
+    <property name="plugin-16" type="string" value="battery"/>
+    <property name="plugin-1" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
   </property>
 </channel>

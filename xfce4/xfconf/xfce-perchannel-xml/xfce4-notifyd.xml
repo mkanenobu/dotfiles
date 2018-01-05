@@ -5,4 +5,15 @@
   <property name="theme" type="string" value="Default"/>
   <property name="expire-timeout" type="int" value="3"/>
   <property name="initial-opacity" type="double" value="0.960000"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="Theme Configuration"/>
+      <value type="string" value="thunar-volman"/>
+      <value type="string" value="Xfce volume daemon"/>
+      <value type="string" value="xfce4-power-manager"/>
+      <value type="string" value="xfce4-settings-helper"/>
+    </property>
+  </property>
+  <property name="log-level" type="uint" value="0"/>
+  <property name="log-level-apps" type="uint" value="0"/>
 </channel>
