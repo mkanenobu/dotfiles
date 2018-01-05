@@ -21,9 +21,11 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
+# Comment helper <C-_>(C-_>
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
+# quickrun \r
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
@@ -33,20 +35,20 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
+# Nim helper
 [[plugins]]
 repo = 'baabelfish/nvim-nim'
-
 #[[plugins]]
 #repo = "zah/nim.vim"
 
 [[plugins]]
-repo = "alvan/vim-closetag"
+repo = 'alvan/vim-closetag'
 
+# Linter
+#[[plugins]]
+#repo = 'neomake/neomake'
 [[plugins]]
-repo = 'neomake/neomake'
-
-[[plugins]]
-repo = 'rhysd/accelerated-jk'
+repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'

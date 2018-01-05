@@ -90,7 +90,7 @@ nnoremap k gk
 "nmap j <Plug>(accelerated_jk_gj)
 "nmap k <Plug>(accelerated_jk_gk)
 nnoremap ; :
-nnoremap ' :
+nnoremap ' ;
 inoremap <C-c> <Esc>
 
 nnoremap <S-h> ^
@@ -211,25 +211,30 @@ let g:closetag_close_shortcut = '<leader>>'
 
 " quickrun
 " 水平に分割
-let g:quickrun_config={'*': {'split': ''}}
-
-" neoterm
-let g:neoterm_position='vertical'
+"let g:quickrun_config={'*': {'split': ''}}
 
 " indentLine
 let g:indentLine_bgcolor_term = 239
 let g:indentLine_setColors = 0
 let g:indentLine_char = 'c'
 
-" Neomake
-" List errors
+
 nnoremap <C-e><C-r> :lopen<CR>
-" When writing a buffer.
-call neomake#configure#automake('w')
-" When writing a buffer, and on normal mode changes (after 750ms).
-call neomake#configure#automake('nw', 750)
-" When reading a buffer (after ns), and when writing.
-call neomake#configure#automake('rw', 750)
+" Neomake
+"" List errors
+"" When writing a buffer.
+"call neomake#configure#automake('w')
+"" When writing a buffer, and on normal mode changes (after 750ms).
+"call neomake#configure#automake('nw', 750)
+"" When reading a buffer (after ns), and when writing.
+"call neomake#configure#automake('rw', 750)
+
+" Ale
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0
+
 
 " Rust
 "let g:rustfmt_autosave = 1
