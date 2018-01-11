@@ -64,9 +64,6 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-
 #[[plugins]]
 #repo = 'autozimu/LanguageClient-neovim'
 
