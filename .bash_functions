@@ -89,9 +89,19 @@ repeat_yes(){
     fi
 }
 
+elastic(){
+    grep -rnw "$1" -e "$2"
+}
+
 chrome_reload_tab(){
     xdotool windowfocus $(xdotool search --onlyvisible --name google)
     xdotool key ctrl+r
     xdotool windowfocus $(xdotool search --onlyvisible --class gnome-terminal)
+}
+
+say(){
+    TMP=/tmp/jsay.wav
+    echo "$1" | open_jtalk -m /usr/share/hts-voice/mei_happy.htsvoice -x /var/lib/mecab/dic/open-jtalk/naist-jdic -ow "$TMP" && mpv "$TMP"
+    rm -f "$TMP"
 }
 
