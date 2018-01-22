@@ -105,3 +105,8 @@ say(){
     rm -f "$TMP"
 }
 
+nimr(){
+    nimcr "$1"
+    rm "$(echo "$1" | sed -e "s/.nim//g")"
+}
+
