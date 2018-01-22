@@ -8,7 +8,10 @@
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="FileZilla"/>
+      <value type="string" value="MEGAsync"/>
       <value type="string" value="nm-applet"/>
+      <value type="string" value="org.gnome.clocks"/>
+      <value type="string" value="Spotify"/>
       <value type="string" value="Theme Configuration"/>
       <value type="string" value="thunar-volman"/>
       <value type="string" value="Xfce volume daemon"/>
