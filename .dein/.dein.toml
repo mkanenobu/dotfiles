@@ -41,8 +41,8 @@ repo = 'baabelfish/nvim-nim'
 #[[plugins]]
 #repo = "zah/nim.vim"
 
-[[plugins]]
-repo = 'alvan/vim-closetag'
+#[[plugins]]
+#repo = 'alvan/vim-closetag'
 
 # Linter
 #[[plugins]]

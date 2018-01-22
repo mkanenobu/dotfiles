@@ -43,7 +43,7 @@ set wildmode=list,full
 set showcmd
 set title
 set showmatch
-let loaded_matchparen=1
+set matchtime=1
 source $VIMRUNTIME/macros/matchit.vim
 
 set foldlevel=100
@@ -166,6 +166,7 @@ endif
 autocmd ColorScheme molokai highlight Visual ctermbg=242
 autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
+autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
 let g:molokai_original=1
 
@@ -235,12 +236,6 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
-
-" Rust
-"let g:rustfmt_autosave = 1
-"let g:rustfmt_command = '$HOME/.cargo/rustfmt'
-"let g:racer_cmd = '$HOME/.cargo/bin/racer'
-"let $RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 syntax on
 filetype indent plugin on
