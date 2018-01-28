@@ -1,23 +1,13 @@
 #!/bin/bash
 
 open(){
-    if [ ! -e "$1" ];then
+    if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
     elif [[ "$1" == *.html ]];then
         google-chrome "$1" >/dev/null 2>&1
     else
-        thunar "$@" >/dev/null 2>&1
+        xdg-open "$1" >/dev/null 2>&1
     fi
-}
-
-countwords(){
-    if [ -e "$1" ];then
-        countstrings=$(cat "$1")
-    else
-        countstrings="$1"
-    fi
-    sleep 0.1s
-    echo "${#countstrings}"
 }
 
 off(){
@@ -107,6 +97,10 @@ say(){
 
 nimr(){
     nimcr "$1"
-    rm "$(echo "$1" | sed -e "s/.nim//g")"
+    rm "${1//.nim/}"
 }
 
+# git commit "date"
+gcd(){
+    git commit -m "$(date +%D)"
+}
