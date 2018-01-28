@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+TERM=xterm-256color
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -68,6 +69,7 @@ fi
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
 RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[\033[00m\] ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
 PS1="${PS1}${RETURN_CODE}"
+PS2='>'
 
 
 # If this is an xterm set the title to user@host:dir
@@ -138,37 +140,35 @@ alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
 alias sbr='source ~/.bashrc'
 alias spr='source ~/.profile'
 alias rename='rename -v'
-alias cp='cp -i'
 alias du='du -h'
 alias duc='du -d 1'
-alias diff='icddiff -U 1 --line-number'
+alias diff='icdiff -U 1 --line-number'
 alias screensaver='cmatrix -a'
-alias copy2xclip='xclip -selection clipboard'
+alias copy2clip='xclip -selection clipboard'
+alias sass='node-sass'
 alias mv='mv -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
-alias flp='flatpak'
+alias wcj='wc -m'
+alias ...='../../'
 
 alias py='python3'
 alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'
-alias rc='rustc'
-alias ltm='latexmk'
+alias nimcd='nim c -d:release'
 
 # typo
 alias al='sl -e'
-alias ka='la'
-alias ks='ls'
 alias c=':'
+alias a=':'
 alias d=':'
-alias a='la'
 alias dc=':'
 alias sl='sl -e'
 
 # Git
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -a --allow-empty-message -m'
 alias gd='git diff'
 alias gcm='git commit -m'
 alias gs='git status'
@@ -187,4 +187,4 @@ set -C noclobber
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
-
+export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
