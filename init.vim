@@ -4,7 +4,6 @@ if &compatible
     set nocompatible
 endif
 
-
 set encoding=utf-8
 set ambiwidth=double
 set history=1000
@@ -87,8 +86,6 @@ nnoremap gj j
 nnoremap gk k
 nnoremap j gj
 nnoremap k gk
-"nmap j <Plug>(accelerated_jk_gj)
-"nmap k <Plug>(accelerated_jk_gk)
 nnoremap ; :
 nnoremap ' ;
 inoremap <C-c> <Esc>
@@ -168,7 +165,8 @@ autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
-let g:molokai_original=1
+let g:molokai_original = 1
+"let g:rehash256 = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1

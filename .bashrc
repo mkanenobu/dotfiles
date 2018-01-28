@@ -168,7 +168,7 @@ alias sl='sl -e'
 
 # Git
 alias ga='git add'
-alias gc='git commit -a --allow-empty-message -m'
+alias gc='git commit -a --allow-empty-message -m ""'
 alias gd='git diff'
 alias gcm='git commit -m'
 alias gs='git status'
