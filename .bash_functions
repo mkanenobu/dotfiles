@@ -3,6 +3,9 @@
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
+    elif [ "$#" -gt 1 ];then
+        echo "This command can take only 1 args"
+        return 1
     elif [[ "$1" == *.html ]];then
         google-chrome "$1" >/dev/null 2>&1
     else
@@ -41,7 +44,8 @@ jtoe(){
 }
 
 encopus(){
-    opusfile=$(echo "$1" | sed -e 's/.wav/.opus/')
+    #opusfile=$(echo "$1" | sed -e 's/.wav/.opus/')
+    opusfile=${1//.wav/.opus}
     if [ -z "$2" ]; then
         rate=160
     else
@@ -57,7 +61,8 @@ encopusm(){
  }
 
 soxspectrogram(){
-    spectrofile=$(echo "$1" | sed -re 's/.wav//g')
+    #spectrofile=$(echo "$1" | sed -re 's/.wav//g')
+    spectrofile=${1//.wav/}
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
 }
 
@@ -65,10 +70,6 @@ generate_m3u(){
     generate_file=$(basename "$(pwd)" | sed -e "s/\$/.m3u/g")
     echo '#EXTM3U' >> "$generate_file"
     ls ./*.opus >> "$generate_file"
-}
-
-cp2multi(){
-    echo "${@:2}" | xargs -n 1 cp -v "$1"
 }
 
 repeat_yes(){
@@ -80,7 +81,7 @@ repeat_yes(){
 }
 
 elastic(){
-    grep -rnw "$1" -e "$2"
+    rg -nws "$1" "$2"
 }
 
 chrome_reload_tab(){
@@ -100,7 +101,7 @@ nimr(){
     rm "${1//.nim/}"
 }
 
-# git commit "date"
-gcd(){
-    git commit -m "$(date +%D)"
-}
+# commit message date
+#gcd(){
+#    git commit -m "$(date +%D)"
+#}
