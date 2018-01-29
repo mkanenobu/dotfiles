@@ -143,7 +143,6 @@ alias rename='rename -v'
 alias du='du -h'
 alias duc='du -d 1'
 alias diff='icdiff -U 1 --line-number'
-alias screensaver='cmatrix -a'
 alias copy2clip='xclip -selection clipboard'
 alias sass='node-sass'
 alias mv='mv -i'
@@ -151,6 +150,7 @@ alias ly='lilypond'
 alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
 alias wcj='wc -m'
+alias youtube-mps='mpsyt'
 alias ...='../../'
 
 alias py='python3'
@@ -168,9 +168,9 @@ alias sl='sl -e'
 
 # Git
 alias ga='git add'
-alias gc='git commit -a --allow-empty-message -m ""'
 alias gd='git diff'
 alias gcm='git commit -m'
+alias gcd='git commit -m "$(date +%D)"'
 alias gs='git status'
 alias gpom='git push origin master'
 alias gcl='git clone'
@@ -188,3 +188,11 @@ if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
 export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
+
+# Complete suggests
+_encopus(){
+    local cur=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "$(ls *.wav)" -- $cur) )
+}
+complete -F _encopus encopus
+
