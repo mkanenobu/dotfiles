@@ -2,11 +2,12 @@
 ### maybe not work
 
 ### install dotfiles
+if [ ! -e "$HOME"/Git/dotfiles ];then
+    mkdir -p "$HOME"/Git/dotfiles
+fi
 DOTDIR="$HOME"/Git/dotfiles
-cd "$DOTDIR"
-#if [ -z "$XDG_CONFIG_HOME" ];then
+cd "$DOTDIR" || exit
 XDG_CONFIG_HOME="$HOME"/.config
-#fi
 mkdir -p "$XDG_CONFIG_HOME"/dotfiles_backups
 
 link(){
@@ -27,7 +28,7 @@ link(){
         fi
         # if exists
         if [ -e "$TO" ];then
-            cp -r "$TO" "$XDG_CONFIG_HOME"/dotfiles_backups
+            mv -r "$TO" "$XDG_CONFIG_HOME"/dotfiles_backups
             rm -r "$TO"
         else
             mkdir -p "$(dirname "$TO")"
