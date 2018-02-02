@@ -122,6 +122,7 @@
         <value type="string" value="clipgrab"/>
         <value type="string" value="slack"/>
         <value type="string" value="remmina"/>
+        <value type="string" value="xfce terminal"/>
       </property>
       <property name="show-frame" type="bool" value="true"/>
       <property name="names-hidden" type="array">

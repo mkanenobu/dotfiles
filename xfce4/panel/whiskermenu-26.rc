@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-web-browser.desktop
-recent=steam.desktop,emacs25-term.desktop,emacs25.desktop,xfce4-terminal.desktop,byobu.desktop,filezilla.desktop,atom.desktop,spotify_spotify.desktop,Human Resource Machine.desktop,min.desktop
+recent=vivaldi-stable.desktop,wine-Nox-Nox.desktop,libreoffice-writer.desktop,spotify_spotify.desktop,byobu.desktop,Thunar.desktop,nautilus.desktop,brave_brave.desktop,line_proxy.desktop,firefox.desktop
 button-title=アプリケーション
 button-icon=xfce4-whiskermenu
 button-single-row=false
