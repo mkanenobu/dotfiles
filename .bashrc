@@ -66,7 +66,7 @@ fi
 #PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
 
 # if return error, change prompt color
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
+PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
 RETURN_CODE='\[$(if [ $? -eq 0 ]; then echo -en \e[\033[00m\] ; else echo -en \e[31m; fi; echo -en $\e[m;)\] '
 PS1="${PS1}${RETURN_CODE}"
 PS2='>'
@@ -151,6 +151,7 @@ alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
 alias wcj='wc -m'
 alias youtube-mps='mpsyt'
+alias ignoreError='>/dev/null 2>&1'
 alias ...='../../'
 
 alias py='python3'
