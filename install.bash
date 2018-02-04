@@ -58,4 +58,5 @@ slink ~/.inputrc ~/.mozc/user_dictionary.db ~/.dein \
     ~/.config/nvim/init.vim ~/.config/byobu ~/.imwheelrc \
     ~/.config/Code/User/settings.json ~/.config/asunder \
     ~/.config/xfce4
+    ~/.local/share/tools
 
