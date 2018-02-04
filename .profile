@@ -21,17 +21,31 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:/usr/local/tools
+export GOROOT="$HOME"/.go
+export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export GITROOT=$HOME/Git
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/tools"
 export EDITOR=vim
-
 export XDG_CONFIG_HOME=$HOME/.config
-export GNUSTEP_USER_DEFAULTS_DIR=/etc/GNUstep/GNUstep.conf
+# nvim in tmux
+export TERM=xterm-256color
 
-export TRANSCEND=/media/mika/TRANSCEND
-
+# LANG settings
+export LC_NUMERIC=ja_JP.UTF-8
+export LC_TIME=ja_JP.UTF-8
+export LC_MONETARY=ja_JP.UTF-8
+export LC_PAPER=ja_JP.UTF-8
+export LC_NAME=ja_JP.UTF-8
+export LC_ADDRESS=ja_JP.UTF-8
+export LC_TELEPHONE=ja_JP.UTF-8
+export LC_MEASUREMENT=ja_JP.UTF-8
+export LC_IDENTIFICATION=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export PAPERSIZE=a4
+export LANGUAGE=en_US
+export LANG=ja_JP.UTF-8
 # ls sorting
 export LC_COLLATE=C
 
@@ -45,5 +59,16 @@ xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant De
 synclient VertScrollDelta=-99
 
 # Kensington Orbit with Scroll Ring middle click emulation
-xinput set-prop "Primax Kensington Eagle Trackball" "Evdev Middle Button Emulation" 1 2>&1 >/dev/null
-xinput set-prop "Primax Kensington Eagle Trackball" "Evdev Middle Button Timeout" 100 2>&1 >/dev/null
+xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
+#xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Button Timeout" 100 >/dev/null #2>&1
+
+# Proxy settings
+export FCITX_NO_PREEDIT_APPS=""
+export http_proxy=""
+export HTTP_PROXY=""
+git config --global http.proxy ""
+git config --global https.proxy ""
+_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+
+# midi setting for wine
+#timidity -iAD -B2,8 -Os1l -s 44100 -x'soundfont /usr/share/midi/sf2/mypatches.sf2 order=1' >/dev/null 2>&1 &
