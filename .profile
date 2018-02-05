@@ -21,14 +21,16 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export GOROOT="$HOME"/.go
 export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export GITROOT=$HOME/Git
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
+export PATH="$PATH:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin"
 export EDITOR=vim
-export XDG_CONFIG_HOME=$HOME/.config
 # nvim in tmux
 export TERM=xterm-256color
 
