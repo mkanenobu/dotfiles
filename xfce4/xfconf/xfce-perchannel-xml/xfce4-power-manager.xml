@@ -14,7 +14,7 @@
     <property name="blank-on-battery" type="int" value="10"/>
     <property name="show-tray-icon" type="int" value="1"/>
     <property name="general-notification" type="bool" value="true"/>
-    <property name="presentation-mode" type="bool" value="true"/>
+    <property name="presentation-mode" type="bool" value="false"/>
     <property name="brightness-level-on-battery" type="uint" value="80"/>
     <property name="dpms-enabled" type="bool" value="true"/>
     <property name="lid-action-on-battery" type="uint" value="3"/>
