@@ -144,7 +144,7 @@ alias du='du -h'
 alias duc='du -d 1'
 alias diff='icdiff -U 1 --line-number'
 alias copy2clip='xclip -selection clipboard'
-alias sass='node-sass'
+alias pbcopy='xclip -selection clipboard'
 alias mv='mv -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
@@ -152,7 +152,6 @@ alias lockscreen='xflock4'
 alias wcj='wc -m'
 alias youtube-mps='mpsyt'
 alias ignoreError='>/dev/null 2>&1'
-alias ...='../../'
 
 alias py='python3'
 alias nimc='nim c'
@@ -188,7 +187,6 @@ set -C noclobber
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions
 fi
-export PATH="$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
 
 # Complete suggests
 _encopus(){
