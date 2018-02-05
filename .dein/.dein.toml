@@ -29,6 +29,10 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+# git wrapper
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
