@@ -194,4 +194,3 @@ _encopus(){
   COMPREPLY=( $(compgen -W "$(ls *.wav)" -- $cur) )
 }
 complete -F _encopus encopus
-

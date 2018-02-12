@@ -216,6 +216,7 @@ let g:closetag_close_shortcut = '<leader>>'
 let g:indentLine_bgcolor_term = 239
 let g:indentLine_setColors = 0
 let g:indentLine_char = 'c'
+let g:indentLine_setConceal = 0
 
 
 nnoremap <C-e><C-r> :lopen<CR>
@@ -228,7 +229,7 @@ nnoremap <C-e><C-r> :lopen<CR>
 "" When reading a buffer (after ns), and when writing.
 "call neomake#configure#automake('rw', 750)
 
-" Ale
+" ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1

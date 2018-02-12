@@ -12,8 +12,8 @@ repo = 'tomasr/molokai'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-#[[plugins]]
-#repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
@@ -21,7 +21,6 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-# Comment helper <C-_>(C-_>
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
@@ -35,15 +34,19 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+#[[plugins]]
+#repo =  'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
 # Nim helper
-[[plugins]]
-repo = 'baabelfish/nvim-nim'
+#[[plugins]]
+#repo = 'baabelfish/nvim-nim'
 #[[plugins]]
 #repo = "zah/nim.vim"
+[[plugins]]
+repo = 'mkanenobu/nvim-nim'
 
 #[[plugins]]
 #repo = 'alvan/vim-closetag'
@@ -56,6 +59,12 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+
+#[[plugins]]
+#repo = 'roxma/nvim-yarp'
+#
+#[[plugins]]
+#repo = 'roxma/vim-hug-neovim-rpc'
 
 # Deoplete sources
 
