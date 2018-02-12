@@ -51,12 +51,12 @@
       <property name="disable-struts" type="bool" value="false"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="background-style" type="uint" value="1"/>
-      <property name="background-alpha" type="uint" value="63"/>
+      <property name="background-alpha" type="uint" value="53"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="background-color" type="array">
-        <value type="uint" value="56797"/>
-        <value type="uint" value="57054"/>
-        <value type="uint" value="57311"/>
+        <value type="uint" value="50737"/>
+        <value type="uint" value="50737"/>
+        <value type="uint" value="50737"/>
         <value type="uint" value="65535"/>
       </property>
       <property name="length" type="uint" value="1"/>
@@ -123,10 +123,12 @@
         <value type="string" value="slack"/>
         <value type="string" value="remmina"/>
         <value type="string" value="xfce terminal"/>
+        <value type="string" value="rambox"/>
       </property>
-      <property name="show-frame" type="bool" value="true"/>
+      <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
       </property>
+      <property name="size-max" type="uint" value="24"/>
     </property>
     <property name="plugin-6" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>

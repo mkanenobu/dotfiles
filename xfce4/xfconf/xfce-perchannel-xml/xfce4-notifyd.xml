@@ -7,6 +7,7 @@
   <property name="initial-opacity" type="double" value="0.960000"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
+      <value type="string" value="Electron"/>
       <value type="string" value="FileZilla"/>
       <value type="string" value="google-chrome"/>
       <value type="string" value="MEGAsync"/>

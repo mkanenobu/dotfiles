@@ -32,8 +32,9 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 ScrollingOnKeystroke=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorBackground=#191919191919
 ShortcutsNoHelpkey=TRUE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoMenukey=TRUE
+TitleMode=TERMINAL_TITLE_HIDE
+ColorBackground=#191919191919
 
