@@ -24,7 +24,7 @@ off(){
 }
 
 # unar extract multiple files
-unam(){
+mnar(){
     for i in "$@"; do
         unar "$i"
     done
