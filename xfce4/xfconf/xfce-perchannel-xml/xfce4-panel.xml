@@ -102,6 +102,7 @@
       <property name="names-visible" type="array">
         <value type="string" value="nylas-mail"/>
         <value type="string" value="thunar"/>
+        <value type="string" value="google-chrome"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
         <value type="string" value="discord"/>

@@ -30,6 +30,7 @@ export GITROOT=$HOME/Git
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export EDITOR=vim
 # nvim in tmux
 export TERM=xterm-256color
@@ -72,5 +73,3 @@ git config --global http.proxy ""
 git config --global https.proxy ""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
-# midi setting for wine
-#timidity -iAD -B2,8 -Os1l -s 44100 -x'soundfont /usr/share/midi/sf2/mypatches.sf2 order=1' >/dev/null 2>&1 &
