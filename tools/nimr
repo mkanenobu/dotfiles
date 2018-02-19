@@ -1,4 +1,0 @@
-#!/bin/bash
-nimcache="/tmp/nimcahce"
-nim c -r --nimcache:"$nimcache" "$1"
-rm -r "${1//.nim/}" "$nimcache"
