@@ -31,7 +31,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export EDITOR=vim
+export EDITOR=nvim
 # nvim in tmux
 export TERM=xterm-256color
 

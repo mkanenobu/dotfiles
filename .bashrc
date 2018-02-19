@@ -151,6 +151,7 @@ alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
 alias wcj='wc -m'
 alias youtube-mps='mpsyt'
+alias show_audio_spec='soxi'
 alias ignoreError='>/dev/null 2>&1'
 
 alias py='python3'
@@ -173,6 +174,7 @@ alias gd='git diff'
 alias gcm='git commit -m'
 alias gcd='git commit -m "$(date +%D)"'
 alias gs='git status'
+alias gp='git push'
 alias gpom='git push origin master'
 alias gcl='git clone'
 alias gl='git log'
@@ -191,7 +193,8 @@ fi
 
 # Complete suggests
 _encopus(){
+    set ignorecase
     local cur=${COMP_WORDS[COMP_CWORD]}
-  COMPREPLY=( $(compgen -W "$(ls *.wav)" -- $cur) )
+    COMPREPLY=( $(compgen -W "$(ls *.wav)" -- $cur) )
 }
 complete -F _encopus encopus

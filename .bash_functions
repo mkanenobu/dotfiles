@@ -54,13 +54,7 @@ encopus(){
     opusenc "$1" "$opusfile" --bitrate "$rate"
 }
 
-encopusm(){
-    for encordfiles in "$@";do
-        encopus "$encordfiles"
-    done
- }
-
-soxspectrogram(){
+gen_spectrogram(){
     #spectrofile=$(echo "$1" | sed -re 's/.wav//g')
     spectrofile=${1//.wav/}
     sox "$1" -n spectrogram -x 1200 -o "$spectrofile"_spectrogram.png
@@ -94,11 +88,6 @@ say(){
     TMP=/tmp/jsay.wav
     echo "$1" | open_jtalk -m /usr/share/hts-voice/mei_happy.htsvoice -x /var/lib/mecab/dic/open-jtalk/naist-jdic -ow "$TMP" && mpv "$TMP"
     rm -f "$TMP"
-}
-
-nimr(){
-    nimcr "$1"
-    rm "${1//.nim/}"
 }
 
 # commit message date

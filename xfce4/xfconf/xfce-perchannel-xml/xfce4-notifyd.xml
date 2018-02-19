@@ -7,6 +7,7 @@
   <property name="initial-opacity" type="double" value="0.960000"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
+      <value type="string" value="Blueman"/>
       <value type="string" value="Electron"/>
       <value type="string" value="FileZilla"/>
       <value type="string" value="google-chrome"/>
@@ -16,6 +17,7 @@
       <value type="string" value="Spotify"/>
       <value type="string" value="Theme Configuration"/>
       <value type="string" value="thunar-volman"/>
+      <value type="string" value="vivaldi-stable"/>
       <value type="string" value="Xfce volume daemon"/>
       <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
