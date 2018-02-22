@@ -15,6 +15,7 @@ open(){
 
 off(){
     if test "$#" -eq 0; then
+        killall chrome && sleep 1
         shutdown -h 0
     elif test "$#" -eq 1; then
         shutdown -h "$1"
@@ -74,7 +75,7 @@ repeat_yes(){
     fi
 }
 
-elastic(){
+elastics(){
     rg -nws "$1" "$2"
 }
 
