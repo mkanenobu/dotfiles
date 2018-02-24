@@ -67,9 +67,5 @@ xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation E
 
 # Proxy settings
 export FCITX_NO_PREEDIT_APPS=""
-export http_proxy=""
-export HTTP_PROXY=""
-git config --global http.proxy ""
-git config --global https.proxy ""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
