@@ -103,7 +103,6 @@
         <value type="string" value="nylas-mail"/>
         <value type="string" value="thunar"/>
         <value type="string" value="google-chrome"/>
-        <value type="string" value="franz"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="networkmanager アプレット"/>
         <value type="string" value="discord"/>
@@ -122,8 +121,9 @@
         <value type="string" value="calendar-indicator"/>
         <value type="string" value="sylpheed"/>
         <value type="string" value="clipgrab"/>
-        <value type="string" value="slack"/>
+        <value type="string" value="franz"/>
         <value type="string" value="remmina"/>
+        <value type="string" value="slack"/>
         <value type="string" value="xfce terminal"/>
         <value type="string" value="rambox"/>
       </property>
