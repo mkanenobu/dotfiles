@@ -197,14 +197,12 @@ fi
 
 # Complete suggests
 _encopus(){
-    set ignorecase
     local cur=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=( $(compgen -W "$(ls *.wav)" -- $cur) )
 }
 complete -F _encopus encopus
 
 _nimr(){
-    set ignorecase
     local cur=${COMP_WORDS[COMP_CWORD]}
     COMPREPLY=( $(compgen -W "$(ls *.nim)" -- $cur) )
 }
