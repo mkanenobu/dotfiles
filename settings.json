@@ -4,7 +4,7 @@
     "workbench.iconTheme": "simple-icons",
     "editor.scrollBeyondLastLine": false,
     "editor.fontFamily": "Code New Roman",
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.insertSpaces": false,
     "editor.renderIndentGuides": true,
     "workbench.startupEditor": "newUntitledFile",

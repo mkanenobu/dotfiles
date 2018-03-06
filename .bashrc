@@ -157,6 +157,7 @@ alias wcj='wc -m'
 alias youtube-mps='mpsyt'
 alias show_audio_spec='soxi'
 alias ignoreError='>/dev/null 2>&1'
+alias opn='open'
 
 alias py='python3'
 alias nimc='nim c'

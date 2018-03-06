@@ -220,7 +220,7 @@ let g:indentLine_setConceal = 0
 
 
 nnoremap <C-e><C-r> :lopen<CR>
-" Neomake
+"" Neomake
 "" List errors
 "" When writing a buffer.
 "call neomake#configure#automake('w')
@@ -231,7 +231,7 @@ nnoremap <C-e><C-r> :lopen<CR>
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
