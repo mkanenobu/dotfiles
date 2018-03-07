@@ -13,6 +13,7 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+HISTCONTROL=erasedups
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -64,15 +65,15 @@ fi
 #fi
 
 # Original
-#PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\[\033[00m\] '
+#PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$\[\033[00m\] '
 
 # if return error, change prompt color
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
 RETURN_CODE='\[$(
 if [ $? -eq 0 ]; then
     echo -en \e[\033[00m\] ;
 else
     echo -en \e[31m; fi; echo -en $\e[m;)\] '
+PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
 PS1="${PS1}""${RETURN_CODE}"
 PS2='>'
 
@@ -191,6 +192,19 @@ set -o emacs
 # リダイレクトによる上書き禁止
 # >|を用いればリダイレクトできる
 set -C noclobber
+
+# tmuxで履歴を共有しつつ重複を削除
+share_history(){
+    history -a
+    # ここから追記
+    tac ~/.bash_history | awk '!a[$0]++' | tac >| ~/.bash_history.tmp
+    mv -f ~/.bash_history{.tmp,}
+    # ここまで追記
+    history -c
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
 
 if [ -f ~/.bash_functions ];then
     . ~/.bash_functions

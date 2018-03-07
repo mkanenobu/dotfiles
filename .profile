@@ -62,10 +62,9 @@ xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant De
 synclient VertScrollDelta=-99
 
 # Kensington Orbit with Scroll Ring middle click emulation
-xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
+#xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
 #xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Button Timeout" 100 >/dev/null #2>&1
 
-# Proxy settings
 export FCITX_NO_PREEDIT_APPS=""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 

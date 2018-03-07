@@ -48,6 +48,9 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+
 #[[plugins]]
 #repo = 'alvan/vim-closetag'
 
