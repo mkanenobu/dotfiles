@@ -31,7 +31,7 @@
     <property name="MenuImages" type="empty"/>
     <property name="ButtonImages" type="empty"/>
     <property name="MenuBarAccel" type="empty"/>
-    <property name="CursorThemeName" type="string" value="Adwaita"/>
+    <property name="CursorThemeName" type="string" value="Paper"/>
     <property name="CursorThemeSize" type="int" value="16"/>
     <property name="DecorationLayout" type="string" value="close,minimize,maximize:"/>
     <property name="ColorScheme" type="string" value=""/>

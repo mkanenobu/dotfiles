@@ -95,3 +95,8 @@ say(){
 #gcd(){
 #    git commit -m "$(date +%D)"
 #}
+
+gcr(){
+    g++ "$1"
+    ./a.out
+}

@@ -29,8 +29,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export GITROOT=$HOME/Git
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
-export PATH="$PATH:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
 export EDITOR=nvim
 # nvim in tmux
 export TERM=xterm-256color
@@ -60,6 +58,7 @@ xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant De
 
 # thinkpad touchpad natural scroll
 synclient VertScrollDelta=-99
+synclient HorizScrollDelta=-99
 
 # Kensington Orbit with Scroll Ring middle click emulation
 #xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
