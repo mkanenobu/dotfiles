@@ -50,6 +50,8 @@ export LANG=ja_JP.UTF-8
 # ls sorting
 export LC_COLLATE=C
 
+export HISTTIMEFORMAT='%F %T '
+
 #imwheel 1>/dev/null 2>/dev/null
 imwheel >/dev/null 2>&1
 

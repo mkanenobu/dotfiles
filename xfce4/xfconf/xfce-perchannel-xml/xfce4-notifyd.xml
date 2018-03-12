@@ -9,6 +9,7 @@
     <property name="known_applications" type="array">
       <value type="string" value="Blueman"/>
       <value type="string" value="Electron"/>
+      <value type="string" value="evolution"/>
       <value type="string" value="FileZilla"/>
       <value type="string" value="google-chrome"/>
       <value type="string" value="MEGAsync"/>
