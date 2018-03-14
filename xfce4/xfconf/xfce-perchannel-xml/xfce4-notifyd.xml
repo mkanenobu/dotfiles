@@ -17,6 +17,7 @@
       <value type="string" value="org.gnome.clocks"/>
       <value type="string" value="Spotify"/>
       <value type="string" value="Theme Configuration"/>
+      <value type="string" value="Thunar"/>
       <value type="string" value="thunar-volman"/>
       <value type="string" value="vivaldi-stable"/>
       <value type="string" value="Xfce volume daemon"/>

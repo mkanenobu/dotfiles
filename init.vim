@@ -95,6 +95,9 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
+
 " Window manage
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
@@ -209,8 +212,17 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 " quickrun
-" 水平に分割
-"let g:quickrun_config={'*': {'split': ''}}
+" バッファを下に出す
+" フォーカスをバッファ側に
+let g:quickrun_config = {
+            \ '_': {
+                \ 'split': '',
+                \ 'outputter/buffer/into': '1',
+            \},
+        \}
+set splitbelow
+
+
 
 " indentLine
 let g:indentLine_bgcolor_term = 239
