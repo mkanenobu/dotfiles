@@ -22,6 +22,8 @@ augroup auto_comment_off
     autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+
 " search
 set hlsearch
 set incsearch
@@ -32,6 +34,7 @@ set inccommand=split
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap <silent><Space><Space> :<C-u>set nohlsearch!<CR>
 
 set mouse=""
 set ruler
@@ -96,7 +99,6 @@ vnoremap <S-h> ^
 vnoremap <S-l> $
 
 let mapleader = "\<Space>"
-nnoremap <Leader>o :CtrlP<CR>
 
 " Window manage
 nnoremap <S-M-j> :split<CR>
@@ -230,6 +232,9 @@ let g:indentLine_setColors = 0
 let g:indentLine_char = 'c'
 let g:indentLine_setConceal = 0
 
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 nnoremap <C-e><C-r> :lopen<CR>
 "" Neomake
