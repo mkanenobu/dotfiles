@@ -28,6 +28,9 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
 # git wrapper
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -53,9 +56,8 @@ repo = 'mkanenobu/nvim-nim'
 repo = 'davidhalter/jedi-vim'
 
 #[[plugins]]
-#repo = 'alvan/vim-closetag'
+#repo = 'rust-lang/rust.vim'
 
-# Linter
 #[[plugins]]
 #repo = 'neomake/neomake'
 [[plugins]]
@@ -72,8 +74,6 @@ repo = 'Shougo/deoplete.nvim'
 
 # Deoplete sources
 
-#[[plugins]]
-#repo = 'rust-lang/rust.vim'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
