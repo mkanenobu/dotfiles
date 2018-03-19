@@ -23,7 +23,7 @@ HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+shopt -u checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -188,11 +188,14 @@ alias gl='git log'
 alias glo='git log --oneline --graph --decorate'
 alias gg='git grep'
 
+alias tmux-kill='tmux kill-server'
+
 shopt -s autocd
 set -o emacs
 # リダイレクトによる上書き禁止
 # >|を用いればリダイレクトできる
 set -C noclobber
+
 
 # tmuxで履歴を共有しつつ重複を削除
 share_history(){
@@ -204,6 +207,7 @@ share_history(){
     history -c
     history -r
 }
+
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 
