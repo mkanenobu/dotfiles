@@ -57,6 +57,7 @@ hlink ~/.bashrc ~/.bash_functions ~/.profile
 slink ~/.inputrc ~/.dein \
     ~/.config/nvim/init.vim ~/.config/byobu ~/.imwheelrc \
     ~/.config/Code/User/settings.json ~/.config/asunder \
-    ~/.config/xfce4
-    ~/.local/share/tools
+    ~/.config/xfce4 \
+    ~/.local/share/tools \
+    ~/.config/peco/config.json
 
