@@ -115,6 +115,7 @@
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="skypeforlinux"/>
         <value type="string" value="calendar-indicator"/>
+        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="sylpheed"/>
         <value type="string" value="clipgrab"/>
         <value type="string" value="franz"/>

@@ -157,7 +157,7 @@ alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
 alias wcj='wc -m'
 alias youtube-mps='mpsyt'
-alias show_audio_spec='soxi'
+alias show_audio_spec='soxinfo'
 alias ignoreError='>/dev/null 2>&1'
 alias opn='open'
 
