@@ -85,6 +85,10 @@ chrome_reload_tab(){
     xdotool windowfocus $(xdotool search --onlyvisible --class gnome-terminal)
 }
 
+history-do(){
+    eval "$(tac ~/.bash_history | grep -v ^# | peco)"
+}
+
 say(){
     TMP=/tmp/jsay.wav
     echo "$1" | open_jtalk -m /usr/share/hts-voice/mei_happy.htsvoice -x /var/lib/mecab/dic/open-jtalk/naist-jdic -ow "$TMP" && mpv "$TMP"
