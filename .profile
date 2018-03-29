@@ -69,3 +69,5 @@ synclient HorizScrollDelta=-99
 export FCITX_NO_PREEDIT_APPS=""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
+# Discord startup minimize
+#wmctrl -c "Discord"
