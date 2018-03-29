@@ -22,7 +22,7 @@ augroup auto_comment_off
     autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " search
 set hlsearch
@@ -104,14 +104,6 @@ let mapleader = "\<Space>"
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
-" charcount
-vnoremap \c :s/./&/gn<CR>
-vnoremap :wordcount :s/./&/gn<CR> :set nohlsearch!<CR>
-
-" ZebkakuSpace
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue ctermbg=white
-match ZenkakuSpace / /
-
 " Emmet
 let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_install_global=0
@@ -175,24 +167,25 @@ let g:molokai_original = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+
 inoremap <expr><tab> () "\<C-n>"
 inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ deoplete#mappings#manual_complete()
-        function! s:check_back_space() abort "{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-        endfunction"}}}
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
 
 inoremap <silent><expr> <S-TAB>
-        \ pumvisible() ? "\<C-p>" :
-        \ <SID>check_back_space() ? "\<S-TAB>" :
-        \ deoplete#mappings#manual_complete()
-        function! s:check_back_space() abort "{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-        endfunction"}}}
+    \ pumvisible() ? "\<C-p>" :
+    \ <SID>check_back_space() ? "\<S-TAB>" :
+    \ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
 
 let g:deoplete#auto_complete_delay = 0
 let g:deoplete#auto_complete_start_length = 1
@@ -203,34 +196,41 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 "set completeopt+=noinsert
-"let g:deoplete#ignore_sources.php = ['omni']
 let g:tern_request_timeout = 1
 
 " vim-closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.php'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.php'
+let g:closetag_xhtml_filenames = '*.xhtml, *.jsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
+" fugitive
+nmap <Space>a :Gwrite<CR> :echomsg "git added"<CR>
+
 " quickrun
+"map <Space>r <Plug>(quickrun)
+map <Space>r :QuickRun -input =@+<CR>
 " バッファを下に出す
 " フォーカスをバッファ側に
+    "\ 'runner' : 'vimproc',
 let g:quickrun_config = {
-            \ '_': {
-                \ 'split': '',
-                \ 'outputter/buffer/into': '1',
-            \},
-        \}
+    \ '_': {
+        \ 'split': '',
+        \ 'outputter/buffer/into': '1',
+        \ 'hook/time/enable': '1',
+    \},
+\}
 set splitbelow
 
-
+" NerdTree
+map <Space>n :NERDTreeToggle<CR>
 
 " indentLine
-let g:indentLine_bgcolor_term = 239
-let g:indentLine_setColors = 0
-let g:indentLine_char = 'c'
-let g:indentLine_setConceal = 0
+"let g:indentLine_bgcolor_term = 239
+"let g:indentLine_setColors = 0
+"let g:indentLine_char = 'c'
+"let g:indentLine_setConceal = 0
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -252,6 +252,9 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
+let g:ale_linters = {
+    \   'python': ['flake8'],
+\}
 
 syntax on
 filetype indent plugin on

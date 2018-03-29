@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~omsg "git added".bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -158,7 +158,6 @@ alias lockscreen='xflock4'
 alias wcj='wc -m'
 alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
-alias ignoreError='>/dev/null 2>&1'
 alias opn='open'
 
 alias py='python3'

@@ -3,9 +3,6 @@
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-#[[plugins]]
-#repo = 'gisraptor/vim-lilypond-integrator'
-
 [[plugins]]
 repo = 'tomasr/molokai'
 
@@ -38,25 +35,16 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-#[[plugins]]
-#repo =  'nathanaelkane/vim-indent-guides'
-
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
-#[[plugins]]
-#repo = "zah/nim.vim"
 [[plugins]]
-repo = 'mkanenobu/nvim-nim'
-
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-
+repo = "zah/nim.vim"
 #[[plugins]]
-#repo = 'rust-lang/rust.vim'
+#repo = 'mkanenobu/nvim-nim'
 
 #[[plugins]]
 #repo = 'neomake/neomake'
