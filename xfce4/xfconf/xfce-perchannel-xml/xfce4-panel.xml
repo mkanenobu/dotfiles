@@ -11,11 +11,11 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="30"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="26"/>
+        <value type="int" value="7"/>
         <value type="int" value="31"/>
         <value type="int" value="30"/>
         <value type="int" value="15"/>
-        <value type="int" value="2"/>
+        <value type="int" value="8"/>
       </property>
       <property name="background-alpha" type="uint" value="32"/>
       <property name="background-style" type="uint" value="1"/>
@@ -72,7 +72,6 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-26" type="string" value="whiskermenu"/>
     <property name="plugin-30" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="false"/>
       <property name="show-labels" type="bool" value="false"/>
@@ -146,7 +145,6 @@
       </property>
     </property>
     <property name="plugin-11" type="string" value="xfce4-orageclock-plugin"/>
-    <property name="plugin-2" type="string" value="thunar-tpa"/>
     <property name="plugin-16" type="string" value="battery"/>
     <property name="plugin-1" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
@@ -156,5 +154,7 @@
       <property name="miniature-view" type="bool" value="true"/>
       <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
+    <property name="plugin-7" type="string" value="whiskermenu"/>
+    <property name="plugin-8" type="string" value="thunar-tpa"/>
   </property>
 </channel>

@@ -41,10 +41,10 @@ repo = 'Shougo/neosnippet.vim'
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
-[[plugins]]
-repo = "zah/nim.vim"
 #[[plugins]]
-#repo = 'mkanenobu/nvim-nim'
+#repo = "zah/nim.vim"
+[[plugins]]
+repo = 'mkanenobu/nvim-nim'
 
 #[[plugins]]
 #repo = 'neomake/neomake'
@@ -53,12 +53,6 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-
-#[[plugins]]
-#repo = 'roxma/nvim-yarp'
-#
-#[[plugins]]
-#repo = 'roxma/vim-hug-neovim-rpc'
 
 # Deoplete sources
 
