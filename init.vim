@@ -81,6 +81,7 @@ nnoremap Q <nop>
 
 "nnoremap Y y$
 "nnoremap y$ Y
+nmap <Space>y :%y<CR>
 
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
@@ -209,7 +210,6 @@ let g:closetag_close_shortcut = '<leader>>'
 nmap <Space>a :Gwrite<CR> :echomsg "git added"<CR>
 
 " quickrun
-"map <Space>r <Plug>(quickrun)
 map <Space>r :QuickRun -input =@+<CR>
 " バッファを下に出す
 " フォーカスをバッファ側に
@@ -218,7 +218,6 @@ let g:quickrun_config = {
     \ '_': {
         \ 'split': '',
         \ 'outputter/buffer/into': '1',
-        \ 'hook/time/enable': '1',
     \},
 \}
 set splitbelow
