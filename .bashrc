@@ -170,7 +170,6 @@ alias al='sl -e'
 alias c=':'
 alias a=':'
 alias d=':'
-alias dc=':'
 alias sl='sl -e'
 
 # Git
