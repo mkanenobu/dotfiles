@@ -34,14 +34,14 @@ mnar(){
 # Translate
 dict(){
     if [ -e ~/Documents/gene-utf8.txt ]; then
-        grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
+        if expr "$1" : '[a-z]*' >/dev/null ;then
+            grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
+        else
+            grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1  -wi --color
+        fi
     else
         curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
     fi
-}
-
-jtoe(){
-    grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1 -w --color
 }
 
 encopus(){
@@ -87,6 +87,12 @@ chrome_reload_tab(){
 
 history-do(){
     eval "$(tac ~/.bash_history | grep -v ^# | peco)"
+}
+
+moveExecutableFile(){
+    mkdir nim_excutable
+    find . -maxdepth 1 -type f -perm 775 -exec mv {} nim_excutable \; \
+        && echo "Done"
 }
 
 say(){
