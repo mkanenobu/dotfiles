@@ -56,7 +56,6 @@ repo = 'Shougo/deoplete.nvim'
 
 # Deoplete sources
 
-
 [[plugins]]
 repo = 'Shougo/neco-vim'
 
@@ -66,5 +65,8 @@ repo = 'Shougo/neco-syntax'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
+#[[plugins]]
+#repo = 'Shougo/neosnippet-snippets'
+
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'mkanenobu/neosnippet-snippets'
