@@ -106,9 +106,9 @@ nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
 " Emmet
-let g:user_emmet_leader_key='<C-y>'
-let g:user_emmet_install_global=0
-let g:user_emmet_mode='iv'
+let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_install_global = 0
+let g:user_emmet_mode = 'iv'
 autocmd Filetype html,css,scss,php EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_settings = {
@@ -169,7 +169,7 @@ let g:molokai_original = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-inoremap <expr><tab> () "\<C-n>"
+inoremap <expr><tab> () "\<C-n>""
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
@@ -206,6 +206,37 @@ let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
+"" neosnippet
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+" If available emmet
+for i in ["html", "css", "scss", "php"]
+    if i == expand("%:e")
+        break
+    endif
+    imap <C-e> <Plug>(neosnippet_expand_or_jump)
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-e> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-e> <Plug>(neosnippet_expand_target)
+endfor
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+let g:neosnippet#snippets_directory = '~/.nvim/snippets'
+
+
 " fugitive
 nmap <Space>a :Gwrite<CR> :echomsg "git added"<CR>
 
@@ -235,7 +266,6 @@ map <Space>n :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-nnoremap <C-e><C-r> :lopen<CR>
 "" Neomake
 "" List errors
 "" When writing a buffer.
@@ -254,6 +284,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_linters = {
     \   'python': ['flake8'],
 \}
+nnoremap <C-e><C-r> :lopen<CR>
 
 syntax on
 filetype indent plugin on
