@@ -237,8 +237,11 @@ endif
 let g:neosnippet#snippets_directory = '~/.nvim/snippets'
 
 
+
 " fugitive
 nmap <Space>a :Gwrite<CR> :echomsg "git added"<CR>
+nnoremap <Space>l :Gblame<CR>
+nnoremap <Space>d :Gdiff<CR>
 
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
