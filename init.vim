@@ -56,13 +56,15 @@ nnoremap m %
 set expandtab
 set tabstop=4
 set shiftwidth=4
-"set softtabstop=0
+"set softtabstop = 0
 set smarttab
 set autoindent
 set smartindent
 set list
 "set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
+
+autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 
 set laststatus=2
 set clipboard=unnamed,unnamedplus
