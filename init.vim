@@ -30,6 +30,9 @@ set incsearch
 set smartcase
 set ignorecase
 
+" tag jump
+set tags=<tags_path>
+
 set inccommand=split
 
 set wrapscan
@@ -93,7 +96,7 @@ nnoremap gk k
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
-nnoremap ' ;
+
 inoremap <C-c> <Esc>
 
 nnoremap <S-h> ^
@@ -107,7 +110,17 @@ let mapleader = "\<Space>"
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
-" Emmet
+" PHP
+let g:php_baselib=1
+let g:php_htmlInStrings=1
+let g:php_noShortTags=1
+let g:php_sql_query=1
+
+" DB
+let g:sql_type_default = 'mysql'
+
+
+" Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode = 'iv'
@@ -118,6 +131,7 @@ let g:user_emmet_settings = {
     \      'lang': "ja"
     \    },
     \ }
+
 
 " :W = save with root permission
 "command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
@@ -236,8 +250,7 @@ smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let g:neosnippet#snippets_directory = '~/.nvim/snippets'
-
+let g:neosnippet#snippets_directory='~/.nvim/'
 
 
 " fugitive
@@ -271,23 +284,21 @@ map <Space>n :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-"" Neomake
-"" List errors
-"" When writing a buffer.
-"call neomake#configure#automake('w')
-"" When writing a buffer, and on normal mode changes (after 750ms).
-"call neomake#configure#automake('nw', 750)
-"" When reading a buffer (after ns), and when writing.
-"call neomake#configure#automake('rw', 750)
+" jedi-vim 
+" no preview
+autocmd FileType python setlocal completeopt-=preview
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
-let g:ale_lint_on_enter = 1
+let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-    \   'python': ['flake8'],
+    \ 'python': ['flake8'],
+\}
+let g:ale_fixers = {
+    \ 'python': ['autopep8', 'isort'],
 \}
 nnoremap <C-e><C-r> :lopen<CR>
 

@@ -63,7 +63,7 @@ synclient VertScrollDelta=-99
 synclient HorizScrollDelta=-99
 
 # Kensington Orbit with Scroll Ring middle click emulation
-#input set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
+xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
 #xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Button Timeout" 100 >/dev/null #2>&1
 
 export FCITX_NO_PREEDIT_APPS=""

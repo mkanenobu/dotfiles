@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sshToEc2(){
+    ssh -i "$ec2_key" ec2-user@"$1"
+}
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
@@ -34,7 +37,7 @@ mnar(){
 # Translate
 dict(){
     if [ -e ~/Documents/gene-utf8.txt ]; then
-        if expr "$1" : '[a-z]*' >/dev/null ;then
+        if expr "$1" : '[a-zA-Z]*' >/dev/null ;then
             grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
         else
             grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1  -wi --color
@@ -100,6 +103,7 @@ say(){
     echo "$1" | open_jtalk -m /usr/share/hts-voice/mei_happy.htsvoice -x /var/lib/mecab/dic/open-jtalk/naist-jdic -ow "$TMP" && mpv "$TMP"
     rm -f "$TMP"
 }
+
 
 # commit message date
 #gcd(){

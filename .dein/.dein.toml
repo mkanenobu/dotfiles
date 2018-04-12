@@ -46,6 +46,9 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
+[[plugins]]
+repo = 'thinca/vim-ref'
+
 #[[plugins]]
 #repo = 'neomake/neomake'
 [[plugins]]
@@ -65,8 +68,8 @@ repo = 'Shougo/neco-syntax'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
-#[[plugins]]
-#repo = 'Shougo/neosnippet-snippets'
+[[plugins]]
+repo = 'padawan-php/deoplete-padawan'
 
 [[plugins]]
-repo = 'mkanenobu/neosnippet-snippets'
+repo = 'Shougo/neosnippet-snippets'
