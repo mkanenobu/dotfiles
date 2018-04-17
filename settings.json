@@ -8,5 +8,6 @@
     "editor.insertSpaces": false,
     "editor.renderIndentGuides": true,
     "workbench.startupEditor": "newUntitledFile",
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "editor.lineHeight": 19
 }

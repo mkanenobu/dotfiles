@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sshToEc2(){
+    . ~/.env
     ssh -i "$ec2_key" ec2-user@"$1"
 }
 open(){

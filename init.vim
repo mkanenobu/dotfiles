@@ -123,8 +123,8 @@ let g:sql_type_default = 'mysql'
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_install_global = 0
-let g:user_emmet_mode = 'iv'
-autocmd Filetype html,css,scss,php EmmetInstall
+let g:user_emmet_mode = 'i'
+autocmd Filetype php,html,css,scss EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_settings = {
     \    'variables': {
@@ -226,19 +226,13 @@ let g:closetag_close_shortcut = '<leader>>'
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" If available emmet
-for i in ["html", "css", "scss", "php"]
-    if i == expand("%:e")
-        break
-    endif
-    imap <C-e> <Plug>(neosnippet_expand_or_jump)
-    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-    smap <C-e> <Plug>(neosnippet_expand_or_jump)
-    xmap <C-e> <Plug>(neosnippet_expand_target)
-endfor
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
+imap <expr><C-n>
     \ pumvisible() ? "\<C-n>" :
     \ neosnippet#expandable_or_jumpable() ?
     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
