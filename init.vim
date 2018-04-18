@@ -95,7 +95,7 @@ nnoremap gj j
 nnoremap gk k
 nnoremap j gj
 nnoremap k gk
-nnoremap ; :
+"nnoremap ; :
 
 inoremap <C-c> <Esc>
 

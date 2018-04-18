@@ -90,7 +90,11 @@ chrome_reload_tab(){
 }
 
 history-do(){
-    eval "$(tac ~/.bash_history | grep -v ^# | peco)"
+    if [ "$#" -eq 1 ];then
+        eval "$(tac ~/.bash_history | grep -v ^# | grep "$1" | peco)"
+    else
+        eval "$(tac ~/.bash_history | grep -v ^# | peco)"
+    fi
 }
 
 moveExecutableFile(){
