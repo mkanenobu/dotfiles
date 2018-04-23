@@ -74,3 +74,6 @@ repo = 'zchee/deoplete-jedi'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'evidens/vim-twig'

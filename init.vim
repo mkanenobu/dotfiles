@@ -267,6 +267,9 @@ set splitbelow
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
+" ファイルが指定されていない場合，NERDTreeを開く
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " indentLine
 "let g:indentLine_bgcolor_term = 239
@@ -295,6 +298,8 @@ let g:ale_fixers = {
     \ 'python': ['autopep8', 'isort'],
 \}
 nnoremap <C-e><C-r> :lopen<CR>
+
+autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 
 syntax on
 filetype indent plugin on
