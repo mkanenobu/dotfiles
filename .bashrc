@@ -160,6 +160,7 @@ alias show_audio_spec='soxinfo'
 alias taggen='ctags -R'
 alias opn='open'
 
+alias phpi='php -a'
 alias py='python3'
 alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'

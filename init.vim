@@ -95,6 +95,10 @@ nnoremap gj j
 nnoremap gk k
 nnoremap j gj
 nnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap j gj
+vnoremap k gk
 "nnoremap ; :
 
 inoremap <C-c> <Esc>
@@ -134,8 +138,7 @@ let g:user_emmet_settings = {
 
 
 " :W = save with root permission
-"command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
-cabbr W w !sudo tee > /dev/null %
+command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')

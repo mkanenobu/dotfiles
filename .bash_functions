@@ -109,11 +109,15 @@ say(){
     rm -f "$TMP"
 }
 
-
-# commit message date
-#gcd(){
-#    git commit -m "$(date +%D)"
-#}
+gpoc(){
+    current_branch="$(git branch | grep \* | sed -e "s/\*\ //")"
+    echo "Push to $current_branch"
+    if [ "$current_branch" = "master" ]; then
+        exit 1
+    else
+        git push origin "$current_branch"
+    fi
+}
 
 gcr(){
     g++ "$1"
