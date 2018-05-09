@@ -8,6 +8,19 @@ set encoding=utf-8
 set ambiwidth=double
 set history=1000
 
+set expandtab
+set tabstop=4
+set shiftwidth=4
+"set softtabstop = 0
+set smarttab
+set autoindent
+set smartindent
+set list
+"set listchars=tab:\¦\
+set listchars=tab:>-,trail:-,extends:>
+
+autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
+
 set nobackup
 set noswapfile
 set hidden
@@ -30,9 +43,6 @@ set incsearch
 set smartcase
 set ignorecase
 
-" tag jump
-set tags=<tags_path>
-
 set inccommand=split
 
 set wrapscan
@@ -49,25 +59,12 @@ set showcmd
 set title
 set showmatch
 set matchtime=1
-source $VIMRUNTIME/macros/matchit.vim
+nnoremap % m
+nnoremap m %
+runtime macros/matchit.vim
 
 set foldlevel=100
 
-nnoremap % m
-nnoremap m %
-
-set expandtab
-set tabstop=4
-set shiftwidth=4
-"set softtabstop = 0
-set smarttab
-set autoindent
-set smartindent
-set list
-"set listchars=tab:\¦\
-set listchars=tab:>-,trail:-,extends:>
-
-autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 
 set laststatus=2
 set clipboard=unnamed,unnamedplus
@@ -302,6 +299,7 @@ let g:ale_fixers = {
 \}
 nnoremap <C-e><C-r> :lopen<CR>
 
+" twig highlight
 autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 
 syntax on

@@ -9,5 +9,8 @@
     "editor.renderIndentGuides": true,
     "workbench.startupEditor": "newUntitledFile",
     "vim.useSystemClipboard": true,
-    "editor.lineHeight": 19
+    "editor.lineHeight": 19,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    }
 }
