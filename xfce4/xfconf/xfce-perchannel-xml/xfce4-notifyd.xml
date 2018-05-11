@@ -18,6 +18,7 @@
       <value type="string" value="nm-applet"/>
       <value type="string" value="notify-send"/>
       <value type="string" value="org.gnome.clocks"/>
+      <value type="string" value="Slack"/>
       <value type="string" value="Spotify"/>
       <value type="string" value="System Config Printer Notification"/>
       <value type="string" value="Theme Configuration"/>

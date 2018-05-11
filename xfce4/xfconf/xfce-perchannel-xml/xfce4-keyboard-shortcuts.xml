@@ -45,9 +45,9 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="gnome-terminal"/>
       <property name="&lt;Super&gt;e" type="string" value="thunar ."/>
       <property name="&lt;Super&gt;n" type="string" value="/usr/share/simplenote/simplenote"/>
-      <property name="&lt;Super&gt;space" type="string" value="xfce4-terminal -e byobu --geometry=0-0"/>
-      <property name="&lt;Super&gt;t" type="string" value="xfce4-terminal -e byobu"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;b" type="string" value="chromium-browser"/>
+      <property name="&lt;Super&gt;t" type="string" value="gnome-terminal"/>
+      <property name="&lt;Super&gt;space" type="string" value="xfce4-terminal -e byobu --geometry=0-0"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

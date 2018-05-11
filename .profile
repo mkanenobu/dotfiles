@@ -24,7 +24,7 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 # export GOROOT="$HOME/.go"
 export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export GITROOT=$HOME/Git
