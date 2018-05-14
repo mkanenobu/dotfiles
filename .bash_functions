@@ -115,9 +115,9 @@ gpoc(){
     if [ "$current_branch" = "master" ]; then
         read -rp "Are you sure?:" confirm
         if [ "$confirm" = "y" ]; then
-          git push origin master
+            git push origin master
         else
-          echo ""
+            echo ""
         fi
     else
         git push origin "$current_branch"
