@@ -1,5 +1,5 @@
 TerminalEmulator=xfce4-terminal
 FileManager=Thunar
 MailReader=evolution
+WebBrowser=google-chrome
 
-WebBrowser=chromium-browser

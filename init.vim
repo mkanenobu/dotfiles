@@ -59,8 +59,10 @@ set showcmd
 set title
 set showmatch
 set matchtime=1
-nnoremap % m
-nnoremap m %
+
+noremap % m
+noremap m %
+
 runtime macros/matchit.vim
 
 set foldlevel=100
@@ -72,6 +74,7 @@ set clipboard=unnamed,unnamedplus
 autocmd InsertLeave * set nopaste
 
 " Keymap
+let mapleader = "\<Space>"
 nnoremap <kplus> <C-a>
 nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
@@ -81,6 +84,7 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
+noremap <Leader>p "0p
 "nnoremap Y y$
 "nnoremap y$ Y
 nmap <Space>y :%y<CR>
@@ -105,8 +109,8 @@ nnoremap <S-l> $
 vnoremap <S-h> ^
 vnoremap <S-l> $
 
-let mapleader = "\<Space>"
-
+" search selected
+vnoremap * "zy:let @/ = @z<CR>n
 " Window manage
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
