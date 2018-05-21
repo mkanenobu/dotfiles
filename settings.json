@@ -12,5 +12,6 @@
     "editor.lineHeight": 19,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
-    }
+    },
+    "gitlens.historyExplorer.enabled": true
 }

@@ -43,11 +43,15 @@ repo = 'Shougo/neosnippet.vim'
 #repo = 'baabelfish/nvim-nim'
 #[[plugins]]
 #repo = "zah/nim.vim"
+
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
 #[[plugins]]
 #repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'hhvm/vim-hack'
 
 [[plugins]]
 repo = '2072/PHP-Indenting-for-VIm'

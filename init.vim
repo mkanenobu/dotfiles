@@ -20,6 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
+autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 set nobackup
 set noswapfile
@@ -281,11 +282,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "let g:indentLine_char = 'c'
 "let g:indentLine_setConceal = 0
 
+" nvim-nim
+let g:nvim_nim_enable_default_binds = 0
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" jedi-vim 
+" jedi-vim
 " no preview
 autocmd FileType python setlocal completeopt-=preview
 
