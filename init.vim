@@ -20,7 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 set nobackup
 set noswapfile
@@ -184,6 +184,8 @@ autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
+"colorscheme gruvbox
+set background=dark
 let g:molokai_original = 1
 "let g:rehash256 = 1
 

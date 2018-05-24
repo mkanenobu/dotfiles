@@ -7,6 +7,9 @@ build = 'make'
 repo = 'tomasr/molokai'
 
 [[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]

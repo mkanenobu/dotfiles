@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=nvim.desktop,gvim.desktop,gparted.desktop,chromium-browser.desktop,code.desktop,gedit.desktop,firefox.desktop,gitkraken.desktop,mstdn.desktop,org.gimp.GIMP.desktop
+recent=mstdn.desktop,gitkraken.desktop,org.gnome.clocks.desktop,filezilla.desktop,stacer.desktop,etcher-electron.desktop,libreoffice-calc.desktop,libreoffice-base.desktop,Haroopad.desktop,gparted.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

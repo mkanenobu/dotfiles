@@ -72,3 +72,5 @@ _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # Discord startup minimize
 #wmctrl -c "Discord"
+
+cd ~/Vagrant && vagrant up & >/dev/null 2>&1
