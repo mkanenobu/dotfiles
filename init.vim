@@ -303,14 +303,23 @@ let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
     \ 'python': ['flake8'],
-\}
+\ }
 let g:ale_fixers = {
     \ 'python': ['autopep8', 'isort'],
-\}
+\ }
 nnoremap <C-e><C-r> :lopen<CR>
 
 " twig highlight
 autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
+
+" shebang
+augroup Shebang
+    "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\"
+    autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+    autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"
+    autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
 
 syntax on
 filetype indent plugin on
