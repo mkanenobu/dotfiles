@@ -3,11 +3,13 @@
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+# colorschemes
 [[plugins]]
 repo = 'tomasr/molokai'
-
 [[plugins]]
 repo = 'morhetz/gruvbox'
+[[plugins]]
+repo = 'sjl/badwolf'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -41,6 +43,8 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
@@ -52,9 +56,6 @@ repo = 'mkanenobu/nvim-nim'
 
 #[[plugins]]
 #repo = 'thinca/vim-ref'
-
-[[plugins]]
-repo = 'hhvm/vim-hack'
 
 [[plugins]]
 repo = '2072/PHP-Indenting-for-VIm'

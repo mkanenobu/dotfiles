@@ -20,7 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 set nobackup
 set noswapfile
@@ -303,14 +303,25 @@ let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
     \ 'python': ['flake8'],
+    \ 'rust': ['rls'],
 \ }
 let g:ale_fixers = {
     \ 'python': ['autopep8', 'isort'],
+    \ 'rust': ['rustfmt'],
 \ }
+
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
 nnoremap <C-e><C-r> :lopen<CR>
 
 " twig highlight
 autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
+
+" lsp
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+
 
 " shebang
 augroup Shebang

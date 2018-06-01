@@ -165,6 +165,7 @@ alias py='python3'
 alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'
 alias nimcd='nim c -d:release'
+alias rc='rustc'
 
 # vagrant
 alias vu='vagrant up'
