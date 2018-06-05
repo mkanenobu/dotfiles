@@ -83,7 +83,7 @@ elastics(){
     rg -nws "$1" "$2"
 }
 
-chrome_reload_tab(){
+tab_reload(){
     xdotool windowfocus $(xdotool search --onlyvisible --name google)
     xdotool key ctrl+r
     xdotool windowfocus $(xdotool search --onlyvisible --class gnome-terminal)

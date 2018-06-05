@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gitkraken.desktop,gparted.desktop,filezilla.desktop,mc.desktop,mcedit.desktop,code.desktop,mstdn.desktop,org.gimp.GIMP.desktop,slack.desktop,appimagekit-bitwarden.desktop
+recent=spotify.desktop,filezilla.desktop,gitkraken.desktop,gparted.desktop,mc.desktop,mcedit.desktop,code.desktop,mstdn.desktop,org.gimp.GIMP.desktop,slack.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

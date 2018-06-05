@@ -20,7 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 set nobackup
 set noswapfile

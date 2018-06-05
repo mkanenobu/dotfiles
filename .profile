@@ -30,6 +30,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export GITROOT=$HOME/Git
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export EDITOR=nvim
 # nvim in tmux
 export TERM=xterm-256color
