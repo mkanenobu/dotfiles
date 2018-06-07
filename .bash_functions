@@ -4,6 +4,7 @@ sshToEc2(){
     . ~/.env
     ssh -i "$ec2_key" ec2-user@"$1"
 }
+
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1

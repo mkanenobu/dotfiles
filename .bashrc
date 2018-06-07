@@ -237,3 +237,4 @@ _nimr(){
 }
 complete -F  _nimr nimr
 
+. ~/.env
