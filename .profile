@@ -73,3 +73,14 @@ _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # Discord startup minimize
 #wmctrl -c "Discord"
+
+# caps to ctrl
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# mozc
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+exec ibus-daemon -dx &
