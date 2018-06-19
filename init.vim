@@ -90,6 +90,8 @@ noremap <Leader>p "0p
 "nnoremap y$ Y
 nmap <Space>y :%y<CR>
 
+inoremap <C-d> $
+
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
 
@@ -299,17 +301,21 @@ autocmd FileType python setlocal completeopt-=preview
 " rcmdnk.com/blog/2017/09/25/computer-vim/
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
+let g:ale_cache_executable_check_failures = 0
 let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
     \ 'python': ['flake8'],
     \ 'rust': ['rls'],
 \ }
+
 let g:ale_fixers = {
     \ 'python': ['autopep8', 'isort'],
     \ 'rust': ['rustfmt'],
+    \ 'perl': ['perltidy'],
 \ }
-
+let g:airline#extensions#ale#enabled = 1
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
@@ -326,9 +332,10 @@ let g:lsp_diagnostics_echo_cursor = 1
 " shebang
 augroup Shebang
     "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
-    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\"
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\" | 2
+    autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
     autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
-    autocmd BufNewFile *.sh 0put =\"#!/bin/sh\"
+    autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
     autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
 

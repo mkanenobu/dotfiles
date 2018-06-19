@@ -1,7 +1,7 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
-    "workbench.colorTheme": "Monokai GRS",
-    "workbench.iconTheme": "simple-icons",
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vs-minimal",
     "editor.scrollBeyondLastLine": false,
     "editor.fontFamily": "Code New Roman",
     "editor.fontSize": 15,

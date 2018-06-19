@@ -23,7 +23,7 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 # export GOROOT="$HOME/.go"
-export GOPATH="$HOME/.go"
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -83,4 +83,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-exec ibus-daemon -dx &
+ibus-daemon -dx &

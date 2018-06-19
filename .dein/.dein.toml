@@ -45,6 +45,7 @@ repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
@@ -54,8 +55,11 @@ repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
-#[[plugins]]
-#repo = 'thinca/vim-ref'
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'vim-perl/vim-perl'
 
 [[plugins]]
 repo = '2072/PHP-Indenting-for-VIm'
