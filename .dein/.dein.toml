@@ -46,6 +46,9 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 
+#[[plugins]]
+#repo = 'andymass/vim-matchup'
+
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
@@ -64,6 +67,9 @@ repo = 'vim-perl/vim-perl'
 [[plugins]]
 repo = '2072/PHP-Indenting-for-VIm'
 
+# [[plugins]]
+# repo = 'phpactor/phpactor'
+
 [[plugins]]
 repo = 'w0rp/ale'
 
@@ -81,8 +87,8 @@ repo = 'Shougo/neco-syntax'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
-#[[plugins]]
-#repo = 'padawan-php/deoplete-padawan'
+[[plugins]]
+repo = 'padawan-php/deoplete-padawan'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'

@@ -82,5 +82,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # mozc
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 ibus-daemon -dx &

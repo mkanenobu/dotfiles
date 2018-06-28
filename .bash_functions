@@ -110,21 +110,6 @@ say(){
     rm -f "$TMP"
 }
 
-gpoc(){
-    current_branch="$(git branch | grep \* | sed -e "s/\*\ //")"
-    echo "Push to $current_branch"
-    if [ "$current_branch" = "master" ]; then
-        read -rp "Are you sure?:" confirm
-        if [[ "$confirm" =~ "y" ]]; then
-            git push origin master
-        else
-            echo ""
-        fi
-    else
-        git push origin "$current_branch"
-    fi
-}
-
 gcr(){
     g++ "$1"
     ./a.out

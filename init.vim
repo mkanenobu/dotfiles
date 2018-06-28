@@ -55,7 +55,7 @@ set ruler
 set number
 set wildmenu
 set wildmode=list,full
-"set cursorline
+" set cursorline
 set showcmd
 set title
 set showmatch
@@ -64,14 +64,14 @@ set matchtime=1
 noremap % m
 noremap m %
 
-runtime macros/matchit.vim
+" runtime macros/matchit.vim
 
 set foldlevel=100
 
 
 set laststatus=2
 set clipboard=unnamed,unnamedplus
-"set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 autocmd InsertLeave * set nopaste
 
 " Keymap
@@ -327,6 +327,9 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 " lsp
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+
+" vim-matchup
+let g:loaded_matchit = 1
 
 
 " shebang
