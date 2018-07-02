@@ -9,6 +9,7 @@
     <property name="known_applications" type="array">
       <value type="string" value="Blueman"/>
       <value type="string" value="chromium-browser"/>
+      <value type="string" value="com.uploadedlobster.peek"/>
       <value type="string" value="Discord"/>
       <value type="string" value="Electron"/>
       <value type="string" value="evolution"/>

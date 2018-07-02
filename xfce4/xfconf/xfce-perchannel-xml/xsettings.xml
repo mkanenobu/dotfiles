@@ -24,7 +24,7 @@
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
     <property name="FontName" type="string" value="Takao Pゴシック 10"/>
-    <property name="MonospaceFontName" type="empty"/>
+    <property name="MonospaceFontName" type="string" value="Code New Roman, 10"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="string" value="icons"/>

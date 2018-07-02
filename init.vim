@@ -331,7 +331,6 @@ let g:lsp_diagnostics_echo_cursor = 1
 " vim-matchup
 let g:loaded_matchit = 1
 
-
 " shebang
 augroup Shebang
     "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
