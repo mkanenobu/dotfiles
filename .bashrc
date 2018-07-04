@@ -65,7 +65,6 @@ fi
 #fi
 
 # Original
-#PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$\[\033[00m\] '
 
 # if return error, change prompt color
 RETURN_CODE='\[$(
@@ -76,6 +75,10 @@ else
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
 PS1="${PS1}""${RETURN_CODE}"
 PS2='>'
+
+if [ -z "$TMUX" ]; then
+PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$\[\033[00m\] '
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

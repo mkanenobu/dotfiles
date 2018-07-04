@@ -79,7 +79,3 @@ _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-ibus-daemon -dx &
