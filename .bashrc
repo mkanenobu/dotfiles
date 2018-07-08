@@ -161,6 +161,7 @@ alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
 alias taggen='ctags -R'
 alias opn='open'
+alias freepascal='fpc'
 
 alias phpsh='psysh'
 alias phpi='php -a'
@@ -241,3 +242,5 @@ _nimr(){
 complete -F  _nimr nimr
 
 . ~/.env
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+

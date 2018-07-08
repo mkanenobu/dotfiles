@@ -54,7 +54,6 @@ export LC_COLLATE=C
 
 export HISTTIMEFORMAT='%F %T '
 
-#imwheel 1>/dev/null 2>/dev/null
 imwheel >/dev/null 2>&1
 
 # thinkpad touchpad acceleration
@@ -75,7 +74,13 @@ _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 #wmctrl -c "Discord"
 
 # caps to ctrl
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+# /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+exec ibus-daemon -dx &
+
+export DISPLAY="${DISPLAY:-:1}"

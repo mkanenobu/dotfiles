@@ -98,9 +98,11 @@ history-do(){
     fi
 }
 
-moveExecutableFile(){
-    mkdir nim_excutable
-    find . -maxdepth 1 -type f -perm 775 -exec mv {} nim_excutable \; \
+mvexec(){
+    if [ ! -e "$1" ]; then
+        mkdir "$1"
+    fi
+    find . -maxdepth 1 -type f -perm 775 -exec mv {} "$1" \; \
         && echo "Done"
 }
 
@@ -115,3 +117,20 @@ gcr(){
     ./a.out
 }
 
+fpc1(){
+    fpc "$1"
+    excutable="${1/.pass/}"
+    rm "$excutable" "$excutable".o
+}
+
+fpr(){
+    fpc "$1"
+    excutable="${1/.pass/}"
+    ./"$excutable"
+    rm "$excutable" "$excutable".o
+}
+
+mkdirmv(){
+    mkdir "$1"
+    mv "$1"
+}

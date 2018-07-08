@@ -3,6 +3,11 @@
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+
 # colorschemes
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -95,3 +100,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'evidens/vim-twig'
+
+# [[plugins]]
+# repo = 'boeckmann/vim-freepascal'

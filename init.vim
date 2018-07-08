@@ -20,7 +20,8 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd filetype pascal setlocal tabstop=4 shiftwidth=4 noexpandtab
 
 set nobackup
 set noswapfile
@@ -64,7 +65,7 @@ set matchtime=1
 noremap % m
 noremap m %
 
-" runtime macros/matchit.vim
+runtime macros/matchit.vim
 
 set foldlevel=100
 
@@ -135,10 +136,10 @@ let g:user_emmet_mode = 'i'
 autocmd Filetype php,html,css,scss EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_settings = {
-    \    'variables': {
-    \      'lang': "ja"
-    \    },
-    \ }
+    \ 'variables': {
+    \   'lang': "ja"
+    \ },
+\ }
 
 
 " :W = save with root permission
@@ -187,9 +188,13 @@ autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
 "colorscheme gruvbox
-set background=dark
-let g:molokai_original = 1
+" set background=dark
+
+" vivid
+" let g:molokai_original = 1
+
 "let g:rehash256 = 1
+
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -221,6 +226,11 @@ let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
+
+call deoplete#custom#source('LanguageClient',
+    \ 'min_pattern_length',
+    \ 2)
+
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
 
@@ -256,11 +266,6 @@ endif
 let g:neosnippet#snippets_directory='~/.nvim/'
 
 
-" fugitive
-nmap <Space>a :Gwrite<CR> :echomsg "git added"<CR>
-nnoremap <Space>l :Gblame<CR>
-nnoremap <Space>d :Gdiff<CR>
-
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
 " バッファを下に出す
@@ -271,6 +276,11 @@ let g:quickrun_config = {
         \ 'split': '',
         \ 'outputter/buffer/into': '1',
     \},
+\}
+
+let g:quickrun_config.pascal = {
+    \ 'command': 'fpr',
+    \ 'exec': '%c %s',
 \}
 set splitbelow
 
@@ -287,6 +297,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "let g:indentLine_setConceal = 0
 
 " nvim-nim
+" disable key config
 let g:nvim_nim_enable_default_binds = 0
 
 " CtrlP
@@ -325,8 +336,20 @@ nnoremap <C-e><C-r> :lopen<CR>
 autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 
 " lsp
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
+" let g:lsp_signs_enabled = 1
+" let g:lsp_diagnostics_echo_cursor = 1
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'pascal': [],
+    \ 'delphi': [],
+    \ 'python': ['pyls'],
+    \ }
+
+nnoremap <F8> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " vim-matchup
 let g:loaded_matchit = 1
