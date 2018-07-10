@@ -21,7 +21,7 @@ set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
-autocmd filetype pascal setlocal tabstop=4 shiftwidth=4 noexpandtab
+"autocmd filetype haskell setlocal tabstop=2 shiftwidth=2
 
 set nobackup
 set noswapfile
@@ -66,6 +66,8 @@ noremap % m
 noremap m %
 
 runtime macros/matchit.vim
+" vim-matchup
+let g:loaded_matchit = 1
 
 set foldlevel=100
 
@@ -74,6 +76,8 @@ set laststatus=2
 set clipboard=unnamed,unnamedplus
 " set clipboard+=unnamedplus
 autocmd InsertLeave * set nopaste
+
+" for comment
 
 " Keymap
 let mapleader = "\<Space>"
@@ -227,9 +231,9 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 
-call deoplete#custom#source('LanguageClient',
-    \ 'min_pattern_length',
-    \ 2)
+" call deoplete#custom#source('LanguageClient',
+"     \ 'min_pattern_length',
+"     \ 2)
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -317,18 +321,15 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-    \ 'python': ['flake8'],
     \ 'rust': ['rls'],
+    \ 'python': ['flake8'],
 \ }
 
 let g:ale_fixers = {
-    \ 'python': ['autopep8', 'isort'],
     \ 'rust': ['rustfmt'],
     \ 'perl': ['perltidy'],
+    \ 'python': ['autopep8', 'isort'],
 \ }
-let g:airline#extensions#ale#enabled = 1
-let g:rustfmt_autosave = 1
-let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
 nnoremap <C-e><C-r> :lopen<CR>
 
@@ -338,12 +339,12 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 " lsp
 " let g:lsp_signs_enabled = 1
 " let g:lsp_diagnostics_echo_cursor = 1
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'pascal': [],
-    \ 'delphi': [],
-    \ 'python': ['pyls'],
-    \ }
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"     \ 'pascal': [],
+"     \ 'delphi': [],
+"     \ 'python': ['pyls'],
+"     \ }
 
 nnoremap <F8> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
@@ -351,13 +352,10 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-" vim-matchup
-let g:loaded_matchit = 1
-
-" shebang
+" shebang auto insert
 augroup Shebang
     "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
-    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\" | 2
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
     autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
     autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
     autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2

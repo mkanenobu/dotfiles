@@ -170,6 +170,7 @@ alias nimc='nim c'
 alias nimcr='nim c -r --verbosity:0'
 alias nimcd='nim c -d:release'
 alias rc='rustc'
+alias ghr='runghc'
 
 # vagrant
 alias vu='vagrant up'

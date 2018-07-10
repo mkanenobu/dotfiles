@@ -12,7 +12,7 @@
   <property name="default-view" type="string" value="ThunarDetailsView"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_SMALLER"/>
-  <property name="last-details-view-column-widths" type="string" value="50,130,50,50,340,50,50,66,102"/>
+  <property name="last-details-view-column-widths" type="string" value="50,130,50,50,360,50,50,72,132"/>
   <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
   <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
   <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALLEST"/>

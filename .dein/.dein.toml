@@ -3,10 +3,10 @@
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# rev = 'next'
+# build = 'bash install.sh'
 
 # colorschemes
 [[plugins]]
@@ -67,15 +67,6 @@ repo = 'mkanenobu/nvim-nim'
 repo = 'thinca/vim-ref'
 
 [[plugins]]
-repo = 'vim-perl/vim-perl'
-
-[[plugins]]
-repo = '2072/PHP-Indenting-for-VIm'
-
-# [[plugins]]
-# repo = 'phpactor/phpactor'
-
-[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
@@ -89,11 +80,11 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
+# [[plugins]]
+# repo = 'zchee/deoplete-jedi'
 
-[[plugins]]
-repo = 'padawan-php/deoplete-padawan'
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -101,5 +92,14 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'evidens/vim-twig'
 
-# [[plugins]]
-# repo = 'boeckmann/vim-freepascal'
+[[plugins]]
+repo = 'boeckmann/vim-freepascal'
+
+[[plugins]]
+repo = 'dag/vim2hs'
+
+[[plugins]]
+repo = 'eagletmt/ghcmod-vim'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
