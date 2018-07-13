@@ -68,12 +68,11 @@ synclient HorizScrollDelta=-99
 xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
 #xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Button Timeout" 100 >/dev/null #2>&1
 
-export FCITX_NO_PREEDIT_APPS=""
+#export FCITX_NO_PREEDIT_APPS=""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # Discord startup minimize
 #wmctrl -c "Discord"
-
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

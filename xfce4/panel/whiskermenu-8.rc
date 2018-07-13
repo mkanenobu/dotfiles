@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=mysql-workbench.desktop,vivaldi-stable.desktop,golly.desktop,gimp.desktop,typora.desktop,stacer.desktop,arandr.desktop,pavucontrol.desktop,alsamixergui.desktop,audacity.desktop
+recent=doublecmd.desktop,mysql-workbench.desktop,blueman-manager.desktop,blueman-adapters.desktop,typora.desktop,stacer.desktop,amoebax.desktop,gitkraken.desktop,org.baedert.corebird.desktop,vivaldi-stable.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

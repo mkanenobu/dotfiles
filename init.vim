@@ -20,7 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 "autocmd filetype haskell setlocal tabstop=2 shiftwidth=2
 
 set nobackup
@@ -328,7 +328,6 @@ let g:ale_linters = {
 let g:ale_fixers = {
     \ 'rust': ['rustfmt'],
     \ 'perl': ['perltidy'],
-    \ 'python': ['autopep8', 'isort'],
 \ }
 
 nnoremap <C-e><C-r> :lopen<CR>

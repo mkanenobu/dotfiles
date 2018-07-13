@@ -130,7 +130,7 @@ fpr(){
     rm "$excutable" "$excutable".o
 }
 
-mkdirmv(){
+mkdircd(){
     mkdir "$1"
-    mv "$1"
+    cd "$1"
 }
