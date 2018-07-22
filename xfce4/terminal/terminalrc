@@ -27,8 +27,9 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 ColorPalette=#000000;#cc0000;#4e9a06;#c4a000;#3465a4;#75507b;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#739fcf;#ad7fa8;#34e2e2;#eeeeec
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0.960000
-ColorBackground=#101010101010
-TitleMode=TERMINAL_TITLE_HIDE
+BackgroundDarkness=0.980000
+ColorBackground=#1b1b1b1b1b1b
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+TitleInitial=
+TitleMode=TERMINAL_TITLE_HIDE
 

@@ -20,6 +20,7 @@ set list
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
+autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
 "autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
 "autocmd filetype haskell setlocal tabstop=2 shiftwidth=2
 
@@ -323,6 +324,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_linters = {
     \ 'rust': ['rls'],
     \ 'python': ['flake8'],
+    \ 'css':['csslint'],
 \ }
 
 let g:ale_fixers = {

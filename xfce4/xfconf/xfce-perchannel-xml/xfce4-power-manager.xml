@@ -27,5 +27,6 @@
     <property name="brightness-on-ac" type="uint" value="9"/>
     <property name="sleep-button-action" type="uint" value="3"/>
     <property name="hibernate-button-action" type="uint" value="3"/>
+    <property name="show-panel-label" type="int" value="1"/>
   </property>
 </channel>

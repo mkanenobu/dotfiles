@@ -1,0 +1,16 @@
+show_frame=false
+fg_set=false
+bg_set=true
+bg=46130R 45530G 44060B
+timezone=
+width_set=false
+height_set=false
+lines_vertically=true
+rotation=0
+data0=%m/%d/%y
+font0=
+data1=%H:%M:%S
+font1=
+tooltip=%A %d %B %Y/%V
+hib_timing=true
+
