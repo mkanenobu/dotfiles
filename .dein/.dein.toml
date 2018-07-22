@@ -48,11 +48,10 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-
 #[[plugins]]
 #repo = 'andymass/vim-matchup'
+
+### Language support
 
 # Nim helper
 #[[plugins]]
@@ -62,6 +61,36 @@ repo = 'prabirshrestha/vim-lsp'
 
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
+
+[[plugins]]
+repo = 'hhvm/vim-hack'
+
+[[plugins]]
+repo = 'evidens/vim-twig'
+
+[[plugins]]
+repo = 'boeckmann/vim-freepascal'
+
+[[plugins]]
+repo = 'dag/vim2hs'
+
+[[plugins]]
+repo = 'eagletmt/ghcmod-vim'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+
+
 
 [[plugins]]
 repo = 'thinca/vim-ref'
@@ -80,26 +109,5 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-# [[plugins]]
-# repo = 'zchee/deoplete-jedi'
-
-# [[plugins]]
-# repo = 'davidhalter/jedi-vim'
-
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'evidens/vim-twig'
-
-[[plugins]]
-repo = 'boeckmann/vim-freepascal'
-
-[[plugins]]
-repo = 'dag/vim2hs'
-
-[[plugins]]
-repo = 'eagletmt/ghcmod-vim'
-
-[[plugins]]
-repo = 'eagletmt/neco-ghc'

@@ -14,7 +14,7 @@ open(){
     elif [[ "$1" == *.html ]];then
         google-chrome "$1" >/dev/null 2>&1
     elif [[ "$1" == *.md ]];then
-        typora "$1" >/dev/null 2>&1 &
+        (typora "$1" >/dev/null 2>&1 &)
     else
         xdg-open "$1" >/dev/null 2>&1
     fi
