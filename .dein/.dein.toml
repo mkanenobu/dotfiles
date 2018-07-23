@@ -83,8 +83,8 @@ repo = 'eagletmt/neco-ghc'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
