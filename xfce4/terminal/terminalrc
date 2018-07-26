@@ -32,4 +32,7 @@ ColorBackground=#1b1b1b1b1b1b
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TitleInitial=
 TitleMode=TERMINAL_TITLE_HIDE
+BackgroundImageFile=/home/mika/Pictures/tape_machine.png
+BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_SCALED
+BackgroundImageShading=0.810000
 

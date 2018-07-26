@@ -21,8 +21,10 @@ set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
-autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
 "autocmd filetype haskell setlocal tabstop=2 shiftwidth=2
+autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
 
 set nobackup
 set noswapfile
@@ -129,7 +131,6 @@ let g:php_baselib=1
 let g:php_htmlInStrings=1
 let g:php_noShortTags=1
 let g:php_sql_query=1
-
 " DB
 let g:sql_type_default = 'mysql'
 
@@ -288,6 +289,10 @@ let g:quickrun_config.pascal = {
     \ 'exec': '%c %s',
 \}
 set splitbelow
+
+if expand("%:e") == "md"
+    map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR>
+endif
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>

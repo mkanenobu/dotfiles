@@ -66,6 +66,9 @@ repo = 'mkanenobu/nvim-nim'
 repo = 'hhvm/vim-hack'
 
 [[plugins]]
+repo = 'wlangstroth/vim-racket'
+
+[[plugins]]
 repo = 'evidens/vim-twig'
 
 [[plugins]]

@@ -5,6 +5,16 @@ sshToEc2(){
     ssh -i "$ec2_key" ec2-user@"$1"
 }
 
+
+# Git
+gl(){
+    if type "tig" >/dev/null 2>&1 ;then
+        tig
+    else
+        git log
+    fi
+}
+
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
@@ -119,17 +129,18 @@ gcr(){
     ./a.out
 }
 
-fpc1(){
-    fpc "$1"
-    excutable="${1/.pass/}"
-    rm "$excutable" "$excutable".o
-}
-
 fpr(){
     fpc "$1"
-    excutable="${1/.pass/}"
-    ./"$excutable"
-    rm "$excutable" "$excutable".o
+    if [ "$?" == 0 ];then
+        excutable="${1/.pas/}"
+        ./"$excutable"
+        if [ -e "$excutable" ];then
+            rm "$excutable"
+        fi
+        if [ -e "$excutable".o ];then
+            rm "$excutable".o
+        fi
+    fi
 }
 
 mkdircd(){
