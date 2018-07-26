@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Session class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-schemaobject.getschema.html">SchemaObject::getSchema</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-session.close.html">Session::close</a></div>
+ <div class="up"><a href="book.mysql-xdevapi.html">Mysql_xdevapi</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.mysql-xdevapi-session" class="reference">
+
+ <h1 class="title">Session class</h1>
+ 
+
+ <div class="partintro"><p class="verinfo">(PECL mysql-xdevapi &gt;= 8.0.11)</p>
+
+
+  <div class="section" id="mysql-xdevapi-session.intro">
+   <h2 class="title">はじめに</h2>
+   <p class="para">
+
+   </p>
+  </div>
+
+
+  <div class="section" id="mysql-xdevapi-session.synopsis">
+   <h2 class="title">クラス概要</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <strong class="classname">mysql_xdevapi\Session</strong>
+     </span>
+     {</div>
+
+    
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>close</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">Object</span> <span class="methodname"><strong>commit</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mysql_xdevapi\Schema</span> <span class="methodname"><strong>createSchema</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$schema_name</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>dropSchema</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$schema_name</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">Object</span> <span class="methodname"><strong>executeSql</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$statement</code></span>  
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>generateUUID</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>getClientId</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mysql_xdevapi\Schema</span> <span class="methodname"><strong>getSchema</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>getSchemas</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><strong>getServerVersion</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">object</span> <span class="methodname"><strong>killClient</strong></span>
+    ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$client_id</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>listClients</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>quoteName</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><strong>releaseSavepoint</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><strong>rollback</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><strong>rollbackTo</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>setSavepoint</strong></span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">mysql_xdevapi\SqlStatement</span> <span class="methodname"><strong>sql</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><strong>startTransaction</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mysql-xdevapi-session.close.html">Session::close</a> — Close session</li><li><a href="mysql-xdevapi-session.commit.html">Session::commit</a> — Commit transaction</li><li><a href="mysql-xdevapi-session.construct.html">Session::__construct</a> — Description constructor</li><li><a href="mysql-xdevapi-session.createschema.html">Session::createSchema</a> — Create new schema</li><li><a href="mysql-xdevapi-session.dropschema.html">Session::dropSchema</a> — Drop a schema</li><li><a href="mysql-xdevapi-session.executesql.html">Session::executeSql</a> — Execute an SQL statement</li><li><a href="mysql-xdevapi-session.generateuuid.html">Session::generateUUID</a> — Get new UUID</li><li><a href="mysql-xdevapi-session.getclientid.html">Session::getClientId</a> — Get client ID</li><li><a href="mysql-xdevapi-session.getschema.html">Session::getSchema</a> — Get the schema</li><li><a href="mysql-xdevapi-session.getschemas.html">Session::getSchemas</a> — Get the schemas</li><li><a href="mysql-xdevapi-session.getserverversion.html">Session::getServerVersion</a> — Get server version</li><li><a href="mysql-xdevapi-session.killclient.html">Session::killClient</a> — Kill the client</li><li><a href="mysql-xdevapi-session.listclients.html">Session::listClients</a> — Get client list</li><li><a href="mysql-xdevapi-session.quotename.html">Session::quoteName</a> — Add quotes</li><li><a href="mysql-xdevapi-session.releasesavepoint.html">Session::releaseSavepoint</a> — Release set savepoint</li><li><a href="mysql-xdevapi-session.rollback.html">Session::rollback</a> — Rollback transaction</li><li><a href="mysql-xdevapi-session.rollbackto.html">Session::rollbackTo</a> — Rollback transaction to savepoint</li><li><a href="mysql-xdevapi-session.setsavepoint.html">Session::setSavepoint</a> — Create savepoint</li><li><a href="mysql-xdevapi-session.sql.html">Session::sql</a> — Execute SQL query</li><li><a href="mysql-xdevapi-session.starttransaction.html">Session::startTransaction</a> — Start transaction</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-schemaobject.getschema.html">SchemaObject::getSchema</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-session.close.html">Session::close</a></div>
+ <div class="up"><a href="book.mysql-xdevapi.html">Mysql_xdevapi</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

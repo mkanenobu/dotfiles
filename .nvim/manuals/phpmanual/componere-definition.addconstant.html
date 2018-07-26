@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Add Constant</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="componere-definition.construct.html">Componere\Definition::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="componere-definition.addproperty.html">Componere\Definition::addProperty</a></div>
+ <div class="up"><a href="class.componere-definition.html">Componere\Definition</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="componere-definition.addconstant" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Componere\Definition::addConstant</h1>
+  <p class="verinfo">(Componere 2 &gt;= 2.1.0)</p><p class="refpurpose"><span class="refname">Componere\Definition::addConstant</span> &mdash; <span class="dc-title">Add Constant</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-componere-definition.addconstant-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type Definition">Definition</span></span> <span class="methodname"><strong>Componere\Definition::addConstant</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   , <span class="methodparam"><span class="type"><span class="type \Componere\Value">\Componere\Value</span></span> <code class="parameter">$value</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Shall declare a class constant on the current Definition
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-componere-definition.addconstant-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">name</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The case sensitive name for the constant
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">value</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The Value for the constant, must not be undefined or static
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-componere-definition.addconstant-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   The current Definition
+  </p>
+ </div>
+
+
+ <div class="refsect1 exceptions" id="refsect1-componere-definition.addconstant-exceptions">
+  <h3 class="title">Exceptions</h3>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <span class="type"><span class="type Definition">Definition</span></span> was registered
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">name</code> is already declared as a constant
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">value</code> is static
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">value</code> is undefined
+   </p>
+  </div>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="componere-definition.construct.html">Componere\Definition::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="componere-definition.addproperty.html">Componere\Definition::addProperty</a></div>
+ <div class="up"><a href="class.componere-definition.html">Componere\Definition</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

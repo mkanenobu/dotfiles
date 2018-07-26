@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Search for document</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.existsindatabase.html">Collection::existsInDatabase</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.getname.html">Collection::getName</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collection.find" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Collection::find</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Collection::find</span> &mdash; <span class="dc-title">Search for document</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collection.find-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\CollectionFind">mysql_xdevapi\CollectionFind</span></span> <span class="methodname"><strong>mysql_xdevapi\Collection::find</strong></span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$search_condition</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Search a database collection for a document or set of documents. The returned
+   documents are contained in the CollectionFind object that can be used further 
+   to fetch one or all the documents.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collection.find-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">search_condition</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Although optional, normally a condition is defined to limit the results
+      to a subset of documents.
+     </p>
+     <p class="para">
+      Multiple elements might build the condition and the syntax supports parameter binding. 
+      The expression used as search condition must be a valid SQL expression.
+      If no search condition is provided (field empty) then find(&#039;true&#039;) is assumed.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collection.find-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   A CollectionFind object that can use used to verify the operation
+   or fetch found documents.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collection.find-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1971">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Collection::find()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Assuming&nbsp;$coll&nbsp;is&nbsp;a&nbsp;valid&nbsp;Collection&nbsp;object<br /><br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Marco",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;19,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Lonardo",&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;59,&nbsp;"job":&nbsp;"Paninaro"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Riccardo",&nbsp;&nbsp;&nbsp;"age":&nbsp;27,&nbsp;"job":&nbsp;"Cantante"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Carlotta",&nbsp;&nbsp;&nbsp;"age":&nbsp;23,&nbsp;"job":&nbsp;"Programmatrice"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Carlo",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;25,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Mariangela",&nbsp;"age":&nbsp;41,&nbsp;"job":&nbsp;"Programmatrice"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Alfredo",&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;27,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Antonella",&nbsp;&nbsp;"age":&nbsp;42,&nbsp;"job":&nbsp;"Studente"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Monica",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;35,&nbsp;"job":&nbsp;"Ballerino"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Giulio",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;29,&nbsp;"job":&nbsp;"Disoccupato"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Lucia",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;47,&nbsp;"job":&nbsp;"Barista"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Filippo",&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;31,&nbsp;"job":&nbsp;"Spazzino"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Alessandra",&nbsp;"age":&nbsp;15,&nbsp;"job":&nbsp;"Barista"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Massimo",&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;22,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Carlo",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;37,&nbsp;"job":&nbsp;"Calciatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;&nbsp;This&nbsp;query&nbsp;will&nbsp;look&nbsp;for&nbsp;up&nbsp;to&nbsp;2&nbsp;documents&nbsp;in&nbsp;the&nbsp;Collection&nbsp;sorted&nbsp;by&nbsp;age&nbsp;(descending),<br />&nbsp;&nbsp;&nbsp;the&nbsp;documents&nbsp;must&nbsp;have&nbsp;the&nbsp;job&nbsp;'Programmatore'&nbsp;and&nbsp;the&nbsp;age&nbsp;field&nbsp;higher&nbsp;or&nbsp;equal&nbsp;to&nbsp;20<br /><br />&nbsp;&nbsp;&nbsp;The&nbsp;actual&nbsp;resulting&nbsp;documents&nbsp;are&nbsp;'Carlo'&nbsp;and&nbsp;'Alfredo'<br />*/<br /><br /></span><span style="color: #0000BB">$obj&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;:job&nbsp;and&nbsp;age&nbsp;&gt;&nbsp;:age'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$res&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'job'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Programmatore'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'age'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;search&nbsp;condition&nbsp;mighe&nbsp;also&nbsp;be&nbsp;very&nbsp;complex&nbsp;and&nbsp;use&nbsp;multiple&nbsp;functions<br /></span><span style="color: #0000BB">$res&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'(1&gt;5)&nbsp;IN&nbsp;(true,false)&nbsp;&amp;&amp;&nbsp;{"title":"Spavatore"}&nbsp;NOT&nbsp;IN&nbsp;jobs&nbsp;&amp;&amp;&nbsp;CAST(_id&nbsp;AS&nbsp;SIGNED)&nbsp;&gt;&nbsp;2'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.existsindatabase.html">Collection::existsInDatabase</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.getname.html">Collection::getName</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

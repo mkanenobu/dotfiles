@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Insert table rows</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-table.getsession.html">Table::getSession</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-table.isview.html">Table::isView</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-table.html">mysql_xdevapi\Table</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-table.insert" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Table::insert</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Table::insert</span> &mdash; <span class="dc-title">Insert table rows</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-table.insert-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\TableInsert">mysql_xdevapi\TableInsert</span></span> <span class="methodname"><strong>mysql_xdevapi\Table::insert</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$columns</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+	Creates a new TableInsert object.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-table.insert-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">columns</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The columns to insert data into. Can be an array
+      with one or more values, or a string.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">...</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Additional columns definitions.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-table.insert-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+	 A TableInsert object.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-table.insert-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2117">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Table::insert()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(</span><span style="color: #DD0000">"name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"age"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">values</span><span style="color: #007700">([</span><span style="color: #DD0000">"Sakila"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">128</span><span style="color: #007700">],[</span><span style="color: #DD0000">"Sakila"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">512</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-table.getsession.html">Table::getSession</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-table.isview.html">Table::isView</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-table.html">mysql_xdevapi\Table</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

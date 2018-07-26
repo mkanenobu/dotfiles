@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Get one document</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.getname.html">Collection::getName</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.getschema.html">Collection::getSchema</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collection.getone" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Collection::getOne</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Collection::getOne</span> &mdash; <span class="dc-title">Get one document</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collection.getone-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type Document">Document</span></span> <span class="methodname"><strong>mysql_xdevapi\Collection::getOne</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$id</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This is a shortcut for <code class="code">Collection.find(&quot;_id = :id&quot;).bind(&quot;id&quot;, id).execute().fetchOne();</code>.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collection.getone-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">id</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The document ID in the collection.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collection.getone-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   The collection object, or <strong><code>NULL</code></strong> if the ID does not match a document.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collection.getone-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1972">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Collection::getOne()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@host"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$schema&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$coll&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">'test_collection'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"_id":&nbsp;"1",&nbsp;"name":&nbsp;"Marco",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;19,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"_id":&nbsp;"2",&nbsp;"name":&nbsp;"Lonardo",&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;59,&nbsp;"job":&nbsp;"Paninaro"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"_id":&nbsp;"3",&nbsp;"name":&nbsp;"Riccardo",&nbsp;&nbsp;&nbsp;"age":&nbsp;27,&nbsp;"job":&nbsp;"Cantante"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"_id":&nbsp;"4",&nbsp;"name":&nbsp;"Carlotta",&nbsp;&nbsp;&nbsp;"age":&nbsp;23,&nbsp;"job":&nbsp;"Programmatrice"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"_id":&nbsp;"5",&nbsp;"name":&nbsp;"Carlo",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age":&nbsp;25,&nbsp;"job":&nbsp;"Programmatore"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getOne</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getOne</span><span style="color: #007700">(</span><span style="color: #0000BB">5</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [_id] =&gt; 3
+    [age] =&gt; 27
+    [job] =&gt; Cantante
+    [name] =&gt; Riccardo
+)
+Array
+(
+    [_id] =&gt; 5
+    [age] =&gt; 25
+    [job] =&gt; Programmatore
+    [name] =&gt; Carlo
+)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.getname.html">Collection::getName</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.getschema.html">Collection::getSchema</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

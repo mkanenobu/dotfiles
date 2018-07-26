@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Set sorting criteria</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-tableupdate.limit.html">TableUpdate::limit</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-tableupdate.set.html">TableUpdate::set</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-tableupdate.html">mysql_xdevapi\TableUpdate</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-tableupdate.orderby" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">TableUpdate::orderby</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">TableUpdate::orderby</span> &mdash; <span class="dc-title">Set sorting criteria</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-tableupdate.orderby-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\TableUpdate">mysql_xdevapi\TableUpdate</span></span> <span class="methodname"><strong>mysql_xdevapi\TableUpdate::orderby</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$orderby_expr</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+	Sets the sorting criteria.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-tableupdate.orderby-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">orderby_expr</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The expressions that define the order by criteria. Can be an array
+      with one or more expressions, or a string.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">...</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Additional sort_expr parameters.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-tableupdate.orderby-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+	TableUpdate object.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-tableupdate.orderby-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2145">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\TableUpdate::orderby()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">update</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">,</span><span style="color: #0000BB">69</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;&gt;&nbsp;15&nbsp;and&nbsp;age&nbsp;&lt;&nbsp;22'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">orderby</span><span style="color: #007700">([</span><span style="color: #DD0000">'age&nbsp;asc'</span><span style="color: #007700">,</span><span style="color: #DD0000">'name&nbsp;desc'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-tableupdate.limit.html">TableUpdate::limit</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-tableupdate.set.html">TableUpdate::set</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-tableupdate.html">mysql_xdevapi\TableUpdate</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

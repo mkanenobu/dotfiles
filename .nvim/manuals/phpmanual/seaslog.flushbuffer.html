@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Flush logs buffer, dump to appender file, or send to remote api with tcp/udp</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="seaslog.error.html">SeasLog::error</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="seaslog.getbasepath.html">SeasLog::getBasePath</a></div>
+ <div class="up"><a href="class.seaslog.html">SeasLog</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="seaslog.flushbuffer" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SeasLog::flushBuffer</h1>
+  <p class="verinfo">(PECL seaslog &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">SeasLog::flushBuffer</span> &mdash; <span class="dc-title">Flush logs buffer, dump to appender file, or send to remote api with tcp/udp</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-seaslog.flushbuffer-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">bool</span> <span class="methodname"><strong>SeasLog::flushBuffer</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+    Flush logs buffer by <a href="seaslog.configuration.html#ini.seaslog.appender" class="link">seaslog.appender</a>: 
+    dump to file, or send to remote api with tcp/udp.
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <p class="para">
+     See also:
+     <a href="seaslog.configuration.html#ini.seaslog.appender-retry" class="link">seaslog.appender_retry</a>
+     <a href="seaslog.configuration.html#ini.seaslog.remote-host" class="link">seaslog.remote_host</a>
+     <a href="seaslog.configuration.html#ini.seaslog.remote-port" class="link">seaslog.remote_port</a>
+     </p>
+    </p></blockquote>
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-seaslog.flushbuffer-parameters">
+  <h3 class="title">パラメータ</h3>
+  <p class="para">この関数にはパラメータはありません。</p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-seaslog.flushbuffer-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   Return TRUE on flush buffer success, FALSE on failure.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-seaslog.flushbuffer-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-4679">
+   <p><strong>例1 <span class="function"><strong>SeasLog::flushBuffer()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />SeasLog</span><span style="color: #007700">::</span><span style="color: #0000BB">info</span><span style="color: #007700">(</span><span style="color: #DD0000">'info&nbsp;log'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">SeasLog</span><span style="color: #007700">::</span><span style="color: #0000BB">debug</span><span style="color: #007700">(</span><span style="color: #DD0000">'debug&nbsp;log'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">SeasLog</span><span style="color: #007700">::</span><span style="color: #0000BB">getBuffer</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">SeasLog</span><span style="color: #007700">::</span><span style="color: #0000BB">flushBuffer</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">SeasLog</span><span style="color: #007700">::</span><span style="color: #0000BB">getBuffer</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(1) {
+  [&quot;/var/log/www/default/20180707.log&quot;]=&gt;
+  array(2) {
+    [0]=&gt;
+    string(79) &quot;2018-07-07 10:47:58 | INFO | 71910 | 5b4029ded6009 | 1530931678.877 | info log
+&quot;
+    [1]=&gt;
+    string(81) &quot;2018-07-07 10:47:58 | DEBUG | 71910 | 5b4029ded6009 | 1530931678.877 | debug log
+&quot;
+  }
+}
+bool(true)
+array(0) {
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-seaslog.flushbuffer-seealso">
+  <h3 class="title">参考</h3>
+  <ul class="simplelist">
+   <li class="member"><a href="seaslog.configuration.html#ini.seaslog.use-buffer" class="link">seaslog.use_buffer</a></li>
+   <li class="member"><a href="seaslog.configuration.html#ini.seaslog.buffer-size" class="link">seaslog.buffer_size</a></li>
+   <li class="member"><a href="seaslog.configuration.html#ini.seaslog.buffer-disabled-in-cli" class="link">seaslog.buffer_disabled_in_cli</a></li>
+   <li class="member"><span class="methodname"><a href="seaslog.getbufferenabled.html" class="methodname" rel="rdfs-seeAlso">SeasLog::getBufferEnabled()</a> - Determin if buffer enabled</span></li>
+   <li class="member"><span class="methodname"><a href="seaslog.getbuffer.html" class="methodname" rel="rdfs-seeAlso">SeasLog::getBuffer()</a> - Get the logs buffer in memory as array</span></li>
+  </ul>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="seaslog.error.html">SeasLog::error</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="seaslog.getbasepath.html">SeasLog::getBasePath</a></div>
+ <div class="up"><a href="class.seaslog.html">SeasLog</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

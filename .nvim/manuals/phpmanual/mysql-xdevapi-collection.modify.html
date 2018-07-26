@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Modify collection documents</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.getsession.html">Collection::getSession</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.remove.html">Collection::remove</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collection.modify" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Collection::modify</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Collection::modify</span> &mdash; <span class="dc-title">Modify collection documents</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collection.modify-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\CollectionModify">mysql_xdevapi\CollectionModify</span></span> <span class="methodname"><strong>mysql_xdevapi\Collection::modify</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$search_condition</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Modify collections that meet specific search conditions. 
+   Multiple operations are allowed, and parameter binding
+   is supported.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collection.modify-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">search_condition</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Must be a valid SQL expression used to match the documents to modify.
+      This expression might be as simple as <strong><code>TRUE</code></strong>, which matches all 
+      documents, or it might use functions and operators such as 
+      <code class="code">&#039;CAST(_id AS SIGNED) &gt;= 10&#039;</code>, 
+      <code class="code">&#039;age MOD 2 = 0 OR age MOD 3 = 0&#039;</code>, or
+      <code class="code">&#039;_id IN [&quot;2&quot;,&quot;5&quot;,&quot;7&quot;,&quot;10&quot;]&#039;</code>.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collection.modify-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   If the operation is not executed, then the function will return 
+   a Modify object that can be used to add additional
+   modify operations.
+  </p>
+  <p class="para">
+   If the modify operation is executed, then the returned object will contain
+   the result of the operation.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collection.modify-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1975">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Collection::modify()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Assuming&nbsp;$coll&nbsp;is&nbsp;a&nbsp;valid&nbsp;Collection&nbsp;object<br /><br />//&nbsp;To&nbsp;all&nbsp;the&nbsp;documents&nbsp;with&nbsp;the&nbsp;'job'&nbsp;field&nbsp;like&nbsp;'Programmatore'&nbsp;or&nbsp;'Cantante'&nbsp;append&nbsp;two&nbsp;new&nbsp;jobs:&nbsp;Volontario&nbsp;and&nbsp;Tassinaro<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">"job&nbsp;in&nbsp;('Programmatore',&nbsp;'Cantante')"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">arrayAppend</span><span style="color: #007700">(</span><span style="color: #DD0000">'job'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Volontario'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">arrayAppend</span><span style="color: #007700">(</span><span style="color: #DD0000">'job'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Tassinaro'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Remove&nbsp;the&nbsp;'age'&nbsp;field&nbsp;from&nbsp;all&nbsp;the&nbsp;docs&nbsp;with&nbsp;'ordinal'&nbsp;between&nbsp;1&nbsp;and&nbsp;9<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'ordinal&nbsp;&gt;=&nbsp;1&nbsp;and&nbsp;ordinal&nbsp;&lt;=&nbsp;9'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">unset</span><span style="color: #007700">([</span><span style="color: #DD0000">'age'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;The&nbsp;modify&nbsp;operation&nbsp;is&nbsp;split&nbsp;in&nbsp;two&nbsp;lines,&nbsp;the&nbsp;object&nbsp;returned&nbsp;by&nbsp;a&nbsp;not&nbsp;executed&nbsp;'modify'<br />&nbsp;holds&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;current&nbsp;modify&nbsp;(it&nbsp;might&nbsp;be&nbsp;executed&nbsp;later)<br />*/<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;&gt;&nbsp;:age1&nbsp;and&nbsp;age&nbsp;&lt;&nbsp;:age2'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'age1'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">25</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'age2'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">([</span><span style="color: #DD0000">'_id&nbsp;desc'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'job'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Disoccupato'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.getsession.html">Collection::getSession</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.remove.html">Collection::remove</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

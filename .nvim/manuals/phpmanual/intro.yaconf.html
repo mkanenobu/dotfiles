@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>はじめに</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="book.yaconf.html">Yaconf</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="yaconf.setup.html">インストール/設定</a></div>
+ <div class="up"><a href="book.yaconf.html">Yaconf</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="intro.yaconf" class="preface">
+  <h1 class="title">はじめに</h1>
+  <p class="para">
+   <em>Yet Another Configurations Container</em>
+   (<acronym>Yaconf</acronym>) is a configurations container, 
+   it parses INI files, and store the result
+   in PHP when PHP is started, the result lives with the
+   whole PHP lifecycle.
+  </p>
+  <p class="para">
+   Yaconf stores all configurations as 
+   interned string or immutable array, which means they are 
+   not refcounted-able, thus when you retrieving configurations
+   from yaconf, it could be considered as zero-copy, very fast. 
+  </p>
+  <p class="para">
+   Yaconf supports sections and sections
+   inheritance in INI files. if PHP is built as non-ZTS build,
+   Yaconf also supports automatically reloading after INI files
+   are changed.
+  </p>
+  <p class="para">
+   Yaconf requires PHP 7.0 or greater.
+  </p>
+  <div class="example" id="example-5097">
+   <p><strong>例1 INI example</strong></p>
+   <div class="example-contents">
+<div class="inicode"><pre class="inicode">;simple key val
+key=val
+;hash
+hash.a=val
+;array
+arr.0=val
+;or
+arr[]=val
+;use PHP constants
+version=PHP_VERION
+;use enviroment
+env=${PATH}</pre>
+</div>
+   </div>
+
+  </div>
+  <div class="example" id="example-5098">
+   <p><strong>例2 INI sections example</strong></p>
+   <div class="example-contents">
+<div class="inicode"><pre class="inicode">[SectionA]
+key=val
+hash.a=val
+
+;SectionB inherits SectionA
+[SectionB:SectionA]
+;override configuration key in SectionA
+key=new_val</pre>
+</div>
+   </div>
+
+  </div>
+ </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="book.yaconf.html">Yaconf</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="yaconf.setup.html">インストール/設定</a></div>
+ <div class="up"><a href="book.yaconf.html">Yaconf</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

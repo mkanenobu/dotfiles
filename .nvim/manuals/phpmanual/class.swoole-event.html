@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The Swoole\Event class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole-coroutine.suspend.html">Swoole\Coroutine::suspend</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole-event.add.html">Swoole\Event::add</a></div>
+ <div class="up"><a href="book.swoole.html">Swoole</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.swoole-event" class="reference">
+
+ <h1 class="title">The Swoole\Event class</h1>
+ 
+
+ <div class="partintro"><p class="verinfo">(PHP 5 &gt;= 5.2.0, PHP 7, PECL swoole &gt;= 1.9.0)</p>
+
+
+  <div class="section" id="swoole-event.intro">
+   <h2 class="title">はじめに</h2>
+   <p class="para">
+
+   </p>
+  </div>
+
+
+  <div class="section" id="swoole-event.synopsis">
+   <h2 class="title">クラス概要</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <strong class="classname">Swoole\Event</strong>
+     </span>
+     {</div>
+
+    
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">boolean</span> <span class="methodname"><a href="swoole-event.add.html" class="methodname">add</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$fd</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$read_callback</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$write_callback</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$events</code></span>
+  ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="swoole-event.defer.html" class="methodname">defer</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$callback</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">boolean</span> <span class="methodname"><a href="swoole-event.del.html" class="methodname">del</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$fd</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="swoole-event.exit.html" class="methodname">exit</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">boolean</span> <span class="methodname"><a href="swoole-event.set.html" class="methodname">set</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$fd</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$read_callback</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$write_callback</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$events</code></span>
+  ]]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="swoole-event.wait.html" class="methodname">wait</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="swoole-event.write.html" class="methodname">write</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$fd</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="swoole-event.add.html">Swoole\Event::add</a> — Add new callback functions of a socket into the EventLoop.</li><li><a href="swoole-event.defer.html">Swoole\Event::defer</a> — Add a callback function to the next event loop.</li><li><a href="swoole-event.del.html">Swoole\Event::del</a> — Remove all event callback functions of a socket.</li><li><a href="swoole-event.exit.html">Swoole\Event::exit</a> — Exit the eventloop, only available at client side.</li><li><a href="swoole-event.set.html">Swoole\Event::set</a> — Update the event callback functions of a socket.</li><li><a href="swoole-event.wait.html">Swoole\Event::wait</a> — Description</li><li><a href="swoole-event.write.html">Swoole\Event::write</a> — Write data to the socket.</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole-coroutine.suspend.html">Swoole\Coroutine::suspend</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole-event.add.html">Swoole\Event::add</a></div>
+ <div class="up"><a href="book.swoole.html">Swoole</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The Swoole\Http\Response class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole-http-request.rawcontent.html">Swoole\Http\Request::rawcontent</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole-http-response.cookie.html">Swoole\Http\Response::cookie</a></div>
+ <div class="up"><a href="book.swoole.html">Swoole</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.swoole-http-response" class="reference">
+
+ <h1 class="title">The Swoole\Http\Response class</h1>
+ 
+
+ <div class="partintro"><p class="verinfo">(PHP 5 &gt;= 5.2.0, PHP 7, PECL swoole &gt;= 1.9.0)</p>
+
+
+  <div class="section" id="swoole-http-response.intro">
+   <h2 class="title">はじめに</h2>
+   <p class="para">
+
+   </p>
+  </div>
+
+
+  <div class="section" id="swoole-http-response.synopsis">
+   <h2 class="title">クラス概要</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <strong class="classname">Swoole\Http\Response</strong>
+     </span>
+     {</div>
+
+    
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="swoole-http-response.cookie.html" class="methodname">cookie</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$expires</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$secure</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$httponly</code></span>
+  ]]]]]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="swoole-http-response.destruct.html" class="methodname">__destruct</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="swoole-http-response.end.html" class="methodname">end</a></span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$content</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="swoole-http-response.gzip.html" class="methodname">gzip</a></span>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$compress_level</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="swoole-http-response.header.html" class="methodname">header</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ucwords</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="swoole-http-response.initheader.html" class="methodname">initHeader</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="swoole-http-response.rawcookie.html" class="methodname">rawcookie</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$expires</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$secure</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$httponly</code></span>
+  ]]]]]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="swoole-http-response.sendfile.html" class="methodname">sendfile</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="swoole-http-response.status.html" class="methodname">status</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$http_code</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="swoole-http-response.write.html" class="methodname">write</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$content</code></span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="swoole-http-response.cookie.html">Swoole\Http\Response::cookie</a> — Set the cookies of the HTTP response.</li><li><a href="swoole-http-response.destruct.html">Swoole\Http\Response::__destruct</a> — Destruct the HTTP response.</li><li><a href="swoole-http-response.end.html">Swoole\Http\Response::end</a> — Send data for the HTTP request and finish the response.</li><li><a href="swoole-http-response.gzip.html">Swoole\Http\Response::gzip</a> — Enable the gzip of response content.</li><li><a href="swoole-http-response.header.html">Swoole\Http\Response::header</a> — Set the HTTP response headers.</li><li><a href="swoole-http-response.initheader.html">Swoole\Http\Response::initHeader</a> — Init the HTTP response header.</li><li><a href="swoole-http-response.rawcookie.html">Swoole\Http\Response::rawcookie</a> — Set the raw cookies to the HTTP response.</li><li><a href="swoole-http-response.sendfile.html">Swoole\Http\Response::sendfile</a> — Send file through the HTTP response.</li><li><a href="swoole-http-response.status.html">Swoole\Http\Response::status</a> — Set the status code of the HTTP response.</li><li><a href="swoole-http-response.write.html">Swoole\Http\Response::write</a> — Append HTTP body content to the HTTP response.</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole-http-request.rawcontent.html">Swoole\Http\Request::rawcontent</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole-http-response.cookie.html">Swoole\Http\Response::cookie</a></div>
+ <div class="up"><a href="book.swoole.html">Swoole</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

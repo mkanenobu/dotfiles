@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>オブジェクト指向 API の使用</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="example.xmlwriter-namespace.html">XML 名前空間の使用</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.xmlwriter.html">XMLWriter 関数</a></div>
+ <div class="up"><a href="xmlwriter.examples.html">例</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="example.xmlwriter-oop" class="section">
+  <h2 class="title">オブジェクト指向 API の使用</h2>
+  <p class="para">
+   この例では、XMLWriter のオブジェクト指向 API を使う方法を示します。
+  </p>
+  <p class="para">
+   <div class="example" id="example-6721">
+    <p><strong>例1 オブジェクト指向 API の使用</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$xw&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">XMLWriter</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">openMemory</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">startDocument</span><span style="color: #007700">(</span><span style="color: #DD0000">"1.0"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">startElement</span><span style="color: #007700">(</span><span style="color: #DD0000">"book"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">text</span><span style="color: #007700">(</span><span style="color: #DD0000">"example"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">endElement</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">endDocument</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$xw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">outputMemory</span><span style="color: #007700">();</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;book&gt;example&lt;/book&gt;
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="example.xmlwriter-namespace.html">XML 名前空間の使用</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.xmlwriter.html">XMLWriter 関数</a></div>
+ <div class="up"><a href="xmlwriter.examples.html">例</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

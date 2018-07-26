@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Set document field filter</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionfind.execute.html">CollectionFind::execute</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionfind.groupby.html">CollectionFind::groupBy</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionfind.html">mysql_xdevapi\CollectionFind</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collectionfind.fields" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">CollectionFind::fields</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">CollectionFind::fields</span> &mdash; <span class="dc-title">Set document field filter</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collectionfind.fields-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\CollectionFind">mysql_xdevapi\CollectionFind</span></span> <span class="methodname"><strong>mysql_xdevapi\CollectionFind::fields</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$projection</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This is the equivalent of the SQL projection, which allows to select which columns the query shall return.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collectionfind.fields-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">projection</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Can either be a single string or an array of string, those strings are identifying the columns
+      that have to be returned for each document that match the search condition.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionfind.fields-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   A CollectionFind object that can be used for further processing
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionfind.fields-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1984">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionFind::fields()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//Assuming&nbsp;$coll&nbsp;is&nbsp;a&nbsp;valid&nbsp;collection&nbsp;object<br /><br />/*<br />&nbsp;&nbsp;&nbsp;The&nbsp;following&nbsp;find&nbsp;call&nbsp;will&nbsp;search&nbsp;for&nbsp;all&nbsp;the&nbsp;documents<br />&nbsp;&nbsp;&nbsp;with&nbsp;a&nbsp;'job'&nbsp;like&nbsp;'tassinaro'&nbsp;and&nbsp;will&nbsp;return&nbsp;only&nbsp;the&nbsp;column<br />&nbsp;&nbsp;&nbsp;'age'&nbsp;from&nbsp;each&nbsp;document<br />*/<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;\'tassinaro\''</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//Example&nbsp;which&nbsp;make&nbsp;use&nbsp;of&nbsp;the&nbsp;COUNT&nbsp;function<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">([</span><span style="color: #DD0000">'COUNT(name)&nbsp;as&nbsp;cn'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MAX(age)&nbsp;as&nbsp;ma'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'job&nbsp;as&nbsp;j'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionfind.execute.html">CollectionFind::execute</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionfind.groupby.html">CollectionFind::groupBy</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionfind.html">mysql_xdevapi\CollectionFind</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Set the sorting criteria</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionremove.limit.html">CollectionRemove::limit</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mysql-xdevapi-columnresult.html">mysql_xdevapi\ColumnResult</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionremove.html">mysql_xdevapi\CollectionRemove</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collectionremove.sort" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">CollectionRemove::sort</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">CollectionRemove::sort</span> &mdash; <span class="dc-title">Set the sorting criteria</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collectionremove.sort-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\CollectionRemove">mysql_xdevapi\CollectionRemove</span></span> <span class="methodname"><strong>mysql_xdevapi\CollectionRemove::sort</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$sort_expr</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Sort the result set by the field selected in the sort_expr argument. The allowed
+   orders are ASC (Ascending) or DESC (Descending). This operation is equivalent to the &#039;ORDER BY&#039; SQL operation
+   and it follows the same set of rules.
+  </p>
+
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
+現在のところ詳細な情報はありません。引数のリストのみが
+記述されています。</p></div>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collectionremove.sort-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">sort_expr</code></dt>
+
+    <dd>
+
+     <p class="para">
+      One or more sorting expressions can be provided. The evaluation is from left to right,
+      and each expression is separated by a comma.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionremove.sort-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   A CollectionRemove object that can be used to execute the command, or to add additional operations.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionremove.sort-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2010">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionRemove::sort()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">remove</span><span style="color: #007700">(</span><span style="color: #DD0000">'true'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionremove.limit.html">CollectionRemove::limit</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="class.mysql-xdevapi-columnresult.html">mysql_xdevapi\ColumnResult</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionremove.html">mysql_xdevapi\CollectionRemove</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>実行時設定</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole.installation.html">インストール手順</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole.resources.html">リソース型</a></div>
+ <div class="up"><a href="swoole.setup.html">インストール/設定</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="swoole.configuration" class="section">
+ <h2 class="title">実行時設定</h2>
+ <p class="simpara">
+<var class="filename">php.ini</var> の設定により動作が変化します。
+</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Swoole 設定オプション</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>名前</th>
+      <th>デフォルト</th>
+      <th>変更可能</th>
+      <th>変更履歴</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="swoole.configuration.html#ini.swoole.aio-thread-num" class="link">swoole.aio_thread_num</a></td>
+      <td>2</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="swoole.configuration.html#ini.swoole.display-errors" class="link">swoole.display_errors</a></td>
+      <td>On</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="swoole.configuration.html#ini.swoole.fast-serialize" class="link">swoole.fast_serialize</a></td>
+      <td>Off</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="swoole.configuration.html#ini.swoole.unixsock-buffer-size" class="link">swoole.unixsock_buffer_size</a></td>
+      <td>8388608</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="swoole.configuration.html#ini.swoole.use-namespace" class="link">swoole.use_namespace</a></td>
+      <td>On</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td></td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+
+ <p class="para">以下に設定ディレクティブに関する
+簡単な説明を示します。</p>
+
+ <p class="para">
+  <dl>
+
+   
+     <dt id="ini.swoole.aio-thread-num">
+      <code class="parameter">swoole.aio_thread_num</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       POSIX asynchronous I/O thread number
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.swoole.display-errors">
+      <code class="parameter">swoole.display_errors</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+        This determines whether Swoole errors should be printed to the screen.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.swoole.fast-serialize">
+      <code class="parameter">swoole.fast_serialize</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+        Whether to enable Swoole fast_serialize.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.swoole.unixsock-buffer-size">
+      <code class="parameter">swoole.unixsock_buffer_size</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Buffer size of Unix socket.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.swoole.use-namespace">
+      <code class="parameter">swoole.use_namespace</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+        Whether to use PHP namespaces
+      </p>
+     </dd>
+
+    
+
+  </dl>
+
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="swoole.installation.html">インストール手順</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="swoole.resources.html">リソース型</a></div>
+ <div class="up"><a href="swoole.setup.html">インストール/設定</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

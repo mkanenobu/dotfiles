@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Execute remove operation</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionremove.construct.html">CollectionRemove::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionremove.limit.html">CollectionRemove::limit</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionremove.html">mysql_xdevapi\CollectionRemove</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collectionremove.execute" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">CollectionRemove::execute</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">CollectionRemove::execute</span> &mdash; <span class="dc-title">Execute remove operation</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collectionremove.execute-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\Result">mysql_xdevapi\Result</span></span> <span class="methodname"><strong>mysql_xdevapi\CollectionRemove::execute</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   The execute function needs to be invoked in order to trigger the client to send the CRUD operation request to the server.
+  </p>
+
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
+現在のところ詳細な情報はありません。引数のリストのみが
+記述されています。</p></div>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collectionremove.execute-parameters">
+  <h3 class="title">パラメータ</h3>
+  <p class="para">この関数にはパラメータはありません。</p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionremove.execute-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+	  Result object.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionremove.execute-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2008">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionRemove::execute()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">remove</span><span style="color: #007700">(</span><span style="color: #DD0000">'true'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionremove.construct.html">CollectionRemove::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionremove.limit.html">CollectionRemove::limit</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionremove.html">mysql_xdevapi\CollectionRemove</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

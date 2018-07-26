@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The MongoDB\BSON\Int64 class</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-dbpointer.unserialize.html">MongoDB\BSON\DBPointer::unserialize</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-int64.construct.html">MongoDB\BSON\Int64::__construct</a></div>
+ <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="class.mongodb-bson-int64" class="reference">
+
+ <h1 class="title">The MongoDB\BSON\Int64 class</h1>
+ 
+
+ <div class="partintro"><p class="verinfo">(mongodb &gt;=1.5.0)</p>
+
+
+  <div class="section" id="mongodb-bson-int64.intro">
+   <h2 class="title">はじめに</h2>
+   <p class="para">
+    BSON type for a 64-bit integer. This class cannot be instantiated and is
+    only created during BSON decoding when a 64-bit integer cannot be
+    represented as a PHP integer on a 32-bit platform. Versions of the driver
+    before 1.5.0 would throw an exception when attempting to decode a 64-bit
+    integer on a 32-bit platform.
+   </p>
+   <p class="para">
+    During BSON encoding, objects of this class will convert back to a 64-bit
+    integer type. This allows 64-bit integers to be roundtripped through a
+    32-bit PHP environment without any loss of precision. The
+    <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a> method allows the 64-bit
+    integer value to be accessed as a string.
+   </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <span class="simpara">
+     This class exists purely for 32-bit platforms. Applications on 64-bit
+     platforms (i.e. <a href="reserved.constants.html#constant.php-int-size" class="link"><strong><code>PHP_INT_SIZE</code></strong></a> is 8) should never
+     encounter this class during normal operation.
+    </span>
+   </p></blockquote>
+  </div>
+
+
+  <div class="section" id="mongodb-bson-int64.synopsis">
+   <h2 class="title">クラス概要</h2>
+
+
+   <div class="classsynopsis">
+    <div class="ooclass"></div>
+
+
+    <div class="classsynopsisinfo">
+     <span class="modifier">final</span>
+     <span class="ooclass">
+      <strong class="classname">MongoDB\BSON\Int64</strong>
+     </span>
+
+     <span class="oointerface">implements 
+      <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span>
+     </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+     </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span>
+     </span>
+     {</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">private</span> <span class="methodname"><a href="mongodb-bson-int64.construct.html" class="methodname">__construct</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongodb-bson-int64.jsonserialize.html" class="methodname">jsonSerialize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-int64.serialize.html" class="methodname">serialize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-int64.tostring.html" class="methodname">__toString</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-bson-int64.unserialize.html" class="methodname">unserialize</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$serialized</code></span>
+   )</div>
+
+   }</div>
+
+
+  </div>
+
+ </div>
+
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-int64.construct.html">MongoDB\BSON\Int64::__construct</a> — Construct a new Int64 (unused)</li><li><a href="mongodb-bson-int64.jsonserialize.html">MongoDB\BSON\Int64::jsonSerialize</a> — Returns a representation that can be converted to JSON</li><li><a href="mongodb-bson-int64.serialize.html">MongoDB\BSON\Int64::serialize</a> — Serialize an Int64</li><li><a href="mongodb-bson-int64.tostring.html">MongoDB\BSON\Int64::__toString</a> — Returns the string representation of this Int64</li><li><a href="mongodb-bson-int64.unserialize.html">MongoDB\BSON\Int64::unserialize</a> — Unserialize an Int64</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-dbpointer.unserialize.html">MongoDB\BSON\DBPointer::unserialize</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-int64.construct.html">MongoDB\BSON\Int64::__construct</a></div>
+ <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

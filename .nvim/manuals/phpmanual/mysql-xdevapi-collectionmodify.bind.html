@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bind value to query placeholder</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionmodify.arrayinsert.html">CollectionModify::arrayInsert</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionmodify.construct.html">CollectionModify::__construct</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collectionmodify.bind" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">CollectionModify::bind</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">CollectionModify::bind</span> &mdash; <span class="dc-title">Bind value to query placeholder</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collectionmodify.bind-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\CollectionModify">mysql_xdevapi\CollectionModify</span></span> <span class="methodname"><strong>mysql_xdevapi\CollectionModify::bind</strong></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$placeholder_values</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Bind a parameter to the placeholder in the search condition of the modify operation.
+  </p>
+  <p class="para">
+   The placeholder has the form of :NAME where &#039;:&#039; is a common prefix that must always exists before any NAME
+   where NAME is the name of the placeholder. The bind method accepts a list of placeholders if multiple
+   entities have to be substituted in the search condition of the modify operation.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collectionmodify.bind-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">placeholder_values</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Placeholder values to substitute in the search condition. Multiple values are allowed
+      and have to be passed as an array of mappings PLACEHOLDER_NAME-&gt;PLACEHOLDER_VALUE.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionmodify.bind-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   A CollectionModify object that can be used to execute the command, or to add additional operations.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionmodify.bind-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1995">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::bind()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Assuming&nbsp;$coll&nbsp;is&nbsp;a&nbsp;valid&nbsp;Collection&nbsp;object<br /><br />//&nbsp;Add&nbsp;a&nbsp;new&nbsp;job&nbsp;to&nbsp;the&nbsp;document&nbsp;which&nbsp;field&nbsp;name&nbsp;is&nbsp;equal&nbsp;to&nbsp;'Sakila'<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'name&nbsp;like&nbsp;:param'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">"job"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Unemployed"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'param'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Sakila'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collectionmodify.arrayinsert.html">CollectionModify::arrayInsert</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collectionmodify.construct.html">CollectionModify::__construct</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Create collection index</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.count.html">Collection::count</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.dropindex.html">Collection::dropIndex</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mysql-xdevapi-collection.createindex" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Collection::createIndex</h1>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Collection::createIndex</span> &mdash; <span class="dc-title">Create collection index</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-mysql-xdevapi-collection.createindex-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>mysql_xdevapi\Collection::createIndex</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$index_name</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$index_desc_json</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+    Creates an index on the collection.
+  </p>
+  <p class="para">
+    An exception is thrown if an index with the same name already exists,
+    or if index definition is not correctly formed.
+   </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-mysql-xdevapi-collection.createindex-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">index_name</code></dt>
+
+    <dd>
+
+     <p class="para">
+      The name of the index that to create. This name must be a valid index name as 
+      accepted by the <em>CREATE INDEX</em> SQL query.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">index_desc_json</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Definition of the index to create. It contains an array of IndexField objects,
+      and each object describes a single document member to include in the index, 
+      and an optional string for the type of index that might be INDEX (default) or SPATIAL.
+     </p>
+     <p class="para">
+      A single IndexField description consists of the following fields:
+     </p>
+     <ul class="itemizedlist">
+      <li class="listitem">
+        <p class="para">
+          <code class="code">field</code>: string, the full document path to the document member or field to be indexed.
+        </p>
+      </li>
+      <li class="listitem">
+       <p class="para">
+        <code class="code">type</code>: string, one of the supported SQL column types to map the field into.
+        For numeric types, the optional UNSIGNED keyword may follow.
+        For the TEXT type, the length to consider for indexing may be added.
+       </p>
+      </li>
+      <li class="listitem">
+        <p class="para">
+          <code class="code">required</code>: bool, (optional) true if the field is required to exist in the document. 
+          Defaults to <strong><code>FALSE</code></strong>, except for <em>GEOJSON</em> where it defaults to <strong><code>TRUE</code></strong>.
+         </p>
+       </li>
+      <li class="listitem">
+        <p class="para">
+          <code class="code">options</code>: integer, (optional) special option flags for use 
+          when decoding <em>GEOJSON</em> data.
+        </p>
+      </li>
+      <li class="listitem">
+        <p class="para">
+          <code class="code">srid</code>: integer, (optional) srid value for use when 
+          decoding <em>GEOJSON</em> data.
+        </p>
+      </li>
+      </ul>
+
+      <p class="para">
+        It is an error to include other fields not described above in 
+        IndexDefinition or IndexField documents.
+      </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collection.createindex-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collection.createindex-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1968">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Collection::createIndex()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;index&nbsp;on&nbsp;single&nbsp;field<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">"index1"</span><span style="color: #007700">,{</span><span style="color: #0000BB">fields</span><span style="color: #007700">:[{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"TEXT(15)"</span><span style="color: #007700">}]})-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;index&nbsp;with&nbsp;unique&nbsp;set&nbsp;to&nbsp;false<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">"index2"</span><span style="color: #007700">,{</span><span style="color: #0000BB">fields</span><span style="color: #007700">:[{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"TEXT(15)"</span><span style="color: #007700">}],</span><span style="color: #0000BB">unique&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">})-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;an&nbsp;index&nbsp;with&nbsp;required&nbsp;option&nbsp;set&nbsp;to&nbsp;true<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">"index3"</span><span style="color: #007700">,{</span><span style="color: #0000BB">fields</span><span style="color: #007700">:[{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"TEXT(15)"</span><span style="color: #007700">,</span><span style="color: #0000BB">required&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">}]})-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;index&nbsp;on&nbsp;multiple&nbsp;feilds<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">"index4"</span><span style="color: #007700">,{</span><span style="color: #0000BB">fields</span><span style="color: #007700">:[{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"TEXT(20)"</span><span style="color: #007700">},{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.age"</span><span style="color: #007700">,</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"INTEGER"</span><span style="color: #007700">}]})-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;spatial&nbsp;index<br /></span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">"index1"</span><span style="color: #007700">,{</span><span style="color: #0000BB">fields</span><span style="color: #007700">:[{</span><span style="color: #0000BB">field</span><span style="color: #007700">:</span><span style="color: #DD0000">"$.name"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">type</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"GEOJSON"</span><span style="color: #007700">}],</span><span style="color: #0000BB">type&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">"SPATIAL"</span><span style="color: #007700">})-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi-collection.count.html">Collection::count</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-collection.dropindex.html">Collection::dropIndex</a></div>
+ <div class="up"><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

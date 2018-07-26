@@ -75,23 +75,10 @@ repo = 'evidens/vim-twig'
 repo = 'boeckmann/vim-freepascal'
 
 [[plugins]]
-repo = 'dag/vim2hs'
-
-[[plugins]]
-repo = 'eagletmt/ghcmod-vim'
-
-[[plugins]]
-repo = 'eagletmt/neco-ghc'
-
-[[plugins]]
 repo = 'zchee/deoplete-jedi'
 
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-
 
 
 

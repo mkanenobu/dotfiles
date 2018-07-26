@@ -269,8 +269,11 @@ smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let g:neosnippet#snippets_directory='~/.nvim/'
+let g:neosnippet#snippets_directory = '~/.nvim/'
 
+" vim-ref
+let g:ref_phpmanual_path = $HOME . '/.nvim/manuals/php-chunked-xhtml'
+"let g:ref_use_vimproc = 0
 
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
@@ -346,18 +349,18 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 " lsp
 " let g:lsp_signs_enabled = 1
 " let g:lsp_diagnostics_echo_cursor = 1
+" let g:LanguageClient_devel = 1
+" let g:LanguageClient_loggingLevel = 'DEBUG'
 " let g:LanguageClient_serverCommands = {
-"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
 "     \ 'pascal': [],
-"     \ 'delphi': [],
 "     \ 'python': ['pyls'],
-"     \ }
+"     \ 'php': ['php', '-l'],
+" \}
 
-nnoremap <F8> :call LanguageClient_contextMenu()<CR>
+" nnoremap <F8> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
 " shebang auto insert
 augroup Shebang
