@@ -369,6 +369,7 @@ augroup Shebang
     autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
     autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
     autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
+    autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
     autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
 
