@@ -288,9 +288,10 @@ let g:quickrun_config = {
 \}
 
 let g:quickrun_config.pascal = {
-    \ 'command': 'fpr',
-    \ 'exec': '%c %s',
+    \ 'command': '~/.local/tools/fpr',
+    \ 'runner': 'shell',
 \}
+
 set splitbelow
 
 if expand("%:e") == "md"

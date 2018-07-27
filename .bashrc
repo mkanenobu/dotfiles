@@ -163,7 +163,6 @@ alias show_audio_spec='soxinfo'
 alias opn='open'
 alias freepascal='fpc'
 alias ssh-pubkeygen='ssh-keygen -yf'
-alias zip-pass='zip -er'
 
 alias phpi='php -a'
 alias py='python3'
