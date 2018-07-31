@@ -77,6 +77,11 @@ repo = 'boeckmann/vim-freepascal'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
 

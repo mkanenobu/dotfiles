@@ -7,6 +7,7 @@
   <property name="initial-opacity" type="double" value="0.960000"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
+      <value type="string" value="BirdFont"/>
       <value type="string" value="Blueman"/>
       <value type="string" value="Brave"/>
       <value type="string" value="chromium-browser"/>

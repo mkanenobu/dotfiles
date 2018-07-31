@@ -295,7 +295,7 @@ let g:quickrun_config.pascal = {
 set splitbelow
 
 if expand("%:e") == "md"
-    map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR>
+    map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
 endif
 
 " NerdTree
@@ -331,16 +331,18 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-    \ 'rust': ['rls'],
     \ 'python': ['flake8'],
-    \ 'css':['csslint'],
+    \ 'css': ['csslint'],
+    \ 'rust': ['rustc'],
 \ }
 
 let g:ale_fixers = {
     \ 'python': ['autopep8', 'isort'],
-    \ 'rust': ['rustfmt'],
     \ 'perl': ['perltidy'],
 \ }
+    " \ 'rust': ['rustfmt'],
+
+let g:rustfmt_autosave = 1
 
 nnoremap <C-e><C-r> :lopen<CR>
 

@@ -14,6 +14,14 @@ gl(){
     fi
 }
 
+# rust run
+rr(){
+    rustc "$1"
+    binary="$(basename "$1" .rs)"
+    ./"$binary"
+    rm ./"$binary"
+}
+
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
