@@ -68,6 +68,11 @@ dict(){
     fi
 }
 
+# php storm
+phpstorm(){
+    (phpstorm.sh "$1" >/dev/null 2>&1 &)
+}
+
 encopus(){
     #opusfile=$(echo "$1" | sed -e 's/.wav/.opus/')
     opusfile=${1//.wav/.opus}
