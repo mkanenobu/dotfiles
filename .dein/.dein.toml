@@ -61,6 +61,7 @@ repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
+build = 'make'
 
 [[plugins]]
 repo = 'hhvm/vim-hack'
