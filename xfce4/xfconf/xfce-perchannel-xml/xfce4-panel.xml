@@ -90,17 +90,17 @@
         <value type="string" value="network"/>
         <value type="string" value="solaar"/>
         <value type="string" value="vnote-1.17-x86_64.appimage"/>
-        <value type="string" value="clipgrab"/>
+        <value type="string" value="sylpheed"/>
         <value type="string" value="rescuetime"/>
         <value type="string" value="stacer"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="slack"/>
-        <value type="string" value="sylpheed"/>
+        <value type="string" value="clipgrab"/>
         <value type="string" value="shift"/>
         <value type="string" value="system-config-printer"/>
         <value type="string" value="remmina"/>
-        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="blueman-applet"/>
+        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="ibus panel"/>
         <value type="string" value="rambox"/>
         <value type="string" value="psensor"/>

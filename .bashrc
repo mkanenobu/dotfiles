@@ -141,6 +141,8 @@ alias bf='nvim ~/.bash_functions'
 alias so='source'
 alias mkdir='mkdir -p'
 alias nvr='nvim ~/.config/nvim/init.vim'
+alias vi='vim'
+alias vim='nvim'
 alias n='nvim'
 alias dein='nvim ~/.dein/.dein.toml'
 alias deinlazy='nvim ~/.dein/.dein_lazy.toml'
@@ -162,9 +164,11 @@ alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
 alias opn='open'
 alias freepascal='fpc'
-alias ssh-pubkeygen='ssh-keygen -yf'
+alias ssh-keygen-pub='ssh-keygen -yf'
 alias op='open'
+alias fd='fd -H'
 
+# languages
 alias phpi='php -a'
 alias py='python3'
 alias nimc='nim c'
@@ -172,6 +176,8 @@ alias nimcr='nim c -r --verbosity:0'
 alias nimcd='nim c -d:release'
 alias rc='rustc'
 alias ghr='runghc'
+alias lr='sbcl --script'
+alias rr='ros run'
 
 # vagrant
 alias vu='vagrant up'
@@ -244,3 +250,4 @@ complete -F  _nimr nimr
 . ~/.env
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 
+xmodmap ~/.Xmodmap

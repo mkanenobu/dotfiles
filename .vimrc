@@ -1,42 +1,6 @@
-"Stntastic
-let g:syntastic_alwayspopulate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_check = ['flake8']
-
-"Emmet
-let g:user_emmet_leader_key =  '<C-Y>,'
-let g:user_emmet_install_global = 0
-let g:user_emmet_mode = 'iv'
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_expandabbr_key = '<C-e>'
-
-"indent
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-"deoplete
-let g:deoplete#enable_at_startup = 1
-
-"no matcheparen
-if !has('gui_running')
-	let g:loaded_matchparen = 1
-endif
-
-"in English
-if has("multi_lang")
-language C
-endif
-
-"autocommand
-if has("autocmd")
-filetype off
-endif
-au BufRead,BufNewFile *.scss set filetype=sass
-
 filetype off
 filetype indent plugin off
+
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -48,6 +12,17 @@ set history=5000
 set nobackup
 set noswapfile
 
+"no matcheparen
+if !has('gui_running')
+  let g:loaded_matchparen = 1
+endif
+
+"in English
+if has("multi_lang")
+  language C
+endif
+
+au BufRead,BufNewFile *.scss set filetype=sass
 "
 set wrap
 set display=lastline
@@ -84,12 +59,6 @@ set laststatus=2
 
 set clipboard=unnamed,unnamedplus
 vmap <C-c> :w !xsel -ib<CR><CR>
-
-"
-"augroup set_kp_help
-"	autocmd FileType vim setlocal keywordprg=:help
-"augroup END
-
 
 "mapping
 
@@ -141,80 +110,21 @@ nnoremap <S-l> $
 map <C-s> <nop>
 nnoremap Q <nop>
 
-"cursor nop
-vnoremap  <Up>	   <nop>
-vnoremap  <Down>   <nop>
-vnoremap  <Left>   <nop>
-vnoremap  <Right>  <nop>
-noremap   <Up>	   <nop>
-noremap   <Down>   <nop>
-noremap   <Left>   <nop>
-noremap   <Right>  <nop>
-inoremap   <Up>		<nop>
-inoremap   <Down>	<nop>
-inoremap   <Left>	<nop>
-inoremap   <Right>	<nop>
-
 "mouse nop
 set mouse=""
-
-" dein settings {{{
-if &compatible
-	set nocompatible
-endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-"dein.vim diredtory
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-"if not exist git clone
-if !isdirectory(s:dein_repo_dir)
-	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-endif
-execute 'set runtimepath^=' . s:dein_repo_dir
-
-if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
-"manege plugins
-	let s:toml = '~/.dein/.dein.toml'
-	let s:lazy_toml = '~/.dein/.dein_lazy.toml'
-	call dein#load_toml(s:toml, {'lazy': 0})
-	call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-	call dein#end()
-	call dein#save_state()
-endif
-
-if dein#check_install(['vimproc'])
-	call dein#install(['vimproc'])
-endif
-
-if dein#check_install()
-	call dein#install()
-endif
-" }}}
 
 ":W = save with root
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
-"NERDTree
-nmap <C-n><C-t> :NERDTreeToggle<CR>
-
-"denite map
-nmap <C-n><C-r> :<C-u>Denite file_rec<CR>
-nmap <C-n><C-g> :<C-u>Denite grep<CR>
-nmap <C-n><C-f> :<C-u>Denite line<CR>
-
 "ColorScheme
 colorscheme molokai
-let g:molokai_original=1
 "set t_Co=256
-set background=dark
 autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment Ctermfg=102
+autocmd ColorScheme molokai highlight Comment ctermfg=102
+autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
+autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
+
 
 syntax on
-
 filetype indent plugin on
-
 set secure
-

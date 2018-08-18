@@ -15,12 +15,20 @@ gl(){
 }
 
 # rust run
-rr(){
-    rustc "$1"
-    binary="$(basename "$1" .rs)"
-    ./"$binary"
-    rm ./"$binary"
+# rr(){
+#     rustc "$1"
+#     binary="$(basename "$1" .rs)"
+#     ./"$binary"
+#     rm ./"$binary"
+# }
+
+## lisp compile (sbcl)
+lc(){
+    source_file="$1"
+    sbcl_compile "$source_file"
+    chmod +x "$(echo "$source_file" | sed -e "s/\(lisp\|cl\)/fasl/")"
 }
+
 
 open(){
     if [ "$#" == 0 ];then
