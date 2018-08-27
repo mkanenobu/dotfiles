@@ -206,6 +206,7 @@ alias gc='git checkout'
 alias gb='git branch'
 alias gpom='echo "Use gpo master"'
 alias gf='git fetch'
+alias gst='git stash'
 alias gsp='git stash pop'
 
 alias tmux-kill='tmux kill-server'
