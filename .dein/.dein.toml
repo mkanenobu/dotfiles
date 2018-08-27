@@ -31,6 +31,9 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
+[[plugins]]
+repo = 'elzr/vim-json'
+
 # quickrun \r
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -56,21 +59,15 @@ repo = 'Shougo/neosnippet.vim'
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'
-#[[plugins]]
-#repo = "zah/nim.vim"
-
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 build = 'make'
 
 [[plugins]]
-repo = 'hhvm/vim-hack'
-
-[[plugins]]
-repo = 'wlangstroth/vim-racket'
-
-[[plugins]]
 repo = 'evidens/vim-twig'
+
+[[plugins]]
+repo = 'jpalardy/vim-slime'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
@@ -85,8 +82,6 @@ repo = 'rust-lang/rust.vim'
 repo = 'sebastianmarkow/deoplete-rust'
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
-
-
 
 [[plugins]]
 repo = 'thinca/vim-ref'

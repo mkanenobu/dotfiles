@@ -14,22 +14,6 @@ gl(){
     fi
 }
 
-# rust run
-# rr(){
-#     rustc "$1"
-#     binary="$(basename "$1" .rs)"
-#     ./"$binary"
-#     rm ./"$binary"
-# }
-
-## lisp compile (sbcl)
-lc(){
-    source_file="$1"
-    sbcl_compile "$source_file"
-    chmod +x "$(echo "$source_file" | sed -e "s/\(lisp\|cl\)/fasl/")"
-}
-
-
 open(){
     if [ "$#" == 0 ];then
         thunar . >/dev/null 2>&1
@@ -138,18 +122,10 @@ mvexec(){
         && echo "Done"
 }
 
-say(){
-    TMP=/tmp/jsay.wav
-    echo "$1" | open_jtalk -m /usr/share/hts-voice/mei_happy.htsvoice -x /var/lib/mecab/dic/open-jtalk/naist-jdic -ow "$TMP" && mpv "$TMP"
-    rm -f "$TMP"
+encrypt_file(){
+    openssl enc -e -aes256 -in "$1" -out "$2"
 }
 
-gcr(){
-    g++ "$1"
-    ./a.out
-}
-
-mkdircd(){
-    mkdir "$1"
-    cd "$1"
+decrypt_file(){
+    openssl enc -d -aes256 -in "$1" -out "$2"
 }

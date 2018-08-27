@@ -48,6 +48,7 @@
       <property name="&lt;Super&gt;n" type="string" value="/usr/local/bin/simplenote"/>
       <property name="&lt;Super&gt;t" type="string" value="xfce4-terminal"/>
       <property name="&lt;Super&gt;space" type="string" value="xfce4-terminal -e byobu --geometry=-0-0"/>
+      <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

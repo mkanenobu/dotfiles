@@ -1,7 +1,7 @@
 " config file for Neovim
 filetype indent plugin off
 if &compatible
-    set nocompatible
+  set nocompatible
 endif
 
 set encoding=utf-8
@@ -9,8 +9,8 @@ set ambiwidth=double
 set history=1000
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 "set softtabstop = 0
 set smarttab
 set autoindent
@@ -21,9 +21,9 @@ set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
-"autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd filetype php setlocal tabstop=4 shiftwidth=4
+autocmd filetype html setlocal tabstop=4 shiftwidth=4
 autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
-"autocmd filetype haskell setlocal tabstop=2 shiftwidth=2
 autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
 
 set nobackup
@@ -35,9 +35,9 @@ set wrap
 set display=lastline
 
 augroup auto_comment_off
-    autocmd!
-    autocmd BufEnter * setlocal formatoptions-=r
-    autocmd BufEnter * setlocal formatoptions-=o
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -142,9 +142,9 @@ let g:user_emmet_mode = 'i'
 autocmd Filetype php,html,css,scss EmmetInstall
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_settings = {
-    \ 'variables': {
-    \   'lang': "ja"
-    \ },
+  \ 'variables': {
+  \   'lang': "ja"
+  \ },
 \ }
 
 
@@ -158,34 +158,34 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
 " 設定開始
 if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-    " プラグインリストを収めた TOML ファイル
-    " 予め TOML ファイル（後述）を用意しておく
-    let g:rc_dir  = expand('~/.dein')
-    let s:toml    = g:rc_dir . '/.dein.toml'
-    let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir  = expand('~/.dein')
+  let s:toml  = g:rc_dir . '/.dein.toml'
+  let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
 
-    " TOML を読み込み、キャッシュしておく
-    call dein#load_toml(s:toml,      {'lazy': 0})
-    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,    {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-    " 設定終了
-    call dein#end()
-    call dein#save_state()
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
 endif
 
 " もし、未インストールものものがあったらインストール
 if dein#check_install()
-    call dein#install()
+  call dein#install()
 endif
 
 autocmd ColorScheme molokai highlight Visual ctermbg=242
@@ -207,22 +207,22 @@ let g:deoplete#enable_at_startup = 1
 
 inoremap <expr><tab> () "\<C-n>""
 inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#mappings#manual_complete()
-    function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ deoplete#mappings#manual_complete()
+  function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction"}}}
 
 inoremap <silent><expr> <S-TAB>
-    \ pumvisible() ? "\<C-p>" :
-    \ <SID>check_back_space() ? "\<S-TAB>" :
-    \ deoplete#mappings#manual_complete()
-    function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
+  \ pumvisible() ? "\<C-p>" :
+  \ <SID>check_back_space() ? "\<S-TAB>" :
+  \ deoplete#mappings#manual_complete()
+  function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction"}}}
 
 let g:deoplete#auto_complete_delay = 0
 let g:deoplete#auto_complete_start_length = 1
@@ -234,8 +234,8 @@ let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 
 " call deoplete#custom#source('LanguageClient',
-"     \ 'min_pattern_length',
-"     \ 2)
+"   \ 'min_pattern_length',
+"   \ 2)
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -246,6 +246,20 @@ let g:closetag_xhtml_filenames = '*.xhtml, *.jsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
+" elzr/vim-json
+let g:vim_json_syntax_conceal = 0
+
+" json parse
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+  if 0 == a:0
+    let l:arg = "."
+  else
+    let l:arg = a:1
+  endif
+  execute "%! jq \"" . l:arg . "\""
+endfunction
 
 "" neosnippet
 
@@ -258,12 +272,12 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <expr><C-n>
-    \ pumvisible() ? "\<C-n>" :
-    \ neosnippet#expandable_or_jumpable() ?
-    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  \ pumvisible() ? "\<C-n>" :
+  \ neosnippet#expandable_or_jumpable() ?
+  \  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
@@ -279,23 +293,23 @@ let g:ref_phpmanual_path = $HOME . '/.nvim/manuals/php-chunked-xhtml'
 map <Space>r :QuickRun -input =@+<CR>
 " バッファを下に出す
 " フォーカスをバッファ側に
-    "\ 'runner' : 'vimproc',
+  "\ 'runner' : 'vimproc',
 let g:quickrun_config = {
-    \ '_': {
-        \ 'split': '',
-        \ 'outputter/buffer/into': '1',
-    \},
+  \ '_': {
+    \ 'split': '',
+    \ 'outputter/buffer/into': '1',
+  \},
 \}
 
 let g:quickrun_config.pascal = {
-    \ 'command': '~/.local/tools/fpr',
-    \ 'runner': 'shell',
+  \ 'command': '~/.local/tools/fpr',
+  \ 'runner': 'shell',
 \}
 
 set splitbelow
 
 if expand("%:e") == "md"
-    map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
+  map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
 endif
 
 " NerdTree
@@ -331,20 +345,26 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-    \ 'python': ['flake8'],
-    \ 'css': ['csslint'],
-    \ 'rust': ['rustc'],
+  \ 'python': ['flake8'],
+  \ 'css': ['csslint'],
+  \ 'rust': ['rustc'],
 \ }
 
 let g:ale_fixers = {
-    \ 'python': ['autopep8', 'isort'],
-    \ 'perl': ['perltidy'],
+  \ 'python': ['autopep8', 'isort'],
+  \ 'perl': ['perltidy'],
 \ }
-    " \ 'rust': ['rustfmt'],
+  " \ 'rust': ['rustfmt'],
 
 let g:rustfmt_autosave = 1
 
 nnoremap <C-e><C-r> :lopen<CR>
+
+" vim-slime
+let g:slime_target = "neovim"
+" let g:slime_target = "tmux"
+" let g:slime_paste_file = "$HOME/.cache/.slime_paste"
+" let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
 
 " twig highlight
 autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
@@ -355,9 +375,9 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 " let g:LanguageClient_devel = 1
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 " let g:LanguageClient_serverCommands = {
-"     \ 'pascal': [],
-"     \ 'python': ['pyls'],
-"     \ 'php': ['php', '-l'],
+"   \ 'pascal': [],
+"   \ 'python': ['pyls'],
+"   \ 'php': ['php', '-l'],
 " \}
 
 " nnoremap <F8> :call LanguageClient_contextMenu()<CR>
@@ -367,13 +387,13 @@ autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
 
 " shebang auto insert
 augroup Shebang
-    "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
-    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
-    autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
-    autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
-    autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
-    autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
-    autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+  "autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
+  autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+  autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
+  autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
 
 syntax on
