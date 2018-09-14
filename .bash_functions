@@ -29,17 +29,6 @@ open(){
     fi
 }
 
-off(){
-    if test "$#" -eq 0; then
-        killall chrome && sleep 1
-        shutdown -h 0
-    elif test "$#" -eq 1; then
-        shutdown -h "$1"
-    else
-        echo "error"
-    fi
-}
-
 # unar extract multiple files
 mnar(){
     for i in "$@"; do

@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gitkraken.desktop,mysql-workbench.desktop,dbeaver.desktop,vivaldi-stable.desktop,steam.desktop,firefox.desktop,opera.desktop,spotify_spotify.desktop,jetbrains-phpstorm.desktop,typora.desktop
+recent=code.desktop,puredata.desktop,jetbrains-phpstorm.desktop,mysql-workbench.desktop,gitkraken.desktop,dbeaver.desktop,vivaldi-stable.desktop,steam.desktop,firefox.desktop,opera.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

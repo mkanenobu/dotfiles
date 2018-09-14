@@ -1,11 +1,11 @@
 [General]
 Show_Title=false
-Show_Labels=true
+Show_Labels=false
 Use_Bar_UI=1
 Show_Colored_Bars=true
 Scale=0
-Font_Size=small
-Font_Size_Numerical=1
+Font_Size=x-small
+Font_Size_Numerical=0
 Font=Sans 12
 Lines_Size=2
 Update_Interval=2

@@ -135,7 +135,7 @@ fi
 
 
 ## User aliases
-#alias off='shutdown -h 0'
+alias off='shutdown -h 0'
 alias br='nvim ~/.bashrc'
 alias bf='nvim ~/.bash_functions'
 alias so='source'
@@ -256,3 +256,8 @@ complete -F  _nimr nimr
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 xmodmap ~/.Xmodmap
+
+# stop ctrl-s panic
+stty stop undef
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
