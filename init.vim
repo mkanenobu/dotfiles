@@ -9,13 +9,14 @@ set ambiwidth=double
 set history=1000
 
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 "set softtabstop = 0
 set smarttab
 set autoindent
 set smartindent
 set list
+set nofixendofline
 "set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
 
@@ -25,6 +26,7 @@ autocmd filetype php setlocal tabstop=4 shiftwidth=4
 autocmd filetype html setlocal tabstop=4 shiftwidth=4
 autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
 autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
+autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
 
 set nobackup
 set noswapfile
@@ -360,14 +362,15 @@ let g:rustfmt_autosave = 1
 
 nnoremap <C-e><C-r> :lopen<CR>
 
-" vim-slime
-let g:slime_target = "neovim"
-" let g:slime_target = "tmux"
-" let g:slime_paste_file = "$HOME/.cache/.slime_paste"
-" let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
+" Autopair
+let g:AutoPairsFlyMode = 0
 
-" twig highlight
-autocmd BufNewFile,BufRead *.twig set filetype=htmljinja
+" easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " lsp
 " let g:lsp_signs_enabled = 1

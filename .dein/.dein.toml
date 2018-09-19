@@ -16,6 +16,17 @@ repo = 'morhetz/gruvbox'
 [[plugins]]
 repo = 'sjl/badwolf'
 
+### Utils
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
@@ -34,7 +45,6 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'elzr/vim-json'
 
-# quickrun \r
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
@@ -51,8 +61,14 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 
-#[[plugins]]
-#repo = 'andymass/vim-matchup'
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
 
 ### Language support
 
@@ -62,12 +78,6 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 build = 'make'
-
-[[plugins]]
-repo = 'evidens/vim-twig'
-
-[[plugins]]
-repo = 'jpalardy/vim-slime'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
@@ -82,15 +92,6 @@ repo = 'rust-lang/rust.vim'
 repo = 'sebastianmarkow/deoplete-rust'
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
-
-[[plugins]]
-repo = 'thinca/vim-ref'
-
-[[plugins]]
-repo = 'w0rp/ale'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
 
 # Deoplete sources
 

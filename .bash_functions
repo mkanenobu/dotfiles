@@ -2,7 +2,7 @@
 
 sshToEc2(){
     . ~/.env
-    ssh -i "$ec2_key" ec2-user@"$1"
+    ssh -i "${ec2_key}" ec2-user@"$1"
 }
 
 # Git
@@ -40,9 +40,9 @@ mnar(){
 dict(){
     if [ -e ~/Documents/gene-utf8.txt ]; then
         if expr "$1" : '[a-zA-Z]*' >/dev/null ;then
-            grep "$1" "${HOME}"/Documents/gene-utf8.txt -A 1  -wi --color
+            grep "$1" "${HOME}/Documents/gene-utf8.txt" -A 1  -wi --color
         else
-            grep "$1" "${HOME}"/Documents/gene-utf8.txt -B 1  -wi --color
+            grep "$1" "${HOME}/Documents/gene-utf8.txt" -B 1  -wi --color
         fi
     else
         curl http://www.namazu.org/~tsuchiya/sdic/data/gene95.tar.gz >> ~/Downloads/gene95.tar.gz && tar xfvz ~/Downloads/gene95.tar.gz -C ~/Downloads && nkf ~/Downloads/gene.txt > ~/Documents/gene-utf8.txt
@@ -90,9 +90,9 @@ elastics(){
 }
 
 tab_reload(){
-    xdotool windowfocus $(xdotool search --onlyvisible --name google)
+    xdotool windowfocus "$(xdotool search --onlyvisible --name google)"
     xdotool key ctrl+r
-    xdotool windowfocus $(xdotool search --onlyvisible --class gnome-terminal)
+    xdotool windowfocus "$(xdotool search --onlyvisible --class gnome-terminal)"
 }
 
 history-do(){
