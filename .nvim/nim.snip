@@ -2,3 +2,11 @@ snippet contest
 options word
   import sequtils, strutils, algorithm, math
   ${0}
+
+snippet readLines
+options word
+  mapIt(0..<${0}, readLine(stdin)${1})
+
+snippet readLine
+options word
+  readLine(stdin)${0}
