@@ -5,8 +5,22 @@ options word
 
 snippet readLines
 options word
-  mapIt(0..<${0}, readLine(stdin)${1})
+  mapIt(0..<${0}, readLine(stdin))
+
+snippet readLinesParseInt
+options word
+  mapIt(0..<${0}, readLine(stdin).parseInt)
 
 snippet readLine
 options word
-  readLine(stdin)${0}
+  readLine(stdin)
+  ${0}
+
+snippet readLineParseInt
+options word
+  readLine(stdin).parseInt
+  ${0}
+
+snippet readLineMapParseInt
+options word
+  readLine(stdin).split.map(parseInt)
