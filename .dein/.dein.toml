@@ -69,8 +69,8 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+# [[plugins]]
+# repo = 'bronson/vim-trailing-whitespace'
 
 ### Language support
 

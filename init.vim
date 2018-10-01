@@ -91,6 +91,10 @@ nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" CR in middle of line
+inoremap <C-y> <Esc>o
+
+nnoremap q <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
@@ -393,6 +397,7 @@ augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   " autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
   autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
+  autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
   autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2

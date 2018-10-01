@@ -133,6 +133,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
+. ~/.env
 
 ## User aliases
 alias off='shutdown -h 0'
@@ -153,13 +154,9 @@ alias rename='rename -v'
 alias diff='icdiff -U 1 --line-number'
 alias copy2clip='xclip -selection clipboard'
 alias pbcopy='xclip -selection clipboard'
-alias mv='mv -i'
-alias cp='cp -i'
 alias ly='lilypond'
 alias ftp-ncftp='ncftp'
 alias lockscreen='xflock4'
-alias wcj='wc -m'
-alias duc='du -d 1 -h | sort -h'
 alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
 alias opn='open'
@@ -168,8 +165,16 @@ alias freepascal='fpc2'
 alias ssh-keygen-pub='ssh-keygen -yf'
 alias op='open'
 alias fd='fd -H'
-alias fzf='fzf --reverse'
 alias psfind='ps aux | fzf'
+
+# Shell utils
+alias man2='tldr'
+alias duc='du -d 1 -h | sort -h'
+alias wcj='wc -m'
+alias mv='mv -i'
+alias cp='cp -i'
+alias fzf='fzf --reverse'
+alias cat='bat'
 
 # languages
 alias phpi='php -a'

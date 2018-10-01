@@ -24,3 +24,11 @@ options word
 snippet readLineMapParseInt
 options word
   readLine(stdin).split.map(parseInt)
+
+snippet .sortInt
+options word
+  .sort(system.cmp[int])
+
+snippet .sortChar
+options word
+  .sort(system.cmp[char])
