@@ -118,3 +118,7 @@ encrypt_file(){
 decrypt_file(){
     openssl enc -d -aes256 -in "$1" -out "$2"
 }
+
+convertToUtf-8(){
+    find . -type f -exec nkf -w -Lu --overwrite {} \;
+}

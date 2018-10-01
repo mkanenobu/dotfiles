@@ -27,6 +27,8 @@ autocmd filetype html setlocal tabstop=4 shiftwidth=4
 autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
 autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
 autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
+autocmd filetype javascript setlocal softtabstop=2 shiftwidth=2
+autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
 
 set nobackup
 set noswapfile
