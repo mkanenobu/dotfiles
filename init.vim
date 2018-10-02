@@ -93,8 +93,8 @@ nnoremap <kMinus> <C-x>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-" CR in middle of line
-inoremap <C-y> <Esc>o
+" C-CR in middle of line
+inoremap  <Esc>o
 
 nnoremap q <nop>
 nnoremap ZZ <nop>
