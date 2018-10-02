@@ -7,7 +7,7 @@ snippet readLines
 options word
   mapIt(0..<${0}, readLine(stdin))
 
-snippet readLinesParseInt
+snippet readLines:int
 options word
   mapIt(0..<${0}, readLine(stdin).parseInt)
 
@@ -16,16 +16,16 @@ options word
   readLine(stdin)
   ${0}
 
-snippet readLineParseInt
+snippet readLine:int
 options word
   readLine(stdin).parseInt
   ${0}
 
-snippet readLineSplit
+snippet readLine:split
 options word
   readLine(stdin).split
 
-snippet readLineMapParseInt
+snippet readLine:split:parseInt
 options word
   readLine(stdin).split.map(parseInt)
 

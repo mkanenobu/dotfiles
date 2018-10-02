@@ -87,8 +87,11 @@ repo = 'boeckmann/vim-freepascal'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
+# [[plugins]]
+# repo = 'othree/yajs.vim'
+#
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
