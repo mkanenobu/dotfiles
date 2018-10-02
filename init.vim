@@ -94,7 +94,8 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 
 " C-CR in middle of line
-inoremap  <Esc>o
+inoremap <C-j> <Esc>o
+inoremap <C-k> <Esc>O
 
 nnoremap q <nop>
 nnoremap ZZ <nop>
