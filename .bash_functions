@@ -122,3 +122,11 @@ decrypt_file(){
 convertToUtf-8(){
     find . -type f -exec nkf -w -Lu --overwrite {} \;
 }
+
+git_remove_from_remote(){
+    git rm --cached -r "$@"
+}
+
+mail2me(){
+    mail -s "From Me" "$my_mail_address"
+}

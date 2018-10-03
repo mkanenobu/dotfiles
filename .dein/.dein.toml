@@ -34,7 +34,7 @@ repo = 'Shougo/denite.nvim'
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'mattn/emmet-vim'
+repo = 'mkanenobu/emmet-vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -45,10 +45,8 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'elzr/vim-json'
 
-# [[plugins]]
-# repo = 'thinca/vim-quickrun'
 [[plugins]]
-repo = 'mkanenobu/vim-quickrun'
+repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
@@ -87,11 +85,19 @@ repo = 'boeckmann/vim-freepascal'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
 # [[plugins]]
-# repo = 'othree/yajs.vim'
-#
-# [[plugins]]
-# repo = 'leafgarland/typescript-vim'
+# repo = 'pangloss/vim-javascript'
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo = 'othree/html5.vim'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'

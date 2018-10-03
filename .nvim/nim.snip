@@ -3,36 +3,36 @@ options word
   import sequtils, strutils, algorithm, math
   ${0}
 
-snippet readLines
-options word
-  mapIt(0..<${0}, readLine(stdin))
-
-snippet readLines:int
-options word
-  mapIt(0..<${0}, readLine(stdin).parseInt)
-
 snippet readLine
 options word
-  readLine(stdin)
-  ${0}
+  readLine(stdin)${0}
 
 snippet readLine:int
 options word
-  readLine(stdin).parseInt
-  ${0}
+  readLine(stdin).parseInt${0}
+
+snippet readLine:split:int
+options word
+  readLine(stdin).split.map(parseInt)${0}
+
+snippet readLine:multi:int
+options word
+  mapIt(0..<${0}, readLine(stdin).parseInt)
 
 snippet readLine:split
 options word
-  readLine(stdin).split
+  readLine(stdin).split${0}
 
-snippet readLine:split:parseInt
+snippet readLine:multi
 options word
-  readLine(stdin).split.map(parseInt)
+  mapIt(0..<${0}, readLine(stdin))
 
 snippet .sortInt
 options word
   .sort(system.cmp[int])
+  ${0}
 
 snippet .sortChar
 options word
   .sort(system.cmp[char])
+  ${0}

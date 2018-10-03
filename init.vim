@@ -23,7 +23,7 @@ set listchars=tab:>-,trail:-,extends:>
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
 autocmd filetype php setlocal tabstop=4 shiftwidth=4
-autocmd filetype html setlocal tabstop=4 shiftwidth=4
+autocmd filetype html setlocal tabstop=4 shiftwidth=4 indentexpr=""
 autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
 autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
 autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
@@ -147,8 +147,8 @@ let g:sql_type_default = 'mysql'
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_install_global = 0
-let g:user_emmet_mode = 'i'
 autocmd Filetype php,html,css,scss EmmetInstall
+let g:user_emmet_mode = 'i'
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_settings = {
   \ 'variables': {
@@ -373,11 +373,11 @@ nnoremap <C-e><C-r> :lopen<CR>
 let g:AutoPairsFlyMode = 0
 
 " easy-align
+vmap <C-l> <Plug>(EasyAlign)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
+"xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+"nmap ga <Plug>(EasyAlign)
 
 " lsp
 " let g:lsp_signs_enabled = 1
