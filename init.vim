@@ -320,6 +320,9 @@ set splitbelow
 if expand("%:e") == "md"
   map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
 endif
+if expand("%:e") == "html"
+  map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
+endif
 
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
