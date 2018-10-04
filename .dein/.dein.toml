@@ -88,8 +88,8 @@ repo = 'zchee/deoplete-jedi'
 # [[plugins]]
 # repo = 'othree/yajs.vim'
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
