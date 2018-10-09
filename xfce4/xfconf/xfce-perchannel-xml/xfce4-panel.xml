@@ -99,8 +99,8 @@
         <value type="string" value="shift"/>
         <value type="string" value="system-config-printer"/>
         <value type="string" value="remmina"/>
-        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="blueman-applet"/>
+        <value type="string" value="evolution-alarm-notify"/>
         <value type="string" value="ibus panel"/>
         <value type="string" value="rambox"/>
         <value type="string" value="psensor"/>

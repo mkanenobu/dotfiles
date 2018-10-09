@@ -166,6 +166,8 @@ alias ssh-keygen-pub='ssh-keygen -yf'
 alias op='open'
 alias fd='fd -H'
 alias psfind='ps aux | fzf'
+alias pip3='sudo -H pip3'
+alias pip='sudo -H pip'
 
 # Shell utils
 alias man2='tldr'
@@ -200,6 +202,7 @@ alias al='sl -e'
 alias a=':'
 alias d=':'
 alias sl='sl -e'
+alias claer="clear"
 
 # Git
 alias g='git'
