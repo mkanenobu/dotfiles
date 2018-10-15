@@ -168,11 +168,8 @@ alias fd='fd -H'
 alias psfind='ps aux | fzf'
 alias pip3='sudo -H pip3'
 alias pip='sudo -H pip'
-<<<<<<< HEAD
 alias lame='lame -b 192'
 alias image-view='sxiv'
-=======
->>>>>>> a96a597ca769517d9cd84db96ed8d1abbe17e44a
 
 # Shell utils
 alias man2='tldr'

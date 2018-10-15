@@ -1,9 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-<<<<<<< HEAD
-recent=firefox.desktop,rxvt-unicode.desktop,asunder.desktop,cool-retro-term.desktop,gitkraken.desktop,spotify_spotify.desktop,gimp.desktop,code.desktop,mysql-workbench.desktop,etcher-electron.desktop
-=======
 recent=spotify_spotify.desktop,cool-retro-term.desktop,etcher-electron.desktop,gitkraken.desktop,com.github.wwmm.pulseeffects.desktop,mysql-workbench.desktop,appimagekit-bitwarden.desktop,gimp.desktop,exo-terminal-emulator.desktop,code.desktop
->>>>>>> a96a597ca769517d9cd84db96ed8d1abbe17e44a
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
