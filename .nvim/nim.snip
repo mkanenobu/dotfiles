@@ -36,3 +36,11 @@ snippet .sortChar
 options word
   .sort(system.cmp[char])
   ${0}
+
+snippet newSeq
+options word
+  newSeq([${1:type}](${2:length}))
+
+snippet stringToChar
+options word
+  mapIt(0..<len(${1:str}), ${2:str}[it])

@@ -130,3 +130,4 @@ git_remove_from_remote(){
 mail2me(){
     mail -s "From Me" "$my_mail_address"
 }
+

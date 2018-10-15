@@ -9,15 +9,15 @@ set ambiwidth=double
 set history=1000
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-"set softtabstop = 0
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set autoindent
 set smartindent
 set list
 set nofixendofline
-"set listchars=tab:\¦\
+" set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
 
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
@@ -27,8 +27,11 @@ autocmd filetype html setlocal tabstop=4 shiftwidth=4 indentexpr=""
 autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
 autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
 autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype javascript setlocal softtabstop=2 shiftwidth=2
+autocmd filetype javascript setlocal softtabstop=4 shiftwidth=4
+autocmd filetype json setlocal softtabstop=2 shiftwidth=2
 autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
+autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
+autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
 
 set nobackup
 set noswapfile
@@ -360,6 +363,7 @@ let g:ale_linters = {
   \ 'python': ['flake8'],
   \ 'css': ['csslint'],
   \ 'rust': ['rustc'],
+  \ 'javascript': [],
 \ }
 
 let g:ale_fixers = {
@@ -369,6 +373,7 @@ let g:ale_fixers = {
   " \ 'rust': ['rustfmt'],
 
 let g:rustfmt_autosave = 1
+
 
 nnoremap <C-e><C-r> :lopen<CR>
 
