@@ -9,9 +9,15 @@ set ambiwidth=double
 set history=1000
 
 set expandtab
+<<<<<<< HEAD
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+=======
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+>>>>>>> a96a597ca769517d9cd84db96ed8d1abbe17e44a
 set smarttab
 set autoindent
 set smartindent
