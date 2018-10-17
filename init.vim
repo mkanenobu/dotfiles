@@ -379,6 +379,7 @@ nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair
 let g:AutoPairsFlyMode = 0
+let g:AutoPairsMultilineClose = 0
 
 " easy-align
 vmap <C-l> <Plug>(EasyAlign)

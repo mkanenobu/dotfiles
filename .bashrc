@@ -172,7 +172,6 @@ alias lame='lame -b 192'
 alias image-view='sxiv'
 
 # Shell utils
-alias man2='tldr'
 alias duc='du -d 1 -h | sort -h'
 alias wcj='wc -m'
 alias mv='mv -i'
