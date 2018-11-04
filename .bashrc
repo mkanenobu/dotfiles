@@ -190,8 +190,7 @@ alias rc='rustc'
 alias ghr='runghc'
 alias lua='lua5.3'
 alias luac='luac5.3'
-alias lr='sbcl --script'
-alias rr='ros run'
+alias fth='pforth'
 
 # vagrant
 alias vu='vagrant up'

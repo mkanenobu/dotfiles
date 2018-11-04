@@ -20,6 +20,7 @@ set nofixendofline
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
 
+" indent widh
 autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
 autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
 autocmd filetype php setlocal tabstop=4 shiftwidth=4
@@ -32,6 +33,9 @@ autocmd filetype json setlocal softtabstop=2 shiftwidth=2
 autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
 autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
 autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
+
+" set filetype by extension
+autocmd BufNewFile,BufRead *.fth set filetype=forth
 
 set nobackup
 set noswapfile
@@ -318,6 +322,10 @@ let g:quickrun_config.pascal = {
   \ 'runner': 'shell',
 \}
 
+let g:quickrun_config.forth = {
+  \ 'command': 'gforthrun',
+  \ 'runner': 'shell',
+\}
 set splitbelow
 
 if expand("%:e") == "md"

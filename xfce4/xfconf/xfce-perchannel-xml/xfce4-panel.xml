@@ -90,12 +90,12 @@
         <value type="string" value="network"/>
         <value type="string" value="solaar"/>
         <value type="string" value="vnote-1.17-x86_64.appimage"/>
-        <value type="string" value="clipgrab"/>
+        <value type="string" value="sylpheed"/>
         <value type="string" value="rescuetime"/>
         <value type="string" value="stacer"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="slack"/>
-        <value type="string" value="sylpheed"/>
+        <value type="string" value="clipgrab"/>
         <value type="string" value="shift"/>
         <value type="string" value="system-config-printer"/>
         <value type="string" value="remmina"/>
@@ -118,7 +118,7 @@
       <property name="size-max" type="uint" value="24"/>
     </property>
     <property name="plugin-6" type="string" value="actions">
-      <property name="appearance" type="uint" value="1"/>
+      <property name="appearance" type="uint" value="0"/>
       <property name="items" type="array">
         <value type="string" value="-lock-screen"/>
         <value type="string" value="-switch-user"/>

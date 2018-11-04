@@ -1,8 +1,8 @@
 delay=0
-region=3
+region=2
 action=1
 show_mouse=0
-screenshot_dir=file:///home/mika/Pictures/Screenshot
+screenshot_dir=file:/home/mika/Pictures/Screenshot
 app=none
 last_user=
 
