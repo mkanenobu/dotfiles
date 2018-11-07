@@ -67,17 +67,19 @@ fi
 # Original
 
 # if return error, change prompt color
+export GIT_PS1_SHOWUPSTREAM=1
+GIT_INFO="$(__git_ps1)"
 RETURN_CODE='\[$(
 if [ $? -eq 0 ]; then
-    echo -en \e[\033[00m\] ;
+    echo -en \e[\033[00m\];
 else
-    echo -en \e[31m; fi; echo -en $\e[m;)\] '
+    echo -en \e[31m; fi; echo -en $\e[m;)\]'
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
-PS1="${PS1}""${RETURN_CODE}"
+PS1="${PS1}${RETURN_CODE} "
 PS2='>'
 
 if [ -z "$TMUX" ]; then
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$\[\033[00m\] '
+  PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;34m\]$(__git_ps1)\[\033[00m\]\$\[\033[00m\] '
 fi
 
 # If this is an xterm set the title to user@host:dir
@@ -243,7 +245,9 @@ share_history(){
     history -r
 }
 
-PROMPT_COMMAND='share_history'
+source ~/.local/tools/git-auto-fetch.bash
+
+PROMPT_COMMAND='share_history; git-auto-fetch'
 shopt -u histappend
 
 if [ -f ~/.bash_functions ];then
