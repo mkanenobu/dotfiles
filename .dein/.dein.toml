@@ -77,7 +77,6 @@ repo = 'junegunn/vim-easy-align'
 #repo = 'baabelfish/nvim-nim'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
-build = 'make'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
