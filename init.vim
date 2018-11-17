@@ -21,21 +21,35 @@ set nofixendofline
 set listchars=tab:>-,trail:-,extends:>
 
 " indent widh
-autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
-autocmd filetype php setlocal tabstop=4 shiftwidth=4
-autocmd filetype html setlocal tabstop=4 shiftwidth=4 indentexpr=""
-autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
-autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
-autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
-autocmd filetype javascript setlocal softtabstop=4 shiftwidth=4
-autocmd filetype json setlocal softtabstop=2 shiftwidth=2
-autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
-autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
-autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
+augroup Indent
+  autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
+  autocmd filetype html setlocal tabstop=4 shiftwidth=4
+  autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype javascript setlocal softtabstop=4 shiftwidth=4
+  autocmd filetype json setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
+  autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
+augroup END
 
-" set filetype by extension
-autocmd BufNewFile,BufRead *.fth set filetype=forth
+" shebang auto insert
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
+  " autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
+  autocmd BufNewFile *.php 0put =\"<?php\" | 2
+  autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
+  autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+  autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
+  autocmd BufNewFile *.bash 0put =\"#!/bin/bash\" | 2
+  autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
 
 set nobackup
 set noswapfile
@@ -411,18 +425,6 @@ vmap <C-l> <Plug>(EasyAlign)
 " Or map each action separately
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-
-" shebang auto insert
-augroup Shebang
-  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
-  " autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
-  autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
-  autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
-  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
-  autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
-  autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
-  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
-augroup END
 
 syntax on
 filetype indent plugin on

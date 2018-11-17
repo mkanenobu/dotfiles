@@ -67,8 +67,6 @@ fi
 # Original
 
 # if return error, change prompt color
-export GIT_PS1_SHOWUPSTREAM=1
-GIT_INFO="$(__git_ps1)"
 RETURN_CODE='\[$(
 if [ $? -eq 0 ]; then
     echo -en \e[\033[00m\];

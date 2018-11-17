@@ -100,14 +100,6 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'othree/html5.vim'
 
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-
-# [[plugins]]
-# repo = 'sebastianmarkow/deoplete-rust'
-# [[plugins]]
-# repo = 'davidhalter/jedi-vim'
-
 # Deoplete sources
 
 [[plugins]]
