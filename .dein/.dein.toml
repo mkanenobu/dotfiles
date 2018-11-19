@@ -1,7 +1,8 @@
 # dein.toml
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# build = 'make'
 
 # [[plugins]]
 # repo = 'autozimu/LanguageClient-neovim'

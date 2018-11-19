@@ -243,9 +243,7 @@ share_history(){
     history -r
 }
 
-source ~/.local/tools/git-auto-fetch.bash
-
-PROMPT_COMMAND='share_history; git-auto-fetch'
+PROMPT_COMMAND='share_history; git_autofetch'
 shopt -u histappend
 
 if [ -f ~/.bash_functions ];then

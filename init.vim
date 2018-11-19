@@ -331,9 +331,8 @@ let g:quickrun_config = {
   \},
 \}
 
-let g:quickrun_config.pascal = {
-  \ 'command': '~/.local/tools/fpr',
-  \ 'runner': 'shell',
+let g:quickrun_config.freepascal = {
+  \ 'command': 'fpr',
 \}
 
 let g:quickrun_config.forth = {
