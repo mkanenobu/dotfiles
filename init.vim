@@ -35,6 +35,7 @@ augroup Indent
   autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
   autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
   autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
+  autocmd filetype rust setlocal softtabstop=4 shiftwidth=4
 augroup END
 
 " shebang auto insert

@@ -3,27 +3,27 @@ options word
   import sequtils, strutils, algorithm, math
   ${0}
 
-snippet readLine
+snippet read
 options word
   readLine(stdin)${0}
 
-snippet readLine:int
+snippet read:int
 options word
   readLine(stdin).parseInt${0}
 
-snippet readLine:split:int
+snippet read:split:int
 options word
   readLine(stdin).split.map(parseInt)${0}
 
-snippet readLine:multi:int
+snippet read:multi:int
 options word
   mapIt(0..<${0}, readLine(stdin).parseInt)
 
-snippet readLine:split
+snippet read:split
 options word
   readLine(stdin).split${0}
 
-snippet readLine:multi
+snippet read:multi
 options word
   mapIt(0..<${0}, readLine(stdin))
 
