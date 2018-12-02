@@ -41,7 +41,6 @@ augroup END
 " shebang auto insert
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
-  " autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\n# coding: utf-8\" | 3
   autocmd BufNewFile *.php 0put =\"<?php\" | 2
   autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
   autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
@@ -381,6 +380,7 @@ let g:ale_cache_executable_check_failures = 0
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
+let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'python': ['flake8'],
   \ 'css': ['csslint'],
@@ -391,6 +391,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
   \ 'python': ['autopep8', 'isort'],
   \ 'perl': ['perltidy'],
+  \ 'javascript': ['prettier'],
+  \ 'typescript': ['prettier']
 \ }
   " \ 'rust': ['rustfmt'],
 
@@ -426,6 +428,6 @@ vmap <C-l> <Plug>(EasyAlign)
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
-syntax on
+syntax enable
 filetype indent plugin on
 set secure

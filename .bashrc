@@ -171,6 +171,7 @@ alias psfind='ps aux | fzf'
 alias pip3='sudo -H pip3'
 alias pip='sudo -H pip'
 alias lame='lame -b 192'
+alias vg='volt get'
 
 # Shell utils
 alias duc='du -d 1 -h | sort -h'
