@@ -382,18 +382,19 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
-  \ 'python': ['flake8'],
   \ 'css': ['csslint'],
   \ 'rust': ['rustc'],
   \ 'javascript': [],
 \ }
+  " \ 'python': ['flake8'],
 
 let g:ale_fixers = {
-  \ 'python': ['autopep8', 'isort'],
+  \ 'python': ['isort'],
   \ 'perl': ['perltidy'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier']
 \ }
+  " \ 'python': ['autopep8', 'isort'],
   " \ 'rust': ['rustfmt'],
 
 let g:rustfmt_autosave = 1
