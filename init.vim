@@ -116,16 +116,12 @@ nnoremap - <C-x>
 
 " C-CR in middle of line
 inoremap <C-j> <Esc>o
-inoremap <C-k> <Esc>O
 
-nnoremap q <nop>
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
 noremap <Leader>p "0p
-"nnoremap Y y$
-"nnoremap y$ Y
 nmap <Space>y :%y<CR>
 
 inoremap <C-d> $
@@ -296,7 +292,6 @@ endfunction
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
@@ -408,6 +403,7 @@ let g:AutoPairsMultilineClose = 0
 
 " easy-align
 vmap <C-l> <Plug>(EasyAlign)
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 "xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
