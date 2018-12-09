@@ -77,25 +77,21 @@ set inccommand=split
 
 set wrapscan
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
-nnoremap <silent><Space><Space> :<C-u>set nohlsearch!<CR>
 
 set mouse=""
 set ruler
 set number
 set wildmenu
-set wildmode=list,full
+set wildmode=list
 " set cursorline
 set showcmd
 set title
 set showmatch
 set matchtime=1
 
-noremap % m
-noremap m %
-
-runtime macros/matchit.vim
+" runtime macros/matchit.vim
 " vim-matchup
-let g:loaded_matchit = 1
+" let g:loaded_matchit = 1
 
 set foldlevel=100
 
