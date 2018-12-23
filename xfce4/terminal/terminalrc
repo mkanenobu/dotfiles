@@ -18,7 +18,7 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
-MiscMiddleClickOpensUri=FALSE
+MiscMiddleClickOpensUri=TRUE
 MiscCopyOnSelect=FALSE
 MiscShowRelaunchDialog=TRUE
 MiscRewrapOnResize=TRUE
@@ -35,4 +35,7 @@ TitleMode=TERMINAL_TITLE_HIDE
 BackgroundImageFile=/home/mika/Pictures/tape_machine.png
 BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_SCALED
 BackgroundImageShading=0.810000
+ShortcutsNoHelpkey=TRUE
+ShortcutsNoMenukey=TRUE
+ShortcutsNoMnemonics=TRUE
 

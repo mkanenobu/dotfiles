@@ -44,9 +44,6 @@ repo = 'itchyny/lightline.vim'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'elzr/vim-json'
-
-[[plugins]]
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
@@ -54,10 +51,6 @@ repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-
-# git wrapper
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -91,17 +84,17 @@ repo = 'zchee/deoplete-jedi'
 # [[plugins]]
 # repo = 'othree/yajs.vim'
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
 
-[[plugins]]
-repo = 'pangloss/vim-javascript'
+# [[plugins]]
+# repo = 'pangloss/vim-javascript'
 
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
+# [[plugins]]
+# repo = 'hail2u/vim-css3-syntax'
 
-[[plugins]]
-repo = 'othree/html5.vim'
+# [[plugins]]
+# repo = 'othree/html5.vim'
 
 # Deoplete sources
 [[plugins]]

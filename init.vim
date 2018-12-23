@@ -328,8 +328,8 @@ let g:quickrun_config.freepascal = {
 
 let g:quickrun_config.forth = {
   \ 'command': 'gforthrun',
-  \ 'runner': 'shell',
 \}
+
 set splitbelow
 
 if expand("%:e") == "md"
@@ -342,8 +342,8 @@ endif
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
 " ファイルが指定されていない場合，NERDTreeを開く
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " indentLine
 "let g:indentLine_bgcolor_term = 239
