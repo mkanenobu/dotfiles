@@ -327,7 +327,8 @@ let g:quickrun_config.freepascal = {
 \}
 
 let g:quickrun_config.forth = {
-  \ 'command': 'gforthrun',
+  \ 'command': 'gforth',
+  \ 'exec': '%o %s -e bye'
 \}
 
 set splitbelow
