@@ -346,11 +346,10 @@ map <Space>n :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" indentLine
-"let g:indentLine_bgcolor_term = 239
-"let g:indentLine_setColors = 0
-"let g:indentLine_char = 'c'
-"let g:indentLine_setConceal = 0
+" vim-Autopair
+if expand("%:e") == "forth"
+  let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', 'T{':'}T'}
+endif
 
 " nvim-nim
 " disable key config
