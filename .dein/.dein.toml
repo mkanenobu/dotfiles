@@ -4,11 +4,6 @@
 # repo = 'Shougo/vimproc.vim'
 # build = 'make'
 
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# rev = 'next'
-# build = 'bash install.sh'
-
 # colorschemes
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -18,9 +13,6 @@ repo = 'morhetz/gruvbox'
 repo = 'sjl/badwolf'
 
 ### Utils
-
-[[plugins]]
-repo = 'thinca/vim-ref'
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -64,9 +56,6 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 
-# [[plugins]]
-# repo = 'bronson/vim-trailing-whitespace'
-
 ### Language support
 
 # Nim helper
@@ -90,11 +79,11 @@ repo = 'zchee/deoplete-jedi'
 # [[plugins]]
 # repo = 'pangloss/vim-javascript'
 
-# [[plugins]]
-# repo = 'hail2u/vim-css3-syntax'
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
 
-# [[plugins]]
-# repo = 'othree/html5.vim'
+[[plugins]]
+repo = 'othree/html5.vim'
 
 # Deoplete sources
 [[plugins]]

@@ -15,6 +15,7 @@ set softtabstop=2
 set smarttab
 set autoindent
 set smartindent
+set showbreak=>>>\ 
 set list
 set nofixendofline
 " set listchars=tab:\¦\
@@ -29,7 +30,7 @@ augroup Indent
   autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
   autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
   autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype javascript setlocal softtabstop=4 shiftwidth=4
+  autocmd filetype javascript setlocal softtabstop=2 shiftwidth=2
   autocmd filetype json setlocal softtabstop=2 shiftwidth=2
   autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
   autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
@@ -101,8 +102,6 @@ set clipboard=unnamed,unnamedplus
 " set clipboard+=unnamedplus
 autocmd InsertLeave * set nopaste
 
-" for comment
-
 " Keymap
 let mapleader = "\<Space>"
 nnoremap <kplus> <C-a>
@@ -133,7 +132,6 @@ vnoremap gj j
 vnoremap gk k
 vnoremap j gj
 vnoremap k gk
-"nnoremap ; :
 
 inoremap <C-c> <Esc>
 
@@ -148,18 +146,9 @@ vnoremap * "zy:let @/ = @z<CR>n
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
-" PHP
-let g:php_baselib=1
-let g:php_htmlInStrings=1
-let g:php_noShortTags=1
-let g:php_sql_query=1
-" DB
-let g:sql_type_default = 'mysql'
-
-
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
-let g:user_emmet_install_global = 0
+let g:user_emmet_install_global = 1
 autocmd Filetype php,html,css,scss EmmetInstall
 let g:user_emmet_mode = 'i'
 let g:user_emmet_expandabbr_key='<C-e>'
@@ -215,14 +204,7 @@ autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
-"colorscheme gruvbox
-" set background=dark
-
-" vivid
-" let g:molokai_original = 1
-
-"let g:rehash256 = 1
-
+" colorscheme gruvbox
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -306,10 +288,6 @@ if has('conceal')
 endif
 let g:neosnippet#snippets_directory = '~/.nvim/'
 
-" vim-ref
-let g:ref_phpmanual_path = $HOME . '/.nvim/manuals/php-chunked-xhtml'
-"let g:ref_use_vimproc = 0
-
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
 " バッファを下に出す
@@ -327,7 +305,7 @@ let g:quickrun_config.freepascal = {
 \}
 
 let g:quickrun_config.forth = {
-  \ 'command': 'gforthrun',
+  \ 'exec': 'gforth %s -e bye',
 \}
 
 set splitbelow
@@ -388,9 +366,8 @@ let g:ale_fixers = {
   " \ 'python': ['autopep8', 'isort'],
   " \ 'rust': ['rustfmt'],
 
-let g:rustfmt_autosave = 1
-
-
+nnoremap <silent><C-j> :ALENextWrap<CR>
+nnoremap <silent><C-k> :ALEPreviousWrap<CR>
 nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair
