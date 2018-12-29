@@ -56,6 +56,9 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 
+[[plugins]]
+repo = 'mhinz/vim-signify'
+
 ### Language support
 
 # Nim helper

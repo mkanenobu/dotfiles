@@ -366,13 +366,18 @@ let g:ale_fixers = {
   " \ 'python': ['autopep8', 'isort'],
   " \ 'rust': ['rustfmt'],
 
-nnoremap <silent><C-j> :ALENextWrap<CR>
-nnoremap <silent><C-k> :ALEPreviousWrap<CR>
+nmap <C-j> <Plug>(ale_next_wrap)
+nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsMultilineClose = 0
+
+" vim-signify
+let g:signify_update_on_bufenter = 1
+nmap <S-j> <plug>(signify-next-hunk)
+nmap <S-k> <plug>(signify-prev-hunk)
 
 " easy-align
 vmap <C-l> <Plug>(EasyAlign)
