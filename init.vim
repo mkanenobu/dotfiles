@@ -83,7 +83,7 @@ set mouse=""
 set ruler
 set number
 set wildmenu
-set wildmode=list
+set wildmode=list:full
 " set cursorline
 set showcmd
 set title
@@ -305,8 +305,7 @@ let g:quickrun_config.freepascal = {
 \}
 
 let g:quickrun_config.forth = {
-  \ 'command': 'gforth',
-  \ 'exec': '%o %s -e bye'
+  \ 'exec': 'gforth %s -e bye'
 \}
 
 set splitbelow
