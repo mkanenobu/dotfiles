@@ -286,7 +286,7 @@ smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let g:neosnippet#snippets_directory = '~/.nvim/'
+let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
 map <Space>r :QuickRun -input =@+<CR>
