@@ -199,12 +199,10 @@ alias vh='vagrant halt'
 alias vs='vagrant ssh'
 alias vr='vagrant reload'
 
-# typo
-alias al='sl -e'
-alias a=':'
-alias d=':'
-alias sl='sl -e'
-alias claer="clear"
+# Docker
+alias drun='sudo docker run'
+alias dps='sudo docker ps'
+alias dl='sudo docker ps -l -q'
 
 # Git
 alias g='git'
@@ -223,6 +221,14 @@ alias gpom='echo "Use gpo master"'
 alias gf='git fetch'
 alias gst='git stash'
 alias gsp='git stash pop'
+
+# typo
+alias al='sl -e'
+alias a=':'
+alias d=':'
+alias sl='sl -e'
+alias .s='ls'
+alias claer="clear"
 
 alias tmux-kill='tmux kill-server'
 
