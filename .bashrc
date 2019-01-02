@@ -183,9 +183,9 @@ alias cat='bat'
 
 # languages
 alias py='python3'
-alias nimc='nim c'
-alias nimcd='nim c -d:release'
-alias nimcr='nim c -r --verbosity:0'
+alias nimc='nim c --warning[SmallLshouldNotBeUsed]:off'
+alias nimcd='nim c -d:release --warning[SmallLshouldNotBeUsed]:off'
+alias nimcr='nim c -r --verbosity:0 --warning[SmallLshouldNotBeUsed]:off'
 alias nimi='nim secret'
 alias rc='rustc'
 alias ghr='runghc'
@@ -258,7 +258,7 @@ share_history(){
     history -r
 }
 
-# PROMPT_COMMAND='share_history; git_autofetch'
+PROMPT_COMMAND='(git_autofetch 2>/dev/null 1>/dev/null &)'
 shopt -u histappend
 
 if [ -f ~/.bash_functions ];then

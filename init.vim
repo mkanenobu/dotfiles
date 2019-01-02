@@ -300,6 +300,10 @@ let g:quickrun_config = {
   \},
 \}
 
+let g:quickrun_config.nim = {
+  \ 'cmdopt': 'c --run --verbosity:0 --warning[SmallLshouldNotBeUsed]:off',
+\}
+
 let g:quickrun_config.freepascal = {
   \ 'command': 'fpr',
 \}
@@ -374,8 +378,9 @@ let g:AutoPairsFlyMode = 0
 let g:AutoPairsMultilineClose = 0
 
 " vim-signify
+let g:signify_disable_by_default = 1
 let g:signify_vcs_list = ['git']
-let g:signify_update_on_bufenter = 1
+let g:signify_update_on_bufenter = 0
 nmap <S-j> <plug>(signify-next-hunk)
 nmap <S-k> <plug>(signify-prev-hunk)
 

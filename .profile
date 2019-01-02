@@ -22,16 +22,23 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
-# export GOROOT="$HOME/.go"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$GOPATH/bin"
+export GOPATH="$HOME/.go"
+export PATH="$PATH:$HOME/.go/bin"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export GITROOT=$HOME/Git
+export GITROOT="$HOME/Git"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/tools"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/fpc/bin"
+export PATH="$PATH:$HOME/.local/PhpStorm-182.3684.42/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/intel/bin"
+
+# for cool retro term
+export PATH="$PATH:$HOME/Qt/5.11.2/gcc_64/bin/"
 export EDITOR=nvim
 # nvim in tmux
 export TERM=xterm-256color
@@ -58,7 +65,7 @@ export HISTTIMEFORMAT='%F %T '
 imwheel >/dev/null 2>&1
 
 # thinkpad touchpad acceleration
-xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 1.5
+#xinput --set-prop "pointer:SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 1.5
 
 # thinkpad touchpad natural scroll
 synclient VertScrollDelta=-99
@@ -68,11 +75,12 @@ synclient HorizScrollDelta=-99
 xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Emulation Enabled" 1 >/dev/null 2>&1
 #xinput set-prop "Primax Kensington Eagle Trackball" "libinput Middle Button Timeout" 100 >/dev/null #2>&1
 
-#export FCITX_NO_PREEDIT_APPS=""
+export FCITX_NO_PREEDIT_APPS=""
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # Discord startup minimize
 #wmctrl -c "Discord"
+
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -83,3 +91,14 @@ exec ibus-daemon -dx &
 
 # caps to ctrl
 /usr/bin/setxkbmap -option "ctrl:nocaps"
+
+# less coloring
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+xmodmap ~/.Xmodmap
