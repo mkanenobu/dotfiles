@@ -50,7 +50,6 @@ augroup Shebang
   autocmd BufNewFile *.bash 0put =\"#!/bin/bash\" | 2
   autocmd BufNewFile *.fs 0put =\"#! /usr/bin/env gforthrun\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
-  autocmd BufNewFile *.fs 0put =\"#! /usr/bin/env gforthrun\" | 2
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
 
