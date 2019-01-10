@@ -180,6 +180,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cat='bat'
+alias cd..='cd ../'
 
 # languages
 alias py='python3'
