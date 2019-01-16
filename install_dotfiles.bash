@@ -25,6 +25,7 @@ for i in $dotfiles ;do
     "init.vim" ) install "$i" "${configDir}/nvim" ;;
     "neosnippet-snippets" ) install "$i" "${configDir}/nvim" ;;
     "dein" ) "$i" "${configDir}/nvim" ;;
+    ".byobu"  ) install "$i" "${HOME}" ;;
     ".bashrc"  ) install "$i" "${HOME}" ;;
     ".vimrc"  ) install "$i" "${HOME}" ;;
     ".bash_functions" ) install "$i" "${HOME}" ;;
