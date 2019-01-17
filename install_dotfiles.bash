@@ -23,7 +23,7 @@ configDir="${HOME}/.config"
 for i in $dotfiles ;do
   case "$i" in
     "init.vim" ) install "$i" "${configDir}/nvim" ;;
-    "neosnippet-snippets" ) install "$i" "${configDir}/nvim" ;;
+    "neosnippet-snippets" ) install "snippets" "${configDir}/nvim" ;;
     "dein" ) "$i" "${configDir}/nvim" ;;
     "byobu"  ) install "$i" "${configDir}" ;;
     ".bashrc"  ) install "$i" "${HOME}" ;;
