@@ -60,7 +60,8 @@ repo = 'junegunn/vim-easy-align'
 repo = 'mhinz/vim-signify'
 
 ### Language support
-
+[[plugins]]
+repo = 'mkanenobu/forth.vim'
 # Nim helper
 #[[plugins]]
 #repo = 'baabelfish/nvim-nim'

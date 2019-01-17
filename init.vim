@@ -46,10 +46,9 @@ augroup Shebang
   autocmd BufNewFile *.php 0put =\"<?php\" | 2
   autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
   autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
-  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\" | 2
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
   autocmd BufNewFile *.bash 0put =\"#!/bin/bash\" | 2
-  autocmd BufNewFile *.fs 0put =\"#! /usr/bin/env gforthrun\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
@@ -97,7 +96,6 @@ set matchtime=1
 " let g:loaded_matchit = 1
 
 set foldlevel=100
-
 
 set laststatus=2
 set clipboard=unnamed,unnamedplus
@@ -183,7 +181,7 @@ if dein#load_state(s:dein_dir)
 
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir  = expand('~/.dein')
+  let g:rc_dir  = expand('~/.config/dein')
   let s:toml  = g:rc_dir . '/.dein.toml'
   let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
 
