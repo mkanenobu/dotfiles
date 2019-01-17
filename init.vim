@@ -16,6 +16,7 @@ set smarttab
 set autoindent
 set smartindent
 set showbreak=>>>\ 
+autocmd filetype quickrun setlocal showbreak=""
 set list
 set nofixendofline
 " set listchars=tab:\¦\
