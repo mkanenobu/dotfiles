@@ -23,6 +23,7 @@ set list
 set nofixendofline
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
+set helplang=ja,en
 
 " indent widh
 augroup Indent
@@ -147,6 +148,10 @@ vnoremap * "zy:let @/ = @z<CR>n
 " Window manage
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
+
+"
+vnoremap { (
+vnoremap } )
 
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'

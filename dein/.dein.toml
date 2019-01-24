@@ -42,6 +42,9 @@ repo = 'thinca/vim-quickrun'
 repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
+repo = 'vim-surround'
+
+[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
@@ -58,6 +61,15 @@ repo = 'junegunn/vim-easy-align'
 
 [[plugins]]
 repo = 'mhinz/vim-signify'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 
 ### Language support
 [[plugins]]
