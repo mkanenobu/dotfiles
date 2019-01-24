@@ -42,9 +42,6 @@ repo = 'thinca/vim-quickrun'
 repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
-repo = 'vim-surround'
-
-[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
@@ -70,6 +67,8 @@ merged = 0
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 ### Language support

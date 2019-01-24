@@ -23,6 +23,7 @@ set list
 set nofixendofline
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
+
 set helplang=ja,en
 
 " indent widh
@@ -119,10 +120,7 @@ nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
 
-noremap <Leader>p "0p
 nmap <Space>y :%y<CR>
-
-inoremap <C-d> $
 
 tnoremap <silent> <Esc> <C-\><C-n>
 tnoremap <silent> <C-[> <C-\><C-n>
