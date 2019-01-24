@@ -153,6 +153,8 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
+nnoremap <C-g> :Rg 
+
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_install_global = 1
