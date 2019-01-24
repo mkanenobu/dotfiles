@@ -70,6 +70,7 @@ merged = 0
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+repo = 'tpope/vim-surround'
 
 ### Language support
 [[plugins]]
