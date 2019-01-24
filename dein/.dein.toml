@@ -59,6 +59,9 @@ repo = 'junegunn/vim-easy-align'
 [[plugins]]
 repo = 'mhinz/vim-signify'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
+
 ### Language support
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
