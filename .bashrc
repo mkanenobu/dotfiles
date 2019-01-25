@@ -1,4 +1,4 @@
-# ~omsg "git added".bashrc: executed by bash(1) for non-login shells.
+# .bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -221,14 +221,13 @@ alias gcm='git commit -m'
 alias gcd='git commit -m "$(date "+%D %R")"'
 alias gs='git status'
 alias gp='git pull'
-alias gpo='git push origin'
 alias gd='git diff'
 alias gcl='git clone'
 alias gg='git grep'
 alias gc='git checkout'
 alias gb='git branch'
-alias gpom='echo "Use gpo master"'
 alias gf='git fetch'
+alias gfp='git fetch && git pull'
 alias gst='git stash'
 alias gsp='git stash pop'
 
@@ -259,7 +258,7 @@ share_history(){
     history -r
 }
 
-PROMPT_COMMAND='(git_autofetch 2>/dev/null 1>/dev/null &)'
+# PROMPT_COMMAND='(git_autofetch 2>/dev/null 1>/dev/null &)'
 shopt -u histappend
 
 if [ -f ~/.bash_functions ];then
@@ -288,3 +287,5 @@ xmodmap ~/.Xmodmap
 stty stop undef
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source "$HOME/.config/wakatime/bash-wakatime.sh"

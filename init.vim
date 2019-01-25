@@ -151,6 +151,8 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
+nnoremap <Space>l :!chrome-tab-reload<CR><CR>
+
 nnoremap <C-g> :Rg 
 
 " Emmet{{{

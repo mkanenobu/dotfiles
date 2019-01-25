@@ -108,12 +108,6 @@ elastics(){
   rg -nws "$1" "$2"
 }
 
-tab_reload(){
-  xdotool windowfocus "$(xdotool search --onlyvisible --name google)"
-  xdotool key ctrl+r
-  xdotool windowfocus "$(xdotool search --onlyvisible --class gnome-terminal)"
-}
-
 history-do(){
   if [ "$#" -eq 1 ];then
     eval "$(tac ~/.bash_history | grep -v "^#" | grep "$1" | peco)"
