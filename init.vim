@@ -159,6 +159,8 @@ else
 endif
 
 nnoremap <C-g> :Rg 
+" grep current word
+nnoremap <C-]> :Rg <C-r><C-w><CR>
 
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
