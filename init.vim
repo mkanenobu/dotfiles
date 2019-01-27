@@ -403,6 +403,9 @@ nmap <S-k> <plug>(signify-prev-hunk)
 " easy-align
 vmap <C-l> <Plug>(EasyAlign)
 
+" wakatime
+let g:wakatime_PythonBinary = '/usr/bin/python'
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 "xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)

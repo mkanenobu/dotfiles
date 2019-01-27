@@ -60,6 +60,9 @@ repo = 'junegunn/vim-easy-align'
 repo = 'mhinz/vim-signify'
 
 [[plugins]]
+repo = 'wakatime/vim-wakatime'
+
+[[plugins]]
 repo = 'junegunn/fzf'
 build = './install --all'
 merged = 0
