@@ -97,6 +97,9 @@ repo = 'leafgarland/typescript-vim'
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+
+[[plugins]]
 repo = 'eagletmt/ghcmod-vim'
 
 [[plugins]]

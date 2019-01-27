@@ -358,6 +358,7 @@ endif
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
 
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
