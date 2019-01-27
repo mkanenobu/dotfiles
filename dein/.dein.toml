@@ -96,6 +96,12 @@ repo = 'leafgarland/typescript-vim'
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 
+[[plugins]]
+repo = 'eagletmt/ghcmod-vim'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'

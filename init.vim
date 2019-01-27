@@ -328,6 +328,12 @@ let g:quickrun_config.forth = {
   \ 'exec': 'gforth %s -e bye'
 \}
 
+let g:quickrun_config.haskell = {
+  \ 'command': 'stack',
+  \ 'exec': '%c %o %s %a',
+  \ 'cmdopt': 'runghc'
+\}
+
 set splitbelow
 
 if expand("%:e") == "md"
