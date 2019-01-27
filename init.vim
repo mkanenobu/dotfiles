@@ -82,7 +82,7 @@ set ignorecase
 set inccommand=split
 
 set wrapscan
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 set mouse=""
 set ruler
@@ -115,6 +115,7 @@ nnoremap - <C-x>
 
 " C-CR in middle of line
 inoremap <C-j> <Esc>o
+inoremap <C-CR> <Esc>o
 
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
@@ -151,7 +152,11 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
-nnoremap <Space>l :!chrome-tab-reload<CR><CR>
+if has('mac')
+  nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
+else
+  nnoremap <silent> <Space>l :silent !chrome-tab-reload<CR><CR>
+endif
 
 nnoremap <C-g> :Rg 
 

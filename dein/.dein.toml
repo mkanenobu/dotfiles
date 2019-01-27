@@ -75,8 +75,6 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
 # Nim helper
-#[[plugins]]
-#repo = 'baabelfish/nvim-nim'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
@@ -86,20 +84,14 @@ repo = 'boeckmann/vim-freepascal'
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 
-# [[plugins]]
-# repo = 'othree/yajs.vim'
+[[plugins]]
+repo = 'pangloss/vim-javascript'
 
-# [[plugins]]
-# repo = 'leafgarland/typescript-vim'
-
-# [[plugins]]
-# repo = 'pangloss/vim-javascript'
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-
-# [[plugins]]
-# repo = 'othree/html5.vim'
 
 # Deoplete sources
 [[plugins]]
