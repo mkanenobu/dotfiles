@@ -184,15 +184,15 @@ alias cd..='cd ../'
 
 # languages
 alias py='python3'
-alias nimc='nim c --warning[SmallLshouldNotBeUsed]:off'
-alias nimcd='nim c -d:release --warning[SmallLshouldNotBeUsed]:off'
-alias nimcr='nim c -r --verbosity:0 --warning[SmallLshouldNotBeUsed]:off'
+alias nimc='nim c'
+alias nimcd='nim c -d:release'
+alias nimcr='nim c -r --verbosity:0'
 alias nimi='nim secret'
 alias rc='rustc'
-alias ghr='runghc'
 alias lua='lua5.3'
 alias luac='luac5.3'
 alias fth='pforth'
+alias ghc='stack ghc --'
 
 # vagrant
 alias vu='vagrant up'

@@ -32,6 +32,7 @@ for i in $dotfiles ;do
     ".imwheelrc" ) install "$i" "${HOME}" ;;
     ".inputrc" ) install "$i" "${HOME}" ;;
     ".Xmodmap" ) install "$i" "${HOME}" ;;
+    "nim.cfg"  ) install "$i" "${configDir}" ;;
     * ) : ;;
   esac
 done
