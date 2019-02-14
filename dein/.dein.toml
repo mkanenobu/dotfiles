@@ -74,6 +74,9 @@ depends = 'fzf'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'mkanenobu/foolproof.vim'
+
 ### Language support
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
