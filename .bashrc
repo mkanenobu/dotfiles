@@ -192,8 +192,8 @@ alias rc='rustc'
 alias lua='lua5.3'
 alias luac='luac5.3'
 alias fth='pforth'
-alias ghc='stack ghc'
 alias ghci='stack ghci'
+alias ghr='stack runghc'
 
 # vagrant
 alias vu='vagrant up'
