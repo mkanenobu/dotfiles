@@ -238,6 +238,7 @@ alias a=':'
 alias sl='sl -e'
 alias .s='ls'
 alias claer="clear"
+alias im='vim'
 
 alias tmux-kill='tmux kill-server'
 
