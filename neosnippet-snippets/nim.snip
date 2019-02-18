@@ -19,6 +19,10 @@ snippet read:multi:int
 options word
   mapIt(0..<${0}, readLine(stdin).parseInt)
 
+snippet read:multi:split:int
+options word
+  mapIt(0..<${0}, readLine(stdin).split.map(parseInt))
+
 snippet read:split
 options word
   readLine(stdin).split${0}

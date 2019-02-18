@@ -31,7 +31,7 @@ augroup Indent
   autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
   autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
   autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
-  autocmd filetype html setlocal tabstop=4 shiftwidth=4
+  autocmd filetype html setlocal tabstop=2 shiftwidth=2
   autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
   autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
   autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
