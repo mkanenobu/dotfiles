@@ -353,6 +353,9 @@ map <Space>n :NERDTreeToggle<CR>
 if expand("%:e") == "fs"
   let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
 endif
+if expand("%:e") == "rb"
+  let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
+endif
 
 " nvim-nim
 " disable key config
@@ -400,7 +403,7 @@ let g:AutoPairsFlyMode = 0
 let g:AutoPairsMultilineClose = 0
 
 " vim-signify
-let g:signify_disable_by_default = 1
+let g:signify_disable_by_default = 0
 let g:signify_vcs_list = ['git']
 let g:signify_update_on_bufenter = 0
 nmap <S-j> <plug>(signify-next-hunk)
