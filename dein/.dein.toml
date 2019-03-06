@@ -88,6 +88,9 @@ repo = 'mkanenobu/nvim-nim'
 repo = 'boeckmann/vim-freepascal'
 
 [[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
 repo = 'zchee/deoplete-jedi'
 
 [[plugins]]
