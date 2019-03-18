@@ -48,11 +48,10 @@ augroup END
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   autocmd BufNewFile *.php 0put =\"<?php\" | 2
-  autocmd BufNewFile *.pl 0put =\"#!/usr/bin/env perl\" | 2
   autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
   autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\" | 2
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
-  autocmd BufNewFile *.bash 0put =\"#!/bin/bash\" | 2
+  autocmd BufNewFile *.bash 0put =\"#!/usr/bin/env bash\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
@@ -89,6 +88,8 @@ set ruler
 set number
 set wildmenu
 set wildmode=list:full
+" set wildoptions+=pum
+" set pumblend=20
 " set cursorline
 set showcmd
 set title

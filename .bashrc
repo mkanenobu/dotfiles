@@ -192,6 +192,7 @@ alias rc='rustc'
 alias lua='lua5.3'
 alias luac='luac5.3'
 alias fth='pforth'
+alias rb='ruby'
 alias ghci='stack ghci'
 alias ghr='stack runghc'
 
