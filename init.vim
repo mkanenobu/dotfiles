@@ -318,7 +318,7 @@ let g:quickrun_config = {
 \}
 
 let g:quickrun_config.nim = {
-  \ 'cmdopt': 'c --run --verbosity:0 --warning[SmallLshouldNotBeUsed]:off',
+  \ 'cmdopt': 'c --run --verbosity:0 --warning[SmallLshouldNotBeUsed]:off -d:ssl --hints:off',
 \}
 
 let g:quickrun_config.freepascal = {
