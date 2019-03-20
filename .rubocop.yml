@@ -30,3 +30,17 @@ HashSyntax:
 # Allow unalign hash
 AlignHash:
   Enabled: false
+
+#
+BracesAroundHashParameters:
+  Enabled: false
+
+ExtraSpacing:
+  Enabled: false
+
+TrailingSpaces:
+  Enabled: false
+
+# Allow empty comment
+EmptyComment:
+  Enabled: false

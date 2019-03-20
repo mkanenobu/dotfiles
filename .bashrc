@@ -195,6 +195,8 @@ alias fth='pforth'
 alias rb='ruby'
 alias ghci='stack ghci'
 alias ghr='stack runghc'
+alias bunexec='bundle exec'
+alias buninstall='bundle install'
 
 # vagrant
 alias vu='vagrant up'
