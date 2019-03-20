@@ -1,0 +1,32 @@
+
+# Allow japanese comment
+AsciiComments:
+  Enabled: false
+
+# Allow "module::Class"
+ClassAndModuleChildren:
+  Enabled: false
+
+# Disable Documentation
+Documentation:
+  Enabled: false
+
+# Allow "and", "or"
+AndOr:
+  Enabled: false
+
+# Allow long line
+LineLength:
+  Enabled: false
+
+# Allow training blank line
+TrailingBlankLines:
+  Enabled: false
+
+# Allow old hash syntax
+HashSyntax:
+  Enabled: false
+
+# Allow unalign hash
+AlignHash:
+  Enabled: false
