@@ -44,3 +44,10 @@ TrailingSpaces:
 # Allow empty comment
 EmptyComment:
   Enabled: false
+
+# Allow short method name
+UncommunicativeMethodParamName:
+  Enabled: false
+
+AccessModifierDeclarations:
+  Enabled: false
