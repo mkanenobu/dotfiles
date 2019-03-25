@@ -153,6 +153,8 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
+autocmd filetype qf nmap <buffer> <silent> q :q<CR>
+
 if has('mac')
   nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
 else
@@ -390,10 +392,10 @@ let g:ale_fixers = {
   \ 'python': ['isort'],
   \ 'perl': ['perltidy'],
   \ 'javascript': ['prettier'],
-  \ 'typescript': ['prettier']
+  \ 'typescript': ['prettier'],
+  \ 'rust': ['rustfmt'],
 \ }
   " \ 'python': ['autopep8', 'isort'],
-  " \ 'rust': ['rustfmt'],
 
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)

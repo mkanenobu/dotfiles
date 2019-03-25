@@ -51,3 +51,11 @@ UncommunicativeMethodParamName:
 
 AccessModifierDeclarations:
   Enabled: false
+
+# Allow double quote string literal
+StringLiterals:
+  Enabled: false
+
+SpaceAfterColon:
+  Enabled: false
+

@@ -1,5 +1,6 @@
 # .bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# vi: set tabstop=4 softtabstop=4 shiftwidth=4 :
 # for examples
 
 TERM=xterm-256color
@@ -72,13 +73,15 @@ if [ $? -eq 0 ]; then
     echo -en \e[\033[00m\];
 else
     echo -en \e[31m; fi; echo -en $\e[m;)\]'
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
+
+# simple
+# PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
+# without username
+# PS1='\[\033[01;34m\]\W\[\033[00m\]'
+# with branch name
+PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;34m\]$(__git_ps1)\[\033[00m\]'
 PS1="${PS1}${RETURN_CODE} "
 PS2='>'
-
-if [ -z "$TMUX" ]; then
-  PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;34m\]$(__git_ps1)\[\033[00m\]\$\[\033[00m\] '
-fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -181,6 +184,7 @@ alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cat='bat'
 alias cd..='cd ../'
+alias log='tail -f'
 
 # languages
 alias py='python3'
