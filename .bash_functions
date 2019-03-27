@@ -63,6 +63,9 @@ mnar(){
 # Translate
 dict(){
   if [ -e ~/Documents/gene-utf8.txt ]; then
+    if [ -z "$1" ]; then
+      exit 1
+    fi
     if expr "$1" : '[a-zA-Z]*' >/dev/null ;then
       grep "$1" "${HOME}/Documents/gene-utf8.txt" -A 1  -wi --color
     else

@@ -23,6 +23,14 @@ LineLength:
 TrailingBlankLines:
   Enabled: false
 
+# Allow leading blank line
+LeadingBlankLines:
+  Enabled: false
+
+# Allow empty lines
+EmptyLines:
+  Enabled: false
+
 # Allow old hash syntax
 HashSyntax:
   Enabled: false
