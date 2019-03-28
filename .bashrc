@@ -65,23 +65,41 @@ fi
 #   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
 
-# Original
-
 # if return error, change prompt color
-RETURN_CODE='\[$(
-if [ $? -eq 0 ]; then
-    echo -en \e[\033[00m\];
-else
-    echo -en \e[31m; fi; echo -en $\e[m;)\]'
+# RETURN_CODE='\[$(
+# if [ $? == "0" ]; then
+#     echo -en \e[m\]
+# else
+#     echo -en \e[31m\]
+# fi; echo -en $\e[m\]; )\]'
 
 # simple
 # PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
+
 # without username
 # PS1='\[\033[01;34m\]\W\[\033[00m\]'
-# with branch name
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1)\[\033[00m\]'
-PS1="${PS1}${RETURN_CODE} "
+
+# Display branch name (not display if master master)
+BRANCH_NAME_RETURN_CODE='\[$(
+return_code=$?
+if [ -n "$(__git_ps1)" ] && [ "$(__git_ps1)" != " (master)" ]; then
+    branch_name="$(__git_ps1)"
+    echo -en \e[m\]"${branch_name// /}"
+fi
+# return code
+if [ $return_code -eq 0 ]; then
+    echo -en \e[m\]
+else
+    echo -en \e[31m\]
+fi; echo -en $\e[m\]
+)\]'
+PS1='\e[01;32m\]\u\e[00m\]:\e[01;34m\]\W' #\[\033[00m\]' #$(__git_ps1)\[\033[00m\]'
+PS1="${PS1}${BRANCH_NAME_RETURN_CODE} "
 PS2='>'
+
+if [ -z $TMUX ]; then
+    PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -165,9 +183,7 @@ alias lockscreen='xflock4'
 alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
 alias opn='open'
-alias fpc='fpc2'
-alias freepascal='fpc2'
-alias ssh-keygen-pub='ssh-keygen -yf'
+alias ssh-pubkeygen='ssh-keygen -yf'
 alias op='open'
 alias fd='fd -H'
 alias psfind='ps aux | fzf'
@@ -200,6 +216,7 @@ alias rb='ruby'
 alias ghci='stack ghci'
 alias ghr='stack runghc'
 alias buninstall='bundle install'
+alias fpc='fpc2'
 
 # vagrant
 alias vu='vagrant up'
@@ -233,6 +250,7 @@ alias gcl='git clone'
 alias gg='git grep'
 alias gc='git checkout'
 alias gb='git branch'
+alias gbrm='git brand --delete'
 alias gf='git fetch'
 alias gfp='git fetch && git pull'
 alias gst='git stash'
@@ -297,3 +315,4 @@ stty stop undef
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source "$HOME/.config/wakatime/bash-wakatime.sh"
+
