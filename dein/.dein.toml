@@ -120,3 +120,6 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+# [[plugins]]
+# repo = 'racer-rust/vim-racer'

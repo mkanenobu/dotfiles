@@ -337,6 +337,12 @@ let g:quickrun_config.haskell = {
   \ 'cmdopt': 'runghc'
 \}
 
+let g:quickrun_config.rust = {
+  \ 'command': 'rustc',
+  \ 'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
+  \ 'cmdopt': '-A dead_code',
+\}
+
 set splitbelow
 
 if expand("%:e") == "md"
@@ -383,14 +389,12 @@ let g:ale_lint_on_enter = 0
 let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
-  \ 'rust': ['rustc'],
   \ 'javascript': [],
-\ }
+\}
   " \ 'python': ['flake8'],
 
 let g:ale_fixers = {
   \ 'python': ['isort'],
-  \ 'perl': ['perltidy'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
