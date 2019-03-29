@@ -151,3 +151,19 @@ mail2me(){
   mail -s "From Me" "$my_mail_address"
 }
 
+mail2(){
+  echo -n "To: "
+  read -r mail_address
+  echo -n "Subject: "
+  read -r subject
+  echo "Text: "
+  while read -r line; do
+    if [ "${line}" == "end" ]; then
+      break
+    fi
+    text="${text}
+${line}"
+  done
+
+  echo -n "${text}" | mail -s "${subject}" "${mail_address}" && echo "Sent an mail"
+}
