@@ -165,5 +165,5 @@ mail2(){
 ${line}"
   done
 
-  echo -n "${text}" | mail -s "${subject}" "${mail_address}" && echo "Sent an mail"
+  echo -n "${text}" | mail -s "${subject}" "${mail_address}" || echo "Filed to sent an mail"
 }
