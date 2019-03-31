@@ -359,12 +359,9 @@ map <Space>n :NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " vim-Autopair
-if expand("%:e") == "fs"
-  let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-endif
-if expand("%:e") == "rb"
-  let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
-endif
+autocmd filetype forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+autocmd filetype ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
+autocmd filetype rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
 
 " nvim-nim
 " disable key config
@@ -378,6 +375,10 @@ let g:ctrlp_cmd = 'CtrlP'
 " no preview
 autocmd FileType python setlocal completeopt-=preview
 
+" deoplete_rust
+let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
+
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
 let g:ale_lint_on_text_changed = 0
@@ -390,6 +391,7 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
+  \ 'rust': ['rustc'],
 \}
   " \ 'python': ['flake8'],
 

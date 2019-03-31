@@ -148,15 +148,10 @@ git_remove_from_remote(){
 }
 
 mail2me(){
-  mail -s "From Me" "$my_mail_address"
-}
-
-mail2(){
-  echo -n "To: "
-  read -r mail_address
   echo -n "Subject: "
   read -r subject
-  echo "Text: "
+  echo "Text (Enter 'end' to send): "
+  text=""
   while read -r line; do
     if [ "${line}" == "end" ]; then
       break
@@ -165,5 +160,23 @@ mail2(){
 ${line}"
   done
 
-  echo -n "${text}" | mail -s "${subject}" "${mail_address}" || echo "Filed to sent an mail"
+  echo -n "${text}" | mail -s "${subject}" "${my_mail_address}" || echo "Failed to sent an mail"
+}
+
+mail2(){
+  echo -n "To: "
+  read -r mail_address
+  echo -n "Subject: "
+  read -r subject
+  echo "Text (Enter 'end' to send): "
+  text=""
+  while read -r line; do
+    if [ "${line}" == "end" ]; then
+      break
+    fi
+    text="${text}
+${line}"
+  done
+
+  echo -n "${text}" | mail -s "${subject}" "${mail_address}" || echo "Failed to sent an mail"
 }

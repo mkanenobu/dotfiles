@@ -111,6 +111,9 @@ repo = 'eagletmt/ghcmod-vim'
 [[plugins]]
 repo = 'eagletmt/neco-ghc'
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -121,5 +124,6 @@ repo = 'Shougo/neco-syntax'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
-# [[plugins]]
-# repo = 'racer-rust/vim-racer'
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+
