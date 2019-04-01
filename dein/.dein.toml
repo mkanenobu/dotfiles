@@ -1,8 +1,8 @@
 # dein.toml
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# build = 'make'
 
 # colorscheme
 [[plugins]]
@@ -19,8 +19,8 @@ repo = 'Shougo/deoplete.nvim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
@@ -82,6 +82,7 @@ repo = 'mkanenobu/forth.vim'
 
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
+on_ft = 'nim'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
@@ -95,8 +96,8 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 
-[[plugins]]
-repo = 'rust-lang/rust.vim'
+# [[plugins]]
+# repo = 'rust-lang/rust.vim'
 
 # Deoplete sources
 [[plugins]]
@@ -107,7 +108,4 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
 
