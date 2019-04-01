@@ -1,16 +1,12 @@
 # dein.toml
 
-# [[plugins]]
-# repo = 'Shougo/vimproc.vim'
-# build = 'make'
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
 
-# colorschemes
+# colorscheme
 [[plugins]]
 repo = 'tomasr/molokai'
-[[plugins]]
-repo = 'morhetz/gruvbox'
-[[plugins]]
-repo = 'sjl/badwolf'
 
 ### Utils
 
@@ -63,6 +59,9 @@ repo = 'mhinz/vim-signify'
 repo = 'wakatime/vim-wakatime'
 
 [[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
 repo = 'junegunn/fzf'
 build = './install --all'
 merged = 0
@@ -80,15 +79,12 @@ repo = 'mkanenobu/foolproof.vim'
 ### Language support
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
-# Nim helper
+
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
-
-[[plugins]]
-repo = 'tpope/vim-endwise'
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
@@ -97,19 +93,7 @@ repo = 'zchee/deoplete-jedi'
 repo = 'pangloss/vim-javascript'
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-
-[[plugins]]
-repo = 'neovimhaskell/haskell-vim'
-
-[[plugins]]
-repo = 'eagletmt/ghcmod-vim'
-
-[[plugins]]
-repo = 'eagletmt/neco-ghc'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'

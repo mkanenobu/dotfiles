@@ -366,6 +366,11 @@ autocmd filetype rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')',
 " nvim-nim
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
+" FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
+" plugin/nim.vim: 98, 103
+let g:nvim_nim_enable_custom_textobjects = 1
+let g:nvim_nim_highlighter_enable = 0
+let g:nvim_nim_highlighter_semantics = []
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
