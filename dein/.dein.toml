@@ -15,12 +15,13 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+merged = 0
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-# [[plugins]]
-# repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
@@ -73,8 +74,8 @@ depends = 'fzf'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-[[plugins]]
-repo = 'mkanenobu/foolproof.vim'
+# [[plugins]]
+# repo = 'mkanenobu/foolproof.vim'
 
 ### Language support
 [[plugins]]
@@ -98,6 +99,9 @@ repo = 'hail2u/vim-css3-syntax'
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
 
 # Deoplete sources
 [[plugins]]

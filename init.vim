@@ -1,6 +1,6 @@
 " ctnfig file for Neovim
 filetype indent plugin off
-if &compatible
+if !&compatible
   set nocompatible
 endif
 
@@ -70,7 +70,7 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " search
 set hlsearch
@@ -223,7 +223,6 @@ autocmd ColorScheme molokai highlight Comment ctermfg=102
 autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
 autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
-" colorscheme gruvbox
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -305,6 +304,7 @@ smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
 let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
@@ -362,10 +362,12 @@ map <Space>n :NERDTreeToggle<CR>
 autocmd filetype forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
 autocmd filetype ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
 autocmd filetype rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
+autocmd filetype nim let g:AutoPairs['{.'] = '.}'
 
 " nvim-nim
 " disable key config
 let g:nvim_nim_enable_default_binds = 0
+let g:nvim_nim_deps_nim = "~/.choosenim/toolchains/nim-0.19.2/lib/"
 " FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
 " plugin/nim.vim: 98, 103
 let g:nvim_nim_enable_custom_textobjects = 1
@@ -396,17 +398,16 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
-  \ 'rust': ['rustc'],
 \}
   " \ 'python': ['flake8'],
+  " \ 'rust': ['rustc'],
 
 let g:ale_fixers = {
-  \ 'python': ['isort'],
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
-\ }
-  " \ 'python': ['autopep8', 'isort'],
+  \ 'python': ['autopep8', 'isort'],
+\}
 
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
@@ -427,7 +428,7 @@ nmap <S-k> <plug>(signify-prev-hunk)
 vmap <C-l> <Plug>(EasyAlign)
 
 " wakatime
-let g:wakatime_PythonBinary = '/usr/bin/python'
+let g:wakatime_PythonBinary = '~/.pyenv/shims/python'
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 "xmap ga <Plug>(EasyAlign)
@@ -453,3 +454,4 @@ let g:wakatime_PythonBinary = '/usr/bin/python'
 syntax enable
 filetype indent plugin on
 set secure
+

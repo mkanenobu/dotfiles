@@ -66,12 +66,12 @@ fi
 #fi
 
 # if return error, change prompt color
-# RETURN_CODE='\[$(
-# if [ $? == "0" ]; then
-#     echo -en \e[m\]
-# else
-#     echo -en \e[31m\]
-# fi; echo -en $\e[m\]; )\]'
+RETURN_CODE='\[$(
+if [ $? == "0" ]; then
+    echo -en \e[m\]
+else
+    echo -en \e[31m\]
+fi; echo -en $\e[m\]; )\]'
 
 # simple
 # PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]'
@@ -94,7 +94,7 @@ else
 fi; echo -en $\e[m\]
 )\]'
 PS1='\e[01;32m\]\u\e[00m\]:\e[01;34m\]\W' #\[\033[00m\]' #$(__git_ps1)\[\033[00m\]'
-PS1="${PS1}${BRANCH_NAME_RETURN_CODE} "
+PS1="${PS1}${RETURN_CODE} "
 PS2='>'
 
 if [ -z $TMUX ]; then
@@ -187,8 +187,6 @@ alias ssh-pubkeygen='ssh-keygen -yf'
 alias op='open'
 alias fd='fd -H'
 alias psfind='ps aux | fzf'
-alias pip3='sudo -H pip3'
-alias pip='sudo -H pip'
 alias lame='lame -b 192'
 alias vimdiff='nvim -d'
 

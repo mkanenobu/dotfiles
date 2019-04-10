@@ -3,6 +3,7 @@ lat=34.576184
 lon=133.705535
 msl=5
 timezone=Asia/Tokyo
+offset=+09:00
 cache_file_max_age=172800
 power_saving=true
 units_temperature=0
