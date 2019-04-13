@@ -74,15 +74,13 @@ depends = 'fzf'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-[[plugins]]
-repo = 'keith/investigate.vim'
-
 # [[plugins]]
 # repo = 'mkanenobu/foolproof.vim'
 
 ### Language support
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
+on_ft = 'forth'
 
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
@@ -93,12 +91,6 @@ repo = 'boeckmann/vim-freepascal'
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
@@ -118,4 +110,4 @@ repo = 'sebastianmarkow/deoplete-rust'
 
 [[plugins]]
 repo = 'copy/deoplete-ocaml'
-on_ft = 'ocaml'
+
