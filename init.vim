@@ -28,20 +28,20 @@ set helplang=ja,en
 
 " indent widh
 augroup Indent
-  autocmd filetype nim setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype yaml setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype php setlocal tabstop=4 shiftwidth=4 noexpandtab
-  autocmd filetype html setlocal tabstop=2 shiftwidth=2
-  autocmd filetype pascal setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype markdown setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype vim setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype javascript setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype json setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype typescript setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype sh setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype bash setlocal softtabstop=2 shiftwidth=2
-  autocmd filetype c setlocal softtabstop=3 shiftwidth=3 noexpandtab
-  autocmd filetype rust setlocal softtabstop=4 shiftwidth=4
+  autocmd FileType nim setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
+  autocmd FileType html setlocal tabstop=2 shiftwidth=2
+  autocmd FileType pascal setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType vim setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType json setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType typescript setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType sh setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType bash setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType c setlocal softtabstop=3 shiftwidth=3 noexpandtab
+  autocmd FileType rust setlocal softtabstop=4 shiftwidth=4
 augroup END
 
 " shebang auto insert
@@ -153,7 +153,7 @@ nnoremap <S-M-l> :vsplit<CR>
 vnoremap { (
 vnoremap } )
 
-autocmd filetype qf nmap <buffer> <silent> q :q<CR>
+autocmd FileType qf nmap <buffer> <silent> q :q<CR>
 
 if has('mac')
   nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
@@ -255,6 +255,9 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 30
 
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+
 " call deoplete#custom#source('LanguageClient',
 "   \ 'min_pattern_length',
 "   \ 2)
@@ -308,7 +311,8 @@ endif
 let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
-map <Space>r :QuickRun -input =@+<CR>
+map <Space>r :silent QuickRun -input =@+<CR>
+
 " バッファを下に出す
 " フォーカスをバッファ側に
   "\ 'runner' : 'vimproc',
@@ -355,14 +359,25 @@ endif
 " NerdTree
 map <Space>n :NERDTreeToggle<CR>
 " ファイルが指定されていない場合，NERDTreeを開く
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" OCaml
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute 'set rtp+=' . g:opamshare . '/merlin/vim'
+execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
 
 " vim-Autopair
-autocmd filetype forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-autocmd filetype ruby let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '''': '''', '(': ')', '[': ']', '|':'|'}
-autocmd filetype rust let g:AutoPairs = {'`': '`', '"': '"', '{': '}', '(': ')', '[': ']', '|':'|'}
-autocmd filetype nim let g:AutoPairs['{.'] = '.}'
+
+let g:AutoPairsMapBS = 0
+" Don't complete single and double quote
+autocmd BufRead * let b:AutoPairs = AutoPairsDefine({}, ['"', ''''])
+
+autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
+autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
+autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
+autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({'(*': '*)'})
 
 " nvim-nim
 " disable key config
@@ -407,6 +422,7 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'python': ['autopep8', 'isort'],
+  \ 'ocaml': ['ocamlformat'],
 \}
 
 nmap <C-j> <Plug>(ale_next_wrap)
@@ -429,6 +445,9 @@ vmap <C-l> <Plug>(EasyAlign)
 
 " wakatime
 let g:wakatime_PythonBinary = '~/.pyenv/shims/python'
+
+" open zeal
+nnoremap <silent> <Space>s :execute '!zeal ' . &filetype . ':' . expand("<cexpr>") . ' &' <CR><CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 "xmap ga <Plug>(EasyAlign)

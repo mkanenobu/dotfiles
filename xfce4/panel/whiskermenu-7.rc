@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=simplenote.desktop,exo-terminal-emulator.desktop,xfce4-terminal-settings.desktop,dbeaver.desktop,sqlitebrowser.desktop,phpstorm_phpstorm.desktop,gitkraken.desktop,obs.desktop,opera.desktop,vivaldi-stable.desktop
+recent=org.zealdocs.Zeal.desktop,simplenote.desktop,exo-terminal-emulator.desktop,xfce4-terminal-settings.desktop,dbeaver.desktop,sqlitebrowser.desktop,phpstorm_phpstorm.desktop,gitkraken.desktop,obs.desktop,opera.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

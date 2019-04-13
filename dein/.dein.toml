@@ -74,6 +74,9 @@ depends = 'fzf'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'keith/investigate.vim'
+
 # [[plugins]]
 # repo = 'mkanenobu/foolproof.vim'
 
@@ -100,9 +103,6 @@ repo = 'hail2u/vim-css3-syntax'
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
 
-[[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
-
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -113,3 +113,9 @@ repo = 'Shougo/neco-syntax'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+
+[[plugins]]
+repo = 'copy/deoplete-ocaml'
+on_ft = 'ocaml'

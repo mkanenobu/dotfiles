@@ -189,6 +189,7 @@ alias fd='fd -H'
 alias psfind='ps aux | fzf'
 alias lame='lame -b 192'
 alias vimdiff='nvim -d'
+alias dash='zeal'
 
 # Shell utils
 alias duc='du -d 1 -h | sort -h'
