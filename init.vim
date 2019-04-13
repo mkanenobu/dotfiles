@@ -413,8 +413,8 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
+  \ 'python': ['flake8'],
 \}
-  " \ 'python': ['flake8'],
   " \ 'rust': ['rustc'],
 
 let g:ale_fixers = {
@@ -422,8 +422,9 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'python': ['autopep8', 'isort'],
-  \ 'ocaml': ['ocamlformat'],
 \}
+  " \ 'ocaml': ['ocamlformat'],
+let g:ale_ocaml_ols_use_global = 1
 
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
