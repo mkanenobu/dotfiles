@@ -215,6 +215,7 @@ alias ghci='stack ghci'
 alias ghr='stack runghc'
 alias buninstall='bundle install'
 alias fpc='fpc2'
+alias ocaml='rlwrap ocaml'
 
 # vagrant
 alias vu='vagrant up'

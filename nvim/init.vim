@@ -366,6 +366,17 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute 'set rtp+=' . g:opamshare . '/merlin/vim'
 execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
+" ocp-indent
+function! s:ocaml_indent_format()
+  let current_line = line('.')
+  exec ':%! ocp-indent'
+  exec ':' . current_line
+endfunction
+
+augroup ocaml_indent_format
+  autocmd!
+  autocmd BufWrite,FileWritePre,FileAppendPre *.ml\= call s:ocaml_indent_format()
+augroup END
 
 " vim-Autopair
 
