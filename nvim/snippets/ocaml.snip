@@ -122,8 +122,26 @@ abbr       Printf.printf
 options    word
     Printf.printf 
 
-snippet   printf
-alias     pr
-abbr      printf
+snippet   printf_int
+alias     pi
+abbr      printf "%d\n"
 options   word
-    printf 
+    Printf.printf "%d\n" 
+
+snippet   printf_float
+alias     pf
+abbr      printf "%F\n"
+options   word
+    Printf.printf "%F\n" 
+
+snippet   printf_string
+alias     ps
+abbr      printf "%s\n"
+options   word
+    Printf.printf "%s\n" 
+
+snippet   printf_bool
+alias     pb
+abbr      printf "%b\n"
+options   word
+    Printf.printf "%b\n" 

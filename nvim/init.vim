@@ -149,6 +149,8 @@ vnoremap * "zy:let @/ = @z<CR>n
 nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
+inoremap <C-n> \n
+
 "
 vnoremap { (
 vnoremap } )
@@ -227,7 +229,7 @@ colorscheme molokai
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-inoremap <expr><tab> () "\<C-n>""
+" inoremap <expr><tab> () "\<C-n>""
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
@@ -347,6 +349,11 @@ let g:quickrun_config.rust = {
   \ 'cmdopt': '-A dead_code',
 \}
 
+let g:quickrun_config.ocaml = {
+  \ 'command': 'ocaml',
+  \ 'cmpopt': '',
+\}
+
 set splitbelow
 
 if expand("%:e") == "md"
@@ -357,38 +364,38 @@ if expand("%:e") == "html"
 endif
 
 " NerdTree
-map <Space>n :NERDTreeToggle<CR>
+nnoremap <Space>n :NERDTreeToggle<CR>
 " ファイルが指定されていない場合，NERDTreeを開く
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " OCaml
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opamshare . '/merlin/vim'
-execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
+let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
+execute 'set rtp+=' . g:opam_share . '/merlin/vim'
+execute 'set rtp+=' . g:opam_share . '/ocp-indent/vim'
+let g:opam_bin = substitute(system('opam config var bin'),'\n$','','''')
+let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 " ocp-indent
-function! s:ocaml_indent_format()
-  let current_line = line('.')
-  exec ':%! ocp-indent'
-  exec ':' . current_line
-endfunction
-
-augroup ocaml_indent_format
-  autocmd!
-  autocmd BufWrite,FileWritePre,FileAppendPre *.ml\= call s:ocaml_indent_format()
-augroup END
+" function! OCaml_indent_format()
+"   silent execute '!ocp-indent --inplace ' . expand("%:p")
+"   bufdo e!
+" endfunction
+"
+" augroup ocaml_indent_format
+"   autocmd!
+"   autocmd BufWrite,FileWritePre,FileAppendPre *.ml\(\|i\) call OCaml_indent_format()
+" augroup END
 
 " vim-Autopair
-
 let g:AutoPairsMapBS = 0
-" Don't complete single and double quote
-autocmd BufRead * let b:AutoPairs = AutoPairsDefine({}, ['"', ''''])
-
+let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
 autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
 autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
-autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({'(*': '*)'})
+autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
+  \ '(*': '*)', '(**':'**)', 'begin':'end',
+\})
 
 " nvim-nim
 " disable key config
@@ -414,12 +421,12 @@ let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_cache_executable_check_failures = 0
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
 let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
@@ -433,9 +440,9 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'python': ['autopep8', 'isort'],
+  \ 'ocaml': ['ocp-indent'],
 \}
   " \ 'ocaml': ['ocamlformat'],
-let g:ale_ocaml_ols_use_global = 1
 
 nmap <C-j> <Plug>(ale_next_wrap)
 nmap <C-k> <Plug>(ale_previous_wrap)
