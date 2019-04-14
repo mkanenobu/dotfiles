@@ -27,6 +27,7 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mkanenobu/emmet-vim'
+on_ft = ['html', 'css', 'scss']
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -73,9 +74,6 @@ merged = 0
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
-[[plugins]]
-repo = 'tpope/vim-surround'
-
 # [[plugins]]
 # repo = 'mkanenobu/foolproof.vim'
 
@@ -90,16 +88,20 @@ on_ft = 'nim'
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
+on_ft = ['freepascal', 'pascal']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
 
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
+# on_ft = 'rust'
 
 # Deoplete sources
 [[plugins]]
 repo = 'Shougo/neco-vim'
+on_ft = 'vim'
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
@@ -109,7 +111,9 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'sebastianmarkow/deoplete-rust'
+on_ft = 'rust'
 
 [[plugins]]
 repo = 'copy/deoplete-ocaml'
+on_ft = 'ocaml'
 

@@ -32,7 +32,7 @@ augroup Indent
   autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
   autocmd FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
   autocmd FileType html setlocal tabstop=2 shiftwidth=2
-  autocmd FileType pascal setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType freepascal setlocal softtabstop=2 shiftwidth=2
   autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2
   autocmd FileType vim setlocal softtabstop=2 shiftwidth=2
   autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
@@ -371,10 +371,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opam_share . '/merlin/vim'
-execute 'set rtp+=' . g:opam_share . '/ocp-indent/vim'
 let g:opam_bin = substitute(system('opam config var bin'),'\n$','','''')
-let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
+execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
+execute 'set rtp+=' . g:opam_share . '/merlin/vim'
+execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
+" let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
+
 " ocp-indent
 " function! OCaml_indent_format()
 "   silent execute '!ocp-indent --inplace ' . expand("%:p")
@@ -387,7 +389,7 @@ let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 " augroup END
 
 " vim-Autopair
-let g:AutoPairsMapBS = 0
+let g:AutoPairsMapBS = 1
 let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
 autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
 autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
