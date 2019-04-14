@@ -29,4 +29,4 @@ echo
 echo "${separater}"
 echo "Opam"
 echo "${separater}"
-opam update && opam upgrade
+opam update && opam upgrade && eval $(opam env)

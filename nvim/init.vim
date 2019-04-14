@@ -374,7 +374,6 @@ let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 let g:opam_bin = substitute(system('opam config var bin'),'\n$','','''')
 execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
 execute 'set rtp+=' . g:opam_share . '/merlin/vim'
-execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
 " let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 
 " ocp-indent
