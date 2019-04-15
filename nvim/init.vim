@@ -365,7 +365,7 @@ let g:quickrun_config.rust = {
 \}
 
 let g:quickrun_config.ocaml = {
-  \ 'command': 'ocrun',
+  \ 'command': 'obrun',
   \ 'exec': ['%c %s'],
 \}
 
