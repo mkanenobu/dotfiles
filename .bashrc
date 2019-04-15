@@ -191,7 +191,7 @@ alias lame='lame -b 192'
 alias vimdiff='nvim -d'
 
 # Shell utils
-alias duc='du -d 1 -h | sort -h'
+alias duc='du -d 1 -ah | sort -h'
 alias wcj='wc -m'
 alias mv='mv -i'
 alias cp='cp -i'

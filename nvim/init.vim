@@ -164,8 +164,6 @@ else
 endif
 
 nnoremap <C-g> :Rg 
-" grep current word
-nnoremap <C-]> :Rg <C-r><C-w><CR>
 
 " Emmet{{{
 let g:user_emmet_leader_key = '<C-y>'
@@ -182,6 +180,22 @@ let g:user_emmet_settings = {
 
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
+
+" OCaml
+let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
+let g:merlin_completion_arg_type = "always"
+
+" ocaml
+augroup OCaml_ide
+  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
+augroup END
+
+" execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
+" execute 'set rtp+=' . g:opam_share . '/merlin/vim'
+" execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
+
+" let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -209,6 +223,7 @@ if dein#load_state(s:dein_dir)
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,    {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
 
   " 設定終了
   call dein#end()
@@ -313,7 +328,7 @@ endif
 let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
-map <Space>r :silent QuickRun -input =@+<CR>
+map <silent> <Space>r :QuickRun -input =@+<CR>
 
 " バッファを下に出す
 " フォーカスをバッファ側に
@@ -350,9 +365,10 @@ let g:quickrun_config.rust = {
 \}
 
 let g:quickrun_config.ocaml = {
-  \ 'command': 'ocaml',
-  \ 'cmpopt': '',
+  \ 'command': 'ocrun',
+  \ 'exec': ['%c %s'],
 \}
+
 
 set splitbelow
 
@@ -366,16 +382,9 @@ endif
 " NerdTree
 nnoremap <Space>n :NERDTreeToggle<CR>
 " ファイルが指定されていない場合，NERDTreeを開く
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" OCaml
-let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-let g:opam_bin = substitute(system('opam config var bin'),'\n$','','''')
-execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
-execute 'set rtp+=' . g:opam_share . '/merlin/vim'
-execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
-" let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 
 " ocp-indent
 " function! OCaml_indent_format()
