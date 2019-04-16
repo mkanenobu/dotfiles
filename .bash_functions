@@ -48,7 +48,7 @@ dkill(){
 # multipurpose open
 open(){
   if [ "$#" == 0 ]; then
-    thunar . >/dev/null 2>&1
+    (nautilus . >/dev/null 2>&1 &)
   elif [ "$#" -gt 1 ];then
     echo "This command can take only 1 args"
     return 1

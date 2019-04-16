@@ -150,8 +150,8 @@ nnoremap <S-M-j> :split<CR>
 nnoremap <S-M-l> :vsplit<CR>
 
 inoremap <C-n> \n
+nmap m %
 
-"
 vnoremap { (
 vnoremap } )
 
@@ -405,7 +405,7 @@ autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
 autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)', 'begin':'end',
+  \ '(*': '*)', '(**':'**)',
 \})
 
 " nvim-nim
