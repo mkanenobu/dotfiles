@@ -154,39 +154,45 @@ if ! shopt -oq posix; then
     fi
 fi
 
+_exists() {
+    type "$1" 1>/dev/null 2>/dev/null
+    return $?
+}
+
 . ~/.env
 
 ## User aliases
 alias off='shutdown -h 0'
-alias br='nvim ~/.bashrc'
-alias bf='nvim ~/.bash_functions'
+alias br='vim ~/.bashrc'
+alias bf='vim ~/.bash_functions'
 alias so='source'
 alias mkdir='mkdir -p'
-alias nvr='nvim ~/.config/nvim/init.vim'
 alias vi='vim'
-alias vim='nvim'
-alias n='nvim'
-alias dein='nvim ~/.config/nvim/dein/.dein.toml'
-alias deinlazy='nvim ~/.config/nvim/dein/.dein_lazy.toml'
+if _exists "nvim"; then
+    alias nvr='nvim ~/.config/nvim/init.vim'
+    alias vim='nvim'
+    alias n='nvim'
+fi
+alias dein='vim ~/.config/nvim/dein/.dein.toml'
+alias deinlazy='vim ~/.config/nvim/dein/.dein_lazy.toml'
 alias sbr='source ~/.bashrc'
 alias spr='source ~/.profile'
 alias sbf='source ~/.bash_functions'
 alias rename='rename -v'
-alias diff='icdiff -U 1 --line-number'
-alias copy='xclip -selection clipboard'
-alias pbcopy='xclip -selection clipboard'
-alias ly='lilypond'
-alias ftp-ncftp='ncftp'
+if _exists "icdiff"; then
+    alias diff='icdiff -U 1 --line-number'
+fi
+if _exists "xclip"; then
+    alias copy='xclip -selection clipboard'
+    alias pbcopy='xclip -selection clipboard'
+fi
 alias lockscreen='xflock4'
-alias youtube-mps='mpsyt'
 alias show_audio_spec='soxinfo'
-alias opn='open'
 alias ssh-pubkeygen='ssh-keygen -yf'
-alias op='open'
 alias fd='fd -H'
 alias psfind='ps aux | fzf'
 alias lame='lame -b 192'
-alias vimdiff='nvim -d'
+alias vimdiff='vim -d'
 
 # Shell utils
 alias duc='du -d 1 -ah | sort -h'
