@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=insync.desktop,phpstorm_phpstorm.desktop,exo-terminal-emulator.desktop,gitkraken.desktop,xfce4-terminal-settings.desktop,org.zealdocs.Zeal.desktop,simplenote.desktop,dbeaver.desktop,sqlitebrowser.desktop
+recent=xfce-xfcalendar-settings.desktop,org.gnome.Calendar.desktop,opera.desktop,min.desktop,chrome-pjkljhegncpnkpknbcohdijeoejaedia-Default.desktop,firefox.desktop,insync.desktop,discord.desktop,phpstorm_phpstorm.desktop,exo-terminal-emulator.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

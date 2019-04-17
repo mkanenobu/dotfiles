@@ -23,6 +23,7 @@ set list
 set nofixendofline
 " set listchars=tab:\¦\
 set listchars=tab:>-,trail:-,extends:>
+set diffopt+=vertical
 
 set helplang=ja,en
 
@@ -191,11 +192,10 @@ augroup OCaml_ide
   autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
 augroup END
 
+" load in dein
 " execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
 " execute 'set rtp+=' . g:opam_share . '/merlin/vim'
 " execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
-
-" let g:ale_ocaml_ocp_indent_excutable = g:opam_bin . '/ocp-indent'
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -366,7 +366,9 @@ let g:quickrun_config.rust = {
 
 let g:quickrun_config.ocaml = {
   \ 'command': 'obrun',
-  \ 'exec': ['%c %s'],
+  \ 'exec': ['%c %o %s'],
+  \ 'cmdopt': '-quiet',
+  \ 'tempfile': '%{tempname()}.ml',
 \}
 
 
@@ -405,7 +407,7 @@ autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
 autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)',
+  \ '(*': '*)', '(**':'**)', '[|':'|]'
 \})
 
 " nvim-nim

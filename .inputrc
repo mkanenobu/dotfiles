@@ -1,1 +1,5 @@
+# complete ignore case
 set completion-ignore-case on
+
+# complete slash after symlink dir
+set mark-symlinked-directories on

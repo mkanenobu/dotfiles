@@ -9,7 +9,6 @@
 repo = 'tomasr/molokai'
 
 ### Utils
-
 # [[plugins]]
 # repo = 'w0rp/ale'
 [[plugins]]
@@ -31,6 +30,9 @@ on_ft = ['html', 'css', 'scss']
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
