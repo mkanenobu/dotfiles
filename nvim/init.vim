@@ -83,6 +83,7 @@ augroup END
 set hlsearch
 set incsearch
 set smartcase
+set ignorecase
 
 set inccommand=split
 
@@ -379,7 +380,7 @@ let g:quickrun_config.ocaml = {
   \ 'command': 'obrun',
   \ 'exec': ['%c %o %s'],
   \ 'cmdopt': '-quiet',
-  \ 'tempfile': '%{tempname()}.ml',
+  \ 'tempfile': 'ocaml%{tempname()}.ml',
 \}
 
 

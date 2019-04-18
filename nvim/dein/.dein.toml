@@ -79,7 +79,9 @@ depends = 'fzf'
 # [[plugins]]
 # repo = 'mkanenobu/foolproof.vim'
 
+
 ### Language support
+
 [[plugins]]
 repo = 'mkanenobu/forth.vim'
 on_ft = 'forth'
@@ -96,11 +98,15 @@ on_ft = ['freepascal', 'pascal']
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
+[[plugins]]
+repo = 'reasonml-editor/vim-reason-plus'
+
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
 # on_ft = 'rust'
 
 # Deoplete sources
+
 [[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
