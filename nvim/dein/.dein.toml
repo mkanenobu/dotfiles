@@ -119,3 +119,9 @@ on_ft = 'rust'
 repo = 'copy/deoplete-ocaml'
 on_ft = 'ocaml'
 
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+

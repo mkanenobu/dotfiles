@@ -64,6 +64,12 @@ set autoread
 
 set wrap
 set display=lastline
+set virtualedit=block
+
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 
 augroup auto_comment_off
   autocmd!
@@ -77,7 +83,6 @@ augroup END
 set hlsearch
 set incsearch
 set smartcase
-set ignorecase
 
 set inccommand=split
 
@@ -156,7 +161,13 @@ nmap m %
 vnoremap { (
 vnoremap } )
 
-autocmd FileType qf nmap <buffer> <silent> q :q<CR>
+nnoremap <C-j> }
+nnoremap <C-k> {
+
+command! Z :qa!
+
+" close on q
+autocmd FileType qf,help nmap <buffer> <silent> q :q<CR>
 
 if has('mac')
   nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
@@ -387,18 +398,6 @@ nnoremap <Space>n :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-
-" ocp-indent
-" function! OCaml_indent_format()
-"   silent execute '!ocp-indent --inplace ' . expand("%:p")
-"   bufdo e!
-" endfunction
-"
-" augroup ocaml_indent_format
-"   autocmd!
-"   autocmd BufWrite,FileWritePre,FileAppendPre *.ml\(\|i\) call OCaml_indent_format()
-" augroup END
-
 " vim-Autopair
 let g:AutoPairsMapBS = 1
 let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
@@ -457,8 +456,8 @@ let g:ale_fixers = {
 \}
   " \ 'ocaml': ['ocamlformat'],
 
-nmap <C-j> <Plug>(ale_next_wrap)
-nmap <C-k> <Plug>(ale_previous_wrap)
+" nmap <C-j> <Plug>(ale_next_wrap)
+" nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
 
 " Autopair
@@ -485,17 +484,6 @@ nnoremap <silent> <Space>s :execute '!zeal ' . &filetype . ':' . expand("<cexpr>
 "xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 "nmap ga <Plug>(EasyAlign)
-
-" lsp
-" let g:lsp_signs_enabled = 1
-" let g:lsp_diagnostics_echo_cursor = 1
-" let g:LanguageClient_devel = 1
-" let g:LanguageClient_loggingLevel = 'DEBUG'
-" let g:LanguageClient_serverCommands = {
-"   \ 'pascal': [],
-"   \ 'python': ['pyls'],
-"   \ 'php': ['php', '-l'],
-" \}
 
 " nnoremap <F8> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
