@@ -196,11 +196,14 @@ command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-let g:merlin_completion_arg_type = "always"
+
+let g:merlin_completion_dwim = 0
+let g:merlin_completion_arg_type = 'never'
 
 " ocaml
 augroup OCaml_ide
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml vnoremap <Space>t :MerlinTypeOfSel <CR>
   autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
 augroup END
 
@@ -235,7 +238,7 @@ if dein#load_state(s:dein_dir)
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,    {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
 
   " 設定終了
   call dein#end()
@@ -276,20 +279,22 @@ inoremap <silent><expr> <S-TAB>
   endfunction"}}}
 
 let g:deoplete#auto_complete_delay = 0
-let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#auto_complete_start_length = 100
 let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#max_list = 30
+let g:deoplete#max_list = 20
 
 let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
-" call deoplete#custom#source('LanguageClient',
-"   \ 'min_pattern_length',
-"   \ 2)
+if !exists('g:deoplete#omni_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.\w*|\s\w*|#'
+let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.'
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -379,8 +384,8 @@ let g:quickrun_config.rust = {
 let g:quickrun_config.ocaml = {
   \ 'command': 'obrun',
   \ 'exec': ['%c %o %s'],
-  \ 'cmdopt': '-quiet',
-  \ 'tempfile': 'ocaml%{tempname()}.ml',
+  \ 'cmdopt': '-quiet -cflags -w,-24',
+  \ 'tempfile': '%{tempname()}.ml',
 \}
 
 
