@@ -200,17 +200,16 @@ let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 let g:merlin_completion_dwim = 0
 let g:merlin_completion_arg_type = 'never'
 
-" ocaml
 augroup OCaml_ide
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
   autocmd FileType ocaml vnoremap <Space>t :MerlinTypeOfSel <CR>
   autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
+  autocmd Filetype ocaml let g:deoplete#complete_method = 'complete'
 augroup END
 
 " load in dein
-" execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
-" execute 'set rtp+=' . g:opam_share . '/merlin/vim'
-" execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
+execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
+execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -278,7 +277,7 @@ inoremap <silent><expr> <S-TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-let g:deoplete#auto_complete_delay = 1000000
+let g:deoplete#auto_complete_delay = 0
 let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
@@ -287,14 +286,8 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 20
 
-" let g:deoplete#ignore_sources = {}
-" let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
-
-" if !exists('g:deoplete#omni_patterns')
-"   let g:deoplete#omni#input_patterns = {}
-" endif
-" let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.\w*|\s\w*|#'
-" let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.'
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -391,12 +384,8 @@ let g:quickrun_config.ocaml = {
 
 set splitbelow
 
-if expand("%:e") == "md"
-  map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
-endif
-if expand("%:e") == "html"
-  map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
-endif
+autocmd FileType markdown map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
+autocmd FileType html map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
 
 " NerdTree
 nnoremap <Space>n :NERDTreeToggle<CR>
@@ -412,7 +401,7 @@ autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
 autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
 autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)', '[|':'|]'
+  \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with'
 \})
 
 " nvim-nim
@@ -439,11 +428,11 @@ let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
-let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_cache_executable_check_failures = 0
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 1
 let g:ale_completion_delay = 150
 let g:ale_linters = {
