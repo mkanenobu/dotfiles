@@ -173,6 +173,7 @@ if _exists "nvim"; then
     alias vim='nvim'
     alias n='nvim'
 fi
+alias e='emacs26'
 alias dein='vim ~/.config/nvim/dein/.dein.toml'
 alias deinlazy='vim ~/.config/nvim/dein/.dein_lazy.toml'
 alias sbr='source ~/.bashrc'

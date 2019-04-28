@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=appimagekit-bitwarden.desktop,opera.desktop,dbeaver.desktop,xfce-xfcalendar-settings.desktop,org.gnome.Calendar.desktop,min.desktop,chrome-pjkljhegncpnkpknbcohdijeoejaedia-Default.desktop,firefox.desktop,insync.desktop,discord.desktop
+recent=org.gnome.FontManager.desktop,opera.desktop,appimagekit-bitwarden.desktop,dbeaver.desktop,xfce-xfcalendar-settings.desktop,org.gnome.Calendar.desktop,min.desktop,chrome-pjkljhegncpnkpknbcohdijeoejaedia-Default.desktop,firefox.desktop,insync.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

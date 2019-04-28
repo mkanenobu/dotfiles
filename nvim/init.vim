@@ -278,8 +278,8 @@ inoremap <silent><expr> <S-TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-let g:deoplete#auto_complete_delay = 0
-let g:deoplete#auto_complete_start_length = 100
+let g:deoplete#auto_complete_delay = 1000000
+let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_smart_case = 1
@@ -287,14 +287,14 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 20
 
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+" let g:deoplete#ignore_sources = {}
+" let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
-if !exists('g:deoplete#omni_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
+" if !exists('g:deoplete#omni_patterns')
+"   let g:deoplete#omni#input_patterns = {}
+" endif
 " let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.\w*|\s\w*|#'
-let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.'
+" let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.'
 
 "set completeopt+=noinsert
 let g:tern_request_timeout = 1
