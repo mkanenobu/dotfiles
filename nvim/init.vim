@@ -29,6 +29,7 @@ set helplang=ja,en
 
 " indent widh
 augroup Indent
+  autocmd!
   autocmd FileType nim setlocal softtabstop=2 shiftwidth=2
   autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
   autocmd FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
@@ -47,6 +48,7 @@ augroup END
 
 " shebang auto insert
 augroup Shebang
+  autocmd!
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   autocmd BufNewFile *.php 0put =\"<?php\" | 2
   autocmd BufNewFile *.lua 0put =\"#!/usr/bin/env lua5.3\" | 2
@@ -197,20 +199,20 @@ command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 
-let g:merlin_completion_dwim = 0
-let g:merlin_completion_arg_type = 'never'
-let g:merlin_ignore_warnings = 'true'
 
-augroup OCaml_ide
+augroup ocaml_settings
+  autocmd!
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
-  autocmd FileType ocaml vnoremap <Space>t :MerlinTypeOfSel <CR>
-  autocmd FileType ocaml nnoremap <C-]> :MerlinLocate <CR>
-  autocmd Filetype ocaml let g:deoplete#complete_method = 'complete'
+      \ vnoremap <Space>t :MerlinTypeOfSel <CR> |
+      \ nnoremap <C-]> :MerlinLocate <CR> |
+      \ let g:deoplete#complete_method = 'complete' |
+      \ set completeopt-=preview |
+      \ let g:merlin_completion_dwim = 0 |
+      \ let g:merlin_completion_arg_type = 'never' |
+      \ let g:merlin_ignore_warnings = 'true' |
+      \ let g:merlin_completion_with_doc = 'false'
 augroup END
 
-" load in dein
-execute 'set rtp^=' . g:opam_share . '/ocp-indent/vim'
-execute 'set rtp+=' . g:opam_share . '/ocp-index/vim'
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
@@ -250,11 +252,15 @@ if dein#check_install()
   call dein#install()
 endif
 
-autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment ctermfg=102
-autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
-autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
 colorscheme molokai
+augroup molokai_colorscheme
+  autocmd!
+  autocmd ColorScheme molokai highlight Visual ctermbg=242 |
+      \ highlight Comment ctermfg=102 |
+      \ highlight Search ctermbg=242 ctermfg=15 |
+      \ highlight MatchParen ctermbg=242 ctermfg=15
+augroup END
+
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -292,7 +298,7 @@ if !exists('g:deoplete#ignore_sources')
 endif
 let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
-"set completeopt+=noinsert
+" set completeopt+=noinsert
 let g:tern_request_timeout = 1
 
 " vim-closetag
@@ -387,8 +393,11 @@ let g:quickrun_config.ocaml = {
 
 set splitbelow
 
-autocmd FileType markdown map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
-autocmd FileType html map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
+augroup space_r
+  autocmd!
+  autocmd FileType markdown map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
+  autocmd FileType html map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
+augroup END
 
 " NerdTree
 nnoremap <Space>n :NERDTreeToggle<CR>
@@ -399,13 +408,16 @@ nnoremap <Space>n :NERDTreeToggle<CR>
 " vim-Autopair
 let g:AutoPairsMapBS = 1
 let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
-autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
-autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
-autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
-autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-  \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with'
-\})
+augroup autopairs_settings
+  autocmd!
+  autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+  autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
+  autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
+  autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
+  autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
+    \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with'
+  \})
+augroup END
 
 " nvim-nim
 " disable key config
@@ -441,7 +453,7 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
-  \ 'python': ['flake8'],
+  \ 'python': [''],
 \}
   " \ 'rust': ['rustc'],
 
@@ -449,7 +461,7 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
-  \ 'python': ['autopep8', 'isort'],
+  \ 'python': ['isort'],
   \ 'ocaml': ['ocp-indent'],
 \}
   " \ 'ocaml': ['ocamlformat'],
