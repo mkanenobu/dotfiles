@@ -199,6 +199,7 @@ let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 
 let g:merlin_completion_dwim = 0
 let g:merlin_completion_arg_type = 'never'
+let g:merlin_ignore_warnings = 'true'
 
 augroup OCaml_ide
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
@@ -286,7 +287,9 @@ let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 20
 
-let g:deoplete#ignore_sources = {}
+if !exists('g:deoplete#ignore_sources')
+  let g:deoplete#ignore_sources = {}
+endif
 let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 
 "set completeopt+=noinsert
