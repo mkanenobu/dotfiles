@@ -101,6 +101,10 @@ on_ft = 'python'
 [[plugins]]
 repo = 'reasonml-editor/vim-reason-plus'
 
+[[plugins]]
+repo = 'cohama/the-ocamlspot.vim'
+on_ft = 'ocaml'
+
 # [[plugins]]
 # repo = 'rust-lang/rust.vim'
 # on_ft = 'rust'
