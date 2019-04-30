@@ -65,7 +65,7 @@ repo = 'mhinz/vim-signify'
 repo = 'wakatime/vim-wakatime'
 
 [[plugins]]
-repo = 'tpope/vim-endwise'
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'

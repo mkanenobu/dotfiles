@@ -296,7 +296,7 @@ let g:deoplete#max_list = 20
 if !exists('g:deoplete#ignore_sources')
   let g:deoplete#ignore_sources = {}
 endif
-let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
 
 " set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -407,7 +407,8 @@ nnoremap <Space>n :NERDTreeToggle<CR>
 
 " vim-Autopair
 let g:AutoPairsMapBS = 1
-let g:AutoPairs = {'(':')', '[':']', '{':'}', '"""':'"""', '`': '`'}
+" undef quotes
+let g:AutoPairs = {'(':')', '[':']', '{':'}'}
 augroup autopairs_settings
   autocmd!
   autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
@@ -415,9 +416,29 @@ augroup autopairs_settings
   autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
   autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
   autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-    \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with'
+        \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with',
   \})
 augroup END
+
+" lexima for customizable endwise
+" disable basic rules (use AutoPair)
+let g:lexima_enable_basic_rules = 0
+let g:lexima_enable_newline_rules = 0
+
+" lexima endwise settings
+function! s:lexima_endwise_rule(at, end, filetype)
+  call lexima#add_rule({
+  \ 'char': '<CR>',
+  \ 'input': '<CR>',
+  \ 'input_after': '<CR>' . a:end,
+  \ 'at': a:at,
+  \ 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1' . a:end,
+  \ 'filetype': a:filetype,
+  \ 'syntax': [],
+\ })
+endfunction
+call s:lexima_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
+
 
 " nvim-nim
 " disable key config
