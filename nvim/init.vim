@@ -411,27 +411,8 @@ function! s:make_endwise_rule(at, end, filetype)
 \ })
 endfunction
 call s:make_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
-call s:make_endwise_rule('^\s*try\>.*\%#', 'with', 'ocaml')
 call s:make_endwise_rule('^\s*(begin\|object)\>.*\%#', 'end', 'ocaml')
 
-
-" nvim-nim
-" disable key config
-let g:nvim_nim_enable_default_binds = 0
-let g:nvim_nim_deps_nim = "~/.choosenim/toolchains/nim-0.19.2/lib/"
-" FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
-" plugin/nim.vim: 98, 103
-let g:nvim_nim_enable_custom_textobjects = 1
-let g:nvim_nim_highlighter_enable = 0
-let g:nvim_nim_highlighter_semantics = []
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" jedi-vim
-" no preview
-autocmd FileType python setlocal completeopt-=preview
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
