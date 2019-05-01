@@ -23,10 +23,24 @@ repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = 'nnoremap <Space>n :NERDTreeToggle<CR>'
 
 [[plugins]]
-repo = 'mkanenobu/emmet-vim'
+repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css', 'scss']
+
+hook_add = '''
+  let g:user_emmet_leader_key = '<C-y>'
+  let g:user_emmet_install_global = 1
+  autocmd Filetype php,html,css,scss EmmetInstall
+  let g:user_emmet_mode = 'i'
+  let g:user_emmet_expandabbr_key='<C-e>'
+  let g:user_emmet_settings = {
+    \ 'variables': {
+    \   'lang': "ja"
+    \ },
+  \ }
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -51,9 +65,17 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+  let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
+'''
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+hook_add = '''
+  " Autopair
+  let g:AutoPairsFlyMode = 0
+  let g:AutoPairsMultilineClose = 0
+'''
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
@@ -89,6 +111,15 @@ on_ft = 'forth'
 [[plugins]]
 repo = 'mkanenobu/nvim-nim'
 on_ft = 'nim'
+hook_add = '''
+  let g:nvim_nim_enable_default_binds = 0
+  let g:nvim_nim_deps_nim = "~/.choosenim/toolchains/nim-0.19.2/lib/"
+  " FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
+  " plugin/nim.vim: 98, 103
+  let g:nvim_nim_enable_custom_textobjects = 1
+  let g:nvim_nim_highlighter_enable = 0
+  let g:nvim_nim_highlighter_semantics = []
+'''
 
 [[plugins]]
 repo = 'boeckmann/vim-freepascal'
@@ -101,15 +132,6 @@ on_ft = 'python'
 [[plugins]]
 repo = 'reasonml-editor/vim-reason-plus'
 
-# [[plugins]]
-# repo = 'cohama/the-ocamlspot.vim'
-# on_ft = 'ocaml'
-
-# [[plugins]]
-# repo = 'rust-lang/rust.vim'
-# on_ft = 'rust'
-
-
 # Deoplete sources
 
 [[plugins]]
@@ -121,10 +143,6 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
-on_ft = 'rust'
 
 [[plugins]]
 repo = 'copy/deoplete-ocaml'

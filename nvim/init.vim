@@ -27,7 +27,7 @@ set diffopt+=vertical
 
 set helplang=ja,en
 
-" indent widh
+" indent width
 augroup Indent
   autocmd!
   autocmd FileType nim setlocal softtabstop=2 shiftwidth=2
@@ -105,10 +105,6 @@ set title
 set showmatch
 set matchtime=1
 
-" runtime macros/matchit.vim
-" vim-matchup
-" let g:loaded_matchit = 1
-
 set foldlevel=100
 
 set laststatus=2
@@ -125,7 +121,6 @@ nnoremap - <C-x>
 
 " C-CR in middle of line
 inoremap <C-j> <Esc>o
-inoremap <C-CR> <Esc>o
 
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
@@ -160,6 +155,7 @@ nnoremap <S-M-l> :vsplit<CR>
 
 inoremap <C-n> \n
 nmap m %
+" nnoremap % m
 
 vnoremap { (
 vnoremap } )
@@ -180,29 +176,15 @@ endif
 
 nnoremap <C-g> :Rg 
 
-" Emmet{{{
-let g:user_emmet_leader_key = '<C-y>'
-let g:user_emmet_install_global = 1
-autocmd Filetype php,html,css,scss EmmetInstall
-let g:user_emmet_mode = 'i'
-let g:user_emmet_expandabbr_key='<C-e>'
-let g:user_emmet_settings = {
-  \ 'variables': {
-  \   'lang': "ja"
-  \ },
-\ }
-
-
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 
-
 augroup ocaml_settings
   autocmd!
-  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR>
+  autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR> |
       \ vnoremap <Space>t :MerlinTypeOfSel <CR> |
       \ nnoremap <C-]> :MerlinLocate <CR> |
       \ let g:deoplete#complete_method = 'complete' |
@@ -210,7 +192,8 @@ augroup ocaml_settings
       \ let g:merlin_completion_dwim = 0 |
       \ let g:merlin_completion_arg_type = 'never' |
       \ let g:merlin_ignore_warnings = 'true' |
-      \ let g:merlin_completion_with_doc = 'false'
+      \ let g:merlin_completion_with_doc = 'false' |
+      \ let b:match_words = "<begin>:<end>,<object>:<end>"
 augroup END
 
 
@@ -301,13 +284,6 @@ let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
 " set completeopt+=noinsert
 let g:tern_request_timeout = 1
 
-" vim-closetag
-let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.php'
-let g:closetag_xhtml_filenames = '*.xhtml, *.jsx'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
-
 " elzr/vim-json
 let g:vim_json_syntax_conceal = 0
 
@@ -322,8 +298,8 @@ function! s:Jq(...)
   execute "%! jq \"" . l:arg . "\""
 endfunction
 
-"" neosnippet
 
+"" neosnippet
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -343,8 +319,6 @@ smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 " quickrun
 map <silent> <Space>r :QuickRun -input =@+<CR>
@@ -400,7 +374,6 @@ augroup space_r
 augroup END
 
 " NerdTree
-nnoremap <Space>n :NERDTreeToggle<CR>
 " ファイルが指定されていない場合，NERDTreeを開く
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -426,7 +399,7 @@ let g:lexima_enable_basic_rules = 0
 let g:lexima_enable_newline_rules = 0
 
 " lexima endwise settings
-function! s:lexima_endwise_rule(at, end, filetype)
+function! s:make_endwise_rule(at, end, filetype)
   call lexima#add_rule({
   \ 'char': '<CR>',
   \ 'input': '<CR>',
@@ -437,7 +410,9 @@ function! s:lexima_endwise_rule(at, end, filetype)
   \ 'syntax': [],
 \ })
 endfunction
-call s:lexima_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
+call s:make_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
+call s:make_endwise_rule('^\s*try\>.*\%#', 'with', 'ocaml')
+call s:make_endwise_rule('^\s*(begin\|object)\>.*\%#', 'end', 'ocaml')
 
 
 " nvim-nim
@@ -458,10 +433,6 @@ let g:ctrlp_cmd = 'CtrlP'
 " no preview
 autocmd FileType python setlocal completeopt-=preview
 
-" deoplete_rust
-let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='~/.cargo/rust-source/rust/src'
-
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
 let g:ale_lint_on_text_changed = 0
@@ -474,7 +445,7 @@ let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
-  \ 'python': [''],
+  \ 'python': [],
 \}
   " \ 'rust': ['rustc'],
 
@@ -490,10 +461,6 @@ let g:ale_fixers = {
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)
 nnoremap <C-e><C-r> :lopen<CR>
-
-" Autopair
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsMultilineClose = 0
 
 " vim-signify
 let g:signify_disable_by_default = 0
@@ -511,15 +478,16 @@ let g:wakatime_PythonBinary = '~/.pyenv/shims/python'
 " open zeal
 nnoremap <silent> <Space>s :execute '!zeal ' . &filetype . ':' . expand("<cexpr>") . ' &' <CR><CR>
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-"xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"nmap ga <Plug>(EasyAlign)
-
 " nnoremap <F8> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" Util
+function! SynGroup()
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
 
 syntax enable
 filetype indent plugin on
