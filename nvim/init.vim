@@ -28,7 +28,7 @@ set diffopt+=vertical
 set helplang=ja,en
 
 " indent width
-augroup Indent
+augroup Indent_setting
   autocmd!
   autocmd FileType nim setlocal softtabstop=2 shiftwidth=2
   autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
@@ -47,7 +47,7 @@ augroup Indent
 augroup END
 
 " shebang auto insert
-augroup Shebang
+augroup Shebang_insert
   autocmd!
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   autocmd BufNewFile *.php 0put =\"<?php\" | 2
@@ -56,7 +56,12 @@ augroup Shebang
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
   autocmd BufNewFile *.bash 0put =\"#!/usr/bin/env bash\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
-  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
+
+" set filetype by extension
+augroup Set_filetype
+  autocmd!
+  autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
 augroup END
 
 set nobackup
@@ -65,6 +70,7 @@ set hidden
 set autoread
 
 set wrap
+set linebreak
 set display=lastline
 set virtualedit=block
 
@@ -155,6 +161,7 @@ nnoremap <S-M-l> :vsplit<CR>
 
 inoremap <C-n> \n
 nmap m %
+vmap m %
 " nnoremap % m
 
 vnoremap { (
@@ -469,6 +476,10 @@ function! SynGroup()
   let l:s = synID(line('.'), col('.'), 1)
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
+
+" function! Lorem()
+"   
+" endfunction
 
 syntax enable
 filetype indent plugin on

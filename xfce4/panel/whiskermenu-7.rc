@@ -1,5 +1,5 @@
-favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=google-chrome.desktop,xfce4-terminal.desktop,xfce4-terminal-settings.desktop,opera.desktop,psensor.desktop,spotify_spotify.desktop,org.gnome.FontManager.desktop,appimagekit-bitwarden.desktop,dbeaver.desktop,xfce-xfcalendar-settings.desktop
+favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop,xfce4-terminal.desktop
+recent=opera.desktop,appimagekit-upterm.desktop,xfce4-terminal.desktop,google-chrome.desktop,xfce4-terminal-settings.desktop,psensor.desktop,spotify_spotify.desktop,org.gnome.FontManager.desktop,appimagekit-bitwarden.desktop,dbeaver.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
