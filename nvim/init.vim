@@ -200,7 +200,7 @@ augroup ocaml_settings
       \ let g:merlin_completion_arg_type = 'never' |
       \ let g:merlin_ignore_warnings = 'true' |
       \ let g:merlin_completion_with_doc = 'false' |
-      \ let b:match_words = "<begin>:<end>,<object>:<end>"
+      \ let b:match_words = "<begin>:<end>,<object>:<end>" |
 augroup END
 
 
@@ -274,12 +274,18 @@ inoremap <silent><expr> <S-TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-let g:deoplete#auto_complete_delay = 0
-let g:deoplete#auto_complete_start_length = 2
+" conflict with lexima
+" <CR>: close popup and save indent.
+imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
+
+" let g:deoplete#auto_complete_delay = 0
+" let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_refresh_always = 0
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#max_list = 20
 
@@ -290,6 +296,18 @@ let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
 
 " set completeopt+=noinsert
 let g:tern_request_timeout = 1
+
+"" neosnippet
+" Plugin key-mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
 
 " elzr/vim-json
 let g:vim_json_syntax_conceal = 0
@@ -304,28 +322,6 @@ function! s:Jq(...)
   endif
   execute "%! jq \"" . l:arg . "\""
 endfunction
-
-
-"" neosnippet
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><C-n>
-  \ pumvisible() ? "\<C-n>" :
-  \ neosnippet#expandable_or_jumpable() ?
-  \  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-smap <expr><C-n> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 
 " quickrun
 map <silent> <Space>r :QuickRun -input =@+<CR>
