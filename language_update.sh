@@ -2,32 +2,30 @@
 cols="$(tput cols)"
 separater="$(echo "===================================================================================================================================" | cut -c "1-${cols}")"
 
-echo "${separater}"
-echo "Nimble"
-echo "${separater}"
+sepatate() {
+  echo ""
+  echo "${separater}"
+  echo "${1}"
+  echo "${separater}"
+}
+
+echo "Update languages and sevaral packages"
+
+sepatate "Nimble"
 nimble update
 
-echo 
-echo "${separater}"
-echo "Rustup"
-echo "${separater}"
+sepatate "Rustup"
 rustup update
 
-echo 
-echo "${separater}"
-echo "Yarn"
-echo "${separater}"
+sepatate "Cargo update"
+cargo install-update -a
+
+sepatate "Yarn"
 yarn global upgrade --no-lockfile
 
-echo 
-echo "${separater}"
-echo "Gem"
-echo "${separater}"
+sepatate "Gem"
 gem update
 
-echo 
-echo "${separater}"
-echo "Opam"
-echo "${separater}"
+sepatate "Opam"
 opam update -y && opam upgrade -y && eval $(opam env)
 
