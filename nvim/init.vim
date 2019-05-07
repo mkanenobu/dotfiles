@@ -62,6 +62,7 @@ augroup END
 augroup Set_filetype
   autocmd!
   autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
+  autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
 augroup END
 
 set nobackup

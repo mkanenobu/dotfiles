@@ -9,10 +9,8 @@
 repo = 'tomasr/molokai'
 
 ### Utils
-# [[plugins]]
-# repo = 'w0rp/ale'
 [[plugins]]
-repo = 'mkanenobu/ale'
+repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
