@@ -17,7 +17,7 @@ set softtabstop=2
 set smarttab
 set autoindent
 set smartindent
-set showbreak=>>>\ 
+set showbreak=>>\ 
 autocmd filetype quickrun setlocal showbreak=""
 set list
 set nofixendofline
@@ -146,6 +146,8 @@ vnoremap gj j
 vnoremap gk k
 vnoremap j gj
 vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
 
 inoremap <C-c> <Esc>
 
@@ -474,9 +476,8 @@ function! SynGroup()
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 
-" function! Lorem()
-"   
-" endfunction
+command! WC :%s/./&/gn
+
 
 syntax enable
 filetype indent plugin on
