@@ -370,7 +370,6 @@ let g:quickrun_config.ocaml = {
   \ 'tempfile': '%{tempname()}.ml',
 \}
 
-
 set splitbelow
 
 augroup space_r
