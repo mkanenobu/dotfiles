@@ -273,15 +273,12 @@ inoremap <silent><expr> <S-TAB>
   return !col || getline('.')[col - 1]  =~ '\s'
   endfunction"}}}
 
-" conflict with lexima
 " <CR>: close popup and save indent.
-imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
   return deoplete#close_popup() . "\<CR>"
 endfunction
+imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
-" let g:deoplete#auto_complete_delay = 0
-" let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_camel_case = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_smart_case = 1
@@ -394,25 +391,25 @@ augroup autopairs_settings
   \})
 augroup END
 
-" lexima for customizable endwise
-" disable basic rules (use AutoPair)
-let g:lexima_enable_basic_rules = 0
-let g:lexima_enable_newline_rules = 0
-
-" lexima endwise settings
-function! s:make_endwise_rule(at, end, filetype)
-  call lexima#add_rule({
-  \ 'char': '<CR>',
-  \ 'input': '<CR>',
-  \ 'input_after': '<CR>' . a:end,
-  \ 'at': a:at,
-  \ 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1' . a:end,
-  \ 'filetype': a:filetype,
-  \ 'syntax': [],
-\ })
-endfunction
-call s:make_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
-call s:make_endwise_rule('^\s*(begin\|object)\>.*\%#', 'end', 'ocaml')
+" " lexima for customizable endwise
+" " disable basic rules (use AutoPair)
+" let g:lexima_enable_basic_rules = 0
+" let g:lexima_enable_newline_rules = 0
+"
+" " lexima endwise settings
+" function! s:make_endwise_rule(at, end, filetype)
+"   call lexima#add_rule({
+"   \ 'char': '<CR>',
+"   \ 'input': '<CR>',
+"   \ 'input_after': '<CR>' . a:end,
+"   \ 'at': a:at,
+"   \ 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1' . a:end,
+"   \ 'filetype': a:filetype,
+"   \ 'syntax': [],
+" \ })
+" endfunction
+" call s:make_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
+" call s:make_endwise_rule('^\s*(begin\|object)\>.*\%#', 'end', 'ocaml')
 
 
 " ale
