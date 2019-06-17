@@ -245,7 +245,7 @@ alias vr='vagrant reload'
 alias g='git'
 alias ga='git add'
 alias gcm='git commit -m'
-alias gcd='git commit -m "$(date)"'
+alias gcd='git commit -m "$(LANG=en date)"'
 alias gs='git status'
 alias gp='git pull'
 alias gd='git diff'
@@ -301,19 +301,7 @@ _encopus(){
 }
 complete -F _encopus encopus
 
-_nimr(){
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    COMPREPLY=( $(compgen -W "$(ls *.nim)" -- $cur) )
-}
-complete -F  _nimr nimr
-
-. ~/.env
 /usr/bin/setxkbmap -option "ctrl:nocaps"
-
-xmodmap ~/.Xmodmap
-
-# stop ctrl-s panic
-stty stop undef
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
