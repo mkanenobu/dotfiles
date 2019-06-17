@@ -103,10 +103,6 @@ merged = 0
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
-# [[plugins]]
-# repo = 'mkanenobu/foolproof.vim'
-
-
 ### Language support
 
 [[plugins]]
@@ -131,22 +127,12 @@ repo = 'boeckmann/vim-freepascal'
 on_ft = ['freepascal', 'pascal']
 
 [[plugins]]
-repo = 'ziglang/zig.vim'
-on_ft = 'zig'
-hook_add = '''
-  let g:zig_fmt_autosave = 1
-'''
-
-[[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 hook_add = '''
   " no preview
   autocmd FileType python setlocal completeopt-=preview
 '''
-
-[[plugins]]
-repo = 'reasonml-editor/vim-reason-plus'
 
 # Deoplete sources
 

@@ -1,8 +1,5 @@
 " ctnfig file for Neovim
 filetype indent plugin off
-if !&compatible
-  set nocompatible
-endif
 
 let configDir='~/.config/nvim'
 
@@ -16,7 +13,6 @@ set shiftwidth=2
 set softtabstop=2
 set smarttab
 set autoindent
-set smartindent
 set showbreak=>>\ 
 autocmd filetype quickrun setlocal showbreak=""
 set list
