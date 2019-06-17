@@ -228,18 +228,18 @@ alias vs='vagrant ssh'
 alias vr='vagrant reload'
 
 # Docker
-alias docker='sudo docker'
-alias drun='sudo docker run'
-alias dps='sudo docker ps'
-alias dl='sudo docker ps -l -q'
-alias dbuild='sudo docker build'
-alias dimages='sudo docker images'
-
-alias dockerc='sudo docker-compose'
-alias dcbuild='sudo docker-compose build'
-alias dcup='sudo docker-compose up -d'
-alias dcps='sudo docker-compose ps'
-alias dclog='sudo docker-compose logs'
+# alias docker='sudo docker'
+# alias drun='sudo docker run'
+# alias dps='sudo docker ps'
+# alias dl='sudo docker ps -l -q'
+# alias dbuild='sudo docker build'
+# alias dimages='sudo docker images'
+#
+# alias dockerc='sudo docker-compose'
+# alias dcbuild='sudo docker-compose build'
+# alias dcup='sudo docker-compose up -d'
+# alias dcps='sudo docker-compose ps'
+# alias dclog='sudo docker-compose logs'
 
 # Git
 alias g='git'
