@@ -163,6 +163,7 @@ _exists() {
 
 ## User aliases
 alias off='shutdown -h 0'
+alias restart='shutdown -r 0'
 alias br='vim ~/.bashrc'
 alias bf='vim ~/.bash_functions'
 alias so='source'
