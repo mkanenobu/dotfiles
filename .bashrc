@@ -307,3 +307,6 @@ complete -F _encopus encopus
 
 source "$HOME/.config/wakatime/bash-wakatime.sh"
 
+# stop ctrl-s panic
+stty stop undef
+
