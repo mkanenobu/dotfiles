@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop,xfce4-terminal.desktop
-recent=xfce4-terminal.desktop,gnome-characters_gnome-characters.desktop,firefox.desktop,spotify_spotify.desktop,com.gexperts.Tilix.desktop,opera.desktop,chrome-gbchcmhmhahfdphkhkmpfmihenigjmpp-Default.desktop,appimagekit-upterm.desktop,google-chrome.desktop,xfce4-terminal-settings.desktop
+recent=cool-retro-term.desktop,com.gexperts.Tilix.desktop,atom.desktop,sublime.desktop,xfce4-terminal.desktop,gnome-characters_gnome-characters.desktop,firefox.desktop,spotify_spotify.desktop,opera.desktop,chrome-gbchcmhmhahfdphkhkmpfmihenigjmpp-Default.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

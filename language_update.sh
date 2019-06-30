@@ -12,7 +12,7 @@ sepatate() {
 echo "Update languages and sevaral packages"
 
 sepatate "Nimble"
-nimble update
+nimble_whole_update.nims
 
 sepatate "Rustup"
 rustup update
@@ -30,5 +30,5 @@ sepatate "pip"
 pip list --outdated --format=json | jq -r '.[].name' | xargs pip install -U pip
 
 sepatate "Opam"
-opam update -y && opam upgrade --fixup -y && eval $(opam env)
+opam update -y && opam upgrade -y && eval $(opam env)
 

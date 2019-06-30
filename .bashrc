@@ -311,3 +311,5 @@ source "$HOME/.config/wakatime/bash-wakatime.sh"
 # stop ctrl-s panic
 stty stop undef
 
+xmodmap ~/.Xmodmap
+

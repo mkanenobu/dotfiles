@@ -23,6 +23,15 @@ set diffopt+=vertical
 
 set helplang=ja,en
 
+" set filetype by extension
+augroup Set_filetype
+  autocmd!
+  autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
+  autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
+  autocmd BufNewFile,BufReadPost,FileReadPost *.hx set filetype=java
+  autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
+augroup END
+
 " indent width
 augroup Indent_setting
   autocmd!
@@ -52,13 +61,6 @@ augroup Shebang_insert
   autocmd BufNewFile *.sh 0put =\"#!/bin/sh\" | 2
   autocmd BufNewFile *.bash 0put =\"#!/usr/bin/env bash\" | 2
   autocmd BufNewFile *.pas 0put =\"program \" .  expand(\"%:r\") . \";\" | 2
-augroup END
-
-" set filetype by extension
-augroup Set_filetype
-  autocmd!
-  autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
-  autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
 augroup END
 
 set nobackup
@@ -425,8 +427,10 @@ let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
   \ 'python': [],
+  \ 'ruby': [],
 \}
   " \ 'rust': ['rustc'],
+  " \ 'python': ['flake8'],
 
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
@@ -436,6 +440,7 @@ let g:ale_fixers = {
   \ 'ocaml': ['ocp-indent'],
 \}
   " \ 'ocaml': ['ocamlformat'],
+  " \ 'python': ['isort', 'autopep8'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)
