@@ -130,6 +130,10 @@ hook_add = '''
 repo = 'boeckmann/vim-freepascal'
 on_ft = ['freepascal', 'pascal']
 
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'javascript'
+
 # Deoplete sources
 
 [[plugins]]
