@@ -134,6 +134,13 @@ on_ft = ['freepascal', 'pascal']
 repo = 'pangloss/vim-javascript'
 on_ft = 'javascript'
 
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+on_ft = 'kotlin'
+
+[[plugins]]
+repo = 'ElmCast/elm-vim'
+
 # Deoplete sources
 
 [[plugins]]

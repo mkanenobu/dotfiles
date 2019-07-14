@@ -436,11 +436,10 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
-  \ 'python': ['isort'],
+  \ 'python': ['isort', 'autopep8'],
   \ 'ocaml': ['ocp-indent'],
 \}
   " \ 'ocaml': ['ocamlformat'],
-  " \ 'python': ['isort', 'autopep8'],
 
 " nmap <C-j> <Plug>(ale_next_wrap)
 " nmap <C-k> <Plug>(ale_previous_wrap)
