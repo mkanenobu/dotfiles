@@ -117,12 +117,16 @@ set mouse=""
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 "ColorScheme
-colorscheme molokai
-"set t_Co=256
-autocmd ColorScheme molokai highlight Visual ctermbg=242
-autocmd ColorScheme molokai highlight Comment ctermfg=102
-autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
-autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
+" colorscheme molokai
+" "set t_Co=256
+" autocmd ColorScheme molokai highlight Visual ctermbg=242
+" autocmd ColorScheme molokai highlight Comment ctermfg=102
+" autocmd ColorScheme molokai highlight Search ctermbg=242 ctermfg=15
+" autocmd ColorScheme molokai highlight MatchParen ctermbg=242 ctermfg=15
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 
 syntax on

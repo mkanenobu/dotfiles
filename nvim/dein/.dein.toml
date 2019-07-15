@@ -8,6 +8,9 @@
 [[plugins]]
 repo = 'tomasr/molokai'
 
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
 ### Utils
 [[plugins]]
 repo = 'w0rp/ale'
@@ -80,6 +83,21 @@ hook_add = '''
   " Autopair
   let g:AutoPairsFlyMode = 0
   let g:AutoPairsMultilineClose = 0
+  let g:AutoPairsMapBS = 1
+  " undef quotes
+  let b:AutoPairs = {'(':')', '[':']', '{':'}'}
+
+  augroup autopairs_settings
+    autocmd!
+    autocmd FileType forth let b:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
+    autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
+    autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
+    autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
+    autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
+      \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with',
+    \})
+    autocmd FileType lisp let b:AutoPairs = g:AutoPairs
+  augroup END
 '''
 
 [[plugins]]
@@ -140,6 +158,11 @@ on_ft = 'kotlin'
 
 [[plugins]]
 repo = 'ElmCast/elm-vim'
+on_ft = 'elm'
+
+# [[plugins]]
+# repo = 'kovisoft/slimv'
+# on_ft = 'lisp'
 
 # Deoplete sources
 

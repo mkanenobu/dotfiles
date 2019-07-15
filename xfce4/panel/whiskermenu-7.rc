@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop,xfce4-terminal.desktop
-recent=fromscratch_fromscratch.desktop,brave_brave.desktop,snap-store_snap-store.desktop,postman_postman.desktop,atom.desktop,cool-retro-term.desktop,com.gexperts.Tilix.desktop,sublime.desktop,xfce4-terminal.desktop,gnome-characters_gnome-characters.desktop
+recent=org.zealdocs.Zeal.desktop,fromscratch_fromscratch.desktop,brave_brave.desktop,snap-store_snap-store.desktop,postman_postman.desktop,atom.desktop,cool-retro-term.desktop,com.gexperts.Tilix.desktop,sublime.desktop,xfce4-terminal.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

@@ -246,6 +246,7 @@ endif
 colorscheme molokai
 augroup molokai_colorscheme
   autocmd!
+  " 微調整
   autocmd ColorScheme molokai highlight Visual ctermbg=242 |
       \ highlight Comment ctermfg=102 |
       \ highlight Search ctermbg=242 ctermfg=15 |
@@ -365,6 +366,11 @@ let g:quickrun_config.ocaml = {
   \ 'tempfile': '%{tempname()}.ml',
 \}
 
+let g:quickrun_config.lisp = {
+  \ 'command': 'sbcl',
+  \ 'exec': ['%c --script %s'],
+\}
+
 set splitbelow
 
 augroup space_r
@@ -377,21 +383,6 @@ augroup END
 " ファイルが指定されていない場合，NERDTreeを開く
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" vim-Autopair
-let g:AutoPairsMapBS = 1
-" undef quotes
-let g:AutoPairs = {'(':')', '[':']', '{':'}'}
-augroup autopairs_settings
-  autocmd!
-  autocmd FileType forth let g:AutoPairs = {'(':')',  '{':'}', '`':'`', 'T{':'}T'}
-  autocmd FileType ruby let b:AutoPairs = AutoPairsDefine({"|": "|"})
-  autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
-  autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
-  autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-        \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with',
-  \})
-augroup END
 
 " " lexima for customizable endwise
 " " disable basic rules (use AutoPair)
