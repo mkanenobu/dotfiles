@@ -30,5 +30,5 @@ sepatate "pip"
 pip list --outdated --format=json | jq -r '.[].name' | xargs pip install -U pip
 
 sepatate "Opam"
-opam update -y && opam upgrade -y && eval $(opam env)
+opam update -y && opam upgrade -y && eval "$(opam env)"
 

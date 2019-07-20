@@ -27,6 +27,7 @@ set helplang=ja,en
 augroup Set_filetype
   autocmd!
   autocmd BufNewFile,BufReadPost,FileReadPost *.vader set filetype=vim
+  autocmd BufNewFile,BufReadPost,FileReadPost .dein.toml set filetype=vim
   autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
   autocmd BufNewFile,BufReadPost,FileReadPost *.hx set filetype=java
   autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
@@ -49,6 +50,7 @@ augroup Indent_setting
   autocmd FileType bash setlocal softtabstop=2 shiftwidth=2
   autocmd FileType c setlocal softtabstop=3 shiftwidth=3 noexpandtab
   autocmd FileType rust setlocal softtabstop=4 shiftwidth=4
+  autocmd FileType lisp setlocal softtabstop=2 shiftwidth=2
 augroup END
 
 " shebang auto insert

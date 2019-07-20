@@ -85,7 +85,7 @@ hook_add = '''
   let g:AutoPairsMultilineClose = 0
   let g:AutoPairsMapBS = 1
   " undef quotes
-  let b:AutoPairs = {'(':')', '[':']', '{':'}'}
+  let g:AutoPairs = {'(':')', '[':']', '{':'}'}
 
   augroup autopairs_settings
     autocmd!
@@ -96,7 +96,9 @@ hook_add = '''
     autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
       \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with',
     \})
-    autocmd FileType lisp let b:AutoPairs = g:AutoPairs
+    autocmd FileType lisp let b:AutoPairs = AutoPairsDefine({
+      \ '"':'"'
+    \})
   augroup END
 '''
 
