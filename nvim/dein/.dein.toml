@@ -27,22 +27,6 @@ repo = 'scrooloose/nerdtree'
 hook_add = 'nnoremap <Space>n :NERDTreeToggle<CR>'
 
 [[plugins]]
-repo = 'mattn/emmet-vim'
-on_ft = ['html', 'css', 'scss']
-hook_add = '''
-  let g:user_emmet_leader_key = '<C-y>'
-  let g:user_emmet_install_global = 1
-  autocmd FileType php,html,css,scss EmmetInstall
-  let g:user_emmet_mode = 'i'
-  let g:user_emmet_expandabbr_key='<C-e>'
-  let g:user_emmet_settings = {
-    \ 'variables': {
-    \   'lang': "ja"
-    \ },
-  \ }
-'''
-
-[[plugins]]
 repo = 'vim-scripts/loremipsum'
 
 [[plugins]]
@@ -100,6 +84,22 @@ hook_add = '''
       \ '"':'"'
     \})
   augroup END
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'css', 'scss']
+hook_add = '''
+  let g:user_emmet_leader_key = '<C-y>'
+  let g:user_emmet_install_global = 1
+  autocmd FileType php,html,css,scss EmmetInstall
+  let g:user_emmet_mode = 'i'
+  let g:user_emmet_expandabbr_key='<C-e>'
+  let g:user_emmet_settings = {
+    \ 'variables': {
+    \   'lang': "ja"
+    \ },
+  \ }
 '''
 
 [[plugins]]
