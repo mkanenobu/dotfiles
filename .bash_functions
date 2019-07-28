@@ -1,10 +1,5 @@
 #!/bin/bash
 
-sshToEc2(){
-  . ~/.env
-  ssh -i "${ec2_key}" ec2-user@"$1"
-}
-
 dash() {
   query="${1}"
   if [ "$#" -gt 1 ]; then

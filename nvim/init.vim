@@ -73,7 +73,7 @@ set autoread
 set wrap
 set linebreak
 set display=lastline
-set virtualedit=block
+" set virtualedit=block
 
 if has('persistent_undo')
   set undodir=~/.vim/undo
@@ -220,22 +220,17 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" 設定開始
+
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir  = expand('~/.config/nvim/dein')
-  let s:toml  = g:rc_dir . '/.dein.toml'
+  let g:rc_dir = expand('~/.config/nvim/dein')
+  let s:toml = g:rc_dir . '/.dein.toml'
   let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
 
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,    {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#load_toml(s:toml)
   call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
 
-  " 設定終了
   call dein#end()
   call dein#save_state()
 endif
@@ -293,6 +288,7 @@ let g:deoplete#max_list = 20
 if !exists('g:deoplete#ignore_sources')
   let g:deoplete#ignore_sources = {}
 endif
+
 let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
 
 " set completeopt+=noinsert
@@ -420,7 +416,7 @@ let g:ale_linters = {
   \ 'css': ['csslint'],
   \ 'javascript': [],
   \ 'python': [],
-  \ 'ruby': [],
+  \ 'ruby': ['ruby', 'solargraph'],
 \}
   " \ 'rust': ['rustc'],
   " \ 'python': ['flake8'],
@@ -430,7 +426,8 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier'],
   \ 'rust': ['rustfmt'],
   \ 'python': ['isort', 'autopep8'],
-  \ 'ocaml': ['ocp-indent'],
+  \ 'ocaml': ['ocp-indent', 'trim_whitespace'],
+  \ 'ruby': ['standardrb'],
 \}
   " \ 'ocaml': ['ocamlformat'],
 

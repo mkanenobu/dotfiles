@@ -11,8 +11,8 @@ sepatate() {
 
 echo "Update languages and sevaral packages"
 
-sepatate "Nimble"
-nimble_whole_update.nims
+# sepatate "Nimble"
+# nimble_whole_update.nims
 
 sepatate "Rustup"
 rustup update
