@@ -229,7 +229,9 @@ if dein#load_state(s:dein_dir)
   let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
 
   call dein#load_toml(s:toml)
-  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
+  if exists('g:opam_share') && isdirectory(g:opam_share . 'merlin/vim')
+    call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
+  endif
 
   call dein#end()
   call dein#save_state()

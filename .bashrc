@@ -87,6 +87,12 @@ if [ -z $TMUX ]; then
     PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$ '
 fi
 
+# command exists?
+_exists() {
+    type "$1" 1>/dev/null 2>/dev/null
+    return $?
+}
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -99,7 +105,11 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    if _exists "exa"; then
+        alias ls='exa --color=auto'
+    else
+        alias ls='ls --color=auto'
+    fi
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -112,9 +122,15 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
+if _exists "exa"; then
+    alias ll='exa -lha'
+    alias la='exa -a'
+    alias l='exa -F'
+else
+    alias ll='ls -alFh'
+    alias la='ls -A'
+    alias l='ls -CF'
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -140,10 +156,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-_exists() {
-    type "$1" 1>/dev/null 2>/dev/null
-    return $?
-}
 
 . ~/.env
 
