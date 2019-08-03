@@ -70,9 +70,9 @@
     <property name="plugin-4" type="string" value="xfce4-sensors-plugin"/>
     <property name="plugin-3" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="skypeforlinux"/>
         <value type="string" value="discord"/>
         <value type="string" value="clipman"/>
+        <value type="string" value="sylpheed"/>
         <value type="string" value="steam"/>
         <value type="string" value="electron"/>
         <value type="string" value="ibus-ui-gtk3"/>
@@ -100,15 +100,15 @@
         <value type="string" value="system-config-printer"/>
         <value type="string" value="blueman-applet"/>
         <value type="string" value="evolution-alarm-notify"/>
-        <value type="string" value="update-notifier"/>
-        <value type="string" value="psensor"/>
-        <value type="string" value="notes"/>
         <value type="string" value="ibus panel"/>
-        <value type="string" value="rambox"/>
-        <value type="string" value="megasync"/>
-        <value type="string" value="calendar-indicator"/>
         <value type="string" value="tuxguitar"/>
-        <value type="string" value="sylpheed"/>
+        <value type="string" value="psensor"/>
+        <value type="string" value="skypeforlinux"/>
+        <value type="string" value="notes"/>
+        <value type="string" value="megasync"/>
+        <value type="string" value="update-notifier"/>
+        <value type="string" value="rambox"/>
+        <value type="string" value="calendar-indicator"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">

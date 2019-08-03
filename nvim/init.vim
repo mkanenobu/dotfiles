@@ -102,8 +102,8 @@ nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 set mouse=""
 set ruler
 set number
+set wildmode=list,longest,full
 set wildmenu
-set wildmode=list:full
 " set wildoptions+=pum
 " set pumblend=20
 " set cursorline
@@ -192,17 +192,20 @@ command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
 
+
+      " \ let g:merlin_completion_arg_type = 'never' |
 augroup ocaml_settings
   autocmd!
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR> |
       \ vnoremap <Space>t :MerlinTypeOfSel <CR> |
       \ nnoremap <C-]> :MerlinLocate <CR> |
-      \ let g:deoplete#complete_method = 'complete' |
+      \ nnoremap <Space>n :MerlinGrowEnclosing <CR> |
+      \ nnoremap <Space>p :MerlinShrinkEnclosing <CR> |
       \ set completeopt-=preview |
+      \ let g:deoplete#complete_method = 'complete' |
       \ let g:merlin_completion_dwim = 0 |
-      \ let g:merlin_completion_arg_type = 'never' |
-      \ let g:merlin_ignore_warnings = 'true' |
-      \ let g:merlin_completion_with_doc = 'false' |
+      \ let g:merlin_ignore_warnings = 'false' |
+      \ let g:merlin_completion_with_doc = 'true' |
       \ let b:match_words = "<begin>:<end>,<object>:<end>" |
 augroup END
 
@@ -229,9 +232,7 @@ if dein#load_state(s:dein_dir)
   let s:lazy_toml = g:rc_dir . '/.dein_lazy.toml'
 
   call dein#load_toml(s:toml)
-  if exists('g:opam_share') && isdirectory(g:opam_share . 'merlin/vim')
-    call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
-  endif
+  call dein#add(g:opam_share . '/merlin/vim', {'lazy': 1, 'on_ft': 'ocaml'})
 
   call dein#end()
   call dein#save_state()
@@ -291,7 +292,22 @@ if !exists('g:deoplete#ignore_sources')
   let g:deoplete#ignore_sources = {}
 endif
 
-let g:deoplete#ignore_sources.ocaml = ['around', 'member', 'tag']
+let g:deoplete#ignore_sources.ocaml = ['around', 'tag', 'buffer']
+augroup deoplete_completion_settings
+  autocmd!
+  call deoplete#custom#source('around', 'mark', '[Around]')
+  call deoplete#custom#source('syntax', 'mark', '[Syntax]')
+  call deoplete#custom#source('ale', 'mark', '[Ale]')
+  call deoplete#custom#source('tabnine', 'mark', '[TabNine]')
+  call deoplete#custom#source('ocaml', 'mark', '[OCaml]')
+  call deoplete#custom#source('neosnippet', 'mark', '[NeoSnippet]')
+
+  call deoplete#custom#source('around', 'rank', 50)
+  call deoplete#custom#source('syntax', 'rank', 50)
+  call deoplete#custom#source('neosnippet', 'rank', 75)
+  call deoplete#custom#source('ale', 'rank', 100)
+  call deoplete#custom#source('tabnine', 'rank', 0)
+augroup END
 
 " set completeopt+=noinsert
 let g:tern_request_timeout = 1
@@ -441,11 +457,11 @@ nnoremap <C-e><C-r> :lopen<CR>
 let g:signify_disable_by_default = 0
 let g:signify_vcs_list = ['git']
 let g:signify_update_on_bufenter = 0
-nmap <S-j> <plug>(signify-next-hunk)
-nmap <S-k> <plug>(signify-prev-hunk)
+" nmap <S-j> <plug>(signify-next-hunk)
+" nmap <S-k> <plug>(signify-prev-hunk)
 
 " easy-align
-vmap <C-l> <Plug>(EasyAlign)
+" vmap <C-l> <Plug>(EasyAlign)
 
 " wakatime
 let g:wakatime_PythonBinary = '~/.pyenv/shims/python'

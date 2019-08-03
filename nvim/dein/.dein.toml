@@ -78,7 +78,7 @@ hook_add = '''
     autocmd FileType rust let b:AutoPairs = AutoPairsDefine({"|": "|"})
     autocmd FileType nim let b:AutoPairs = AutoPairsDefine({'{.': '.}'})
     autocmd FileType ocaml let b:AutoPairs = AutoPairsDefine({
-      \ '(*': '*)', '(**':'**)', '[|':'|]', 'match':'with',
+      \ '(*': '*)', '(**':'**)', '[|':'|]',
     \})
     autocmd FileType lisp let b:AutoPairs = AutoPairsDefine({
       \ '"':'"'
@@ -177,6 +177,10 @@ hook_add = '''
   " no preview
   autocmd FileType python setlocal completeopt-=preview
 '''
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+on_ft = 'rust'
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
