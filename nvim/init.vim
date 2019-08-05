@@ -102,7 +102,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 set mouse=""
 set ruler
 set number
-set wildmode=list,longest,full
+set wildmode=list,longest
 set wildmenu
 " set wildoptions+=pum
 " set pumblend=20
