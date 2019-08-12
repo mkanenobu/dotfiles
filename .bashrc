@@ -201,6 +201,7 @@ alias wcj='wc -m'
 alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
+alias cl='clear'
 
 # languages
 alias py='python3'

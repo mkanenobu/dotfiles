@@ -13,7 +13,7 @@ repo = 'altercation/vim-colors-solarized'
 
 ### Utils
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -149,10 +149,6 @@ on_ft = ['freepascal', 'pascal']
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = 'javascript'
-
-[[plugins]]
-repo = 'ElmCast/elm-vim'
-on_ft = 'elm'
 
 # Deoplete sources
 

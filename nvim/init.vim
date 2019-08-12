@@ -48,7 +48,7 @@ augroup Indent_setting
   autocmd FileType typescript setlocal softtabstop=2 shiftwidth=2
   autocmd FileType sh setlocal softtabstop=2 shiftwidth=2
   autocmd FileType bash setlocal softtabstop=2 shiftwidth=2
-  autocmd FileType c setlocal softtabstop=3 shiftwidth=3 noexpandtab
+  autocmd FileType c setlocal softtabstop=2 shiftwidth=2 noexpandtab
   autocmd FileType rust setlocal softtabstop=4 shiftwidth=4
   autocmd FileType lisp setlocal softtabstop=2 shiftwidth=2
 augroup END
@@ -102,7 +102,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 set mouse=""
 set ruler
 set number
-set wildmode=list,longest
+set wildmode=list:full
 set wildmenu
 " set wildoptions+=pum
 " set pumblend=20
