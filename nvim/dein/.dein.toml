@@ -69,7 +69,7 @@ hook_add = '''
   let g:AutoPairsMultilineClose = 0
   let g:AutoPairsMapBS = 1
   " undef quotes
-  let g:AutoPairs = {'(':')', '[':']', '{':'}'}
+  let g:AutoPairs = {'[':']', '{':'}'}
 
   augroup autopairs_settings
     autocmd!
