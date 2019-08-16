@@ -20,8 +20,8 @@ rustup update
 sepatate "Cargo update"
 cargo install-update -a
 
-sepatate "Yarn"
-yarn global upgrade --no-lockfile
+# sepatate "Yarn"
+# yarn global upgrade --no-lockfile
 
 sepatate "Gem"
 gem update

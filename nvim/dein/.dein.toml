@@ -50,6 +50,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]

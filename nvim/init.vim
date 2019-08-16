@@ -31,6 +31,7 @@ augroup Set_filetype
   autocmd BufNewFile,BufReadPost,FileReadPost *.fsx set filetype=fsharp
   autocmd BufNewFile,BufReadPost,FileReadPost *.hx set filetype=java
   autocmd BufNewFile,BufReadPost,FileReadPost *.nims set filetype=nim
+  autocmd BufNewFile,BufReadPost,FileReadPost dune set filetype=lisp
 augroup END
 
 " indent width
@@ -176,7 +177,7 @@ nnoremap <C-k> {
 command! Z :qa!
 
 " close on q
-autocmd FileType qf,help nmap <buffer> <silent> q :q<CR>
+autocmd FileType qf,help,fzf nmap <buffer> <silent> q :q<CR>
 
 if has('mac')
   nnoremap <silent> <Space>l :silent !chrome-tab-reload-mac<CR><CR>
@@ -184,21 +185,18 @@ else
   nnoremap <silent> <Space>l :silent !chrome-tab-reload<CR><CR>
 endif
 
-nnoremap <C-g> :Rg 
+nnoremap <C-]> :Rg <C-r><C-w><CR>
 
 " :W = save with root permission
 command -nargs=0 -complete=augroup -bang W w !sudo tee % > /dev/null
 
 " OCaml
 let g:opam_share = substitute(system('opam config var share'),'\n$','','''')
-
-
       " \ let g:merlin_completion_arg_type = 'never' |
 augroup ocaml_settings
   autocmd!
   autocmd FileType ocaml nnoremap <Space>t :MerlinTypeOf <CR> |
       \ vnoremap <Space>t :MerlinTypeOfSel <CR> |
-      \ nnoremap <C-]> :MerlinLocate <CR> |
       \ nnoremap <Space>n :MerlinGrowEnclosing <CR> |
       \ nnoremap <Space>p :MerlinShrinkEnclosing <CR> |
       \ set completeopt-=preview |
@@ -206,8 +204,18 @@ augroup ocaml_settings
       \ let g:merlin_completion_dwim = 0 |
       \ let g:merlin_ignore_warnings = 'false' |
       \ let g:merlin_completion_with_doc = 'true' |
-      \ let b:match_words = "<begin>:<end>,<object>:<end>" |
+      \ let b:match_words = "<begin>:<end>,<object>:<end>,<match>:<with>" |
 augroup END
+
+" Nim
+function! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+nnoremap <C-]> :call JumpToDef()<CR>
 
 
 " dein
@@ -253,6 +261,8 @@ augroup molokai_colorscheme
       \ highlight MatchParen ctermbg=242 ctermfg=15
 augroup END
 
+" easy motion
+map <Leader> <Plug>(easymotion-prefix)
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -377,8 +387,7 @@ let g:quickrun_config.rust = {
 
 let g:quickrun_config.ocaml = {
   \ 'command': 'obrun',
-  \ 'exec': ['%c %o %s'],
-  \ 'cmdopt': '-quiet -cflags -w,-24',
+  \ 'exec': ['%c %s'],
   \ 'tempfile': '%{tempname()}.ml',
 \}
 
@@ -467,7 +476,7 @@ let g:signify_update_on_bufenter = 0
 let g:wakatime_PythonBinary = '~/.pyenv/shims/python'
 
 " open zeal
-nnoremap <silent> <Space>s :execute '!zeal ' . &filetype . ':' . expand("<cexpr>") . ' &' <CR><CR>
+nnoremap <silent> <Space>d :execute '!zeal ' . &filetype . ':' . expand("<cexpr>") . ' &' <CR><CR>
 
 " nnoremap <F8> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
