@@ -280,15 +280,13 @@ set -C noclobber
 # tmuxで履歴を共有しつつ重複を削除
 share_history(){
     history -a
-    # ここから追記
     tac ~/.bash_history | awk '!a[$0]++' | tac >| ~/.bash_history.tmp
     mv -f ~/.bash_history{.tmp,}
-    # ここまで追記
     history -c
     history -r
 }
 
-# PROMPT_COMMAND='(git_autofetch 2>/dev/null 1>/dev/null &)'
+PROMPT_COMMAND="share_history"
 shopt -u histappend
 
 if [ -f ~/.bash_functions ];then

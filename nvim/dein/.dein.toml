@@ -153,6 +153,10 @@ on_ft = ['freepascal', 'pascal']
 repo = 'pangloss/vim-javascript'
 on_ft = 'javascript'
 
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = 'dart'
+
 # Deoplete sources
 
 [[plugins]]

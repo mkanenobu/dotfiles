@@ -52,6 +52,7 @@ augroup Indent_setting
   autocmd FileType c setlocal softtabstop=2 shiftwidth=2 noexpandtab
   autocmd FileType rust setlocal softtabstop=4 shiftwidth=4
   autocmd FileType lisp setlocal softtabstop=2 shiftwidth=2
+  autocmd FileType groovy setlocal softtabstop=4 shiftwidth=4
 augroup END
 
 " shebang auto insert
@@ -130,6 +131,7 @@ nnoremap - <C-x>
 " C-CR in middle of line
 inoremap <C-j> <Esc>o
 
+" Disable some keybinds
 nnoremap ZZ <nop>
 nnoremap ZQ <nop>
 nnoremap Q <nop>
@@ -168,8 +170,12 @@ nmap m %
 vmap m %
 " nnoremap % m
 
-vnoremap { (
-vnoremap } )
+
+" move to next parentheses
+vnoremap { ?[{}()]<CR>
+vnoremap } /[{}()]<CR>
+nnoremap { ?[{}()]<CR>
+nnoremap } /[{}()]<CR>
 
 nnoremap <C-j> }
 nnoremap <C-k> {
@@ -215,7 +221,17 @@ function! JumpToDef()
     exe "norm! \<C-]>"
   endif
 endf
-nnoremap <C-]> :call JumpToDef()<CR>
+
+augroup nim_settings
+  autocmd!
+  autocmd FileType nim nnoremap <C-]> :call JumpToDef()<CR>
+augroup END
+
+" Dart
+augroup dart_settings
+  autocmd!
+  autocmd FileType dart let dart_style_guide = 2
+augroup END
 
 
 " dein
@@ -396,6 +412,11 @@ let g:quickrun_config.lisp = {
   \ 'exec': ['%c --script %s'],
 \}
 
+let g:quickrun_config.dart = {
+  \ 'command': 'dart',
+  \ 'exec': ['%c %s'],
+\}
+
 set splitbelow
 
 augroup space_r
@@ -403,32 +424,6 @@ augroup space_r
   autocmd FileType markdown map <Space>r :!typora "%:p" >/dev/null 2>&1 &<CR><CR>
   autocmd FileType html map <Space>r :!google-chrome "%:p" >/dev/null 2>&1 &<CR><CR>
 augroup END
-
-" NerdTree
-" ファイルが指定されていない場合，NERDTreeを開く
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" " lexima for customizable endwise
-" " disable basic rules (use AutoPair)
-" let g:lexima_enable_basic_rules = 0
-" let g:lexima_enable_newline_rules = 0
-"
-" " lexima endwise settings
-" function! s:make_endwise_rule(at, end, filetype)
-"   call lexima#add_rule({
-"   \ 'char': '<CR>',
-"   \ 'input': '<CR>',
-"   \ 'input_after': '<CR>' . a:end,
-"   \ 'at': a:at,
-"   \ 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1' . a:end,
-"   \ 'filetype': a:filetype,
-"   \ 'syntax': [],
-" \ })
-" endfunction
-" call s:make_endwise_rule('\<\%(for\|while\)\>.*\%#', 'done', 'ocaml')
-" call s:make_endwise_rule('^\s*(begin\|object)\>.*\%#', 'end', 'ocaml')
-
 
 " ale
 " rcmdnk.com/blog/2017/09/25/computer-vim/
@@ -441,9 +436,10 @@ let g:ale_lint_on_enter = 1
 let g:ale_completion_delay = 150
 let g:ale_linters = {
   \ 'css': ['csslint'],
-  \ 'javascript': [],
+  \ 'javascript': ['eslint'],
   \ 'python': [],
   \ 'ruby': ['ruby', 'solargraph'],
+  \ 'dart': ['dartanalyzer', 'language_server'],
 \}
   " \ 'rust': ['rustc'],
   " \ 'python': ['flake8'],
@@ -455,6 +451,7 @@ let g:ale_fixers = {
   \ 'python': ['isort', 'autopep8'],
   \ 'ocaml': ['ocp-indent', 'trim_whitespace'],
   \ 'ruby': ['standardrb'],
+  \ 'dart': ['dartfmt'],
 \}
   " \ 'ocaml': ['ocamlformat'],
 

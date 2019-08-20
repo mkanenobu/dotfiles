@@ -1,0 +1,66 @@
+""" IdeaVimrc
+
+set incsearch
+set ignorecase
+set smartcase
+
+set incsearch
+set hlsearch
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+
+set laststatus=2
+set cmdheight=2
+set showcmd
+
+set cinoptions+=:0
+
+set display=lasttline
+
+" use global clipboard
+set clipboard=unnamed
+
+
+nnoremap <S-h> ^
+nnoremap <S-l> $
+vnoremap <S-h> ^
+vnoremap <S-l> $
+
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap j gj
+vnoremap k gk
+
+nnoremap m %
+nnoremap % m
+
+" move to next parentheses
+vnoremap { ?[{}()]<CR>
+vnoremap } /[{}()]<CR>
+nnoremap { ?[{}()]<CR>
+nnoremap } /[{}()]<CR>
+
+nnoremap <C-]> :action VimGotoDeclaration<CR>
+
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+
+nnoremap <C-S-l> :action NextTab<CR>
+nnoremap <C-S-h> :action PreviousTab<CR>
+
+nnoremap <C-r> :redo<CR>
+
+"
+nnoremap x "_x
+vnoremap x "_x
+
+"
+nnoremap yy "+yy
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P

@@ -12,15 +12,6 @@ bunexec() {
   rerun "bundle exec ${1}"
 }
 
-# Git
-gl(){
-  if type "tig" >/dev/null 2>&1 ;then
-    tig
-  else
-    git log
-  fi
-}
-
 # Docker
 dremove(){
   if [ "$#" != 0 ]; then
@@ -150,36 +141,3 @@ git_remove_from_remote(){
   git rm --cached -r "$@"
 }
 
-mail2me(){
-  echo -n "Subject: "
-  read -r subject
-  echo "Text (Enter 'end' to send): "
-  text=""
-  while read -r line; do
-    if [ "${line}" == "end" ]; then
-      break
-    fi
-    text="${text}
-${line}"
-  done
-
-  echo -n "${text}" | mail -s "${subject}" "${my_mail_address}" || echo "Failed to sent an mail"
-}
-
-mail2(){
-  echo -n "To: "
-  read -r mail_address
-  echo -n "Subject: "
-  read -r subject
-  echo "Text (Enter 'end' to send): "
-  text=""
-  while read -r line; do
-    if [ "${line}" == "end" ]; then
-      break
-    fi
-    text="${text}
-${line}"
-  done
-
-  echo -n "${text}" | mail -s "${subject}" "${mail_address}" || echo "Failed to sent an mail"
-}
