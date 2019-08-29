@@ -1,4 +1,4 @@
-" ctnfig file for Neovim
+" config file for Neovim
 filetype indent plugin off
 
 let configDir='~/.config/nvim'
@@ -170,6 +170,9 @@ nmap m %
 vmap m %
 " nnoremap % m
 
+" semicolon to EOL
+inoremap ; <C-o>A;
+inoremap \; ;
 
 " move to next parentheses
 vnoremap { ?[{}()]<CR>

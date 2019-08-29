@@ -202,13 +202,16 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias fzf='fzf --reverse'
 alias cl='clear'
+if _exists "fuck"; then
+    alias f='fuck'
+fi
 
 # languages
 alias py='python3'
 alias nimc='nim c'
 alias nimcd='nim c -d:release'
 alias nimcr='nim c -r --verbosity:0'
-alias nimi='rlwrap nim secret'
+alias nimi='nim secret'
 alias rc='rustc'
 alias lua='lua5.3'
 alias luac='luac5.3'

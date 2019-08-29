@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop,xfce4-terminal.desktop
-recent=android-studio_android-studio.desktop,firefox.desktop,org.zealdocs.Zeal.desktop,code.desktop,vivaldi-stable.desktop,blueman-manager.desktop,blueman-adapters.desktop,insomnia_insomnia.desktop,evince.desktop,com.gexperts.Tilix.desktop
+recent=brave_brave.desktop,firefox.desktop,slack_slack.desktop,intellij-idea-community_intellij-idea-community.desktop,android-studio_android-studio.desktop,chrome-fahmaaghhglfmonjliepjlchgpgfmobi-Default.desktop,google-chrome.desktop,org.zealdocs.Zeal.desktop,code.desktop,vivaldi-stable.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

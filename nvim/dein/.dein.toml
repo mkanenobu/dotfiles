@@ -137,7 +137,7 @@ repo = 'mkanenobu/nvim-nim'
 on_ft = 'nim'
 hook_add = '''
   let g:nvim_nim_enable_default_binds = 0
-  let g:nvim_nim_deps_nim = "~/.choosenim/toolchains/nim-0.19.2/lib/"
+  let g:nvim_nim_deps_nim = "~/.choosenim/toolchains/nim-0.20.2/lib/"
   " FIXME: 以下3つの変数は、明示的に設定されていない場合、プラグイン内で既定値が設定されるようになっているはずだが効いていない
   " plugin/nim.vim: 98, 103
   let g:nvim_nim_enable_custom_textobjects = 1
